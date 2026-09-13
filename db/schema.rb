@@ -10,8 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 0) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_13_002030) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "members", force: :cascade do |t|
+    t.string "FirstName"
+    t.date "JoinAt"
+    t.string "LastName"
+    t.boolean "carPoolStatus"
+    t.datetime "created_at", null: false
+    t.string "email"
+    t.integer "points"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rsvps", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "member_id", null: false
+    t.date "respondedAt"
+    t.boolean "response"
+    t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_rsvps_on_member_id"
+  end
+
+  add_foreign_key "rsvps", "members"
 end
