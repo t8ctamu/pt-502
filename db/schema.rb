@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_09_20_205358) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_20_232607) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -36,14 +36,21 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_20_205358) do
   end
 
   create_table "members", force: :cascade do |t|
-    t.string "FirstName"
-    t.date "JoinAt"
-    t.string "LastName"
-    t.boolean "carPoolStatus"
+    t.string "avatar_url"
+    t.boolean "car_pool_status", default: false
     t.datetime "created_at", null: false
     t.string "email"
-    t.integer "points"
+    t.string "first_name"
+    t.date "joined_at"
+    t.string "last_name"
+    t.integer "points", default: 0
+    t.datetime "profile_completed_at"
+    t.date "pt_school_application_date"
+    t.bigint "role_id", null: false
+    t.string "uid"
     t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_members_on_role_id"
+    t.index ["uid"], name: "index_members_on_uid", unique: true
   end
 
   create_table "roles", force: :cascade do |t|
@@ -63,5 +70,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_20_205358) do
 
   add_foreign_key "attendances", "events"
   add_foreign_key "attendances", "members"
+  add_foreign_key "members", "roles"
   add_foreign_key "rsvps", "members"
 end

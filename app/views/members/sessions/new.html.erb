@@ -1,0 +1,6 @@
+<h2>Welcome! Sign in to continue.</h2>
+
+<%= button_to member_google_oauth2_omniauth_authorize_path,
+      method: :post, data: { turbo: "false" } do %>
+  <span>Sign in with Google</span>
+<% end %>
