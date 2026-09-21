@@ -1,6 +1,6 @@
 require "simplecov"
 SimpleCov.start "rails" do
-  track_files "app/**/*.rb"
+  cover "app/**/*.rb"
   enable_coverage :branch
 end
 

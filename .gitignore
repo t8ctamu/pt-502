@@ -13,3 +13,5 @@
 !/.env.example
 /public/assets
 /evidence/
+
+.env

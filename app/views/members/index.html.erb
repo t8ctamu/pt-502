@@ -1,0 +1,32 @@
+<h1>Members (<%= @members.size %>)</h1>
+<p>Paid dues: <%= @members.count(&:paid_dues) %> of <%= @members.size %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th><th>Role</th><th>First name</th><th>Last name</th><th>Email</th>
+      <th>Joined</th><th>Car pool</th><th>Points</th>
+      <th>Plans to apply to PT school</th><th>Paid dues</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @members.each do |m| %>
+      <tr>
+        <td><%= m.id %></td>
+        <td><%= m.role.description %></td>
+        <td><%= m.first_name %></td>
+        <td><%= m.last_name %></td>
+        <td><%= m.email %></td>
+        <td><%= m.joined_at %></td>
+        <td><%= m.car_pool_status ? "Yes" : "No" %></td>
+        <td><%= m.points %></td>
+        <td><%= m.pt_school_application_date&.strftime("%b %Y") %></td>
+        <td>
+          <%= form_with model: m, url: member_path(m), method: :patch do |f| %>
+            <%= f.check_box :paid_dues, onchange: "this.form.requestSubmit()" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
