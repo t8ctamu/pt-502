@@ -44,6 +44,8 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+ 
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -64,3 +66,4 @@ gem 'omniauth-rails_csrf_protection'
 gem "dotenv-rails", "~> 3.2", groups: [:development, :test]
 
 gem "json", "< 3"
+

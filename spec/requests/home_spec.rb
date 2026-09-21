@@ -8,18 +8,14 @@ RSpec.describe "Homes", type: :request do
     end
 
     it "returns http success for a member with a completed profile" do
-      member = create(:member)
-      allow_any_instance_of(Member).to receive(:profile_completed?).and_return(true)
-      sign_in member
+      sign_in create(:member, :profile_completed)
 
       get "/home/index"
       expect(response).to have_http_status(:success)
     end
 
     it "redirects to the profile form when the profile is incomplete" do
-      member = create(:member)
-      allow_any_instance_of(Member).to receive(:profile_completed?).and_return(false)
-      sign_in member
+      sign_in create(:member)
 
       get "/home/index"
       expect(response).to redirect_to(edit_profile_path)
