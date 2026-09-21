@@ -6,11 +6,11 @@ if Rails.env.development?
 
   [
     # first,    last,      email,                       carpool, points, applying
-    ["Alice",  "Nguyen",  "alice.nguyen@tamu.edu",     true,  12, Date.new(2027, 5, 1)],
-    ["Ben",    "Ortiz",   "ben.ortiz@tamu.edu",        false,  4, Date.new(2027, 8, 1)],
-    ["Carla",  "Singh",   "carla.singh@tamu.edu",      true,   9, Date.new(2028, 1, 1)],
-    ["Derek",  "Johnson", "derek.johnson@tamu.edu",    false,  0, nil],
-    ["Elena",  "Garcia",  "elena.garcia@tamu.edu",     true,  20, Date.new(2027, 5, 1)]
+    [ "Alice",  "Nguyen",  "alice.nguyen@tamu.edu",     true,  12, Date.new(2027, 5, 1) ],
+    [ "Ben",    "Ortiz",   "ben.ortiz@tamu.edu",        false,  4, Date.new(2027, 8, 1) ],
+    [ "Carla",  "Singh",   "carla.singh@tamu.edu",      true,   9, Date.new(2028, 1, 1) ],
+    [ "Derek",  "Johnson", "derek.johnson@tamu.edu",    false,  0, nil ],
+    [ "Elena",  "Garcia",  "elena.garcia@tamu.edu",     true,  20, Date.new(2027, 5, 1) ]
   ].each do |first, last, email, carpool, points, applying|
     Member.find_or_create_by!(email: email) do |m|
       m.role                       = member_role

@@ -1,7 +1,7 @@
 class Member < ApplicationRecord
   ALLOWED_EMAIL_DOMAIN = "@tamu.edu".freeze
 
-  devise :omniauthable, omniauth_providers: [:google_oauth2]
+  devise :omniauthable, omniauth_providers: [ :google_oauth2 ]
 
   belongs_to :role
   has_many :rsvps, dependent: :destroy
