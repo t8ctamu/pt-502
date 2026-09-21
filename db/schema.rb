@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_09_20_232607) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_21_001054) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -43,6 +43,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_20_232607) do
     t.string "first_name"
     t.date "joined_at"
     t.string "last_name"
+    t.boolean "paid_dues", default: false, null: false
     t.integer "points", default: 0
     t.datetime "profile_completed_at"
     t.date "pt_school_application_date"

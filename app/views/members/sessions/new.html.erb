@@ -1,6 +1,47 @@
-<h2>Welcome! Sign in to continue.</h2>
+<header>
+  <h1>Physical Therapy Society</h1>
+  <p>Texas A&amp;M's community for students preparing for a career in physical therapy.</p>
+</header>
 
-<%= button_to member_google_oauth2_omniauth_authorize_path,
-      method: :post, data: { turbo: "false" } do %>
-  <span>Sign in with Google</span>
-<% end %>
+<section>
+  <h2>Join or sign in</h2>
+
+  <div>
+    <h3>Returning member?</h3>
+    <%= button_to member_google_oauth2_omniauth_authorize_path,
+          method: :post, data: { turbo: "false" } do %>
+      <span>Sign in with Google</span>
+    <% end %>
+  </div>
+
+  <div>
+    <h3>New here?</h3>
+    <p>Sign up with your @tamu.edu Google account. You'll fill out a short profile after signing in.</p>
+    <%= button_to member_google_oauth2_omniauth_authorize_path,
+          method: :post, data: { turbo: "false" } do %>
+      <span>Sign up with Google</span>
+    <% end %>
+  </div>
+
+  <p><small>Only @tamu.edu accounts can sign in.</small></p>
+</section>
+
+<section>
+  <h2>What we do</h2>
+  <ul>
+    <li>Regular meetings and events (guest speakers, PT school info sessions)</li>
+    <li>Volunteer and shadowing opportunities</li>
+    <li>Carpools to off-campus events</li>
+    <li>Points for attendance and participation</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Upcoming events</h2>
+  <p>Sign in to see the full schedule and RSVP.</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Questions? Email us at <a href="mailto:ptsociety@example.com">ptsociety@example.com</a>.</p>
+</section>

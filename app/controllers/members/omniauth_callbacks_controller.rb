@@ -4,12 +4,10 @@ class Members::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if member.present?
       sign_out_all_scopes
-      flash[:success] = t "devise.omniauth_callbacks.success", kind: "Google"
       sign_in_and_redirect member, event: :authentication
     else
-      flash[:alert] = t "devise.omniauth_callbacks.failure", kind: "Google",
-                        reason: "#{auth.info.email} is not authorized."
-      redirect_to new_member_session_path
+      redirect_to new_member_session_path,
+        alert: "Please sign in/up with your Texas A&M account."
     end
   end
 

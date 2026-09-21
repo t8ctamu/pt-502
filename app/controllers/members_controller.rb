@@ -8,7 +8,18 @@ class MembersController < ApplicationController
 
   def update
     member = Member.find(params[:id])
-    member.update!(role_id: params.require(:member).permit(:role_id)[:role_id])
-    redirect_to members_path, notice: "#{member.first_name}'s role updated."
+
+    if member.update(member_params)
+      redirect_to members_path, notice: "#{member.first_name}'s dues updated."
+    else
+      redirect_to members_path, alert: "Could not update #{member.first_name}."
+    end
+  end
+
+  private
+
+  # Only the fields admins are allowed to change from the dashboard
+  def member_params
+    params.require(:member).permit(:paid_dues)
   end
 end
