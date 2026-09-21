@@ -2,10 +2,27 @@ require 'rails_helper'
 
 RSpec.describe "Homes", type: :request do
   describe "GET /index" do
-    it "returns http success" do
+    it "redirects to sign in when signed out" do
+      get "/home/index"
+      expect(response).to redirect_to(new_member_session_path)
+    end
+
+    it "returns http success for a member with a completed profile" do
+      member = create(:member)
+      allow_any_instance_of(Member).to receive(:profile_completed?).and_return(true)
+      sign_in member
+
       get "/home/index"
       expect(response).to have_http_status(:success)
     end
-  end
 
+    it "redirects to the profile form when the profile is incomplete" do
+      member = create(:member)
+      allow_any_instance_of(Member).to receive(:profile_completed?).and_return(false)
+      sign_in member
+
+      get "/home/index"
+      expect(response).to redirect_to(edit_profile_path)
+    end
+  end
 end
