@@ -55,7 +55,11 @@ class EventsController < ApplicationController
       END:VEVENT
       END:VCALENDAR
     ICS
+    
     send_data calendar, type: "text/calendar", disposition: "attachment", filename: "#{@event.name.parameterize}.ics"
+    rescue StandardError => e
+      Rails.logger.error("ICS generation failed for event #{@event.id}: #{e.message}")
+      redirect_to event_path(@event), alert: "Couldn't generate the calendar file."
   end
 
   private
