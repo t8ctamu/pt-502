@@ -15,7 +15,7 @@ class Member < ApplicationRecord
   end
 
   def admin?
-    role&.description&.casecmp?("admin")
+    role.present? && role.description.casecmp?("admin")
   end
 
   def self.from_google(email:, first_name:, last_name:, uid:, avatar_url:)
