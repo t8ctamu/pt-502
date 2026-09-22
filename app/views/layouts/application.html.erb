@@ -10,40 +10,32 @@
 
     <%= yield :head %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-
-    <style>
-      .flash__alert   { color: red; }
-      .flash__notice  { color: blue; }
-      .flash__success { color: green; }
-    </style>
   </head>
 
   <body>
     <% if member_signed_in? %>
-    <nav>
-      <% if current_member.avatar_url.present? %>
-        <%= image_tag current_member.avatar_url, alt: "", width: 28, height: 28, style: "border-radius:50%" %>
-      <% end %>
-      <%= current_member.first_name %>
-      <%= link_to "Home", root_path %>
-      <%= link_to "Sign out", destroy_member_session_path %>
-    </nav>
-  <% end %>
+      <nav>
+        <% if current_member.avatar_url.present? %>
+          <%= image_tag current_member.avatar_url, alt: "", width: 28, height: 28, style: "border-radius:50%" %>
+        <% end %>
+        <%= current_member.first_name %>
+        <%= link_to "Home", root_path %>
+        <%= link_to "Sign out", destroy_member_session_path %>
+      </nav>
+    <% end %>
 
-  <% flash.each do |key, value| %>
-    <section class="flash flash__<%= key %>"><%= value %></section>
-  <% end %>
+    <% flash.each do |key, value| %>
+      <section class="flash flash__<%= key %>"><%= value %></section>
+    <% end %>
 
-  <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
