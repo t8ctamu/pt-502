@@ -1,0 +1,15 @@
+<h1>Events</h1>
+
+<% if current_member.admin? %>
+  <%= link_to "Create Event", new_event_path %>
+<% end %>
+
+<ul>
+  <% @events.each do |event| %>
+    <li>
+      <%= link_to event.name, event_path(event) %>
+      – <%= event.starts_at.strftime("%b %d, %Y %I:%M %p") %>
+      at <%= event.location %>
+    </li>
+  <% end %>
+</ul>

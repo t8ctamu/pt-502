@@ -12,4 +12,10 @@ Rails.application.routes.draw do
 
   resources :members, only: [ :index, :update ]
   resource  :profile, only: [ :edit, :update ]
+
+  resources :events do
+    member do
+      get :ics
+    end
+  end
 end

@@ -20,15 +20,16 @@
 
   <body>
     <% if member_signed_in? %>
-      <nav>
-        <% if current_member.avatar_url.present? %>
-          <%= image_tag current_member.avatar_url, alt: "", width: 28, height: 28, style: "border-radius:50%" %>
-        <% end %>
-        <%= current_member.first_name %>
-        <%= link_to "Home", root_path %>
-        <%= link_to "Sign out", destroy_member_session_path %>
-      </nav>
-    <% end %>
+    <nav>
+      <% if current_member.avatar_url.present? %>
+        <%= image_tag current_member.avatar_url, alt: "", width: 28, height: 28, style: "border-radius:50%" %>
+      <% end %>
+      <%= current_member.first_name %>
+      <%= link_to "Home", root_path %>
+      <%= link_to "Sign out", destroy_member_session_path %>
+      <%= link_to "Events", events_path %>
+    </nav>
+  <% end %>
 
     <% flash.each do |key, value| %>
       <section class="flash flash__<%= key %>"><%= value %></section>
