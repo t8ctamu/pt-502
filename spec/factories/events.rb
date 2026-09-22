@@ -1,6 +1,9 @@
 FactoryBot.define do
   factory :event do
-    # Event has no attributes defined yet beyond ApplicationRecord defaults.
-    # Add fields here (name, starts_at, etc.) once the Event model grows.
+    name        { "Test Event" }
+    description { "A test event" }
+    starts_at   { 1.day.from_now }
+    ends_at     { 1.day.from_now + 1.hour }
+    location    { "Room 101" }
   end
 end
