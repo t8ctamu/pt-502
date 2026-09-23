@@ -15,4 +15,32 @@
       }.to_query, target: "_blank" %>
 </p>
 
+<% if current_member.admin? %>
+  <section aria-labelledby="attendance-heading">
+    <h2 id="attendance-heading">Attendance</h2>
+    <% if @attendance_load_failed %>
+      <p role="alert">Attendance couldn't be loaded. Please try again.</p>
+      <p><%= link_to "Try again", event_path(@event) %></p>
+    <% elsif @attendances.empty? %>
+      <p>No attendees yet.</p>
+    <% else %>
+      <table>
+        <caption>Members present at <%= @event.name %></caption>
+        <thead>
+          <tr><th scope="col">Name</th><th scope="col">Check-in time</th></tr>
+        </thead>
+        <tbody>
+          <% @attendances.each do |attendance| %>
+            <tr>
+              <td><%= [attendance.member.first_name, attendance.member.last_name].compact.join(" ") %></td>
+              <td><time datetime="<%= attendance.checked_in_at.iso8601 %>"><%= attendance.checked_in_at.strftime("%b %d, %Y %I:%M %p %Z") %></time></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+    <p><%= link_to "Refresh attendance", event_path(@event) %></p>
+  </section>
+<% end %>
+
 <%= link_to "Back to events", events_path %>

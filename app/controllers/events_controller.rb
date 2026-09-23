@@ -8,6 +8,13 @@ class EventsController < ApplicationController
   end
 
   def show
+    return unless current_member.admin?
+
+    @attendances = @event.attendances.where.not(checked_in_at: nil)
+      .includes(:member).order(:checked_in_at, :id).to_a
+  rescue ActiveRecord::ActiveRecordError => error
+    Rails.logger.error("Attendance load failed for event #{@event.id}: #{error.class}")
+    @attendance_load_failed = true
   end
 
   def new
