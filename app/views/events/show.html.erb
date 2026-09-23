@@ -1,0 +1,18 @@
+<h1><%= @event.name %></h1>
+<p><%= @event.description %></p>
+<p><strong>Time:</strong> <%= @event.starts_at.strftime("%b %d, %Y %I:%M %p") %></p>
+<p><strong>Location:</strong> <%= @event.location %></p>
+
+<p>
+  <%= link_to "Download .ics", ics_event_path(@event, format: :ics) %> |
+  <%= link_to "Add to Google Calendar",
+      "https://calendar.google.com/calendar/render?" + {
+        action: "TEMPLATE",
+        text: @event.name,
+        dates: "#{@event.starts_at.utc.strftime("%Y%m%dT%H%M%SZ")}/#{(@event.ends_at || @event.starts_at + 1.hour).utc.strftime("%Y%m%dT%H%M%SZ")}",
+        details: @event.description,
+        location: @event.location
+      }.to_query, target: "_blank" %>
+</p>
+
+<%= link_to "Back to events", events_path %>
