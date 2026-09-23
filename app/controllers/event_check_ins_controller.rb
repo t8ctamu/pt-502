@@ -15,6 +15,10 @@ class EventCheckInsController < ApplicationController
     @check_in_error = error.message
     @attendance = current_member.attendances.find_by(event: @event)
     render :show, status: :unprocessable_entity
+  rescue ActiveRecord::ActiveRecordError => error
+    Rails.logger.error("Check-in failed for event #{@event.id}: #{error.class}")
+    @check_in_error = "Check-in couldn't be saved. Please try again."
+    render :show, status: :service_unavailable
   end
 
   private

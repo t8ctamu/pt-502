@@ -12,6 +12,16 @@ RSpec.describe "Event check-in", type: :request do
     expect(Attendance.count).to eq(0)
   end
 
+  it "shows a retry message when the attendance save fails" do
+    sign_in member
+    allow(EventCheckIn).to receive(:call).and_raise(ActiveRecord::StatementInvalid)
+    post event_check_in_path(event), params: { latitude: 30.6, longitude: -96.3 }
+    expect(response).to have_http_status(:service_unavailable)
+    expect(CGI.unescapeHTML(response.body)).to include("Check-in couldn't be saved", "Check in using my location")
+    expect(Attendance.count).to eq(0)
+    expect(member.reload.points).to eq(4)
+  end
+
   it "does not allow anonymous check-in submissions" do
     post event_check_in_path(event), params: { latitude: 30.6, longitude: -96.3 }
     expect(response).to redirect_to(new_member_session_path)
