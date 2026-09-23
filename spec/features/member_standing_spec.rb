@@ -48,7 +48,7 @@ RSpec.describe "Editing member points", type: :request do
       patch member_path(member), params: { member: { points: "abc" } }
 
       member.reload
-      expect(member.points).to eq(0) 
+      expect(member.points).to eq(0)
     end
   end
 
