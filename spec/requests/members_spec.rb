@@ -47,6 +47,12 @@ RSpec.describe "Members", type: :request do
   describe "PATCH /members/:id" do
     before { sign_in admin }
 
+    it "does not change points through the dues update endpoint" do
+      target = create(:member, :profile_completed, points: 5)
+      patch member_path(target), params: { member: { paid_dues: true, points: 999 } }
+      expect(target.reload.points).to eq(5)
+    end
+
     it "updates the member's paid_dues status and redirects to the index" do
       target = create(:member, :profile_completed, paid_dues: false)
 
@@ -55,12 +61,5 @@ RSpec.describe "Members", type: :request do
       expect(response).to redirect_to(members_path)
       expect(target.reload.paid_dues).to be true
     end
-
-    # This test is no longer true now that the admin can edit points
-    # it "ignores attributes other than paid_dues" do
-    #   target = create(:member, :profile_completed, points: 5)
-
-    #   patch member_path(target), params: { member: { paid_dues: true, points: 999 } }
-    #   expect(target.reload.points).to eq(5)
   end
 end

@@ -36,5 +36,28 @@
     <%= f.text_field :location %>
   </div>
 
-  <%= f.submit "Save Event", class: "btn" %>
+  <fieldset data-controller="event-location">
+    <legend>Attendance check-in</legend>
+    <p>Set the meeting coordinates to enable QR check-in. Leave both blank to configure later.</p>
+    <p>
+      <%= f.label :latitude %><br>
+      <%= f.number_field :latitude, step: "any", min: -90, max: 90, data: { event_location_target: "latitude" } %>
+    </p>
+    <p>
+      <%= f.label :longitude %><br>
+      <%= f.number_field :longitude, step: "any", min: -180, max: 180, data: { event_location_target: "longitude" } %>
+    </p>
+    <button type="button" data-action="event-location#locate" data-event-location-target="button">Use my current location</button>
+    <p data-event-location-target="status" role="status"></p>
+    <p>Use your current location only when you are at the meeting venue.</p>
+    <p>
+      <%= f.label :check_in_radius_meters, "Allowed distance (meters)" %><br>
+      <%= f.number_field :check_in_radius_meters, min: 1, step: 1, required: true %>
+    </p>
+    <p>
+      <%= f.label :point_value, "Points for attending" %><br>
+      <%= f.number_field :point_value, min: 0, step: 1, required: true %>
+    </p>
+  </fieldset>
+  <%= f.submit "Save Event" %>
 <% end %>

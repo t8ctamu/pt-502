@@ -22,6 +22,20 @@ RSpec.describe "Members::OmniauthCallbacks", type: :request do
   end
 
   describe "GET /members/auth/google_oauth2/callback" do
+    it "returns a member to the scanned event after Google sign-in without marking attendance" do
+      member = create(:member, :profile_completed)
+      event = create(:event, latitude: 30.6, longitude: -96.3)
+      get event_check_in_path(event)
+      mock_google_auth(email: member.email)
+
+      get member_google_oauth2_omniauth_callback_path
+
+      expect(response).to redirect_to(event_check_in_path(event))
+      follow_redirect!
+      expect(response.body).to include("Check in using my location")
+      expect(Attendance.count).to eq(0)
+    end
+
     context "with a tamu.edu email" do
       it "signs in an existing member and redirects to root" do
         member = create(:member, :profile_completed, email: "ada#{Member::ALLOWED_EMAIL_DOMAIN}")
