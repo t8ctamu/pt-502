@@ -62,4 +62,96 @@ RSpec.describe "Members", type: :request do
       expect(target.reload.paid_dues).to be true
     end
   end
+
+  describe "PATCH /members/:id/change_role" do
+    let(:manager) { create(:member, :manager, :profile_completed) }
+    let(:target) { create(:member, :profile_completed) }
+
+    context "when signed out" do
+      it "redirects to sign in" do
+        patch change_role_member_path(target), params: { role: "Admin" }
+        expect(response).to redirect_to(new_member_session_path)
+      end
+    end
+
+    context "when signed in as a regular member" do
+      before { sign_in regular_member }
+
+      it "redirects to root with an alert and does not change the target role" do
+        patch change_role_member_path(target), params: { role: "Admin" }
+        expect(response).to redirect_to(root_path)
+        expect(flash[:alert]).to eq("You're not authorized to change roles.")
+        expect(target.reload.role.description).to eq("Member")
+      end
+    end
+
+    context "when signed in as an admin" do
+      before { sign_in admin }
+
+      it "redirects to root with an alert and does not change the target role" do
+        patch change_role_member_path(target), params: { role: "Admin" }
+        expect(response).to redirect_to(root_path)
+        expect(flash[:alert]).to eq("You're not authorized to change roles.")
+        expect(target.reload.role.description).to eq("Member")
+      end
+    end
+
+    context "when signed in as a manager" do
+      before { sign_in manager }
+
+      it "promotes a member to admin" do
+        patch change_role_member_path(target), params: { role: "Admin" }
+        expect(response).to redirect_to(members_path)
+        expect(flash[:notice]).to eq("#{target.first_name} is now Admin.")
+        expect(target.reload.role.description).to eq("Admin")
+      end
+
+      it "demotes an admin to member" do
+        admin_target = create(:member, :admin, :profile_completed)
+
+        patch change_role_member_path(admin_target), params: { role: "Member" }
+
+        expect(response).to redirect_to(members_path)
+        expect(admin_target.reload.role.description).to eq("Member")
+      end
+
+      it "refuses to change their own role" do
+        patch change_role_member_path(manager), params: { role: "Member" }
+        expect(response).to redirect_to(members_path)
+        expect(flash[:alert]).to eq("You cannot change your own role.")
+        expect(manager.reload.role.description).to eq("Manager")
+      end
+
+      it "refuses to change another manager's role" do
+        other_manager = create(:member, :manager, :profile_completed)
+
+        patch change_role_member_path(other_manager), params: { role: "Member" }
+
+        expect(response).to redirect_to(members_path)
+        expect(flash[:alert]).to eq("You cannot change a Manager's role.")
+        expect(other_manager.reload.role.description).to eq("Manager")
+      end
+
+      it "refuses to promote to Manager" do
+        patch change_role_member_path(target), params: { role: "Manager" }
+        expect(response).to redirect_to(members_path)
+        expect(flash[:alert]).to eq("Invalid role change.")
+        expect(target.reload.role.description).to eq("Member")
+      end
+
+      it "refuses an unknown role" do
+        patch change_role_member_path(target), params: { role: "Alumni" }
+        expect(response).to redirect_to(members_path)
+        expect(flash[:alert]).to eq("Invalid role change.")
+        expect(target.reload.role.description).to eq("Member")
+      end
+
+      it "refuses a nil role" do
+        patch change_role_member_path(target), params: { role: nil }
+        expect(response).to redirect_to(members_path)
+        expect(flash[:alert]).to eq("Invalid role change.")
+        expect(target.reload.role.description).to eq("Member")
+      end
+    end
+  end
 end
