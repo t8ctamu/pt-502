@@ -56,12 +56,11 @@ RSpec.describe "Members", type: :request do
       expect(target.reload.paid_dues).to be true
     end
 
-    # This test is no longer true now that the admin can edit points 
+    # This test is no longer true now that the admin can edit points
     # it "ignores attributes other than paid_dues" do
     #   target = create(:member, :profile_completed, points: 5)
 
     #   patch member_path(target), params: { member: { paid_dues: true, points: 999 } }
     #   expect(target.reload.points).to eq(5)
-    end
   end
 end
