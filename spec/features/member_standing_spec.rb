@@ -36,16 +36,19 @@ RSpec.describe "Editing member points", type: :request do
     it "updates points and reflects it on the members page" do
       patch member_path(member), params: { member: { points: 8 } }
 
-      puts "STATUS: #{response.status}"
-    puts "LOCATION: #{response.headers['Location']}" if response.redirect?
-    puts response.body if response.status >= 400 && response.status != 302
-
       member.reload
       expect(member.points).to eq(8)
 
       get members_path
       member_row = response.body[/<tr>.*?#{Regexp.escape(member.email)}.*?<\/tr>/m]
       expect(member_row).to include("8")
+    end
+
+    it "rejects a non-integer value for points and does not persist it" do
+      patch member_path(member), params: { member: { points: "abc" } }
+
+      member.reload
+      expect(member.points).to eq(0) 
     end
   end
 
