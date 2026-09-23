@@ -519,3 +519,17 @@ textarea { resize: vertical; }
   margin: 0;
   font-weight: 500;
 }
+
+.event-delete {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.event-delete form {
+  margin: 0;
+}
+
+.event-delete .btn-danger {
+  margin: 0;
+}

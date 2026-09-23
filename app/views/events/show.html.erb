@@ -125,10 +125,19 @@
     <% end %>
   </div>
 
+  <% if current_member.admin? %>
+    <div class="event-delete">
+      <%= button_to "Delete",
+          event_path(@event),
+          method: :delete,
+          class: "btn btn-danger",
+          data: { turbo_confirm: "Are you sure you want to delete this event?" } %>
+    </div>
+  <% end %>
+
   <div class="event-navigation">
     <%= link_to "← Back to events",
         events_path,
         class: "back-link" %>
   </div>
 </div>
-```
