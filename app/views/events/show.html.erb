@@ -18,6 +18,11 @@
 <% if current_member.admin? %>
   <section aria-labelledby="attendance-heading">
     <h2 id="attendance-heading">Attendance</h2>
+    <% if @event.check_in_configured? %>
+      <p><%= link_to "Show check-in QR code", check_in_qr_event_path(@event) %></p>
+    <% else %>
+      <p><%= link_to "Configure attendance check-in", edit_event_path(@event) %></p>
+    <% end %>
     <% if @attendance_load_failed %>
       <p role="alert">Attendance couldn't be loaded. Please try again.</p>
       <p><%= link_to "Try again", event_path(@event) %></p>

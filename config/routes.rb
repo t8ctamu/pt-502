@@ -14,8 +14,10 @@ Rails.application.routes.draw do
   resource  :profile, only: [ :edit, :update ]
 
   resources :events do
+    resource :check_in, only: [ :show, :create ], controller: "event_check_ins"
     member do
       get :ics
+      get :check_in_qr
     end
   end
 end

@@ -1,0 +1,24 @@
+<h1>Check in to <%= @event.name %></h1>
+<p><%= @event.location %></p>
+<% if @check_in_error %>
+  <p role="alert"><%= @check_in_error %></p>
+<% end %>
+
+<% if @attendance&.checked_in_at? %>
+  <h2>You're marked present</h2>
+  <p>Checked in at <%= @attendance.checked_in_at.strftime("%b %d, %Y %I:%M %p %Z") %>.</p>
+  <p>Points awarded: <%= @attendance.points_awarded %>. Your total: <%= current_member.points %>.</p>
+<% elsif !@event.check_in_configured? %>
+  <p>Check-in is not configured for this event yet. Please ask an officer.</p>
+<% else %>
+  <p>Check in within <%= @event.check_in_radius_meters %> meters of the venue to earn <%= pluralize(@event.point_value, "point") %>.</p>
+  <p>Allow location access when prompted. Your coordinates are used to check your distance and are not saved with your attendance.</p>
+  <%= form_with url: event_check_in_path(@event), data: { controller: "check-in", action: "submit->check-in#submit", turbo: false } do %>
+    <%= hidden_field_tag :latitude, nil, data: { check_in_target: "latitude" } %>
+    <%= hidden_field_tag :longitude, nil, data: { check_in_target: "longitude" } %>
+    <button type="submit" data-check-in-target="button">Check in using my location</button>
+    <p role="status" data-check-in-target="status"></p>
+    <noscript><p>Enable JavaScript to check in with your location.</p></noscript>
+  <% end %>
+<% end %>
+<%= link_to "Back to event", event_path(@event) %>

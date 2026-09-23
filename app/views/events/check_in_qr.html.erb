@@ -1,0 +1,6 @@
+<h1>Check in to <%= @event.name %></h1>
+<p>Scan this code with your phone's camera, sign in, and allow location access to mark yourself present.</p>
+<%= image_tag "data:image/svg+xml;base64,#{Base64.strict_encode64(@qr_svg)}", alt: "Check-in QR code for #{@event.name}", width: 300, height: 300, style: "max-width:100%;height:auto" %>
+<p><%= link_to "Open check-in page", @check_in_url %></p>
+<p><%= pluralize(@event.point_value, "point") %> for attending. Check in within <%= @event.check_in_radius_meters %> meters of the venue.</p>
+<%= link_to "Back to event", event_path(@event) %>

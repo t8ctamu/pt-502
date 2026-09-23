@@ -66,3 +66,4 @@ gem "omniauth-rails_csrf_protection"
 gem "dotenv-rails", "~> 3.2", groups: [ :development, :test ]
 
 gem "json", "< 3"
+gem "rqrcode", "~> 3.2"

@@ -1,7 +1,19 @@
 class EventsController < ApplicationController
   before_action :require_completed_profile
-  before_action :require_admin!, only: %i[new create edit update destroy]
-  before_action :set_event, only: %i[show edit update destroy ics]
+  before_action :require_admin!, only: %i[new create edit update destroy check_in_qr]
+  before_action :set_event, only: %i[show edit update destroy ics check_in_qr]
+
+  def check_in_qr
+    unless @event.check_in_configured?
+      redirect_to edit_event_path(@event), alert: "Set the event coordinates before sharing check-in."
+      return
+    end
+
+    @check_in_url = event_check_in_url(@event)
+    @qr_svg = RQRCode::QRCode.new(@check_in_url).as_svg(
+      module_size: 5, offset: 20, color: "000", fill: "fff", use_path: true
+    )
+  end
 
   def index
     @events = Event.order(:starts_at)
@@ -76,7 +88,8 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :description, :starts_at, :ends_at, :location)
+    params.require(:event).permit(:name, :description, :starts_at, :ends_at, :location,
+      :latitude, :longitude, :check_in_radius_meters, :point_value)
   end
 
   def require_admin!
