@@ -20,6 +20,6 @@ class MembersController < ApplicationController
 
   # Only the fields admins are allowed to change from the dashboard
   def member_params
-    params.require(:member).permit(:paid_dues)
+    params.require(:member).permit(:paid_dues, :points)
   end
 end
