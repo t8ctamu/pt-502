@@ -30,6 +30,15 @@ RSpec.describe Role, type: :model do
     it "returns -1 for an unrecognized description" do
       expect(Role.new(description: "Alumni").level).to eq(-1)
     end
+    it "returns 2 for manager (lowercase)" do
+      expect(Role.new(description: "manager").level).to eq(2)
+    end
+    it "returns 1 for ADMIN (uppercase)" do
+      expect(Role.new(description: "ADMIN").level).to eq(1)
+    end
+    it "returns 0 for Member (mixed case)" do
+      expect(Role.new(description: "mEmBeR").level).to eq(0)
+    end
   end
 
   describe "#manager?" do

@@ -1,8 +1,8 @@
 class Role < ApplicationRecord
-  LEVELS = { "Member" => 0, "Admin" => 1, "Manager" => 2 }.freeze
+  LEVELS = { "member" => 0, "admin" => 1, "manager" => 2 }.freeze
 
   def level
-    LEVELS.fetch(description, -1)
+    LEVELS.fetch(description.to_s.downcase, -1)
   end
 
   def manager?
