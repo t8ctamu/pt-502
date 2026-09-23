@@ -13,12 +13,12 @@
 
 html, body {
   min-height: 100%;
+  background: var(--grey);
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: var(--text);
-  background: var(--grey);
   margin: 0;
   line-height: 1.6;
 }
@@ -444,3 +444,78 @@ textarea { resize: vertical; }
   color: #888;
   cursor: not-allowed;
 }   
+.profile-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.status-active { background: #dcfce7; color: #15803d; }
+.status-inactive { background: #fde2e2; color: #b91c1c; }
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--grey);
+  border-bottom: 1px solid var(--grey);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6b6b6b;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.info-box {
+  background: var(--grey);
+  border-left: 4px solid var(--maroon);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.info-box p { margin: 0; }
+
+.form-page {
+  max-width: 480px;
+  margin: 3rem auto;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox-field label {
+  margin: 0;
+  font-weight: 500;
+}

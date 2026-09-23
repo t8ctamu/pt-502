@@ -1,19 +1,50 @@
-<h1>Welcome, <%= current_member.first_name %></h1>
-<p>Role: <strong><%= current_member.role.description %></strong></p>
-<p>Active Member Status: 
-  <% if current_member.points >= 7 && current_member.paid_dues%>
-    <span style="color: green;">Active</span>
-  <% else %>
-    <span style="color: red;">Not Active</span>
-  <% end %> 
-</p>
-<p>To be considered an active member you must have paid semester dues and have a total of 7 points by the end of the semester. This can be any combination of meeting, service, and social points.  The points sheet for members can be found in the GroupMe and will be updated periodically. Service points can  also be  earned by donating canned goods to the Brazos Valley Food Bank (5 cans for 1pt, 10 for 2pts), shadowing at a PT clinic (10 hrs for 1pt, 20 for 2pts),  or by sending proof of independent volunteering  and tagging @tamuptsociety.</p>
-<p>email: <%= current_member.email %></p>
-<p>joined at: <%= current_member.joined_at %></p>
-<p>car pool status: <%= current_member.car_pool_status ? "Yes" : "No" %></p>
-<p>Total points <%= current_member.points %></p>
-<p>Application time: <%= current_member.pt_school_application_date&.strftime("%b %Y") %></p>
-<p><%= link_to "Edit my profile", edit_profile_path %></p>
+<div class="card profile-card">
+  <div class="profile-header">
+  <% unless current_member.admin? %>
+      <% if current_member.points >= 7 && current_member.paid_dues %>
+        <span class="status-badge status-active">Active Member</span>
+      <% else %>
+        <span class="status-badge status-inactive">Not Active Member</span>
+      <% end %>
+    </div>
+
+  
+    <div class="profile-stats">
+      <div class="stat">
+        <span class="stat-label">Email</span>
+        <span class="stat-value"><%= current_member.email %></span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Joined</span>
+        <span class="stat-value"><%= current_member.joined_at&.strftime("%b %Y") %></span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Car pool</span>
+        <span class="stat-value"><%= current_member.car_pool_status ? "Yes" : "No" %></span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Points</span>
+        <span class="stat-value"><%= current_member.points %> / 7</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">PT school application</span>
+        <span class="stat-value"><%= current_member.pt_school_application_date&.strftime("%b %Y") || "Not set" %></span>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p>
+        To be considered an active member you must have paid semester dues and have a total of 7 points
+        by the end of the semester. This can be any combination of meeting, service, and social points.
+        The points sheet for members can be found in the GroupMe and will be updated periodically.
+        Service points can also be earned by donating canned goods to the Brazos Valley Food Bank
+        (5 cans for 1pt, 10 for 2pts), shadowing at a PT clinic (10 hrs for 1pt, 20 for 2pts), or by
+        sending proof of independent volunteering and tagging @tamuptsociety.
+      </p>
+    </div>
+  <% end %>
+
+</div>
 
 <% if current_member.admin? %>
   <div class="card">
