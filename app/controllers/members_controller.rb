@@ -14,12 +14,18 @@ class MembersController < ApplicationController
     else
       redirect_to members_path, alert: "Could not update #{member.first_name}."
     end
+
   end
 
   private
-
-  # Only the fields admins are allowed to change from the dashboard
   def member_params
-    params.require(:member).permit(:paid_dues, :points)
+    member_attributes = params.require(:member)
+
+    if member_attributes[:paid_dues].present?
+      member_attributes.permit(:paid_dues)
+    else
+      member_attributes.permit(:points)
+    end
+
   end
 end
