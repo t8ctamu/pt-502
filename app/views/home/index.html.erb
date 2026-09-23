@@ -1,12 +1,16 @@
-<div class="card">
-  <h1>Welcome, <%= current_member.first_name %></h1>
-  <p><span class="role-badge"><%= current_member.role.description %></span></p>
-  <p><%= link_to "Edit my profile", edit_profile_path, class: "btn" %></p>
-</div>
-
 <% if current_member.admin? %>
   <div class="card">
     <h2>Officer tools</h2>
-    <p><%= link_to "Member dashboard", members_path, class: "btn" %></p>
+    <p class="card-subtitle">Manage members and dues from one place.</p>
+    <div class="btn-group">
+      <%= link_to "Member dashboard", members_path, class: "btn" %>
+      <%= link_to "Create Event", new_event_path, class: "btn" %>
+    </div>
   </div>
 <% end %>
+
+<div class="card">
+  <h2>Upcoming events</h2>
+  <%= render "events/event_list", events: @upcoming_events, empty_message: "No upcoming events right now — check back soon." %>
+  <%= link_to "View all events", events_path, class: "btn" %>
+</div>

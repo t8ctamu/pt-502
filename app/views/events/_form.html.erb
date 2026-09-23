@@ -1,39 +1,40 @@
-<%= form_with model: @event do |f| %>
-  <% if @event.errors.any? %>
-    <div class="errors">
-      <h2><%= pluralize(@event.errors.count, "error") %> stopped this event from being saved:</h2>
+<%= form_with model: event, class: "event-form" do |f| %>
+  <% if event.errors.any? %>
+    <div class="form-errors">
+      <h2><%= pluralize(event.errors.count, "error") %> stopped this event from being saved:</h2>
       <ul>
-        <% @event.errors.full_messages.each do |message| %>
+        <% event.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <p>
-    <%= f.label :name %><br>
+  <div>
+    <%= f.label :name %>
     <%= f.text_field :name %>
-  </p>
+  </div>
 
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description, rows: 4 %>
+  </div>
 
-  <p>
-    <%= f.label :starts_at, "Date and time" %><br>
-    <%= f.datetime_local_field :starts_at %>
-  </p>
+  <div class="form-row">
+    <div>
+      <%= f.label :starts_at, "Date and time" %>
+      <%= f.datetime_local_field :starts_at %>
+    </div>
+    <div>
+      <%= f.label :ends_at, "End time (optional)" %>
+      <%= f.datetime_local_field :ends_at %>
+    </div>
+  </div>
 
-  <p>
-    <%= f.label :ends_at, "End time (optional)" %><br>
-    <%= f.datetime_local_field :ends_at %>
-  </p>
-
-  <p>
-    <%= f.label :location %><br>
+  <div>
+    <%= f.label :location %>
     <%= f.text_field :location %>
-  </p>
+  </div>
 
-  <%= f.submit "Save Event" %>
+  <%= f.submit "Save Event", class: "btn" %>
 <% end %>
