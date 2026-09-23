@@ -1,4 +1,4 @@
-%w[Admin Member].each { |r| Role.find_or_create_by!(description: r) }
+%w[Admin Manager Member].each { |r| Role.find_or_create_by!(description: r) }
 
 # Fake sample data: development only, never in production
 if Rails.env.development?
