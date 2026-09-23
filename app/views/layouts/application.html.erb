@@ -10,41 +10,50 @@
 
     <%= yield :head %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-
-    <style>
-      .flash__alert   { color: red; }
-      .flash__notice  { color: blue; }
-      .flash__success { color: green; }
-    </style>
   </head>
 
   <body>
     <% if member_signed_in? %>
-    <nav>
-      <% if current_member.avatar_url.present? %>
-        <%= image_tag current_member.avatar_url, alt: "", width: 28, height: 28, style: "border-radius:50%" %>
-      <% end %>
-      <%= current_member.first_name %>
-      <%= link_to "Home", root_path %>
-      <%= link_to "Sign out", destroy_member_session_path %>
-      <%= link_to "Events", events_path %>
-    </nav>
-  <% end %>
+      <nav>
+        <div class="nav-left">
+          <div class="nav-user">
+            <% if current_member.avatar_url.present? %>
+              <%= image_tag current_member.avatar_url, alt: "", width: 28, height: 28, style: "border-radius:50%" %>
+            <% end %>
+            <span class="nav-name">Welcome, <%= current_member.first_name %> <span class="nav-caret">▾</span></span>
+            <span class="role-badge"><%= display_role(current_member) %></span>
+            <div class="nav-dropdown">
+              <div class="nav-dropdown-inner">
+                <%= link_to "Edit my profile", edit_profile_path %>
+              </div>
+            </div>
+          </div>
 
-  <% flash.each do |key, value| %>
-    <section class="flash flash__<%= key %>"><%= value %></section>
-  <% end %>
+          <%= link_to "Home", root_path %>
+          <% if current_member.admin? %>
+            <%= link_to "Members", members_path %>
+          <% end %>
+          <%= link_to "Events", events_path %>
+        </div>
 
-  <%= yield %>
+        <div class="nav-right">
+          <%= link_to "Sign out", destroy_member_session_path, class: "nav-signout" %>
+        </div>
+      </nav>
+    <% end %>
+
+    <% flash.each do |key, value| %>
+      <section class="flash flash__<%= key %>"><%= value %></section>
+    <% end %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

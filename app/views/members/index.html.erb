@@ -1,13 +1,11 @@
-<h1>Members (<%= @members.size %>)</h1>
-<p>Paid dues: <%= @members.count(&:paid_dues) %> of <%= @members.size %></p>
-
+<h1>Members</h1>
 <table>
   <thead>
     <tr>
       <th>ID</th><th>Role</th><th>First name</th><th>Last name</th><th>Email</th>
       <th>Joined</th><th>Car pool</th><th>Points</th>
       <th>Plans to apply to PT school</th><th>Paid dues</th>
-      <th>Active Member</th>
+      <th>Status</th>
     </tr>
   </thead>
   <tbody>
@@ -32,10 +30,10 @@
           <% end %>
         </td>
         <td>
-            <% if m.points >= 7 && m.paid_dues%>
-              <span style="color: green;">Yes</span>
+            <% if m.points >= 7 && m.paid_dues %>
+              <span class="status-badge status-active">Active</span>
             <% else %>
-              <span style="color: red;">No</span>
+              <span class="status-badge status-inactive">Not Active</span>
             <% end %>
         </td>
       </tr>
