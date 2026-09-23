@@ -14,7 +14,6 @@ class MembersController < ApplicationController
     else
       redirect_to members_path, alert: "Could not update #{member.first_name}."
     end
-
   end
 
   private
@@ -26,6 +25,5 @@ class MembersController < ApplicationController
     else
       member_attributes.permit(:points)
     end
-
   end
 end
