@@ -4,6 +4,8 @@ class Member < ApplicationRecord
   devise :omniauthable, omniauth_providers: [ :google_oauth2 ]
 
   belongs_to :role
+  delegate :admin?, :manager?, to: :role, allow_nil: true
+
   has_many :rsvps, dependent: :destroy
   has_many :attendances, dependent: :destroy
 
@@ -12,10 +14,6 @@ class Member < ApplicationRecord
 
   def profile_completed?
     profile_completed_at.present?
-  end
-
-  def admin?
-    role.present? && role.description.casecmp?("admin")
   end
 
   def self.from_google(email:, first_name:, last_name:, uid:, avatar_url:)
