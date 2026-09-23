@@ -1,4 +1,4 @@
-<% if events.any? %>
+<% if events&.any? %>
   <div class="event-list">
     <%= render partial: "events/event_card", collection: events, as: :event %>
   </div>
