@@ -17,4 +17,9 @@ class ApplicationController < ActionController::Base
     return if current_member&.admin?
     redirect_to root_path, alert: "You're not authorized to view that page."
   end
+
+  def require_manager
+    return if current_member&.manager?
+    redirect_to root_path, alert: "You're not authorized to change roles."
+  end
 end

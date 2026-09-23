@@ -14,4 +14,10 @@ RSpec.configure do |config|
 
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include FactoryBot::Syntax::Methods
+
+  config.before(:suite) do
+    %w[Member Admin Manager].each do |description|
+      Role.find_or_create_by!(description: description)
+    end
+  end
 end

@@ -7,5 +7,9 @@ FactoryBot.define do
     trait :admin do
       description { "Admin" }
     end
+
+    trait :manager do
+      description { "Manager" }
+    end
   end
 end
