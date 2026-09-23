@@ -54,12 +54,34 @@ RSpec.describe Member, type: :model do
       expect(build(:member, :admin).admin?).to be true
     end
 
+    it "is true for a member with the manager role (Manager inherits Admin)" do
+      expect(build(:member, :manager).admin?).to be true
+    end
+
     it "is false for a member with a non-admin role" do
       expect(build(:member).admin?).to be false
     end
 
     it "is false when the member has no role" do
-      expect(build(:member, role: nil).admin?).to be false
+      expect(build(:member, role: nil).admin?).to be_falsey
+    end
+  end
+
+  describe "#manager?" do
+    it "is true for a member with the manager role" do
+      expect(build(:member, :manager).manager?).to be true
+    end
+
+    it "is false for a member with the admin role" do
+      expect(build(:member, :admin).manager?).to be false
+    end
+
+    it "is false for a member with a non-manager role" do
+      expect(build(:member).manager?).to be false
+    end
+
+    it "is false when the member has no role" do
+      expect(build(:member, role: nil).manager?).to be_falsey
     end
   end
 

@@ -2,7 +2,7 @@
 require "rails_helper"
 
 RSpec.describe "Editing member points", type: :request do
-  let(:admin_role) { Role.create!(description: "Admin") }
+  let(:admin_role) { Role.find_or_create_by!(description: "Admin") }
   let!(:admin) do
     Member.create!(
       uid: "123545",
@@ -16,7 +16,7 @@ RSpec.describe "Editing member points", type: :request do
     )
   end
 
-  let(:member_role) { Role.create!(description: "member") }
+  let(:member_role) { Role.find_or_create_by!(description: "Member") }
   let!(:member) do
     Member.create!(
       uid: "987654",

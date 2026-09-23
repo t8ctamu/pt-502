@@ -6,6 +6,9 @@
       <th>Joined</th><th>Car pool</th><th>Points</th>
       <th>Plans to apply to PT school</th><th>Paid dues</th>
       <th>Status</th>
+      <% if current_member.manager? %>
+        <th>Change Role</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -36,6 +39,17 @@
               <span class="status-badge status-inactive">Not Active</span>
             <% end %>
         </td>
+        <% if current_member.manager? %>
+          <td>
+            <% if m == current_member || m.manager? %>
+              <%= m.role.description %>
+            <% else %>
+              <%= form_with url: change_role_member_path(m), method: :patch do |f| %>
+                <%= select_tag :role, options_for_select([["Member", "Member"], ["Admin", "Admin"]], m.role.description), onchange: "this.form.requestSubmit()" %>
+              <% end %>
+            <% end %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
