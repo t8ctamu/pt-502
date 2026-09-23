@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_09_22_000000) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_22_000001) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -20,6 +20,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_22_000000) do
     t.datetime "created_at", null: false
     t.bigint "event_id", null: false
     t.bigint "member_id", null: false
+    t.integer "points_awarded", default: 0, null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_attendances_on_event_id"
     t.index ["member_id", "event_id"], name: "index_attendances_on_member_id_and_event_id", unique: true
@@ -27,13 +28,19 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_22_000000) do
   end
 
   create_table "events", force: :cascade do |t|
+    t.integer "check_in_radius_meters", default: 100, null: false
     t.datetime "created_at", null: false
     t.text "description"
     t.datetime "ends_at"
+    t.decimal "latitude", precision: 10, scale: 6
     t.string "location"
+    t.decimal "longitude", precision: 10, scale: 6
     t.string "name"
+    t.integer "point_value", default: 1, null: false
     t.datetime "starts_at"
     t.datetime "updated_at", null: false
+    t.check_constraint "check_in_radius_meters > 0", name: "events_positive_radius"
+    t.check_constraint "point_value >= 0", name: "events_nonnegative_points"
   end
 
   create_table "members", force: :cascade do |t|
