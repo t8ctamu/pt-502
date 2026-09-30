@@ -1,6 +1,15 @@
 %w[Admin Manager Member].each { |r| Role.find_or_create_by!(description: r) }
 
-# Fake sample data: development only, never in production
+admin_role = Role.find_by!(description: "Admin")
+
+admin = Member.find_or_initialize_by(email: "lukechambers0217@tamu.edu")
+admin.role = admin_role
+admin.first_name           ||= "Luke"
+admin.last_name            ||= "Chambers"
+admin.joined_at            ||= Date.current
+admin.profile_completed_at ||= Time.current
+admin.save!
+
 if Rails.env.development?
   member_role = Role.find_by!(description: "Member")
 
