@@ -170,13 +170,13 @@ RSpec.describe "Members", type: :request do
     context "when signed in as an admin (not a manager)" do
       before { sign_in admin }
 
-      it "does not show the admins table" do
+      it "shows the admins table" do
         create(:member, :admin, :profile_completed, first_name: "Ada")
 
         get members_path
 
-        expect(response.body).not_to include("Admins")
-        expect(response.body).not_to include("Ada")
+        expect(response.body).to include("Admins")
+        expect(response.body).to include("Ada")
       end
     end
 

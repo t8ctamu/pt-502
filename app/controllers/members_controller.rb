@@ -9,7 +9,7 @@ class MembersController < ApplicationController
     @admins = nil
     @admins_error = nil
 
-    if current_member.manager?
+    if current_member.admin?
       begin
         @admins = Member.admins.includes(:role).order(:last_name, :first_name)
       rescue StandardError => e
