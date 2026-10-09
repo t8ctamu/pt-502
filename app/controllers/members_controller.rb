@@ -4,7 +4,19 @@ class MembersController < ApplicationController
   before_action :require_manager, only: :change_role
 
   def index
-    @members = Member.includes(:role).order(:last_name, :first_name)
+    @members = Member.non_admins.includes(:role).order(:last_name, :first_name)
+
+    @admins = nil
+    @admins_error = nil
+
+    if current_member.admin?
+      begin
+        @admins = Member.admins.includes(:role).order(:last_name, :first_name)
+      rescue StandardError => e
+        Rails.logger.error("Admins table failed to load: #{e.message}")
+        @admins_error = "Admins could not be loaded, try again later."
+      end
+    end
   end
 
   def update

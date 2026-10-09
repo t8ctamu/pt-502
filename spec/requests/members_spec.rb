@@ -97,6 +97,90 @@ RSpec.describe "Members", type: :request do
     end
 
     context "when signed in as a manager" do
+      let(:manager) { create(:member, :manager, :profile_completed) }
+
+      before { sign_in manager }
+
+      it "shows admins in a separate table and excludes them from the members table" do
+        create(:member, :admin,  :profile_completed, first_name: "Ada")
+        create(:member,          :profile_completed, first_name: "Bob")
+
+        get members_path
+
+        expect(response.body).to include("Admins")
+        expect(response.body).to include("Ada")
+        expect(response.body).to include("Bob")
+
+        # Ada's name appears exactly once — in the admins table, not duplicated
+        expect(response.body.scan("Ada").size).to eq(1)
+      end
+
+      it "moves a member between tables when their role changes" do
+        promoted = create(:member, :profile_completed, first_name: "Carol")
+        get members_path
+        expect(response.body).to include("Carol")
+
+        promoted.update!(role: Role.find_by!(description: "Admin"))
+
+        get members_path
+        expect(response.body.scan("Carol").size).to eq(1)
+        expect(response.body.index("Carol")).to be > response.body.index("Admins")
+      end
+
+      it "shows 'No admins to display' when there are no admins" do
+        Member.admins.update_all(role_id: Role.find_by!(description: "Member").id)
+
+        get members_path
+
+        expect(response.body).to include("No admins to display")
+      end
+
+      it "hides phone numbers for admins who haven't opted in" do
+        create(:member, :admin, :profile_completed,
+              phone_number: "555-1234", phone_visible: false)
+
+        get members_path
+
+        expect(response.body).not_to include("555-1234")
+      end
+
+      it "shows phone numbers for admins who opted in" do
+        create(:member, :admin, :profile_completed,
+              phone_number: "555-1234", phone_visible: true)
+
+        get members_path
+
+        expect(response.body).to include("555-1234")
+      end
+
+      it "renders members table with a clear message when admins fail to load" do
+        create(:member, :admin,  :profile_completed, first_name: "Ada")
+        create(:member,          :profile_completed, first_name: "Bob")
+
+        allow(Member).to receive(:admins).and_raise(StandardError, "boom")
+
+        get members_path
+
+        expect(response).to have_http_status(:success)
+        expect(response.body).to include("Bob")
+        expect(response.body).to include("Admins could not be loaded")
+      end
+    end
+
+    context "when signed in as an admin (not a manager)" do
+      before { sign_in admin }
+
+      it "shows the admins table" do
+        create(:member, :admin, :profile_completed, first_name: "Ada")
+
+        get members_path
+
+        expect(response.body).to include("Admins")
+        expect(response.body).to include("Ada")
+      end
+    end
+
+    context "when signed in as a manager" do
       before { sign_in manager }
 
       it "promotes a member to admin" do

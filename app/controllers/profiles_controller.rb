@@ -20,6 +20,7 @@ class ProfilesController < ApplicationController
   # Only fields the member may change. Never role_id or points.
   def profile_params
     params.require(:member).permit(:first_name, :last_name,
-                                   :pt_school_application_date, :car_pool_status)
+                                 :pt_school_application_date, :car_pool_status,
+                                 :phone_number, :phone_visible)
   end
 end
