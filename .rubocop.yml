@@ -1,8 +1,76 @@
 # Omakase Ruby styling for Rails
 inherit_gem: { rubocop-rails-omakase: rubocop.yml }
 
-# Overwrite or add rules to create your own house style
-#
-# # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
-# Layout/SpaceInsideArrayLiteralBrackets:
-#   Enabled: false
+# Inherit generated exclusions for pre-existing offenses
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  NewCops: enable
+  Include:
+    - '**/*.rb'
+    - '**/*.rake'
+    - '**/Gemfile'
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/**/*'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'public/**/*'
+
+# -----------------------------------------------------------------------------
+# Indentation Standard (Enforce 5-space indentation starting today)
+# -----------------------------------------------------------------------------
+Layout/IndentationWidth:
+  Enabled: true
+  Width: 5
+
+# -----------------------------------------------------------------------------
+# Control Flow & Loops Standards
+# -----------------------------------------------------------------------------
+Style/For:
+  Enabled: true
+  EnforcedStyle: each
+
+Style/NegatedIf:
+  Enabled: true
+
+Style/UnlessElse:
+  Enabled: true
+
+Style/NegatedWhile:
+  Enabled: true
+
+# -----------------------------------------------------------------------------
+# Naming Conventions Standards
+# -----------------------------------------------------------------------------
+Naming/MethodName:
+  Enabled: true
+  EnforcedStyle: snake_case
+
+Naming/VariableName:
+  Enabled: true
+  EnforcedStyle: snake_case
+
+Naming/ClassAndModuleCamelCase:
+  Enabled: true
+
+# Predicate methods check
+Naming/PredicatePrefix:
+  Enabled: true
+  NamePrefix:
+    - is_
+    - does_
+    - can_
+  ForbiddenPrefixes:
+    - is_
+    - does_
+    - can_
+
+# -----------------------------------------------------------------------------
+# Method Definitions Standard
+# -----------------------------------------------------------------------------
+Style/MethodDefParentheses:
+  EnforcedStyle: require_parentheses
