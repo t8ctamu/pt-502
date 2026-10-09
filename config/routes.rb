@@ -20,6 +20,11 @@ Rails.application.routes.draw do
 
   resources :events do
     resource :check_in, only: [ :show, :create ], controller: "event_check_ins"
+
+    collection do
+      get :location_search, defaults: { format: :json }
+    end
+
     member do
       get :ics
       get :check_in_qr

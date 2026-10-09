@@ -1,4 +1,20 @@
-<%= form_with model: event, class: "event-form" do |f| %>
+<%# Leaflet + OpenStreetMap (no API key). If the CDN is blocked the picker falls back to search/list. %>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+<%= form_with model: event, class: "event-form", data: {
+      controller: "location-picker",
+      action: "submit->location-picker#validate",
+      location_picker_search_url_value: location_search_events_path,
+      location_picker_default_lat_value: 30.628,
+      location_picker_default_lng_value: -96.3344,
+      location_picker_default_zoom_value: 14,
+      location_picker_no_results_message_value: "No locations found, try a different search.",
+      location_picker_map_error_message_value: "The map could not be loaded. Choose from the list or try again later.",
+      location_picker_search_error_message_value: "Search is unavailable right now. Choose from the list or try again later.",
+      location_picker_missing_location_message_value: "Choose a location by searching, picking from the list, or clicking the map before saving.",
+      location_picker_missing_name_message_value: "Give this location a name or address that members will see."
+    } do |f| %>
   <% if event.errors.any? %>
     <div class="form-errors">
       <h2><%= pluralize(event.errors.count, "error") %> stopped this event from being saved:</h2>
@@ -31,25 +47,73 @@
     </div>
   </div>
 
-  <div>
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-  </div>
+  <fieldset class="location-picker">
+    <legend>Location</legend>
 
-  <fieldset data-controller="event-location">
+    <div>
+      <label for="location_query">Search for an address or place</label>
+      <input type="search" id="location_query" autocomplete="off"
+             placeholder="e.g. Student Center or 123 Main St"
+             aria-controls="location_results"
+             data-location-picker-target="query"
+             data-action="input->location-picker#queueSearch keydown->location-picker#queryKeydown">
+      <button type="button" data-action="location-picker#search">Search</button>
+      <button type="button" data-action="location-picker#useMyLocation">Use my current location</button>
+    </div>
+
+    <ul id="location_results" role="listbox" aria-label="Matching locations"
+        style="list-style:none;padding:0;margin:.5rem 0"
+        data-location-picker-target="results"></ul>
+
+    <% if saved_locations.any? %>
+      <div>
+        <label for="saved_location">Or choose a commonly used location</label>
+        <select id="saved_location" data-location-picker-target="saved"
+                data-action="location-picker#chooseSaved">
+          <option value="">Choose from the list…</option>
+          <% saved_locations.each do |saved| %>
+            <%= tag.option saved.name, value: saved.id,
+                  data: { name: saved.name, latitude: saved.latitude.to_f, longitude: saved.longitude.to_f } %>
+          <% end %>
+        </select>
+      </div>
+    <% end %>
+
+    <p data-location-picker-target="status" role="status" aria-live="polite"></p>
+
+    <p data-location-picker-target="mapError" role="alert" hidden></p>
+    <div data-location-picker-target="mapFrame" style="position:relative">
+      <div data-location-picker-target="map" class="location-map"
+           style="height:320px;width:100%" role="application"
+           aria-label="Map. Click to drop a pin, or drag the pin to adjust."></div>
+      <button type="button" data-location-picker-target="fullscreenButton"
+              data-action="location-picker#toggleFullscreen"
+              aria-pressed="false"
+              style="position:absolute;top:.5rem;right:.5rem;z-index:1001">Full screen</button>
+      <p data-location-picker-target="fullscreenStatus" role="status" hidden
+         style="position:absolute;left:0;right:0;bottom:0;margin:0;padding:.5rem 1rem;background:rgba(255,255,255,.95);z-index:1001"></p>
+    </div>
+    <p><small>Click the map to drop a pin, or drag the pin to fine-tune the spot.</small></p>
+
+    <%= f.hidden_field :latitude, data: { location_picker_target: "latitude" } %>
+    <%= f.hidden_field :longitude, data: { location_picker_target: "longitude" } %>
+
+    <div>
+      <%= f.label :location, "Location name or address (shown to members)" %>
+      <%= f.text_field :location, data: { location_picker_target: "name", action: "input->location-picker#nameEdited" } %>
+    </div>
+
+    <p>
+      <label>
+        <%= check_box_tag :save_as_location, "1", false %>
+        Add this spot to the commonly used locations list
+      </label>
+    </p>
+  </fieldset>
+
+  <fieldset>
     <legend>Attendance check-in</legend>
-    <p>Set the meeting coordinates to enable QR check-in. Leave both blank to configure later.</p>
-    <p>
-      <%= f.label :latitude %><br>
-      <%= f.number_field :latitude, step: "any", min: -90, max: 90, data: { event_location_target: "latitude" } %>
-    </p>
-    <p>
-      <%= f.label :longitude %><br>
-      <%= f.number_field :longitude, step: "any", min: -180, max: 180, data: { event_location_target: "longitude" } %>
-    </p>
-    <button type="button" data-action="event-location#locate" data-event-location-target="button">Use my current location</button>
-    <p data-event-location-target="status" role="status"></p>
-    <p>Use your current location only when you are at the meeting venue.</p>
+    <p>Members can check in within the allowed distance of the pin above.</p>
     <p>
       <%= f.label :check_in_radius_meters, "Allowed distance (meters)" %><br>
       <%= f.number_field :check_in_radius_meters, min: 1, step: 1, required: true %>
@@ -59,5 +123,6 @@
       <%= f.number_field :point_value, min: 0, step: 1, required: true %>
     </p>
   </fieldset>
+
   <%= f.submit "Save Event" %>
 <% end %>
