@@ -14,11 +14,24 @@ RSpec.describe "Events", type: :request do
     expect {
       post events_path, params: { event: {
         name: "Meeting", description: "Details",
-        starts_at: "2026-10-01 10:00", location: "Room 1"
+        starts_at: "2026-10-01 10:00", location: "Room 1",
+        latitude: "30.628", longitude: "-96.3344"
       } }
     }.to change(Event, :count).by(1)
 
     expect(response).to redirect_to(events_path)
+  end
+
+  it "does not create an event without a location pin" do
+    expect {
+      post events_path, params: { event: {
+        name: "Meeting", description: "Details",
+        starts_at: "2026-10-01 10:00", location: "Room 1"
+      } }
+    }.not_to change(Event, :count)
+
+    expect(response).to have_http_status(422)
+    expect(CGI.unescapeHTML(response.body)).to include("Choose a location on the map before saving.")
   end
 
   it "does not create an event when a required field is blank" do
@@ -45,7 +58,8 @@ RSpec.describe "Event calendar", type: :request do
     Event.create!(name: "Meeting", description: "Details",
                   starts_at: Time.utc(2026, 10, 1, 10, 0),
                   ends_at:   Time.utc(2026, 10, 1, 11, 0),
-                  location: "Room 1")
+                  location: "Room 1",
+                  latitude: 30.628, longitude: -96.3344)
   end
 
   before { sign_in member }

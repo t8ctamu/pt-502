@@ -1,35 +1,32 @@
 require "rails_helper"
 
+# Event itself already tests name presence, coordinate bounds and pairing
+# (spec/models/event_spec.rb). These cover only what the location picker added.
 RSpec.describe EventLocationValidations do
-  # Adjust to the attributes your Event needs to be otherwise valid.
-  let(:attributes) do
-    {
-      name: "Weekly meeting", starts_at: 2.days.from_now,
-      location: "Student Center, 100 Campus Dr",
-      latitude: 30.61, longitude: -96.34,
-      check_in_radius_meters: 100, point_value: 1
-    }
+  it "is valid with a name and a pin" do
+    expect(build(:event, location: "Student Center, 100 Campus Dr",
+                         latitude: 30.61, longitude: -96.34)).to be_valid
   end
 
-  it "is valid with a name and coordinates" do
-    expect(Event.new(attributes)).to be_valid
-  end
+  it "requires a pin" do
+    event = build(:event, latitude: nil, longitude: nil)
 
-  it "requires a readable location name" do
-    event = Event.new(attributes.merge(location: ""))
-    expect(event).not_to be_valid
-    expect(event.errors[:location]).to be_present
-  end
-
-  it "requires both coordinates" do
-    event = Event.new(attributes.merge(latitude: nil))
     expect(event).not_to be_valid
     expect(event.errors[:base]).to include("Choose a location on the map before saving.")
   end
 
-  it "rejects out-of-range coordinates" do
-    expect(Event.new(attributes.merge(latitude: 90.5))).not_to be_valid
-    expect(Event.new(attributes.merge(longitude: -180.5))).not_to be_valid
+  it "requires a readable location name" do
+    event = build(:event, location: "")
+
+    expect(event).not_to be_valid
+    expect(event.errors[:location]).to be_present
+  end
+
+  it "reports a half-set pin with the existing pairing message" do
+    event = build(:event, latitude: 30.61, longitude: nil)
+
+    expect(event).not_to be_valid
+    expect(event.errors[:base]).to include("Provide both latitude and longitude")
   end
 end
 

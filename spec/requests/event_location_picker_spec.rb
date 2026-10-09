@@ -3,11 +3,10 @@ require "rails_helper"
 # Acceptance criteria for the event location picker.
 #
 # Assumptions to adjust for your app:
-#   * FactoryBot factory :member exists and Member has a boolean `admin`.
-#   * Authentication is stubbed in `sign_in_as`; swap in your own sign-in helper.
+#   * Uses your :member factory traits (:admin, :profile_completed) and Devise's `sign_in`.
 RSpec.describe "Event location picker", type: :request do
-  let(:officer) { create(:member, admin: true) }
-  let(:regular_member) { create(:member, admin: false) }
+  let(:officer) { create(:member, :admin, :profile_completed) }
+  let(:regular_member) { create(:member, :profile_completed) }
   let(:geocoder) { instance_double(Geocoding::Nominatim) }
 
   let(:valid_attributes) do
@@ -25,18 +24,13 @@ RSpec.describe "Event location picker", type: :request do
 
   let(:json_headers) { { "Accept" => "application/json" } }
 
-  def sign_in_as(member)
-    allow_any_instance_of(ApplicationController).to receive(:current_member).and_return(member)
-    allow_any_instance_of(ApplicationController).to receive(:require_completed_profile)
-  end
-
   before do
     allow(Geocoding::Nominatim).to receive(:new).and_return(geocoder)
   end
 
   # -------------------------------------------------------------------------
   describe "Acceptance criterion 1 (sunny): pick a location without typing coordinates" do
-    before { sign_in_as(officer) }
+    before { sign_in(officer) }
 
     it "suggests matching places when the officer searches" do
       allow(geocoder).to receive(:search).with("student center").and_return(
@@ -84,7 +78,8 @@ RSpec.describe "Event location picker", type: :request do
       expect(event.latitude.to_f).to eq(30.61)
       expect(event.longitude.to_f).to eq(-96.34)
 
-      sign_in_as(regular_member)
+      sign_out officer
+      sign_in regular_member
       get event_path(event)
       expect(response.body).to include("Student Center, 100 Campus Dr")
       expect(response.body).not_to include("30.61")
@@ -102,7 +97,7 @@ RSpec.describe "Event location picker", type: :request do
   # -------------------------------------------------------------------------
   describe "Acceptance criterion 2 (rainy): clear messages and never a bad location" do
     context "as an officer" do
-      before { sign_in_as(officer) }
+      before { sign_in(officer) }
 
       it "reports a search with no results as an empty list the picker turns into a clear message" do
         allow(geocoder).to receive(:search).and_return([])
@@ -186,7 +181,7 @@ RSpec.describe "Event location picker", type: :request do
     end
 
     context "as a regular member (officers only)" do
-      before { sign_in_as(regular_member) }
+      before { sign_in(regular_member) }
 
       it "cannot use location search" do
         expect(geocoder).not_to receive(:search)

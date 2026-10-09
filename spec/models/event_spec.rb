@@ -1,15 +1,17 @@
 require "rails_helper"
 
 RSpec.describe Event, type: :model do
-  it "allows events to be created before check-in coordinates are configured" do
-    event = build(:event)
-    expect(event).to be_valid
-    expect(event).not_to be_check_in_configured
-  end
+  it "requires a location pin, so every new event has check-in configured" do
+  expect(build(:event)).to be_check_in_configured
+
+  event = build(:event, latitude: nil, longitude: nil)
+  expect(event).not_to be_valid
+  expect(event.errors[:base]).to include("Choose a location on the map before saving.")
+end
 
   it "requires coordinates together and within geographic bounds" do
-    expect(build(:event, latitude: 30)).not_to be_valid
-    expect(build(:event, longitude: -96)).not_to be_valid
+    expect(build(:event, latitude: 30, longitude: nil)).not_to be_valid
+    expect(build(:event, latitude: nil, longitude: -96)).not_to be_valid
     expect(build(:event, latitude: 91, longitude: 0)).not_to be_valid
     expect(build(:event, latitude: 0, longitude: -181)).not_to be_valid
     expect(build(:event, latitude: 0, longitude: 0)).to be_valid

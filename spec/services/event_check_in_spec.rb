@@ -42,7 +42,7 @@ RSpec.describe EventCheckIn do
   end
 
   it "rejects events without coordinates" do
-    event.update!(latitude: nil, longitude: nil)
+    event.update_columns(latitude: nil, longitude: nil) # legacy row: validation would now block this
     expect { check_in }.to raise_error(EventCheckIn::Rejected, /not configured/)
     expect(member.reload.points).to eq(4)
   end
