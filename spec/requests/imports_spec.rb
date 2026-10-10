@@ -51,19 +51,22 @@ RSpec.describe "Imports", type: :request do
 
     before do
          FileUtils.mkdir_p(File.dirname(path))
-      File.binwrite(path, "Email\nnew@tamu.edu\n")
-      allow(MemberImport::Parser).to receive(:new).and_return(
+        File.binwrite(path, "Email\nnew@tamu.edu\n")
+        allow(MemberImport::Parser).to receive(:new).and_return(
         instance_double(MemberImport::Parser,
-          headers: [ "Email" ],
-          rows: [ [ "new@tamu.edu" ] ])
-      )
+            headers: [ "Email" ],
+            rows: [ [ "new@tamu.edu" ] ])
+        )
     end
 
-    it "creates members and shows the summary" do
+    it "creates members and redirects to the members list with a summary" do
          expect {
               post confirm_import_path(token), params: { mapping: { "0" => "email" } }
          }.to change(Member, :count).by(1)
-      expect(response.body).to include("1 members added")
+
+        expect(response).to redirect_to(members_path)
+        follow_redirect!
+        expect(response.body).to include("1 member added")
     end
   end
 
