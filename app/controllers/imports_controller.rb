@@ -46,12 +46,16 @@ class ImportsController < ApplicationController
     parser = MemberImport::Parser.new(@path)
     rows = MemberImport::Mapper.new(rows: parser.rows, mapping: mapping_params).preview
 
-    @created = MemberImport::Executor.new(rows).call
-    @skipped = rows.count { |r| r.status == :skip }
-    @errored = rows.select { |r| r.status == :error }
+    created = MemberImport::Executor.new(rows).call
+    skipped = rows.count { |r| r.status == :skip }
+    errored = rows.count { |r| r.status == :error }
 
     File.delete(@path) if File.exist?(@path)
-    render :summary
+
+    message = "#{created} member#{'s' if created != 1} added, #{skipped} skipped."
+    message += " #{errored} row#{'s' if errored != 1} had issues." if errored.positive?
+
+    redirect_to members_path, notice: message
   end
 
   private
