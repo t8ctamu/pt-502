@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "event_check_ins/show", type: :view do
      let!(:service) { create(:requirement, name: "Service", minimum_points: 1) }
   let(:event) do
-    create(:event, :check_in_ready, requirement: service, point_value: 2)
+       create(:event, :check_in_ready, requirement: service, point_value: 2)
   end
   let(:member)   { create(:member) }
 
