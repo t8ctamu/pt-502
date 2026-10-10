@@ -251,7 +251,7 @@ RSpec.describe "Point settings", type: :request do
     end
 
     it "rejects a duplicate name regardless of case" do
-      create(:requirement, name: "Service")
+      Requirement.find_or_create_by!(name: "Service") { |r| r.minimum_points = 1 }
       expect {
         post add_type_point_settings_path, params: { name: "service", minimum_points: "1" }
       }.not_to change(Requirement, :count)

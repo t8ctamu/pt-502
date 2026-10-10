@@ -18,6 +18,7 @@
     <% @members.each do |m| %>
       <tr>
         <td><%= m.id %></td>
+        <td><%= m.role.description %></td>
         <td><%= m.first_name %></td>
         <td><%= m.last_name %></td>
         <td><%= m.email %></td>
@@ -41,7 +42,6 @@
           <% end %>
         </td>
         <td>
-<<<<<<< HEAD
           <% if m.active_status? && m.paid_dues %>
             <span class="status-badge status-active">Active</span>
           <% else %>
@@ -49,14 +49,23 @@
             <% unless m.active_status? %>
               <small class="status-missing"><%= m.missing_requirements_text.capitalize %></small>
             <% end %>
-=======
-          <% if m.points >= 7 && m.paid_dues %>
-            <span class="status-badge status-active">Active</span>
-          <% else %>
-            <span class="status-badge status-inactive">Not Active</span>
->>>>>>> main
           <% end %>
         </td>
+        <% if current_member.manager? %>
+          <td>
+            <% if m == current_member || m.manager? %>
+              <%= m.role.description %>
+            <% elsif m.admin? %>
+              <%= button_to "Demote to Member", change_role_member_path(m),
+                    method: :patch, params: { role: "Member" },
+                    form: { data: { turbo_confirm: "Demote this admin to Member?" } } %>
+            <% else %>
+              <%= button_to "Promote to Admin", change_role_member_path(m),
+                    method: :patch, params: { role: "Admin" },
+                    form: { data: { turbo_confirm: "Promote this member to Admin?" } } %>
+            <% end %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -76,6 +85,9 @@
           <th>ID</th><th>Role</th><th>First name</th><th>Last name</th><th>Email</th>
           <th>Joined</th><th>Car pool</th>
           <th>Plans to apply to PT school</th><th>Phone</th>
+          <% if current_member.manager? %>
+            <th>Change Role</th>
+          <% end %>
         </tr>
       </thead>
       <tbody>
@@ -90,6 +102,17 @@
             <td><%= a.car_pool_status ? "Yes" : "No" %></td>
             <td><%= a.pt_school_application_date&.strftime("%b %Y") %></td>
             <td><%= a.phone_visible? ? a.phone_number.presence || "—" : "—" %></td>
+            <% if current_member.manager? %>
+              <td>
+                <% if a == current_member || a.manager? %>
+                  <%= a.role.description %>
+                <% else %>
+                  <%= button_to "Demote to Member", change_role_member_path(a),
+                        method: :patch, params: { role: "Member" },
+                        form: { data: { turbo_confirm: "Demote this admin to Member?" } } %>
+                <% end %>
+              </td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>
