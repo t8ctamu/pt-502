@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_10_172211) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_10_190815) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -33,6 +33,28 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_10_172211) do
     t.index ["member_id", "event_id"], name: "index_attendances_on_member_id_and_event_id", unique: true
     t.index ["member_id"], name: "index_attendances_on_member_id"
     t.index ["point_id"], name: "index_attendances_on_point_id", unique: true
+  end
+
+  create_table "event_submissions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.text "denial_reason"
+    t.text "description", null: false
+    t.date "event_date", null: false
+    t.bigint "member_id", null: false
+    t.string "name", null: false
+    t.bigint "point_id"
+    t.bigint "requirement_id", null: false
+    t.datetime "reviewed_at"
+    t.bigint "reviewed_by_id"
+    t.string "status", default: "pending", null: false
+    t.datetime "updated_at", null: false
+    t.index "member_id, lower((name)::text), event_date", name: "index_event_submissions_on_member_name_date", unique: true
+    t.index ["member_id"], name: "index_event_submissions_on_member_id"
+    t.index ["point_id"], name: "index_event_submissions_on_point_id"
+    t.index ["requirement_id"], name: "index_event_submissions_on_requirement_id"
+    t.index ["reviewed_by_id"], name: "index_event_submissions_on_reviewed_by_id"
+    t.index ["status"], name: "index_event_submissions_on_status"
+    t.check_constraint "status::text = ANY (ARRAY['pending'::character varying, 'approved'::character varying, 'denied'::character varying]::text[])", name: "event_submissions_status_valid"
   end
 
   create_table "events", force: :cascade do |t|
@@ -116,6 +138,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_10_172211) do
   add_foreign_key "attendances", "events"
   add_foreign_key "attendances", "members"
   add_foreign_key "attendances", "points"
+  add_foreign_key "event_submissions", "members"
+  add_foreign_key "event_submissions", "members", column: "reviewed_by_id", on_delete: :nullify
+  add_foreign_key "event_submissions", "points", on_delete: :nullify
+  add_foreign_key "event_submissions", "requirements"
   add_foreign_key "events", "requirements"
   add_foreign_key "members", "roles"
   add_foreign_key "points", "members"

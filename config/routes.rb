@@ -30,4 +30,13 @@ Rails.application.routes.draw do
       get :check_in_qr
     end
   end
+
+  resources :event_submissions, only: %i[new create]
+
+  resources :submission_reviews, only: :index do
+    member do
+      patch :approve
+      patch :deny
+    end
+  end
 end

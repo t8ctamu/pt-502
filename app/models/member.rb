@@ -9,6 +9,7 @@ class Member < ApplicationRecord
   has_many :rsvps, dependent: :destroy
   has_many :attendances, dependent: :destroy
   has_many :point_entries, class_name: "Point", dependent: :destroy
+  has_many :event_submissions, dependent: :destroy
 
   scope :admins, -> {
     admin_names = Role::LEVELS.select { |_, lvl| lvl >= 1 }.keys

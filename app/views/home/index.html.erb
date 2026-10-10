@@ -67,6 +67,36 @@
       </p>
     </div>
   </div>
+    <div class="card">
+    <h2>Non-PT event submissions</h2>
+    <p>Attended something outside PT Society? Submit it for officer approval.</p>
+    <%= link_to "Submit an event", new_event_submission_path,
+    class: "btn", style: "display: inline-block; margin-bottom: 16px;" %>
+
+    <% submissions = current_member.event_submissions.includes(:requirement).order(created_at: :desc).limit(10) %>
+    <% if submissions.any? %>
+      <table>
+        <thead>
+          <tr><th>Event</th><th>Date</th><th>Point type</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <% submissions.each do |s| %>
+            <tr>
+              <td><%= s.name %></td>
+              <td><%= s.event_date.strftime("%b %-d, %Y") %></td>
+              <td><%= s.requirement.name %></td>
+              <td>
+                <%= s.status.capitalize %>
+                <% if s.denied? %>
+                  <br><small>Reason: <%= s.denial_reason %></small>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
 <% end %>
 
 <% if current_member.admin? %>
