@@ -1,0 +1,92 @@
+<div class="settings-page">
+  <header class="settings-header">
+    <h1>Point requirements</h1>
+    <p>
+      Members must reach the total below and meet each type's minimum to be active.
+      Use 0 for "not required".
+    </p>
+  </header>
+
+  <div class="settings-grid">
+    <section class="card">
+      <%= form_with url: point_settings_path, method: :patch do %>
+        <div class="settings-field">
+          <%= label_tag :total_points_required, "Total points required (any type)" %>
+          <%= text_field_tag :total_points_required,
+                @app_setting.total_points_required_before_type_cast,
+                id: "total_points_required" %>
+          <% @app_setting.errors[:total_points_required].each do |msg| %>
+            <p class="error"><%= msg %></p>
+          <% end %>
+        </div>
+
+        <h2>Minimum per type</h2>
+        <table class="settings-table">
+          <thead>
+            <tr>
+              <th>Point type</th>
+              <th>Minimum</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @requirements.each do |req| %>
+              <tr>
+                <td><%= label_tag "requirements_#{req.id}", req.name %></td>
+                <td>
+                  <%= text_field_tag "requirements[#{req.id}][minimum_points]",
+                        req.minimum_points_before_type_cast, id: "requirements_#{req.id}" %>
+                  <% req.errors[:minimum_points].each do |msg| %>
+                    <p class="error"><%= msg %></p>
+                  <% end %>
+                </td>
+                <td class="actions">
+                  <% if PointSettingsController::PROTECTED_TYPES.include?(req.name) %>
+                    <span class="badge">Core type</span>
+                  <% else %>
+                    <button type="submit" form="delete_type_<%= req.id %>" class="btn-danger">Delete</button>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <div class="settings-actions">
+          <%= submit_tag "Save requirements", class: "btn" %>
+        </div>
+      <% end %>
+
+      <%# Delete forms live outside the main form (forms can't nest). The buttons above point at them by id. %>
+      <% @requirements.each do |req| %>
+        <% next if PointSettingsController::PROTECTED_TYPES.include?(req.name) %>
+        <%= form_with url: destroy_type_point_settings_path(req.id), method: :delete,
+              id: "delete_type_#{req.id}",
+              data: { turbo_confirm: "Delete #{req.name}?" } do %><% end %>
+      <% end %>
+    </section>
+
+    <aside class="card">
+      <h2>Add a point type</h2>
+      <% new_req = @new_requirement || Requirement.new %>
+      <%= form_with url: add_type_point_settings_path, method: :post do %>
+        <div class="settings-field">
+          <%= label_tag :new_type_name, "Name" %>
+          <%= text_field_tag :name, new_req.name, id: "new_type_name" %>
+          <% new_req.errors[:name].each do |msg| %>
+            <p class="error"><%= msg %></p>
+          <% end %>
+        </div>
+        <div class="settings-field">
+          <%= label_tag :new_type_minimum, "Minimum points (0 = not required)" %>
+          <%= text_field_tag :minimum_points, new_req.minimum_points_before_type_cast || "0",
+                id: "new_type_minimum" %>
+          <% new_req.errors[:minimum_points].each do |msg| %>
+            <p class="error"><%= msg %></p>
+          <% end %>
+        </div>
+        <%= submit_tag "Add point type", class: "btn" %>
+      <% end %>
+    </aside>
+  </div>
+</div>

@@ -533,3 +533,49 @@ textarea { resize: vertical; }
 .event-delete .btn-danger {
   margin: 0;
 }
+
+.settings-page { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem; }
+.settings-header p { color: inherit; opacity: 0.85; margin-top: 0.25rem; }
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+@media (max-width: 800px) {
+  .settings-grid { grid-template-columns: 1fr; }
+}
+
+.settings-field { margin-bottom: 1rem; }
+.settings-field label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+.settings-field input[type="text"] { width: 100%; box-sizing: border-box; }
+
+.settings-table { width: 100%; border-collapse: collapse; margin-top: 0.75rem; }
+.settings-table th {
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: white;
+  padding: 0.5rem;
+  border-bottom: 2px solid currentColor;
+}
+.settings-table label { color: inherit; font-weight: 600; }
+
+.settings-table td { padding: 0.6rem 0.5rem; border-bottom: 1px solid #eee; vertical-align: top; }
+.settings-table input[type="text"] { width: 6rem; }
+.settings-table .actions { text-align: right; white-space: nowrap; }
+
+.settings-page .error { color: #b42318; font-size: 0.85rem; margin: 0.25rem 0 0; }
+.settings-page .help-text { color: inherit; opacity: 0.85; font-size: 0.9rem; margin-top: 0.75rem; }.settings-actions { margin-top: 1.25rem; }
+
+.badge {
+  display: inline-block; padding: 0.15rem 0.6rem; border-radius: 999px;
+  background: #eef0f3; color: #555; font-size: 0.8rem;
+}
+.btn-danger {
+  background: transparent; color: #b42318; border: 1px solid #b42318;
+  border-radius: 6px; padding: 0.3rem 0.7rem; cursor: pointer;
+}
+.btn-danger:hover { background: #b42318; color: #fff; }

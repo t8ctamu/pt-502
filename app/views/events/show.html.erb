@@ -18,6 +18,10 @@
       <p class="event-meta-large">
         📍 <%= @event.location %>
       </p>
+
+      <% if @event.requirement %>
+        <p class="event-meta-large">⭐ <%= pluralize(@event.point_value, "point") %> · <%= @event.requirement.name %></p>
+      <% end %>
     </div>
   </div>
 
