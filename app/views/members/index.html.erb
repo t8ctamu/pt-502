@@ -3,7 +3,11 @@
   <thead>
     <tr>
       <th>ID</th><th>Role</th><th>First name</th><th>Last name</th><th>Email</th>
-      <th>Joined</th><th>Car pool</th><th>Points</th>
+      <th>Joined</th><th>Car pool</th>
+      <% @requirements.each do |r| %>
+        <th><%= r.name %></th>
+      <% end %>
+      <th>Total</th>
       <th>Plans to apply to PT school</th><th>Paid dues</th>
       <th>Status</th>
       <% if current_member.manager? %>
@@ -21,11 +25,17 @@
         <td><%= m.email %></td>
         <td><%= m.joined_at %></td>
         <td><%= m.car_pool_status ? "Yes" : "No" %></td>
-        <td>
-          <%= form_with model: m, url: member_path(m), method: :patch do |f| %>
-            <%= f.number_field :points, style: "width: 4em;", onchange: "this.form.requestSubmit()" %>
-          <% end %>
-        </td>
+        <% @requirements.each do |r| %>
+          <td>
+            <%= form_with url: set_points_member_path(m), method: :patch do |f| %>
+              <%= f.hidden_field :requirement_id, value: r.id, id: nil %>
+              <%= f.number_field :total, value: m.points_by_requirement[r.id].to_i,
+                    min: 0, step: 1, id: nil, style: "width: 4em;",
+                    onchange: "this.form.requestSubmit()" %>
+            <% end %>
+          </td>
+        <% end %>
+        <td><%= m.total_points %></td>
         <td><%= m.pt_school_application_date&.strftime("%b %Y") %></td>
         <td>
           <%= form_with model: m, url: member_path(m), method: :patch do |f| %>
@@ -33,11 +43,14 @@
           <% end %>
         </td>
         <td>
-            <% if m.points >= 7 && m.paid_dues %>
-              <span class="status-badge status-active">Active</span>
-            <% else %>
-              <span class="status-badge status-inactive">Not Active</span>
+          <% if m.active_status? && m.paid_dues %>
+            <span class="status-badge status-active">Active</span>
+          <% else %>
+            <span class="status-badge status-inactive">Not Active</span>
+            <% unless m.active_status? %>
+              <small class="status-missing"><%= m.missing_requirements_text.capitalize %></small>
             <% end %>
+          <% end %>
         </td>
         <% if current_member.manager? %>
           <td>

@@ -48,7 +48,8 @@ RSpec.describe "Profiles", type: :request do
 
       member.reload
       expect(member.role_id).to eq(original_role_id)
-      expect(member.points).not_to eq(500)
+      expect(member.total_points).to eq(0)
+      expect(Point.where(member: member)).to be_empty
     end
   end
 end

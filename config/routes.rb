@@ -13,10 +13,15 @@ Rails.application.routes.draw do
   resources :members, only: [ :index, :update ] do
     member do
       patch :change_role
+      patch :set_points
     end
   end
 
   resource  :profile, only: [ :edit, :update ]
+  resource :point_settings, only: %i[show update] do
+    post :add_type
+    delete "types/:id", to: "point_settings#destroy_type", as: :destroy_type
+  end
 
   resources :events do
     resource :check_in, only: [ :show, :create ], controller: "event_check_ins"

@@ -48,9 +48,14 @@ RSpec.describe "Members", type: :request do
     before { sign_in admin }
 
     it "does not change points through the dues update endpoint" do
-      target = create(:member, :profile_completed, points: 5)
-      patch member_path(target), params: { member: { paid_dues: true, points: 999 } }
-      expect(target.reload.points).to eq(5)
+      requirement = create(:requirement, name: "Service")
+      target = create(:member, :profile_completed)
+      create(:point, member: target, requirement: requirement, point_amount: 5)
+
+      patch member_path(target), params: { member: { paid_dues: "1", points: 99 } }
+
+      expect(target.reload.total_points).to eq(5)
+      expect(Point.where(member: target).count).to eq(1)
     end
 
     it "updates the member's paid_dues status and redirects to the index" do

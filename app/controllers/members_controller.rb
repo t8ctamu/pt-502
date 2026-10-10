@@ -5,6 +5,7 @@ class MembersController < ApplicationController
 
   def index
     @members = Member.includes(:role).order(:last_name, :first_name)
+    @requirements = Requirement.active.order(:id)
   end
 
   def update
@@ -14,6 +15,33 @@ class MembersController < ApplicationController
       redirect_to members_path, notice: "#{member.first_name}'s dues updated."
     else
       redirect_to members_path, alert: "Could not update #{member.first_name}."
+    end
+  end
+
+  def set_points
+    member = Member.find(params[:id])
+    requirement = Requirement.active.find_by(id: params[:requirement_id])
+    target = Integer(params[:total].to_s, exception: false)
+
+    if requirement.nil? || target.nil? || target.negative?
+      return redirect_to members_path, alert: "Enter a whole number of 0 or more."
+    end
+
+    delta = target - member.points_by_requirement[requirement.id].to_i
+    return redirect_to members_path if delta.zero?
+
+    point = member.point_entries.build(
+      requirement: requirement,
+      point_amount: delta,
+      awarded_date: Date.current,   # confirm name in schema.rb
+      note: "Adjusted by #{current_member.email}"
+    )
+
+    if point.save
+      redirect_to members_path,
+        notice: "#{member.first_name}'s #{requirement.name} points set to #{target}."
+    else
+      redirect_to members_path, alert: point.errors.full_messages.to_sentence
     end
   end
 
@@ -43,13 +71,8 @@ class MembersController < ApplicationController
   end
 
   private
-  def member_params
-    member_attributes = params.require(:member)
 
-    if member_attributes[:paid_dues].present?
-      member_attributes.permit(:paid_dues)
-    else
-      member_attributes.permit(:points)
-    end
+  def member_params
+    params.require(:member).permit(:paid_dues)
   end
 end

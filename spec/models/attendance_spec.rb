@@ -44,4 +44,54 @@ RSpec.describe Attendance, type: :model do
     expect(attendance.member).to be_a(Member)
     expect(attendance.event).to be_a(Event)
   end
+
+  describe "associations" do
+    it "optionally belongs to a point" do
+      attendance = build(:attendance, point: nil)
+      expect(attendance).to be_valid
+      expect(described_class.reflect_on_association(:point).macro).to eq(:belongs_to)
+    end
+  end
+
+  describe "uniqueness" do
+    it "prevents a member from checking in to the same event twice" do
+      first = create(:attendance)
+      duplicate = build(:attendance, member: first.member, event: first.event)
+
+      expect(duplicate).not_to be_valid
+      expect(duplicate.errors[:member_id]).to include("has already checked in to this event")
+    end
+
+    it "allows the same member at different events" do
+      member = create(:member)
+      create(:attendance, member: member)
+      expect(build(:attendance, member: member)).to be_valid
+    end
+  end
+
+  describe "#points_awarded" do
+    it "returns the amount on the linked point" do
+      point = create(:point, point_amount: 3)
+      expect(build(:attendance, point: point).points_awarded).to eq(3)
+    end
+
+    it "returns 0 when no point was awarded" do
+      expect(build(:attendance, point: nil).points_awarded).to eq(0)
+    end
+
+    it "keeps the original amount when the event is edited later" do
+      member = create(:member)
+      requirement = create(:requirement)
+      event = create(:event, requirement: requirement, point_value: 2)
+      point = create(:point, member: member, requirement: requirement, point_amount: 2)
+      attendance = create(:attendance, member: member, event: event, point: point)
+
+      event.update!(point_value: 9)
+
+      expect(attendance.reload.points_awarded).to eq(2)
+    end
+  end
 end
+
+require "rails_helper"
+

@@ -9,8 +9,9 @@ class EventCheckInsController < ApplicationController
   def create
     attendance = EventCheckIn.call(member: current_member, event: @event,
       latitude: params[:latitude], longitude: params[:longitude])
-    redirect_to event_check_in_path(@event), status: :see_other,
-      notice: "You're marked present! #{helpers.pluralize(attendance.points_awarded, 'point')} added to your total."
+    type = attendance.event.requirement&.name
+      redirect_to event_check_in_path(@event), status: :see_other,
+        notice: "You're marked present! #{helpers.pluralize(attendance.points_awarded, 'point')} added#{" to #{type}" if type}."
   rescue EventCheckIn::Rejected => error
     @check_in_error = error.message
     @attendance = current_member.attendances.find_by(event: @event)
