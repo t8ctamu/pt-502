@@ -1,7 +1,7 @@
 class Requirement < ApplicationRecord
      has_many :events, dependent: :restrict_with_error
   has_many :points, dependent: :restrict_with_error
-
+  has_many :event_submissions, dependent: :restrict_with_error
   scope :active, -> { where(is_active: true) }
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
