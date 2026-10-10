@@ -1,0 +1,12 @@
+<h1>Import Members</h1>
+
+<p>Upload a <code>.csv</code> file. In Excel or Google Sheets, choose
+<em>File → Save As → CSV</em> first — this ensures formulas are evaluated
+and written as their values.</p>
+
+<%= form_with url: imports_path, method: :post, multipart: true do |f| %>
+  <%= f.file_field :file, accept: ".csv,text/csv" %>
+  <%= f.submit "Upload and preview" %>
+<% end %>
+
+<%= link_to "Back to members", members_path %>
