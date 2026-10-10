@@ -10,6 +10,15 @@ class Member < ApplicationRecord
   has_many :attendances, dependent: :destroy
   has_many :point_entries, class_name: "Point", dependent: :destroy
 
+  scope :admins, -> {
+    admin_names = Role::LEVELS.select { |_, lvl| lvl >= 1 }.keys
+    joins(:role).where("LOWER(roles.description) IN (?)", admin_names)
+  }
+  scope :non_admins, -> {
+    admin_names = Role::LEVELS.select { |_, lvl| lvl >= 1 }.keys
+    joins(:role).where("LOWER(roles.description) NOT IN (?)", admin_names)
+  }
+
   validates :pt_school_application_date, presence: true, on: :profile
   validates :email, presence: true
 

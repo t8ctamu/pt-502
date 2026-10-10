@@ -8,8 +8,7 @@
         <th><%= r.name %></th>
       <% end %>
       <th>Total</th>
-      <th>Plans to apply to PT school</th><th>Paid dues</th>
-      <th>Status</th>
+      <th>Plans to apply to PT school</th><th>Paid dues</th><th>Status</th>
       <% if current_member.manager? %>
         <th>Change Role</th>
       <% end %>
@@ -19,7 +18,6 @@
     <% @members.each do |m| %>
       <tr>
         <td><%= m.id %></td>
-        <td><%= m.role.description %></td>
         <td><%= m.first_name %></td>
         <td><%= m.last_name %></td>
         <td><%= m.email %></td>
@@ -43,6 +41,7 @@
           <% end %>
         </td>
         <td>
+<<<<<<< HEAD
           <% if m.active_status? && m.paid_dues %>
             <span class="status-badge status-active">Active</span>
           <% else %>
@@ -50,20 +49,50 @@
             <% unless m.active_status? %>
               <small class="status-missing"><%= m.missing_requirements_text.capitalize %></small>
             <% end %>
+=======
+          <% if m.points >= 7 && m.paid_dues %>
+            <span class="status-badge status-active">Active</span>
+          <% else %>
+            <span class="status-badge status-inactive">Not Active</span>
+>>>>>>> main
           <% end %>
         </td>
-        <% if current_member.manager? %>
-          <td>
-            <% if m == current_member || m.manager? %>
-              <%= m.role.description %>
-            <% else %>
-              <%= form_with url: change_role_member_path(m), method: :patch do |f| %>
-                <%= select_tag :role, options_for_select([["Member", "Member"], ["Admin", "Admin"]], m.role.description), onchange: "this.form.requestSubmit()" %>
-              <% end %>
-            <% end %>
-          </td>
-        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<% if current_member.admin? %>
+  <h2>Admins</h2>
+
+  <% if @admins_error %>
+    <p class="flash flash__alert"><%= @admins_error %></p>
+  <% elsif @admins.blank? %>
+    <p>No admins to display.</p>
+  <% else %>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Role</th><th>First name</th><th>Last name</th><th>Email</th>
+          <th>Joined</th><th>Car pool</th>
+          <th>Plans to apply to PT school</th><th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @admins.each do |a| %>
+          <tr>
+            <td><%= a.id %></td>
+            <td><%= a.role.description %></td>
+            <td><%= a.first_name %></td>
+            <td><%= a.last_name %></td>
+            <td><%= a.email %></td>
+            <td><%= a.joined_at %></td>
+            <td><%= a.car_pool_status ? "Yes" : "No" %></td>
+            <td><%= a.pt_school_application_date&.strftime("%b %Y") %></td>
+            <td><%= a.phone_visible? ? a.phone_number.presence || "—" : "—" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+<% end %>

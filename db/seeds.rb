@@ -9,7 +9,20 @@
   Requirement.find_or_create_by!(name: name) { |r| r.minimum_points = min }
 end
 
-# Fake sample data: development only, never in production
+# Makes sure the total-points setting row exists (defaults to 7)
+AppSetting.current
+
+# First manager, so someone can reach Point settings in every environment
+manager_role = Role.find_by!(description: "Manager")
+
+owner = Member.find_or_initialize_by(email: "lukechambers0217@tamu.edu")
+owner.role = manager_role unless owner.manager?
+owner.first_name           ||= "Luke"
+owner.last_name            ||= "Chambers"
+owner.joined_at            ||= Date.current
+owner.profile_completed_at ||= Time.current
+owner.save!
+
 if Rails.env.development?
   member_role = Role.find_by!(description: "Member")
   service     = Requirement.find_by!(name: "Service")
