@@ -1,14 +1,32 @@
 <h1>Preview Import</h1>
 
 <%= form_with url: preview_import_path(params[:token]), method: :get do |f| %>
+  <div class="default-requirement">
+    <label>
+      <strong>Default point type for unmapped True/False columns:</strong>
+      <%= select_tag :default_requirement_id,
+            options_for_select(
+              [["None", ""]] + @requirements.map { |r| [r.name, r.id] },
+              @default_requirement_id
+            ) %>
+    </label>
+    <small>Any column whose values are only True/False and that isn't otherwise mapped will use this category. Pick "None" to leave them ignored.</small>
+  </div>
+
   <h2>Column mapping</h2>
   <table>
-    <thead><tr><th>#</th><th>Header</th><th>Maps to</th></tr></thead>
+    <thead><tr><th>#</th><th>Header</th><th>Sample</th><th>Maps to</th></tr></thead>
     <tbody>
       <% @headers.each_with_index do |header, i| %>
         <tr>
           <td><%= i + 1 %></td>
           <td><%= header.presence || "(blank)" %></td>
+          <td>
+            <small>
+              <% samples = @sample_rows.map { |r| r[i].to_s.strip }.reject(&:empty?).first(3) %>
+              <%= samples.any? ? samples.join(", ") : "—" %>
+            </small>
+          </td>
           <td>
             <%= select_tag "mapping[#{i}]",
                   options_for_select(
@@ -30,26 +48,42 @@
 <% end %>
 
 <h2>Preview (<%= @preview_rows.size %> rows)</h2>
+
 <table>
   <thead>
-    <tr><th>Row</th><th>Status</th><th>Member</th><th>Points</th><th>Issues</th></tr>
+    <tr>
+      <th>Row</th>
+      <th>Status</th>
+      <th>Member</th>
+      <% @requirements.each do |r| %>
+        <th><%= r.name %></th>
+      <% end %>
+      <th>Total</th>
+      <th>Issues</th>
+    </tr>
   </thead>
   <tbody>
     <% @preview_rows.each do |row| %>
+      <%
+        totals = row.points.group_by { |p| p[:requirement_id] }
+                            .transform_values { |pts| pts.sum { |p| p[:point_amount] } }
+      %>
       <tr class="row--<%= row.status %>">
         <td><%= row.index %></td>
         <td><%= row.status %></td>
         <td>
-          <strong><%= "#{row.attributes[:first_name]} #{row.attributes[:last_name]}".strip %></strong>
-          <% if row.attributes[:email].present? %> · <%= row.attributes[:email] %><% end %>
-          <br><small>Dues: <%= row.attributes[:paid_dues] ? "yes" : "no" %></small>
-        </td>
-        <td>
-          <% row.points.group_by { |p| p[:requirement_id] }.each do |req_id, pts| %>
-            <% req = @requirements.find { |r| r.id == req_id } %>
-            <%= "#{req&.name || "?"} #{pts.sum { |p| p[:point_amount] }}" %>
+          <% name = "#{row.attributes[:first_name]} #{row.attributes[:last_name]}".strip %>
+          <strong><%= name.presence || "N/A" %></strong>
+          <% if row.attributes[:email].present? %>
+            <br><small><%= row.attributes[:email] %></small>
+          <% else %>
+            <br><small>N/A</small>
           <% end %>
         </td>
+        <% @requirements.each do |r| %>
+          <td><%= totals[r.id].to_i %></td>
+        <% end %>
+        <td><strong><%= totals.values.sum %></strong></td>
         <td><%= row.errors.join(", ") %></td>
       </tr>
     <% end %>
