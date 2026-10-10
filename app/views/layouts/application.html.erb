@@ -37,6 +37,9 @@
             <%= link_to "Members", members_path %>
           <% end %>
           <%= link_to "Events", events_path %>
+          <% if current_member&.manager? %>
+            <%= link_to "Point requirements", point_settings_path %>
+          <% end %>
         </div>
 
         <div class="nav-right">

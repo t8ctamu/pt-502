@@ -1,0 +1,13 @@
+<%= form_with url: point_settings_path, method: :patch do %>
+  <% @requirements.each do |req| %>
+    <div>
+      <%= label_tag "requirements_#{req.id}", req.name %>
+      <%= text_field_tag "requirements[#{req.id}][minimum_points]",
+            req.minimum_points_before_type_cast, id: "requirements_#{req.id}" %>
+      <% req.errors[:minimum_points].each do |msg| %>
+        <p class="error"><%= msg %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <%= submit_tag "Save requirements" %>
+<% end %>

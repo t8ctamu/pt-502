@@ -55,6 +55,7 @@ end
 
 group :test do
   gem "simplecov", "~> 1.2", require: false
+  gem "capybara"
 end
 
 gem "bcrypt", "~> 3.1"

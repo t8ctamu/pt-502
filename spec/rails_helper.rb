@@ -14,6 +14,9 @@ RSpec.configure do |config|
 
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include FactoryBot::Syntax::Methods
+  config.before(:each) do
+    AppSetting.current.update!(total_points_required: 0)
+  end
 
   config.before(:suite) do
     %w[Member Admin Manager].each do |description|
