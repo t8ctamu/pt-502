@@ -6,7 +6,7 @@ class ImportsController < ApplicationController
   before_action :load_import_file, only: %i[preview confirm]
 
   MAX_FILE_BYTES = 10.megabytes
-  BOOLEAN_LIKE = %w[true false yes no y n 1 0 x].freeze
+  BOOLEAN_LIKE = %w[true false yes no y n x].freeze
 
   def new
   end
@@ -27,7 +27,7 @@ class ImportsController < ApplicationController
   def preview
     parser = MemberImport::Parser.new(@path)
     @headers = parser.headers
-    @requirements = Requirement.active.order(:id)
+    @requirements = Requirement.where(is_active: true).order(:id).to_a
     @default_requirement_id = params[:default_requirement_id].presence
     @sample_rows = parser.rows.first(20)
 
@@ -88,10 +88,11 @@ class ImportsController < ApplicationController
   end
 
   def auto_detect_mapping(headers, sample_rows)
-    reqs = Requirement.active.to_a
+    reqs = Requirement.where(is_active: true).to_a
     headers.each_with_index.to_h do |h, i|
       key = h.to_s.downcase.strip
-      field = key.empty? ? blank_header_guess(sample_rows, i) : detect_field(key, reqs)
+      values = sample_rows.map { |r| r[i].to_s.strip }.reject(&:empty?)
+      field = key.empty? ? blank_header_guess(values) : detect_field(key, reqs)
       [ i.to_s, field ]
     end
   end
@@ -104,16 +105,10 @@ class ImportsController < ApplicationController
     return "paid_dues"  if key.include?("dues")
 
     req = reqs.find { |r| r.name.to_s.downcase == key }
-    req ||= reqs.find do |r|
-      name = r.name.to_s.downcase
-      name.length >= 3 && key.include?(name)
-    end
-
     req ? "requirement:#{req.id}" : "ignore"
   end
 
-  def blank_header_guess(rows, col_index)
-    values = rows.map { |r| r[col_index].to_s.strip }.reject(&:empty?)
+  def blank_header_guess(values)
     return "ignore" if values.empty?
 
     looks_like_name = values.all? do |v|
@@ -123,8 +118,6 @@ class ImportsController < ApplicationController
     looks_like_name ? "full_name" : "ignore"
   end
 
-  # Any column currently mapped to "ignore" that contains only boolean-like
-  # values gets mapped to the chosen default requirement.
   def apply_default_requirement(mapping)
     req_id = @default_requirement_id.to_s
     return mapping if req_id.blank?
