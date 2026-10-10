@@ -84,7 +84,7 @@ RSpec.describe Member, type: :model do
 
   describe "#requirement_shortfalls" do
     it "lists every required type for a brand new member" do
-      shortfalls = member.requirement_shortfalls.to_h { |s| [s[:requirement].name, s[:needed]] }
+      shortfalls = member.requirement_shortfalls.to_h { |s| [ s[:requirement].name, s[:needed] ] }
       expect(shortfalls).to eq("Service" => 3, "Professional/Development" => 2, "Social" => 2)
     end
 

@@ -18,7 +18,7 @@ RSpec.describe Event, type: :model do
   it "currently allows an event with no point type" do
     expect(build(:event, requirement: nil)).to be_valid
   end
-  
+
   it "allows events to be created before check-in coordinates are configured" do
     event = build(:event)
     expect(event).to be_valid
@@ -48,4 +48,3 @@ end
 
 
 require "rails_helper"
-

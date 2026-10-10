@@ -3,14 +3,14 @@ require "rails_helper"
 # Field ids assume standard form_with model: @event helpers (event_name, event_location, ...).
 # Adjust the ids below if your form uses custom ids.
 RSpec.feature "Officer assigns a point type to an event", type: :feature do
-  include Devise::Test::IntegrationHelpers
+     include Devise::Test::IntegrationHelpers
 
   let(:admin) { create(:member, :profile_completed, :admin) }
   let!(:service) { create(:requirement, name: "Service", minimum_points: 3) }
   let!(:social)  { create(:requirement, name: "Social", minimum_points: 2) }
 
   scenario "creating a service event" do
-    sign_in admin
+       sign_in admin
     visit new_event_path
 
     fill_in "event_name", with: "Food Bank Shift"
@@ -34,7 +34,7 @@ RSpec.feature "Officer assigns a point type to an event", type: :feature do
   end
 
   scenario "changing an event's type" do
-    event = create(:event, requirement: service)
+       event = create(:event, requirement: service)
     sign_in admin
     visit edit_event_path(event)
 
@@ -45,7 +45,7 @@ RSpec.feature "Officer assigns a point type to an event", type: :feature do
   end
 
   scenario "the event page tells members what kind of point it earns" do
-    event = create(:event, name: "Mixer", requirement: social, point_value: 1)
+       event = create(:event, name: "Mixer", requirement: social, point_value: 1)
     sign_in create(:member, :profile_completed)
     visit event_path(event)
 

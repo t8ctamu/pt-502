@@ -94,4 +94,3 @@ RSpec.describe Attendance, type: :model do
 end
 
 require "rails_helper"
-

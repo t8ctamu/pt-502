@@ -62,7 +62,7 @@ RSpec.describe "home/index.html.erb", type: :view do
     expect(rendered).to have_link("Member dashboard")
   expect(rendered).not_to have_link("Point settings")
   end
-  
+
   it "shows officer tools for an admin" do
     admin = build_stubbed(:member, :admin, :profile_completed)
     allow(view).to receive(:current_member).and_return(admin)

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resource  :profile, only: [ :edit, :update ]
+  resource :profile, only: [ :edit, :update ]
   resource :point_settings, only: %i[show update] do
     post :add_type
     delete "types/:id", to: "point_settings#destroy_type", as: :destroy_type

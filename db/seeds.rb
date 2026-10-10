@@ -2,9 +2,9 @@
 
 # Real configuration: needed in every environment
 [
-  ["Service", 1],
-  ["Professionalism", 1],
-  ["Other", 0]
+  [ "Service", 1 ],
+  [ "Professionalism", 1 ],
+  [ "Other", 0 ]
 ].each do |name, min|
   Requirement.find_or_create_by!(name: name) { |r| r.minimum_points = min }
 end

@@ -1,5 +1,5 @@
 class Point < ApplicationRecord
-  belongs_to :member
+     belongs_to :member
   belongs_to :requirement
   has_one :attendance, dependent: :nullify
 

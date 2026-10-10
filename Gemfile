@@ -55,7 +55,7 @@ end
 
 group :test do
   gem "simplecov", "~> 1.2", require: false
-  gem 'capybara'
+  gem "capybara"
 end
 
 gem "bcrypt", "~> 3.1"
@@ -68,4 +68,3 @@ gem "dotenv-rails", "~> 3.2", groups: [ :development, :test ]
 
 gem "json", "< 3"
 gem "rqrcode", "~> 3.2"
-
