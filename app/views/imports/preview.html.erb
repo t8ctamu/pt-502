@@ -1,16 +1,30 @@
 <h1>Preview Import</h1>
 
+<% if @requirements.empty? %>
+  <div class="flash flash__alert">
+    <strong>No point categories found.</strong>
+    Run <code>bundle exec rails runner 'Requirement.update_all(is_active: true)'</code>
+    or create requirements before importing.
+  </div>
+<% else %>
+  <p>
+    Active point categories: <%= @requirements.map(&:name).join(", ") %>
+  </p>
+<% end %>
+
 <%= form_with url: preview_import_path(params[:token]), method: :get do |f| %>
   <div class="default-requirement">
     <label>
-      <strong>Default point type for unmapped True/False columns:</strong>
+      <strong>Apply to all remaining True/False columns:</strong>
       <%= select_tag :default_requirement_id,
             options_for_select(
               [["None", ""]] + @requirements.map { |r| [r.name, r.id] },
               @default_requirement_id
             ) %>
     </label>
-    <small>Any column whose values are only True/False and that isn't otherwise mapped will use this category. Pick "None" to leave them ignored.</small>
+    <small>
+      Any unmapped column whose values are only True/False will be assigned to this category.
+    </small>
   </div>
 
   <h2>Column mapping</h2>
@@ -29,14 +43,18 @@
           </td>
           <td>
             <%= select_tag "mapping[#{i}]",
-                  options_for_select(
-                    [["Ignore", "ignore"],
-                     ["Email", "email"],
-                     ["First name", "first_name"],
-                     ["Last name", "last_name"],
-                     ["Full name", "full_name"],
-                     ["Paid dues", "paid_dues"]] +
-                    @requirements.map { |r| ["Requirement: #{r.name}", "requirement:#{r.id}"] },
+                  grouped_options_for_select(
+                    [
+                      [ "Member fields",
+                        [ [ "Ignore", "ignore" ],
+                          [ "Email", "email" ],
+                          [ "First name", "first_name" ],
+                          [ "Last name", "last_name" ],
+                          [ "Full name", "full_name" ],
+                          [ "Paid dues", "paid_dues" ] ] ],
+                      [ "Point categories",
+                        @requirements.map { |r| [ r.name, "requirement:#{r.id}" ] } ]
+                    ],
                     @mapping[i.to_s]
                   ) %>
           </td>
