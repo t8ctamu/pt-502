@@ -39,4 +39,9 @@ Rails.application.routes.draw do
       patch :deny
     end
   end
+
+  resources :imports, only: [ :new, :create ], param: :token do
+    get  :preview, on: :member
+    post :confirm, on: :member
+  end
 end

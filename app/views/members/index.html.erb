@@ -1,4 +1,10 @@
-<h1>Members</h1>
+<div class="page-header">
+  <h1>Members</h1>
+  <% if current_member.admin? %>
+    <%= link_to "Import Members", new_import_path, class: "btn" %>
+  <% end %>
+</div>
+
 <table>
   <thead>
     <tr>
@@ -19,9 +25,9 @@
       <tr>
         <td><%= m.id %></td>
         <td><%= m.role.description %></td>
-        <td><%= m.first_name %></td>
-        <td><%= m.last_name %></td>
-        <td><%= m.email %></td>
+        <td><%= m.first_name.presence || "N/A" %></td>
+        <td><%= m.last_name.presence || "N/A" %></td>
+        <td><%= m.email.presence || "N/A" %></td>
         <td><%= m.joined_at %></td>
         <td><%= m.car_pool_status ? "Yes" : "No" %></td>
         <% @requirements.each do |r| %>
@@ -95,9 +101,9 @@
           <tr>
             <td><%= a.id %></td>
             <td><%= a.role.description %></td>
-            <td><%= a.first_name %></td>
-            <td><%= a.last_name %></td>
-            <td><%= a.email %></td>
+            <td><%= a.first_name.presence || "N/A" %></td>
+            <td><%= a.last_name.presence || "N/A" %></td>
+            <td><%= a.email.presence || "N/A" %></td>
             <td><%= a.joined_at %></td>
             <td><%= a.car_pool_status ? "Yes" : "No" %></td>
             <td><%= a.pt_school_application_date&.strftime("%b %Y") %></td>

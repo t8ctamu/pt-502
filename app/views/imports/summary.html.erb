@@ -1,0 +1,17 @@
+<h1>Import complete</h1>
+
+<p><%= @created %> members added, <%= @skipped %> skipped.</p>
+
+<% if @errored.any? %>
+  <h2>Rows with issues</h2>
+  <table>
+    <thead><tr><th>Row</th><th>Issues</th></tr></thead>
+    <tbody>
+      <% @errored.each do |row| %>
+        <tr><td><%= row.index %></td><td><%= row.errors.join(", ") %></td></tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<%= link_to "Back to members", members_path %>
