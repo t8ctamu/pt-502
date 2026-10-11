@@ -10,7 +10,8 @@ FactoryBot.define do
 
     trait :profile_completed do
       profile_completed_at { Time.current }
-      pt_school_application_date { Date.current }
+      expected_graduation_term { "Spring #{Date.current.year + 1}" }
+      pt_school_application_date { Date.new(Date.current.year + 1, 6, 1) }
     end
 
     trait :admin do

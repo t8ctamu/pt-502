@@ -2,6 +2,18 @@
 <p>Role: <strong><%= current_member.role.description %></strong></p>
 <p><%= link_to "Edit my profile", edit_profile_path %></p>
 
+<h2>My profile</h2>
+<dl>
+  <dt>Expected graduation</dt>
+  <dd><%= current_member.expected_graduation_term.presence || "Not provided" %></dd>
+  <dt>Anticipated application cycle</dt>
+  <dd><%= current_member.anticipated_application_cycle || "Not provided" %></dd>
+  <dt>Available to carpool for field trips</dt>
+  <dd><%= current_member.car_pool_status? ? "Yes" : "No" %></dd>
+  <dt>Phone sharing</dt>
+  <dd><%= current_member.shared_phone_number || "Not shared" %></dd>
+</dl>
+
 <% if current_member.admin? %>
   <h2>Officer tools</h2>
   <p><%= link_to "Member dashboard", members_path %></p>
