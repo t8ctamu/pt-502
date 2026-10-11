@@ -1,3 +1,10 @@
+<div class="btn-group" style="margin-bottom: 16px;">
+  <%= button_to "Reset Semester",
+        reset_semesters_path,
+        method: :post,
+        form: { data: { turbo_confirm: "This will start a new semester. Members' current points will no longer count toward the new semester's totals. Their history is preserved. Continue?" } } %>
+</div>
+
 <h1>Members</h1>
 <table>
   <thead>

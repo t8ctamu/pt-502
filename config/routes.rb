@@ -19,6 +19,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :semesters, only: [ :index, :show ] do
+    collection do
+      post :reset
+    end
+  end
+
   resource :profile, only: [ :edit, :update ]
   resource :point_settings, only: %i[show update] do
     post :add_type
