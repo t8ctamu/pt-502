@@ -1,8 +1,0 @@
-<nav class="help-navigation" aria-label="Help guides">
-  <%= link_to "Help home", help_path %>
-  <%= link_to "Member guide", member_help_path %>
-  <% if current_member&.admin? %>
-    <%= link_to "Officer guide", officer_help_path %>
-    <%= link_to "System guide", system_help_path %>
-  <% end %>
-</nav>
