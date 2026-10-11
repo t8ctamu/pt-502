@@ -142,6 +142,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_11_000001) do
     t.index ["member_id"], name: "index_rsvps_on_member_id"
   end
 
+  create_table "saved_locations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.decimal "latitude", precision: 10, scale: 6, null: false
+    t.decimal "longitude", precision: 10, scale: 6, null: false
+    t.string "name", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_saved_locations_on_name", unique: true
+  end
+
   create_table "semesters", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "ends_on", null: false

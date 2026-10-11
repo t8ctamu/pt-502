@@ -30,6 +30,14 @@ owner.joined_at            ||= Date.current
 owner.profile_completed_at ||= Time.current
 owner.save!
 
+admin2  = Member.find_or_initialize_by(email: "balarson@tamu.edu")
+admin2.role = manager_role unless admin2.manager?
+admin2.first_name           ||= "Brendan"
+admin2.last_name            ||= "Larson"
+admin2.joined_at            ||= Date.current
+admin2.profile_completed_at ||= Time.current
+admin2.save!
+
 if Rails.env.development?
   member_role = Role.find_by!(description: "Member")
   service     = Requirement.find_by!(name: "Service")

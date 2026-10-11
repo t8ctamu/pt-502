@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  include EventLocationValidations
   belongs_to :requirement, optional: true
   has_many :attendances, dependent: :destroy
   has_many :members, through: :attendances
