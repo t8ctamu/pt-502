@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     member do
       patch :change_role
       patch :set_points
+      patch :remove
+      patch :restore
     end
   end
 

@@ -12,6 +12,7 @@
       <% if current_member.manager? %>
         <th>Change Role</th>
       <% end %>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -66,10 +67,46 @@
             <% end %>
           </td>
         <% end %>
+         <td>
+           <% if m == current_member || m.manager? %>
+             <span class="muted">-</span>
+           <% else %>
+             <%= button_to "Remove", remove_member_path(m),
+                   method: :patch,
+                   form: { data: { turbo_confirm: "Remove #{m.first_name} from the roster?" } } %>
+           <% end %>
+         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<% if @removed_members.any? %>
+  <details>
+    <summary>Removed members (<%= @removed_members.count %>)</summary>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th><th>Email</th><th>Removed on</th><th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @removed_members.each do |m| %>
+          <tr>
+            <td><%= m.first_name %> <%= m.last_name %></td>
+            <td><%= m.email %></td>
+            <td><%= m.removed_at&.strftime("%b %-d, %Y") %></td>
+            <td>
+              <%= button_to "Restore", restore_member_path(m),
+                    method: :patch,
+                    form: { data: { turbo_confirm: "Restore #{m.first_name} to the roster?" } } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </details>
+<% end %>
 
 <% if current_member.admin? %>
   <h2>Admins</h2>
