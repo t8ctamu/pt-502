@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_10_190815) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_10_230452) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   create_table "app_settings", force: :cascade do |t|
     t.datetime "created_at", null: false
+    t.bigint "current_semester_id"
     t.integer "total_points_required", default: 7, null: false
     t.datetime "updated_at", null: false
+    t.index ["current_semester_id"], name: "index_app_settings_on_current_semester_id"
     t.check_constraint "total_points_required >= 0", name: "app_settings_total_nonnegative"
   end
 
@@ -54,7 +56,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_10_190815) do
     t.index ["requirement_id"], name: "index_event_submissions_on_requirement_id"
     t.index ["reviewed_by_id"], name: "index_event_submissions_on_reviewed_by_id"
     t.index ["status"], name: "index_event_submissions_on_status"
-    t.check_constraint "status::text = ANY (ARRAY['pending'::character varying, 'approved'::character varying, 'denied'::character varying]::text[])", name: "event_submissions_status_valid"
+    t.check_constraint "status::text = ANY (ARRAY['pending'::character varying::text, 'approved'::character varying::text, 'denied'::character varying::text])", name: "event_submissions_status_valid"
   end
 
   create_table "events", force: :cascade do |t|
@@ -89,9 +91,11 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_10_190815) do
     t.boolean "phone_visible", default: false, null: false
     t.datetime "profile_completed_at"
     t.date "pt_school_application_date"
+    t.datetime "removed_at"
     t.bigint "role_id", null: false
     t.string "uid"
     t.datetime "updated_at", null: false
+    t.index ["removed_at"], name: "index_members_on_removed_at"
     t.index ["role_id"], name: "index_members_on_role_id"
     t.index ["uid"], name: "index_members_on_uid", unique: true
   end
@@ -103,9 +107,11 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_10_190815) do
     t.string "note"
     t.integer "point_amount", null: false
     t.bigint "requirement_id", null: false
+    t.bigint "semester_id", null: false
     t.datetime "updated_at", null: false
     t.index ["member_id"], name: "index_points_on_member_id"
     t.index ["requirement_id"], name: "index_points_on_requirement_id"
+    t.index ["semester_id"], name: "index_points_on_semester_id"
   end
 
   create_table "requirements", force: :cascade do |t|
@@ -135,6 +141,17 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_10_190815) do
     t.index ["member_id"], name: "index_rsvps_on_member_id"
   end
 
+  create_table "semesters", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.date "ends_on", null: false
+    t.string "name", null: false
+    t.date "starts_on", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_semesters_on_name", unique: true
+    t.check_constraint "ends_on >= starts_on", name: "semesters_valid_date_range"
+  end
+
+  add_foreign_key "app_settings", "semesters", column: "current_semester_id"
   add_foreign_key "attendances", "events"
   add_foreign_key "attendances", "members"
   add_foreign_key "attendances", "points"
@@ -146,5 +163,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_10_190815) do
   add_foreign_key "members", "roles"
   add_foreign_key "points", "members"
   add_foreign_key "points", "requirements"
+  add_foreign_key "points", "semesters"
   add_foreign_key "rsvps", "members"
 end
