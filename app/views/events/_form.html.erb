@@ -121,6 +121,27 @@
     <p>
       <%= f.label :point_value, "Points for attending" %><br>
       <%= f.number_field :point_value, min: 0, step: 1, required: true %>
+      <%= f.label :requirement_id, "Point type" %>
+        <%= f.collection_select :requirement_id, Requirement.active.order(:id), :id, :name,
+              { include_blank: "No points" },
+              { id: "event_requirement_id", data: { other_id: Requirement.find_by(name: "Other")&.id } } %>
+
+        <div id="other-type-field" style="display: none;">
+          <%= f.label :other_type, "What kind of event?" %>
+          <%= f.text_field :other_type, placeholder: "e.g. Social, Fundraising" %>
+        </div>
+
+        <script>
+          (function () {
+            var select = document.getElementById("event_requirement_id");
+            var field = document.getElementById("other-type-field");
+            function toggle() {
+              field.style.display = select.value === select.dataset.otherId ? "" : "none";
+            }
+            select.addEventListener("change", toggle);
+            toggle();
+          })();
+        </script>
     </p>
   </fieldset>
 

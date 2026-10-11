@@ -1,76 +1,69 @@
-# spec/requests/member_standing_spec.rb
 require "rails_helper"
-
-RSpec.describe "Editing member points", type: :request do
-  let(:admin_role) { Role.find_or_create_by!(description: "Admin") }
-  let!(:admin) do
-    Member.create!(
-      uid: "123545",
-      first_name: "Ad",
-      last_name: "Min",
-      email: "admin@example.com",
-      role: admin_role,
-      points: 0,
-      paid_dues: true,
-      profile_completed_at: Time.current
-    )
+RSpec.describe "Member standing", type: :request do
+  let!(:service) { create(:requirement, name: "Service", minimum_points: 3) }
+  let!(:social)  { create(:requirement, name: "Social", minimum_points: 0) }
+  let(:admin)    { create(:member, :admin, :profile_completed, paid_dues: true) }
+  let!(:member) do
+    create(:member, :profile_completed, first_name: "Jane", last_name: "Doe",
+           email: "jane@tamu.edu", paid_dues: true)
   end
 
-  let(:member_role) { Role.find_or_create_by!(description: "Member") }
-  let!(:member) do
-    Member.create!(
-      uid: "987654",
-      first_name: "Jane",
-      last_name: "Doe",
-      email: "jane@example.com",
-      role: member_role,
-      points: 3,
-      paid_dues: false,
-      profile_completed_at: Time.current
-    )
+  def row_for(target)
+    response.body.scan(/<tr[^>]*>.*?<\/tr>/m).find { |row| row.include?(target.email) }
   end
 
   context "as an admin" do
     before { sign_in admin }
 
-    it "updates points and reflects it on the members page" do
-      patch member_path(member), params: { member: { points: 8 } }
-
-      member.reload
-      expect(member.points).to eq(8)
-
+    it "shows Active when every minimum is met and dues are paid" do
+      create(:point, member: member, requirement: service, point_amount: 3)
       get members_path
-      member_row = response.body[/<tr>.*?#{Regexp.escape(member.email)}.*?<\/tr>/m]
-      expect(member_row).to include("8")
+
+      expect(row_for(member)).to include("status-active")
+      expect(row_for(member)).not_to include("status-inactive")
     end
 
-    it "rejects a non-integer value for points and does not persist it" do
-      patch member_path(member), params: { member: { points: "abc" } }
+    it "shows Not Active and what is missing for a member below a minimum" do
+      get members_path
 
-      member.reload
-      expect(member.points).to eq(0)
+      expect(row_for(member)).to include("status-inactive")
+      expect(row_for(member)).to include("Needs 3 more service points")
+    end
+
+    it "still shows Not Active when total points are high but Service is short" do
+      create(:point, member: member, requirement: social, point_amount: 50)
+      get members_path
+
+      expect(row_for(member)).to include("status-inactive")
+      expect(row_for(member)).to include("Needs 3 more service points")
+    end
+
+    it "shows Not Active when minimums are met but dues are unpaid" do
+      member.update!(paid_dues: false)
+      create(:point, member: member, requirement: service, point_amount: 3)
+      get members_path
+
+      expect(row_for(member)).to include("status-inactive")
+    end
+
+    it "updates dues and cannot be used to assign points" do
+      patch member_path(member), params: { member: { paid_dues: "0", points: 8 } }
+
+      expect(response).to redirect_to(members_path)
+      expect(member.reload.paid_dues).to be(false)
+      expect(Point.where(member: member)).to be_empty
+      expect(member.total_points).to eq(0)
     end
   end
 
   context "as a non-admin" do
-    before { sign_in member }
+    it "does not let a member change another member's dues" do
+      other = create(:member, :profile_completed, paid_dues: false)
+      sign_in member
 
-    it "does not update another member's points" do
-      other = Member.create!(
-        uid: "555555",
-        first_name: "Sam",
-        last_name: "Lee",
-        email: "sam@example.com",
-        role: member_role,
-        points: 2,
-        paid_dues: false,
-        profile_completed_at: Time.current
-      )
+      patch member_path(other), params: { member: { paid_dues: "1" } }
 
-      patch member_path(other), params: { member: { points: 8 } }
-
-      other.reload
-      expect(other.points).to eq(2)
+      expect(other.reload.paid_dues).to be(false)
     end
   end
 end

@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include Pagy::Method
+
   before_action :authenticate_member!
 
   def after_sign_in_path_for(member)
@@ -7,6 +9,20 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  # Shared by self-service profiles and authorized officer profile edits.
+  def member_profile_params
+    params.require(:member).permit(:first_name, :last_name, :expected_graduation_term,
+                                   :pt_school_application_date, :car_pool_status,
+                                   :share_phone_number, :phone_visible, :phone_number)
+  end
+
+  def save_member_profile(member, context: :profile)
+    member.save(context: context)
+  rescue ActiveRecord::StatementInvalid, ActiveRecord::RecordNotSaved
+    member.errors.add(:base, "Your profile could not be saved. Please try again.")
+    false
+  end
 
   def require_completed_profile
     return if current_member.profile_completed?

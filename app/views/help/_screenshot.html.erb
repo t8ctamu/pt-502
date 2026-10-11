@@ -1,0 +1,6 @@
+<figure class="help-figure">
+  <%= link_to image_path("help/#{name}.jpg"), target: "_blank", rel: "noopener" do %>
+    <%= image_tag "help/#{name}.jpg", alt: caption, loading: "lazy" %>
+  <% end %>
+  <figcaption><%= caption %> Open the image for a larger view. Example accounts and events are fictional.</figcaption>
+</figure>

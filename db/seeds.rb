@@ -1,14 +1,34 @@
+semester = Semester.find_or_create_by!(name: "Fall 2026") do |s|
+  s.starts_on = Date.new(2026, 8, 1)
+  s.ends_on   = Date.new(2026, 12, 31)
+end
+
+AppSetting.current.update!(current_semester: semester)
+
 %w[Admin Manager Member].each { |r| Role.find_or_create_by!(description: r) }
 
-admin_role = Role.find_by!(description: "Admin")
+# Real configuration: needed in every environment
+[
+  [ "Service", 1 ],
+  [ "Professionalism", 1 ],
+  [ "Other", 0 ]
+].each do |name, min|
+  Requirement.find_or_create_by!(name: name) { |r| r.minimum_points = min }
+end
 
-admin = Member.find_or_initialize_by(email: "lukechambers0217@tamu.edu")
-admin.role = admin_role
-admin.first_name           ||= "Luke"
-admin.last_name            ||= "Chambers"
-admin.joined_at            ||= Date.current
-admin.profile_completed_at ||= Time.current
-admin.save!
+# Makes sure the total-points setting row exists (defaults to 7)
+AppSetting.current
+
+# First manager, so someone can reach Point settings in every environment
+manager_role = Role.find_by!(description: "Manager")
+
+owner = Member.find_or_initialize_by(email: "lukechambers0217@tamu.edu")
+owner.role = manager_role unless owner.manager?
+owner.first_name           ||= "Luke"
+owner.last_name            ||= "Chambers"
+owner.joined_at            ||= Date.current
+owner.profile_completed_at ||= Time.current
+owner.save!
 
 admin2  = Member.find_or_initialize_by(email: "balarson@tamu.edu")
 admin2.role = admin_role
@@ -20,6 +40,7 @@ admin2.save!
 
 if Rails.env.development?
   member_role = Role.find_by!(description: "Member")
+  service     = Requirement.find_by!(name: "Service")
 
   [
     # first,    last,      email,                       carpool, points, applying
@@ -29,15 +50,20 @@ if Rails.env.development?
     [ "Derek",  "Johnson", "derek.johnson@tamu.edu",    false,  0, nil ],
     [ "Elena",  "Garcia",  "elena.garcia@tamu.edu",     true,  20, Date.new(2027, 5, 1) ]
   ].each do |first, last, email, carpool, points, applying|
-    Member.find_or_create_by!(email: email) do |m|
+    member = Member.find_or_create_by!(email: email) do |m|
       m.role                       = member_role
       m.first_name                 = first
       m.last_name                  = last
       m.joined_at                  = Date.current
       m.car_pool_status            = carpool
-      m.points                     = points
       m.pt_school_application_date = applying
       m.profile_completed_at       = Time.current
+    end
+
+    # Sample points go in the ledger (all Service, just so there is data to look at)
+    if points > 0 && member.point_entries.none?
+      member.point_entries.create!(requirement: service, point_amount: points,
+        awarded_date: Date.current, note: "Sample data")
     end
   end
 end

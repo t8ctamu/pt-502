@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
   include EventLocationValidations
+  belongs_to :requirement, optional: true
   has_many :attendances, dependent: :destroy
   has_many :members, through: :attendances
 
@@ -11,6 +12,9 @@ class Event < ApplicationRecord
   validates :check_in_radius_meters, numericality: { only_integer: true, greater_than: 0 }
   validate :coordinates_provided_together
 
+  before_validation { self.other_type = nil unless requirement&.name == "Other" }
+  validates :other_type, presence: { message: "is required when the point type is Other" },
+                        if: -> { requirement&.name == "Other" }
   def check_in_configured?
     latitude.present? && longitude.present?
   end

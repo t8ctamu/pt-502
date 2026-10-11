@@ -2,12 +2,30 @@ require "rails_helper"
 
 RSpec.describe Event, type: :model do
   it "requires a location pin, so every new event has check-in configured" do
-  expect(build(:event)).to be_check_in_configured
+    expect(build(:event)).to be_check_in_configured
 
-  event = build(:event, latitude: nil, longitude: nil)
-  expect(event).not_to be_valid
-  expect(event.errors[:base]).to include("Choose a location on the map before saving.")
-end
+    event = build(:event, latitude: nil, longitude: nil)
+    expect(event).not_to be_valid
+    expect(event.errors[:base]).to include("Choose a location on the map before saving.")
+  end
+
+  it "belongs to a requirement" do
+    expect(described_class.reflect_on_association(:requirement).macro).to eq(:belongs_to)
+  end
+
+  it "is valid with a requirement (point type)" do
+    expect(build(:event, requirement: create(:requirement, name: "Service"))).to be_valid
+  end
+
+  it "exposes the point type through the association" do
+    service = create(:requirement, name: "Service")
+    expect(create(:event, requirement: service).requirement.name).to eq("Service")
+  end
+
+  # Remove this example once you switch to a required `belongs_to :requirement`
+  it "currently allows an event with no point type" do
+    expect(build(:event, requirement: nil)).to be_valid
+  end
 
   it "requires coordinates together and within geographic bounds" do
     expect(build(:event, latitude: 30, longitude: nil)).not_to be_valid
@@ -29,3 +47,6 @@ end
     expect(create(:event)).to be_persisted
   end
 end
+
+
+require "rails_helper"

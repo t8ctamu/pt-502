@@ -1,14 +1,21 @@
-<div class="card profile-card">
-  <div class="profile-header">
-  <% unless current_member.admin? %>
-      <% if current_member.points >= 7 && current_member.paid_dues %>
+<% unless current_member.admin? %>
+  <% requirements = Requirement.active.where("minimum_points > 0").order(:name) %>
+
+  <div class="card profile-card">
+    <div class="profile-header">
+      <% if current_member.active_status? && current_member.paid_dues %>
         <span class="status-badge status-active">Active Member</span>
       <% else %>
         <span class="status-badge status-inactive">Not Active Member</span>
+        <% unless current_member.active_status? %>
+          <p class="status-missing"><%= current_member.missing_requirements_text.capitalize %></p>
+        <% end %>
+        <% unless current_member.paid_dues %>
+          <p class="status-missing">Semester dues not paid</p>
+        <% end %>
       <% end %>
     </div>
 
-  
     <div class="profile-stats">
       <div class="stat">
         <span class="stat-label">Email</span>
@@ -23,39 +30,112 @@
         <span class="stat-value"><%= current_member.car_pool_status ? "Yes" : "No" %></span>
       </div>
       <div class="stat">
-        <span class="stat-label">Points</span>
-        <span class="stat-value"><%= current_member.points %> / 7</span>
+        <span class="stat-label">Total points</span>
+        <span class="stat-value">
+          <%= current_member.total_points %> / <%= AppSetting.total_points_required %>
+          <%= current_member.total_points >= AppSetting.total_points_required ? "✓" : "" %>
+        </span>
+      </div>
+      <% requirements.each do |req| %>
+        <% earned = current_member.points_by_requirement.fetch(req.id, 0) %>
+        <div class="stat">
+          <span class="stat-label"><%= req.name %> points</span>
+          <span class="stat-value">
+            <%= earned %> / <%= req.minimum_points %>
+            <%= earned >= req.minimum_points ? "✓" : "" %>
+          </span>
+        </div>
+      <% end %>
+      <div class="stat">
+        <span class="stat-label">Anticipated application cycle</span>
+        <span class="stat-value"><%= current_member.anticipated_application_cycle || "Not provided" %></span>
       </div>
       <div class="stat">
-        <span class="stat-label">PT school application</span>
-        <span class="stat-value"><%= current_member.pt_school_application_date&.strftime("%b %Y") || "Not set" %></span>
+        <span class="stat-label">Expected graduation</span>
+        <span class="stat-value"><%= current_member.expected_graduation_term.presence || "Not provided" %></span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Phone sharing</span>
+        <span class="stat-value"><%= current_member.shared_phone_number || "Not shared" %></span>
       </div>
     </div>
 
     <div class="info-box">
       <p>
-        To be considered an active member you must have paid semester dues and have a total of 7 points
-        by the end of the semester. This can be any combination of meeting, service, and social points.
+        To be considered an active member you must have paid semester dues and earned
+        <%= AppSetting.total_points_required %> points in total by the end of the semester,
+        including at least
+        <%= requirements.map { |r| "#{r.minimum_points} #{r.name.downcase}" }.to_sentence %>.
+      </p>
+      <p>
         The points sheet for members can be found in the GroupMe and will be updated periodically.
         Service points can also be earned by donating canned goods to the Brazos Valley Food Bank
         (5 cans for 1pt, 10 for 2pts), shadowing at a PT clinic (10 hrs for 1pt, 20 for 2pts), or by
         sending proof of independent volunteering and tagging @tamuptsociety.
       </p>
     </div>
-  <% end %>
+  </div>
+    <div class="card">
+    <h2>Non-PT event submissions</h2>
+    <p>Attended something outside PT Society? Submit it for officer approval.</p>
+    <%= link_to "Submit an event", new_event_submission_path,
+    class: "btn", style: "display: inline-block; margin-bottom: 16px;" %>
 
-</div>
+    <% submissions = current_member.event_submissions.includes(:requirement).order(created_at: :desc).limit(10) %>
+    <% if submissions.any? %>
+      <table>
+        <thead>
+          <tr><th>Event</th><th>Date</th><th>Point type</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <% submissions.each do |s| %>
+            <tr>
+              <td><%= s.name %></td>
+              <td><%= s.event_date.strftime("%b %-d, %Y") %></td>
+              <td><%= s.requirement.name %></td>
+              <td>
+                <%= s.status.capitalize %>
+                <% if s.denied? %>
+                  <br><small>Reason: <%= s.denial_reason %></small>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+<% end %>
 
 <% if current_member.admin? %>
   <div class="card">
+    <h2>My profile</h2>
+    <dl>
+      <dt>Expected graduation</dt>
+      <dd><%= current_member.expected_graduation_term.presence || "Not provided" %></dd>
+      <dt>Anticipated application cycle</dt>
+      <dd><%= current_member.anticipated_application_cycle || "Not provided" %></dd>
+      <dt>Available to carpool for field trips</dt>
+      <dd><%= current_member.car_pool_status? ? "Yes" : "No" %></dd>
+      <dt>Phone sharing</dt>
+      <dd><%= current_member.shared_phone_number || "Not shared" %></dd>
+    </dl>
+  </div>
+  <div class="card">
     <h2>Officer tools</h2>
-    <p class="card-subtitle">Manage members and dues from one place.</p>
+    <p class="card-subtitle">Manage members, dues, and point requirements from one place.</p>
     <div class="btn-group">
       <%= link_to "Member dashboard", members_path, class: "btn" %>
       <%= link_to "Create Event", new_event_path, class: "btn" %>
-    </div>
+      <%= link_to "Semesters", semesters_path, class: "btn" %>
+      <% if current_member.manager? %>
+        <%= link_to "Point settings", point_settings_path, class: "btn" %>
+      <% end %>
+      </div>
   </div>
 <% end %>
+
+
 
 <div class="card">
   <h2>Upcoming events</h2>

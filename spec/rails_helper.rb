@@ -14,10 +14,21 @@ RSpec.configure do |config|
 
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include FactoryBot::Syntax::Methods
+  config.before(:each) do
+    AppSetting.current.update!(total_points_required: 0)
+  end
 
   config.before(:suite) do
     %w[Member Admin Manager].each do |description|
       Role.find_or_create_by!(description: description)
     end
+  end
+
+  config.before(:each) do
+    semester = Semester.find_or_create_by!(name: "Test Semester") do |s|
+      s.starts_on = Date.new(2026, 1, 1)
+      s.ends_on   = Date.new(2026, 12, 31)
+    end
+    AppSetting.current.update!(current_semester: semester)
   end
 end
