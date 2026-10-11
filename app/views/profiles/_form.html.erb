@@ -1,6 +1,6 @@
 <%= form_with model: member, url: url, method: :patch, data: { controller: "profile" } do |f| %>
   <% if member.errors.any? %>
-    <div role="alert" tabindex="-1" aria-labelledby="profile-errors-title" data-profile-target="errors">
+    <div class="form-errors" role="alert" tabindex="-1" aria-labelledby="profile-errors-title" data-profile-target="errors">
       <h2 id="profile-errors-title">Please correct your profile</h2>
       <ul>
         <% member.errors.each do |error| %>
@@ -60,5 +60,5 @@
     </div>
   <% end %>
 
-  <%= f.submit "Save profile" %>
+  <%= f.submit "Save profile", class: "btn" %>
 <% end %>

@@ -1,2 +1,6 @@
-<h1><%= @member.profile_completed? ? "Edit my profile" : "Finish your profile" %></h1>
-<%= render "profiles/form", member: @member, url: profile_path %>
+<div class="form-page">
+  <div class="card">
+    <h1><%= @member.profile_completed? ? "Edit my profile" : "Finish your profile" %></h1>
+    <%= render "profiles/form", member: @member, url: profile_path %>
+  </div>
+</div>

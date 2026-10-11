@@ -24,8 +24,17 @@ class EventCheckIn
         raise Rejected, "You are not nearby. Move closer to the event and try again."
       end
 
-      attendance.update!(checked_in_at: Time.current, points_awarded: event.point_value)
-      member.update!(points: member.points.to_i + attendance.points_awarded)
+      point = nil
+      if event.requirement && event.point_value.to_i > 0
+        point = member.point_entries.create!(
+          requirement: event.requirement,
+          point_amount: event.point_value.to_i,
+          awarded_date: Date.current,
+          note: "Checked in: #{event.name}"
+        )
+      end
+
+      attendance.update!(checked_in_at: Time.current, point: point)
       attendance
     end
   end

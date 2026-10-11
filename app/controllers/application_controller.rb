@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   def member_profile_params
     params.require(:member).permit(:first_name, :last_name, :expected_graduation_term,
                                    :pt_school_application_date, :car_pool_status,
-                                   :share_phone_number, :phone_number)
+                                   :share_phone_number, :phone_visible, :phone_number)
   end
 
   def save_member_profile(member, context: :profile)
@@ -30,5 +30,10 @@ class ApplicationController < ActionController::Base
   def require_admin
     return if current_member&.admin?
     redirect_to root_path, alert: "You're not authorized to view that page."
+  end
+
+  def require_manager
+    return if current_member&.manager?
+    redirect_to root_path, alert: "You're not authorized to change roles."
   end
 end

@@ -61,6 +61,16 @@ RSpec.describe "Profiles", type: :request do
       expect(response.body).to include("979-555-0123")
     end
 
+    it "accepts the existing phone visibility field for sharing and withdrawal" do
+      patch profile_path, params: valid_params.deep_merge(member: { phone_visible: "1", phone_number: "979-555-0123" })
+      expect(member.reload.phone_visible?).to be true
+      expect(member.shared_phone_number).to eq("979-555-0123")
+
+      patch profile_path, params: valid_params.deep_merge(member: { phone_visible: "0" })
+      expect(member.reload.share_phone_number?).to be false
+      expect(member.phone_number).to be_nil
+    end
+
     it "discards a phone number supplied without consent" do
       patch profile_path, params: valid_params.deep_merge(member: { share_phone_number: "0", phone_number: "979-555-0123" })
       expect(member.reload.phone_number).to be_nil
@@ -133,7 +143,8 @@ RSpec.describe "Profiles", type: :request do
 
       member.reload
       expect(member.role_id).to eq(original_role_id)
-      expect(member.points).not_to eq(500)
+      expect(member.total_points).to eq(0)
+      expect(Point.where(member: member)).to be_empty
     end
   end
 end

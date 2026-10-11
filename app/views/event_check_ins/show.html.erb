@@ -7,11 +7,16 @@
 <% if @attendance&.checked_in_at? %>
   <h2>You're marked present</h2>
   <p>Checked in at <%= @attendance.checked_in_at.strftime("%b %d, %Y %I:%M %p %Z") %>.</p>
-  <p>Points awarded: <%= @attendance.points_awarded %>. Your total: <%= current_member.points %>.</p>
+  <p>Points awarded: <%= @attendance.points_awarded %>. Your total: <%= current_member.total_points %>.</p>
+    <% if current_member.active_status? %>
+      <p>Status: Active</p>
+    <% else %>
+      <p>Status: Inactive (<%= current_member.missing_requirements_text %>)</p>
+    <% end %>
 <% elsif !@event.check_in_configured? %>
   <p>Check-in is not configured for this event yet. Please ask an officer.</p>
 <% else %>
-  <p>Check in within <%= @event.check_in_radius_meters %> meters of the venue to earn <%= pluralize(@event.point_value, "point") %>.</p>
+  <p>Check in within <%= @event.check_in_radius_meters %> meters of the venue to earn <%= pluralize(@event.point_value, "point") %><%= " (#{@event.requirement.name})" if @event.requirement %>.</p>
   <p>Allow location access when prompted. Your coordinates are used to check your distance and are not saved with your attendance.</p>
   <%= form_with url: event_check_in_path(@event), data: { controller: "check-in", action: "submit->check-in#submit", turbo: false } do %>
     <%= hidden_field_tag :latitude, nil, data: { check_in_target: "latitude" } %>

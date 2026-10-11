@@ -1,0 +1,13 @@
+<%= link_to event_path(event), class: "event-card" do %>
+  <div class="event-date-badge">
+    <span class="event-month"><%= event.starts_at.strftime("%b") %></span>
+    <span class="event-day"><%= event.starts_at.strftime("%d") %></span>
+  </div>
+  <div class="event-info">
+    <div class="event-name"><%= event.name %></div>
+    <div class="event-meta">
+      <%= event.starts_at.strftime("%I:%M %p") %> &middot; <%= event.location %>
+    </div>
+  </div>
+  <span class="event-arrow">→</span>
+<% end %>

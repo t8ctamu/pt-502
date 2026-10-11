@@ -1,0 +1,34 @@
+<h1>Submit a non-PT event</h1>
+<p>Attended something outside PT Society? Submit it here. An officer will review it, and points are added only if it's approved.</p>
+
+<%= form_with model: @submission, url: event_submissions_path do |f| %>
+  <% if @submission.errors.any? %>
+    <div class="form-errors">
+      <ul>
+        <% @submission.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name, "Event name" %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :event_date, "Date" %>
+    <%= f.date_field :event_date %>
+  </div>
+  <div>
+    <%= f.label :requirement_id, "Point type" %>
+    <%= f.collection_select :requirement_id, Requirement.active.order(:id), :id, :name,
+          { prompt: "Choose a point type" } %>
+  </div>
+  <div>
+    <%= f.label :description, "Description or proof of attendance" %>
+    <%= f.text_area :description, rows: 4 %>
+  </div>
+
+  <%= f.submit "Submit for approval" %>
+<% end %>

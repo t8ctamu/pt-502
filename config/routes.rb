@@ -10,14 +10,33 @@ Rails.application.routes.draw do
     get "members/sign_out", to: "members/sessions#destroy", as: :destroy_member_session
   end
 
-  resources :members, only: [ :index, :edit, :update ]
-  resource  :profile, only: [ :edit, :update ]
+  resources :members, only: [ :index, :edit, :update ] do
+    member do
+      patch :change_role
+      patch :set_points
+    end
+  end
+
+  resource :profile, only: [ :edit, :update ]
+  resource :point_settings, only: %i[show update] do
+    post :add_type
+    delete "types/:id", to: "point_settings#destroy_type", as: :destroy_type
+  end
 
   resources :events do
     resource :check_in, only: [ :show, :create ], controller: "event_check_ins"
     member do
       get :ics
       get :check_in_qr
+    end
+  end
+
+  resources :event_submissions, only: %i[new create]
+
+  resources :submission_reviews, only: :index do
+    member do
+      patch :approve
+      patch :deny
     end
   end
 end

@@ -1,39 +1,40 @@
-<%= form_with model: @event do |f| %>
-  <% if @event.errors.any? %>
-    <div class="errors">
-      <h2><%= pluralize(@event.errors.count, "error") %> stopped this event from being saved:</h2>
+<%= form_with model: event, class: "event-form" do |f| %>
+  <% if event.errors.any? %>
+    <div class="form-errors">
+      <h2><%= pluralize(event.errors.count, "error") %> stopped this event from being saved:</h2>
       <ul>
-        <% @event.errors.full_messages.each do |message| %>
+        <% event.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <p>
-    <%= f.label :name %><br>
+  <div>
+    <%= f.label :name %>
     <%= f.text_field :name %>
-  </p>
+  </div>
 
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description, rows: 4 %>
+  </div>
 
-  <p>
-    <%= f.label :starts_at, "Date and time" %><br>
-    <%= f.datetime_local_field :starts_at %>
-  </p>
+  <div class="form-row">
+    <div>
+      <%= f.label :starts_at, "Date and time" %>
+      <%= f.datetime_local_field :starts_at %>
+    </div>
+    <div>
+      <%= f.label :ends_at, "End time (optional)" %>
+      <%= f.datetime_local_field :ends_at %>
+    </div>
+  </div>
 
-  <p>
-    <%= f.label :ends_at, "End time (optional)" %><br>
-    <%= f.datetime_local_field :ends_at %>
-  </p>
-
-  <p>
-    <%= f.label :location %><br>
+  <div>
+    <%= f.label :location %>
     <%= f.text_field :location %>
-  </p>
+  </div>
 
   <fieldset data-controller="event-location">
     <legend>Attendance check-in</legend>
@@ -56,6 +57,27 @@
     <p>
       <%= f.label :point_value, "Points for attending" %><br>
       <%= f.number_field :point_value, min: 0, step: 1, required: true %>
+      <%= f.label :requirement_id, "Point type" %>
+        <%= f.collection_select :requirement_id, Requirement.active.order(:id), :id, :name,
+              { include_blank: "No points" },
+              { id: "event_requirement_id", data: { other_id: Requirement.find_by(name: "Other")&.id } } %>
+
+        <div id="other-type-field" style="display: none;">
+          <%= f.label :other_type, "What kind of event?" %>
+          <%= f.text_field :other_type, placeholder: "e.g. Social, Fundraising" %>
+        </div>
+
+        <script>
+          (function () {
+            var select = document.getElementById("event_requirement_id");
+            var field = document.getElementById("other-type-field");
+            function toggle() {
+              field.style.display = select.value === select.dataset.otherId ? "" : "none";
+            }
+            select.addEventListener("change", toggle);
+            toggle();
+          })();
+        </script>
     </p>
   </fieldset>
   <%= f.submit "Save Event" %>

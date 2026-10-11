@@ -1,12 +1,12 @@
 FactoryBot.define do
   factory :member do
-    sequence(:email)      { |n| "member#{n}#{Member::ALLOWED_EMAIL_DOMAIN}" }
-    sequence(:uid)        { |n| "uid-#{n}" }
-    sequence(:first_name) { |n| "First#{n}" }
-    sequence(:last_name)  { |n| "Last#{n}" }
-    avatar_url { "https://example.com/avatar.png" }
-    joined_at  { Date.current }
-    role
+    sequence(:email) { |n| "member#{n}@tamu.edu" }
+    first_name { "Test" }
+    sequence(:last_name) { |n| format("Member%06d", n) }
+    role { association :role }
+    joined_at { Date.current }
+    profile_completed_at { nil }
+    paid_dues { false }
 
     trait :profile_completed do
       profile_completed_at { Time.current }
@@ -14,8 +14,20 @@ FactoryBot.define do
       pt_school_application_date { Date.new(Date.current.year + 1, 6, 1) }
     end
 
+    trait :incomplete_profile do
+      profile_completed_at { nil }
+    end
+
     trait :admin do
-      association :role, :admin
+      role { association :role, :admin }
+    end
+
+    trait :manager do
+      role { association :role, :manager }
+    end
+
+    trait :paid do
+      paid_dues { true }
     end
   end
 end
