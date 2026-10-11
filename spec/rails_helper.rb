@@ -23,4 +23,12 @@ RSpec.configure do |config|
       Role.find_or_create_by!(description: description)
     end
   end
+
+  config.before(:each) do
+    semester = Semester.find_or_create_by!(name: "Test Semester") do |s|
+      s.starts_on = Date.new(2026, 1, 1)
+      s.ends_on   = Date.new(2026, 12, 31)
+    end
+    AppSetting.current.update!(current_semester: semester)
+  end
 end

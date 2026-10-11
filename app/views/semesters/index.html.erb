@@ -1,0 +1,32 @@
+<h1>Semesters</h1>
+
+<p><%= link_to "Back to members", members_path, class: "btn" %></p>
+
+<% if @semesters.empty? %>
+  <p>No semesters yet.</p>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th><th>Starts</th><th>Ends</th><th>Members</th><th>Total points</th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @semesters.each do |semester| %>
+        <tr>
+          <td>
+            <%= semester.name %>
+            <% if semester == AppSetting.current_semester %>
+              <strong>(current)</strong>
+            <% end %>
+          </td>
+          <td><%= semester.starts_on.strftime("%b %-d, %Y") %></td>
+          <td><%= semester.ends_on.strftime("%b %-d, %Y") %></td>
+          <td><%= semester.points.distinct.count(:member_id) %></td>
+          <td><%= semester.points.sum(:point_amount) %></td>
+          <td><%= link_to "View details", semester_path(semester) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

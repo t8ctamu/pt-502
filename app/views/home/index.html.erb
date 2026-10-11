@@ -127,6 +127,7 @@
     <div class="btn-group">
       <%= link_to "Member dashboard", members_path, class: "btn" %>
       <%= link_to "Create Event", new_event_path, class: "btn" %>
+      <%= link_to "Semesters", semesters_path, class: "btn" %>
       <% if current_member.manager? %>
         <%= link_to "Point settings", point_settings_path, class: "btn" %>
       <% end %>

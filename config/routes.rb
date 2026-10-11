@@ -19,6 +19,14 @@ Rails.application.routes.draw do
     member do
       patch :change_role
       patch :set_points
+      patch :remove
+      patch :restore
+    end
+  end
+
+  resources :semesters, only: [ :index, :show ] do
+    collection do
+      post :reset
     end
   end
 

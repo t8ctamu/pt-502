@@ -21,6 +21,10 @@ class Member < ApplicationRecord
     joins(:role).where("LOWER(roles.description) NOT IN (?)", admin_names)
   }
 
+  scope :active, -> {
+    where(removed_at: nil)
+  }
+
   before_validation :discard_unshared_phone_number
 
   validates :first_name, :last_name, :expected_graduation_term, presence: true, on: :profile
@@ -42,9 +46,11 @@ class Member < ApplicationRecord
     profile_completed_at.present?
   end
 
-  def total_points
-    point_entries.sum(:point_amount)
-  end
+     def current_point_entries
+          semester = AppSetting.current_semester
+          return point_entries.none if semester.nil?
+          point_entries.where(semester_id: semester.id)
+     end
 
   def anticipated_application_cycle
     "Summer #{pt_school_application_date.year}" if pt_school_application_date.present?
@@ -54,9 +60,13 @@ class Member < ApplicationRecord
     phone_number if share_phone_number?
   end
 
-  def points_by_requirement
-    @points_by_requirement ||= point_entries.group(:requirement_id).sum(:point_amount)
-  end
+     def total_points
+          current_point_entries.sum(:point_amount)
+     end
+
+     def points_by_requirement
+          @points_by_requirement ||= current_point_entries.group(:requirement_id).sum(:point_amount)
+     end
 
   def requirement_shortfalls
     Requirement.active.where("minimum_points > 0").filter_map do |req|
