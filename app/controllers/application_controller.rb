@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include Pagy::Method
+
   before_action :authenticate_member!
 
   def after_sign_in_path_for(member)

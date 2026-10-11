@@ -4,7 +4,8 @@ class MembersController < ApplicationController
   before_action :require_manager, only: :change_role
 
   def index
-    @members = Member.non_admins.includes(:role).order(:last_name, :first_name)
+    @members = Member.non_admins.active.includes(:role).order(:last_name, :first_name)
+    @removed_members = Member.non_admins.where.not(removed_at: nil).includes(:role).order(:removed_at)
     @requirements = Requirement.active.order(:id)
 
     @admins = nil
@@ -12,7 +13,7 @@ class MembersController < ApplicationController
 
     if current_member.admin?
       begin
-        @admins = Member.admins.includes(:role).order(:last_name, :first_name)
+        @admins = Member.admins.active.includes(:role).order(:last_name, :first_name)
       rescue StandardError => e
         Rails.logger.error("Admins table failed to load: #{e.message}")
         @admins_error = "Admins could not be loaded, try again later."
@@ -79,6 +80,34 @@ class MembersController < ApplicationController
       redirect_to members_path, notice: "#{member.first_name} is now #{target_role.description}."
     else
       redirect_to members_path, alert: "Could not change #{member.first_name}'s role."
+    end
+  end
+
+  def remove
+    member = Member.find(params[:id])
+
+    if member == current_member
+      return redirect_to members_path, alert: "You cannot remove yourself."
+    end
+
+    if member.manager?
+      return redirect_to members_path, alert: "You cannot remove a Manager."
+    end
+
+    if member.update(removed_at: Time.current)
+      redirect_to members_path, notice: "#{member.first_name} removed from the roster."
+    else
+      redirect_to members_path, alert: "Could not remove #{member.first_name}."
+    end
+  end
+
+  def restore
+    member = Member.find(params[:id])
+
+    if member.update(removed_at: nil)
+      redirect_to members_path, notice: "#{member.first_name} restored to the roster."
+    else
+      redirect_to members_path, alert: "Could not restore #{member.first_name}."
     end
   end
 

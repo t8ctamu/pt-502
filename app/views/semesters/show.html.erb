@@ -1,0 +1,38 @@
+<h1><%= @semester.name %></h1>
+
+<p>
+  <%= @semester.starts_on.strftime("%b %-d, %Y") %> –
+  <%= @semester.ends_on.strftime("%b %-d, %Y") %>
+  <% if @semester == AppSetting.current_semester %>
+    <strong>(current)</strong>
+  <% end %>
+</p>
+
+<p>
+  Total points awarded: <%= @semester.points.sum(:point_amount) %>
+</p>
+
+<p><%= link_to "Back to semesters", semesters_path, class: "btn" %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Member</th><th>Email</th><th>Points this semester</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= member.first_name %> <%= member.last_name %></td>
+        <td><%= member.email %></td>
+        <td><%= @totals.fetch(member.id, 0) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if @pagy.pages > 1 %>
+  <nav>
+    <%== @pagy.series_nav %>
+  </nav>
+<% end %>

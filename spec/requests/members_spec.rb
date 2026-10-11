@@ -243,4 +243,87 @@ RSpec.describe "Members", type: :request do
       end
     end
   end
+
+    describe "PATCH /members/:id/remove" do
+    let(:target) { create(:member, :profile_completed) }
+
+    context "when signed out" do
+      it "redirects to sign in" do
+        patch remove_member_path(target)
+        expect(response).to redirect_to(new_member_session_path)
+      end
+    end
+
+    context "when signed in as a regular member" do
+      before { sign_in regular_member }
+
+      it "redirects to root with an alert and does not remove the member" do
+        patch remove_member_path(target)
+        expect(response).to redirect_to(root_path)
+        expect(target.reload.removed_at).to be_nil
+      end
+    end
+
+    context "when signed in as an admin" do
+      before { sign_in admin }
+
+      it "sets removed_at and redirects with a notice" do
+        patch remove_member_path(target)
+        expect(response).to redirect_to(members_path)
+        expect(flash[:notice]).to include("#{target.first_name} removed")
+        expect(target.reload.removed_at).not_to be_nil
+      end
+
+      it "refuses to remove self" do
+        patch remove_member_path(admin)
+        expect(response).to redirect_to(members_path)
+        expect(flash[:alert]).to eq("You cannot remove yourself.")
+        expect(admin.reload.removed_at).to be_nil
+      end
+
+      it "refuses to remove a manager" do
+        manager = create(:member, :manager, :profile_completed)
+
+        patch remove_member_path(manager)
+
+        expect(response).to redirect_to(members_path)
+        expect(flash[:alert]).to eq("You cannot remove a Manager.")
+        expect(manager.reload.removed_at).to be_nil
+      end
+    end
+  end
+
+  describe "PATCH /members/:id/restore" do
+    let(:removed_member) do
+      create(:member, :profile_completed, removed_at: 2.days.ago)
+    end
+
+    context "when signed out" do
+      it "redirects to sign in" do
+        patch restore_member_path(removed_member)
+        expect(response).to redirect_to(new_member_session_path)
+      end
+    end
+
+    context "when signed in as a regular member" do
+      before { sign_in regular_member }
+
+      it "redirects to root with an alert and does not restore the member" do
+        patch restore_member_path(removed_member)
+        expect(response).to redirect_to(root_path)
+        expect(removed_member.reload.removed_at).not_to be_nil
+      end
+    end
+
+    context "when signed in as an admin" do
+      before { sign_in admin }
+
+      it "clears removed_at and redirects with a notice" do
+        patch restore_member_path(removed_member)
+        expect(response).to redirect_to(members_path)
+        expect(flash[:notice]).to include("#{removed_member.first_name} restored")
+        expect(removed_member.reload.removed_at).to be_nil
+      end
+    end
+  end
 end
