@@ -19,6 +19,80 @@ RSpec.describe Member, type: :model do
     end
   end
 
+  describe "profile details" do
+    let(:profile) do
+      build(:member, expected_graduation_term: "Spring 2027",
+                     pt_school_application_date: Date.new(2027, 6, 1))
+    end
+
+    it "accepts a graduation term and a summer application cycle" do
+      expect(profile.valid?(:profile)).to be true
+      expect(profile.anticipated_application_cycle).to eq("Summer 2027")
+    end
+
+    it "requires graduation and names when completing a profile" do
+      profile.assign_attributes(expected_graduation_term: nil, first_name: "", last_name: "")
+      expect(profile.valid?(:profile)).to be false
+      expect(profile.errors.attribute_names).to include(:expected_graduation_term, :first_name, :last_name)
+    end
+
+    it "rejects an invalid graduation term" do
+      profile.expected_graduation_term = "Winter 2027"
+      expect(profile.valid?(:profile)).to be false
+      expect(profile.errors[:expected_graduation_term]).to be_present
+    end
+
+    it "rejects a non-summer application date" do
+      profile.pt_school_application_date = Date.new(2027, 1, 1)
+      expect(profile.valid?(:profile)).to be false
+      expect(profile.errors[:pt_school_application_date].join).to include("Please choose a summer term")
+    end
+
+    it "allows an existing member to sign in before completing the new details" do
+      profile.expected_graduation_term = nil
+      profile.pt_school_application_date = Date.new(2027, 1, 1)
+      expect(profile).to be_valid
+    end
+
+    it "defaults phone sharing off" do
+      expect(profile.share_phone_number?).to be false
+      expect(profile.shared_phone_number).to be_nil
+    end
+
+    it "discards a phone number supplied without consent" do
+      profile.phone_number = "979-555-0123"
+      profile.save!(context: :profile)
+      expect(profile.reload.phone_number).to be_nil
+    end
+
+    it "accepts a formatted phone number with consent" do
+      profile.assign_attributes(share_phone_number: true, phone_number: " +1 (979) 555-0123 ")
+      profile.save!(context: :profile)
+      expect(profile.reload.shared_phone_number).to eq("+1 (979) 555-0123")
+    end
+
+    it "rejects missing, short, oversized, or nonnumeric shared phone numbers" do
+      [ nil, "123", "1" * 16, "979-555-CALL", "<script>9795550123</script>" ].each do |number|
+        profile.assign_attributes(share_phone_number: true, phone_number: number)
+        expect(profile.valid?(:profile)).to be false
+        expect(profile.errors[:phone_number]).to be_present
+      end
+    end
+
+    it "removes the saved phone number when consent is withdrawn" do
+      profile.assign_attributes(share_phone_number: true, phone_number: "979-555-0123")
+      profile.save!(context: :profile)
+      profile.update!(share_phone_number: false)
+      expect(profile.reload.phone_number).to be_nil
+      expect(profile.shared_phone_number).to be_nil
+    end
+
+    it "never exposes an unshared legacy phone number" do
+      profile.phone_number = "979-555-0123"
+      expect(profile.shared_phone_number).to be_nil
+    end
+  end
+
   describe "associations" do
     it "belongs to a role" do
       expect(Member.reflect_on_association(:role).macro).to eq(:belongs_to)
