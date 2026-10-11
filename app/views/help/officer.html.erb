@@ -1,0 +1,118 @@
+<% content_for :title, "Officer guide | PT Society" %>
+<% content_for :body_class, "help-layout" %>
+<main class="help-page">
+  <%= render "navigation" %>
+  <h1>Officer guide</h1>
+  <p>Start with the <%= link_to "member guide", member_help_path %> for signing in, your own profile, events, calendars, and check-in. This guide covers the additional club tools.</p>
+  <nav class="help-contents card" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#members">Member information, dues, and points</a></li>
+      <li><a href="#roles">Manager-only role changes</a></li>
+      <li><a href="#events">Create, edit, and delete events</a></li>
+      <li><a href="#attendance">QR codes and attendance</a></li>
+      <li><a href="#requests">Approve or deny outside events</a></li>
+      <li><a href="#requirements">Manager-only point requirements</a></li>
+      <li><a href="#troubleshooting">Troubleshooting</a></li>
+      <li><a href="#training">Train the next officer</a></li>
+    </ul>
+  </nav>
+  <section id="members">
+    <h2>Member information, dues, and points</h2>
+    <ol>
+      <li>Choose <strong>Members</strong>. Regular members and officers appear in separate tables.</li>
+      <li>Read carpool availability, graduation, and application cycle. <strong>Not shared</strong> means a phone number is unavailable; do not ask another officer to reveal it.</li>
+      <li>Choose <strong>Edit profile</strong> for a member, correct their details, and choose <strong>Save profile</strong>. Phone number and consent stay under the member’s control.</li>
+      <li>To record payment received outside the app, check <strong>Paid dues</strong>. It saves when changed. Clear it only to correct the record, then verify the saved state after refreshing.</li>
+      <li>To correct points, enter the intended <strong>absolute total for that point type</strong> in the member’s row, then leave the field to save. Entering 3 sets that type to 3; it does not add 3. Use a whole number of zero or more, then refresh to verify it.</li>
+      <li>Check the member’s total and status. Dues and every point minimum must be satisfied for the table to show Active.</li>
+    </ol>
+    <%= render "screenshot", name: "members", caption: "The member table keeps dues, per-type point controls, status, and profile links together; officers are listed separately." %>
+    <%= render "screenshot", name: "officer-profile", caption: "An officer can edit profile details without changing a member’s phone-sharing choice." %>
+  </section>
+  <section id="roles">
+    <h2>Manager-only role changes</h2>
+    <p>The app labels officer roles <strong>Admin</strong> and <strong>Manager</strong>. Both can use ordinary officer tools. Only Managers can change Member/Admin roles and point requirements.</p>
+    <ol>
+      <li>As a Manager, open Members and find the person in the correct table.</li>
+      <li>Choose <strong>Promote to Admin</strong> to grant officer tools to a Member, or <strong>Demote to Member</strong> to remove Admin tools. Confirm the prompt.</li>
+      <li>Confirm the person moves to the correct table and their role label changes.</li>
+    </ol>
+    <p>You cannot change your own role or a Manager’s role here. The buttons do not create another Manager. Follow the club’s agreed access process for those changes.</p>
+  </section>
+  <section id="events">
+    <h2>Create, edit, and delete events</h2>
+    <ol>
+      <li>Choose <strong>Create Event</strong> on Home or Events.</li>
+      <li>Fill in the name, description, date and time, and location. If you add an end time, it must be after the start.</li>
+      <li>Set both venue coordinates for check-in, or leave both blank to configure later. <strong>Use my current location</strong> fills the fields only; use it while at the actual venue, not at home.</li>
+      <li>Set a positive check-in radius in meters, a point value of zero or more, and a point type. If the type is Other, fill in the additional type detail.</li>
+      <li>Choose <strong>Save Event</strong>, then check the published details.</li>
+      <li>For a correction, open the event, choose <strong>Edit</strong>, change the fields, and save. Use <strong>Delete</strong> only when the event should be removed and confirm the prompt.</li>
+    </ol>
+    <p>Deleting an event also removes its attendance records. Discuss deleting an event with attendance already recorded before proceeding. Calendar files people already saved do not automatically update.</p>
+    <%= render "screenshot", name: "event-form", caption: "The event form includes venue coordinates, radius, point value, and point type." %>
+    <%= render "screenshot", name: "event-check-in", caption: "The lower part of the form sets the allowed distance, attendance points, and point type before Save Event." %>
+  </section>
+  <section id="attendance">
+    <h2>QR codes and attendance</h2>
+    <ol>
+      <li>Open the event and check the venue coordinates and allowed radius.</li>
+      <li>Choose <strong>Show check-in QR code</strong>. Display that page at the meeting; members can scan the code or use its check-in link.</li>
+      <li>Ask members to allow location access and look for their marked-present confirmation. Opening the link alone does not record attendance.</li>
+      <li>Return to the event and choose <strong>Refresh attendance</strong> to see names and check-in times.</li>
+    </ol>
+    <p>The app checks distance and awards each member once per event. There is no manual attendance toggle on this page. For an exceptional missing award, verify attendance and correct the member’s point-type total if club policy permits.</p>
+    <%= render "screenshot", name: "qr", caption: "Display the event-specific QR code or share the check-in link at the venue." %>
+    <%= render "screenshot", name: "attendance", caption: "The officer event page lists marked-present members and their check-in times." %>
+  </section>
+  <section id="requests">
+    <h2>Approve or deny outside events</h2>
+    <ol>
+      <li>Choose <strong>Point Requests</strong>. The approval queue shows pending requests with the member, event, date, type, and written proof.</li>
+      <li>Check the details against the club’s point policy. In the approval field, enter a positive whole number and choose <strong>Approve</strong>.</li>
+      <li>To deny instead, enter a reason in <strong>Reason (required)</strong> and choose <strong>Deny</strong>.</li>
+      <li>Look for the decision’s confirmation. A reviewed request leaves the pending queue; the member sees the decision on Home.</li>
+    </ol>
+    <p>Approval adds points to the selected type. Denial adds none and shows your reason to the member. The current queue lists pending work; it has no status filter or reviewed-request history screen. If another officer already decided, refresh rather than repeat the award through the member table.</p>
+    <%= render "screenshot", name: "requests", caption: "Each pending request has separate approval points and required denial-reason controls." %>
+  </section>
+  <section id="requirements">
+    <h2>Manager-only point requirements</h2>
+    <ol>
+      <li>As a Manager, choose <strong>Point requirements</strong>.</li>
+      <li>Enter the total required points and each type’s minimum, using whole numbers of zero or more. Zero means that minimum is not required.</li>
+      <li>Choose <strong>Save requirements</strong>. Members’ status is calculated using the new requirements.</li>
+      <li>To add a type, fill in its unique name and minimum in <strong>Add a point type</strong>, then choose <strong>Add point type</strong>.</li>
+      <li>Delete an unused, non-core type with its <strong>Delete</strong> button and confirm. Service, Professionalism, and Other are core types and cannot be deleted here. A type used by events or points cannot be deleted.</li>
+    </ol>
+    <p>Confirm a semester-policy change with the club before saving. Changing a minimum does not change points already earned.</p>
+    <%= render "screenshot", name: "requirements", caption: "Managers set the overall minimum, individual type minimums, and additional point types." %>
+  </section>
+  <section id="troubleshooting">
+    <h2>Troubleshooting</h2>
+    <dl class="help-fixes">
+      <dt>A role or settings control is missing</dt><dd>Check the role badge. Admins cannot use Manager-only controls. A regular Member cannot use officer tools. Ask an existing Manager to verify access; do not borrow another person’s sign-in.</dd>
+      <dt>A profile edit fails</dt><dd>Correct the highlighted required fields and choose a summer cycle. Previous saved details remain unchanged after an invalid save. Ask the member to correct their own shared phone if it is invalid; officers cannot edit it.</dd>
+      <dt>Points or dues do not save</dt><dd>Refresh and check the current value before retrying. Set points to the desired type total, not an amount to add. Use a nonnegative whole number in a currently available point type’s field, then leave the field to save.</dd>
+      <dt>An event does not save</dt><dd>Read the errors above the form. Fill required fields, provide both coordinates or neither, use a positive radius, and check the end time. Other requires its extra description. A location button failure leaves manual coordinate entry available.</dd>
+      <dt>Attendance cannot load or nobody can check in</dt><dd>Choose Refresh attendance or Try again. Verify the meeting’s coordinates at the venue and its radius. Ask members to allow location and use the secure club URL. Do not create another event just to retry.</dd>
+      <dt>There are no pending requests</dt><dd>This can mean all requests have been reviewed. Ask the member to check the status on Home. If the queue reports a load error, try again before assuming it is empty.</dd>
+      <dt>An approval or denial fails</dt><dd>Refresh the queue. A failed saved decision stays pending and adds no points. A successful decision disappears. Retry only if still pending; if already reviewed, do not separately add those points again. Denial needs a reason and approval needs a positive whole-number award.</dd>
+      <dt>Point settings fail</dt><dd>Correct the highlighted nonnegative whole numbers. Failed validation saves none of the changes. Use a unique name for a new type. Core or in-use types cannot be removed.</dd>
+    </dl>
+  </section>
+  <section id="training" class="card">
+    <h2>Train the next officer</h2>
+    <p>Allow about 20 minutes. Practice edits and awards with designated training accounts and events, not real member records.</p>
+    <ol>
+      <li>Have the learner locate a member, explain the two tables, and identify phone consent and carpool availability.</li>
+      <li>Practice a profile correction, dues change, and setting a point-type total. Refresh and verify each saved result.</li>
+      <li>Create a training event, configure check-in, show its QR code, and locate attendance.</li>
+      <li>Review a training outside-event request. Explain why approval, denial, and retry behave differently.</li>
+      <li>For a Manager, demonstrate role changes and explain total versus per-type requirements before editing them.</li>
+      <li>Have the learner find the fix for an unavailable approval queue and explain how to avoid awarding twice.</li>
+    </ol>
+  </section>
+  <p class="help-review">Checked October 10, 2026. Follow the club’s point and access policy when using these tools.</p>
+</main>
