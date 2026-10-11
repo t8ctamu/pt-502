@@ -18,7 +18,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="<%= content_for(:body_class) %>">
     <% if member_signed_in? %>
       <nav>
         <div class="nav-left">
@@ -38,6 +38,7 @@
             <%= link_to "Point Requests", submission_reviews_path %>
           <% end %>
           <%= link_to "Events", events_path %>
+          <%= link_to "Help", help_path %>
           
           <% if current_member&.manager? %>
             <%= link_to "Point requirements", point_settings_path %>
