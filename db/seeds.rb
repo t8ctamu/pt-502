@@ -31,7 +31,7 @@ owner.profile_completed_at ||= Time.current
 owner.save!
 
 admin2  = Member.find_or_initialize_by(email: "balarson@tamu.edu")
-admin2.role = admin_role
+admin2.role = manager_role unless admin2.manager?
 admin2.first_name           ||= "Brendan"
 admin2.last_name            ||= "Larson"
 admin2.joined_at            ||= Date.current
