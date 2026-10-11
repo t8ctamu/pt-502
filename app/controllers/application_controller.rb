@@ -15,6 +15,13 @@ class ApplicationController < ActionController::Base
                                    :share_phone_number, :phone_number)
   end
 
+  def save_member_profile(member, context: :profile)
+    member.save(context: context)
+  rescue ActiveRecord::StatementInvalid, ActiveRecord::RecordNotSaved
+    member.errors.add(:base, "Your profile could not be saved. Please try again.")
+    false
+  end
+
   def require_completed_profile
     return if current_member.profile_completed?
     redirect_to edit_profile_path, alert: "Please finish your profile first."

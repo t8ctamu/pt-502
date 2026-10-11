@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get "members/sign_out", to: "members/sessions#destroy", as: :destroy_member_session
   end
 
-  resources :members, only: [ :index, :update ]
+  resources :members, only: [ :index, :edit, :update ]
   resource  :profile, only: [ :edit, :update ]
 
   resources :events do

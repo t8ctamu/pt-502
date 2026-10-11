@@ -6,7 +6,8 @@
     <tr>
       <th>ID</th><th>Role</th><th>First name</th><th>Last name</th><th>Email</th>
       <th>Joined</th><th>Car pool</th><th>Points</th>
-      <th>Plans to apply to PT school</th><th>Paid dues</th>
+      <th>Expected graduation</th><th>Anticipated application cycle</th>
+      <th>Shared phone number</th><th>Paid dues</th><th>Profile</th>
     </tr>
   </thead>
   <tbody>
@@ -20,12 +21,15 @@
         <td><%= m.joined_at %></td>
         <td><%= m.car_pool_status ? "Yes" : "No" %></td>
         <td><%= m.points %></td>
-        <td><%= m.pt_school_application_date&.strftime("%b %Y") %></td>
+        <td><%= m.expected_graduation_term.presence || "Not provided" %></td>
+        <td><%= m.anticipated_application_cycle || "Not provided" %></td>
+        <td><%= m.shared_phone_number || "Not shared" %></td>
         <td>
           <%= form_with model: m, url: member_path(m), method: :patch do |f| %>
             <%= f.check_box :paid_dues, onchange: "this.form.requestSubmit()" %>
           <% end %>
         </td>
+        <td><%= link_to "Edit profile", edit_member_path(m), aria: { label: "Edit profile for #{m.first_name} #{m.last_name}" } %></td>
       </tr>
     <% end %>
   </tbody>

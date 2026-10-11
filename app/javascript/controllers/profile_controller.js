@@ -9,6 +9,8 @@ export default class extends Controller {
   }
 
   togglePhone() {
+    if (!this.hasConsentTarget) return
+
     const sharing = this.consentTarget.checked
     this.phoneFieldsTarget.hidden = !sharing
     this.phoneInputTarget.disabled = !sharing

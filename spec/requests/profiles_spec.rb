@@ -9,6 +9,14 @@ RSpec.describe "Profiles", type: :request do
     it "returns a successful response" do
       get edit_profile_path
       expect(response).to have_http_status(:success)
+      expect(response.body).to include("Expected graduation", "Anticipated application cycle", "Summer 2027")
+      expect(response.body).not_to include('type="date"')
+    end
+
+    it "requires sign in" do
+      sign_out member
+      get edit_profile_path
+      expect(response).to redirect_to(new_member_session_path)
     end
   end
 
@@ -23,6 +31,13 @@ RSpec.describe "Profiles", type: :request do
           car_pool_status: "1"
         }
       }
+    end
+
+    it "requires sign in before saving details" do
+      sign_out member
+      patch profile_path, params: valid_params
+      expect(response).to redirect_to(new_member_session_path)
+      expect(member.reload).not_to be_profile_completed
     end
 
     it "saves a valid profile, marks it complete, and redirects to root" do
@@ -70,10 +85,20 @@ RSpec.describe "Profiles", type: :request do
       expect(member.car_pool_status?).to be false
     end
 
+    it "shows a retry message without losing saved information when the database save fails" do
+      original = member.attributes
+      allow_any_instance_of(Member).to receive(:save).and_raise(ActiveRecord::StatementInvalid, "save unavailable")
+      patch profile_path, params: valid_params
+      expect(response).to have_http_status(:unprocessable_content)
+      expect(response.body).to include("Your profile could not be saved. Please try again.", 'value="Taylor"')
+      expect(member.reload.attributes).to eq(original)
+    end
+
     it "rejects a forged non-summer date without completing the profile" do
       patch profile_path, params: valid_params.deep_merge(member: { pt_school_application_date: "2027-01-01" })
       expect(response).to have_http_status(:unprocessable_content)
       expect(response.body).to include("Please choose a summer term")
+      expect(response.body).to include("Finish your profile")
       expect(member.reload).not_to be_profile_completed
     end
 

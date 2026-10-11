@@ -4,7 +4,13 @@
       <h2 id="profile-errors-title">Please correct your profile</h2>
       <ul>
         <% member.errors.each do |error| %>
-          <li><%= link_to error.full_message, "#member_#{error.attribute}" %></li>
+          <li>
+            <% if error.attribute == :base %>
+              <%= error.full_message %>
+            <% else %>
+              <%= link_to error.full_message, "#member_#{error.attribute}" %>
+            <% end %>
+          </li>
         <% end %>
       </ul>
     </div>
@@ -39,18 +45,20 @@
     <%= f.check_box :car_pool_status %>
     <%= f.label :car_pool_status, "I am available to carpool for field trips" %>
   </div>
-  <div>
-    <%= f.check_box :share_phone_number, data: { profile_target: "consent", action: "profile#togglePhone" }, aria: { describedby: "phone-sharing-hint" } %>
-    <%= f.label :share_phone_number, "Share my phone number with officers (optional)" %>
-    <p id="phone-sharing-hint">Your phone number is shared only when you opt in. Turning this off removes your saved number.</p>
-  </div>
-  <div data-profile-target="phoneFields">
-    <%= f.label :phone_number, "Phone number" %>
-    <%= f.telephone_field :phone_number, **profile_field_options(member, :phone_number, hint: "phone-number-hint"),
-                          autocomplete: "tel", maxlength: 40, data: { profile_target: "phoneInput" } %>
-    <p id="phone-number-hint">Required only if you share it. Include 10 to 15 digits, for example (979) 555-0123.</p>
-    <%= render "profiles/field_error", member: member, field: :phone_number %>
-  </div>
+  <% if local_assigns.fetch(:phone_controls, true) %>
+    <div>
+      <%= f.check_box :share_phone_number, data: { profile_target: "consent", action: "profile#togglePhone" }, aria: { describedby: "phone-sharing-hint" } %>
+      <%= f.label :share_phone_number, "Share my phone number with officers (optional)" %>
+      <p id="phone-sharing-hint">Your phone number is shared only when you opt in. Turning this off removes your saved number.</p>
+    </div>
+    <div data-profile-target="phoneFields">
+      <%= f.label :phone_number, "Phone number" %>
+      <%= f.telephone_field :phone_number, **profile_field_options(member, :phone_number, hint: "phone-number-hint"),
+                            autocomplete: "tel", maxlength: 40, data: { profile_target: "phoneInput" } %>
+      <p id="phone-number-hint">Required only if you share it. Include 10 to 15 digits, for example (979) 555-0123.</p>
+      <%= render "profiles/field_error", member: member, field: :phone_number %>
+    </div>
+  <% end %>
 
   <%= f.submit "Save profile" %>
 <% end %>
