@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
+  get "help", to: "help#index"
+  get "help/member", to: "help#member", as: :member_help
+  get "help/officer", to: "help#officer", as: :officer_help
+  get "help/system", to: "help#system", as: :system_help
+
   get "home/index"
   root "home#index"
 
@@ -10,7 +15,7 @@ Rails.application.routes.draw do
     get "members/sign_out", to: "members/sessions#destroy", as: :destroy_member_session
   end
 
-  resources :members, only: [ :index, :update ] do
+  resources :members, only: [ :index, :edit, :update ] do
     member do
       patch :change_role
       patch :set_points

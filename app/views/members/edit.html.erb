@@ -1,0 +1,9 @@
+<div class="form-page">
+  <div class="card">
+    <h1>Edit profile for <%= @member.first_name %> <%= @member.last_name %></h1>
+    <p>Members manage their own phone number and sharing consent through “Edit my profile.”</p>
+    <p>Shared phone number: <%= @member.shared_phone_number || "Not shared" %></p>
+    <%= render "profiles/form", member: @member, url: member_path(@member), phone_controls: false %>
+    <p><%= link_to "Back to members", members_path %></p>
+  </div>
+</div>

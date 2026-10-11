@@ -47,8 +47,16 @@
         </div>
       <% end %>
       <div class="stat">
-        <span class="stat-label">PT school application</span>
-        <span class="stat-value"><%= current_member.pt_school_application_date&.strftime("%b %Y") || "Not set" %></span>
+        <span class="stat-label">Anticipated application cycle</span>
+        <span class="stat-value"><%= current_member.anticipated_application_cycle || "Not provided" %></span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Expected graduation</span>
+        <span class="stat-value"><%= current_member.expected_graduation_term.presence || "Not provided" %></span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Phone sharing</span>
+        <span class="stat-value"><%= current_member.shared_phone_number || "Not shared" %></span>
       </div>
     </div>
 
@@ -100,6 +108,19 @@
 <% end %>
 
 <% if current_member.admin? %>
+  <div class="card">
+    <h2>My profile</h2>
+    <dl>
+      <dt>Expected graduation</dt>
+      <dd><%= current_member.expected_graduation_term.presence || "Not provided" %></dd>
+      <dt>Anticipated application cycle</dt>
+      <dd><%= current_member.anticipated_application_cycle || "Not provided" %></dd>
+      <dt>Available to carpool for field trips</dt>
+      <dd><%= current_member.car_pool_status? ? "Yes" : "No" %></dd>
+      <dt>Phone sharing</dt>
+      <dd><%= current_member.shared_phone_number || "Not shared" %></dd>
+    </dl>
+  </div>
   <div class="card">
     <h2>Officer tools</h2>
     <p class="card-subtitle">Manage members, dues, and point requirements from one place.</p>
