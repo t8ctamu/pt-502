@@ -56,7 +56,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_11_000001) do
     t.index ["requirement_id"], name: "index_event_submissions_on_requirement_id"
     t.index ["reviewed_by_id"], name: "index_event_submissions_on_reviewed_by_id"
     t.index ["status"], name: "index_event_submissions_on_status"
-    t.check_constraint "status::text = ANY (ARRAY['pending'::character varying::text, 'approved'::character varying::text, 'denied'::character varying::text])", name: "event_submissions_status_valid"
+    t.check_constraint "status::text = ANY (ARRAY['pending'::character varying, 'approved'::character varying, 'denied'::character varying]::text[])", name: "event_submissions_status_valid"
   end
 
   create_table "events", force: :cascade do |t|
