@@ -8,7 +8,8 @@
         <th><%= r.name %></th>
       <% end %>
       <th>Total</th>
-      <th>Plans to apply to PT school</th><th>Paid dues</th><th>Status</th>
+      <th>Expected graduation</th><th>Anticipated application cycle</th>
+      <th>Shared phone number</th><th>Paid dues</th><th>Status</th><th>Profile</th>
       <% if current_member.manager? %>
         <th>Change Role</th>
       <% end %>
@@ -35,7 +36,9 @@
           </td>
         <% end %>
         <td><%= m.total_points %></td>
-        <td><%= m.pt_school_application_date&.strftime("%b %Y") %></td>
+        <td><%= m.expected_graduation_term.presence || "Not provided" %></td>
+        <td><%= m.anticipated_application_cycle || "Not provided" %></td>
+        <td><%= m.shared_phone_number || "Not shared" %></td>
         <td>
           <%= form_with model: m, url: member_path(m), method: :patch do |f| %>
             <%= f.check_box :paid_dues, onchange: "this.form.requestSubmit()" %>
@@ -51,6 +54,7 @@
             <% end %>
           <% end %>
         </td>
+        <td><%= link_to "Edit profile", edit_member_path(m), aria: { label: "Edit profile for #{m.first_name} #{m.last_name}" } %></td>
         <% if current_member.manager? %>
           <td>
             <% if m == current_member || m.manager? %>
@@ -84,7 +88,7 @@
         <tr>
           <th>ID</th><th>Role</th><th>First name</th><th>Last name</th><th>Email</th>
           <th>Joined</th><th>Car pool</th>
-          <th>Plans to apply to PT school</th><th>Phone</th>
+          <th>Expected graduation</th><th>Anticipated application cycle</th><th>Shared phone number</th><th>Profile</th>
           <% if current_member.manager? %>
             <th>Change Role</th>
           <% end %>
@@ -100,8 +104,10 @@
             <td><%= a.email %></td>
             <td><%= a.joined_at %></td>
             <td><%= a.car_pool_status ? "Yes" : "No" %></td>
-            <td><%= a.pt_school_application_date&.strftime("%b %Y") %></td>
-            <td><%= a.phone_visible? ? a.phone_number.presence || "—" : "—" %></td>
+            <td><%= a.expected_graduation_term.presence || "Not provided" %></td>
+            <td><%= a.anticipated_application_cycle || "Not provided" %></td>
+            <td><%= a.shared_phone_number || "Not shared" %></td>
+            <td><%= link_to "Edit profile", edit_member_path(a), aria: { label: "Edit profile for #{a.first_name} #{a.last_name}" } %></td>
             <% if current_member.manager? %>
               <td>
                 <% if a == current_member || a.manager? %>

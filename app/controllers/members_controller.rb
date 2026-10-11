@@ -21,13 +21,24 @@ class MembersController < ApplicationController
   end
 
   def update
-    member = Member.find(params[:id])
+    @member = Member.find(params[:id])
+    attributes = member_params
+    editing_profile = attributes.except(:paid_dues).present?
+    @member.assign_attributes(attributes)
+    @member.profile_completed_at ||= Time.current if editing_profile
 
-    if member.update(member_params)
-      redirect_to members_path, notice: "#{member.first_name}'s dues updated."
+    if save_member_profile(@member, context: editing_profile ? :profile : nil)
+      detail = editing_profile ? "profile" : "dues"
+      redirect_to members_path, notice: "#{@member.first_name}'s #{detail} updated."
+    elsif editing_profile
+      render :edit, status: :unprocessable_entity
     else
-      redirect_to members_path, alert: "Could not update #{member.first_name}."
+      redirect_to members_path, alert: "Could not update #{@member.first_name}."
     end
+  end
+
+  def edit
+    @member = Member.find(params[:id])
   end
 
   def set_points
@@ -84,7 +95,9 @@ class MembersController < ApplicationController
 
   private
 
+  # Members control their own phone number and sharing consent.
   def member_params
-    params.require(:member).permit(:paid_dues)
+    member_profile_params.except(:phone_number, :share_phone_number, :phone_visible)
+                         .merge(params.require(:member).permit(:paid_dues))
   end
 end
