@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
-  get "help", to: "help#index"
-  get "help/member", to: "help#member", as: :member_help
-  get "help/officer", to: "help#officer", as: :officer_help
-  get "help/system", to: "help#system", as: :system_help
-
   get "home/index"
   root "home#index"
 
