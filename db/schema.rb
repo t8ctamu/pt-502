@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_11_000001) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_12_002745) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -64,6 +64,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_11_000001) do
     t.datetime "created_at", null: false
     t.text "description"
     t.datetime "ends_at"
+    t.string "external_reference"
     t.decimal "latitude", precision: 10, scale: 6
     t.string "location"
     t.decimal "longitude", precision: 10, scale: 6
@@ -73,6 +74,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_11_000001) do
     t.bigint "requirement_id"
     t.datetime "starts_at"
     t.datetime "updated_at", null: false
+    t.index ["external_reference"], name: "index_events_on_external_reference", unique: true
     t.index ["requirement_id"], name: "index_events_on_requirement_id"
     t.check_constraint "check_in_radius_meters > 0", name: "events_positive_radius"
     t.check_constraint "point_value >= 0", name: "events_nonnegative_points"

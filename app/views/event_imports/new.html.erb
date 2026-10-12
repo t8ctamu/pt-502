@@ -1,0 +1,13 @@
+<h1>Import Events from GetInvolved</h1>
+
+<p>
+  Upload a <code>.csv</code> or <code>.xlsx</code> file exported from GetInvolved.
+  Only events with status <strong>Approved</strong> will be imported.
+</p>
+
+<%= form_with url: event_imports_path, method: :post, multipart: true do |f| %>
+  <%= f.file_field :file, accept: ".csv,.xlsx,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" %>
+  <%= f.submit "Upload and preview" %>
+<% end %>
+
+<%= link_to "Back to events", events_path %>

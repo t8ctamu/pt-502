@@ -49,6 +49,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :event_imports, only: [ :new, :create ], param: :token do
+    get  :preview, on: :member
+    post :confirm, on: :member
+  end
+
   resources :event_submissions, only: %i[new create]
 
   resources :submission_reviews, only: :index do

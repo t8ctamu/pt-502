@@ -1,0 +1,101 @@
+<h1>Preview Event Import</h1>
+
+<%
+  new_count = @preview_rows.count { |r| r.status == :new }
+  update_count = @preview_rows.count { |r| r.status == :update }
+  skip_count = @preview_rows.count { |r| r.status == :skip }
+  error_count = @preview_rows.count { |r| r.status == :error }
+%>
+
+<p>
+  <strong><%= new_count %></strong> will be imported (new).
+  <strong><%= update_count %></strong> will update existing events.
+  <strong><%= skip_count %></strong> will be skipped (not approved in GetInvolved).
+  <% if error_count.positive? %>
+    <strong><%= error_count %></strong> have issues and will not import.
+  <% end %>
+</p>
+
+<p>
+  Only events with status <strong>Approved</strong> in GetInvolved are imported.
+  Events with status <em>Initiated</em> or <em>Submitted</em> are skipped.
+  Approve them in GetInvolved first, then re-import.
+</p>
+
+<p>
+  <strong>Assign a point type for each event before confirming.</strong>
+  Leave <em>No type</em> for events that don't award points.
+</p>
+
+<%= form_with url: confirm_event_import_path(params[:token]), method: :post do |f| %>
+  <table>
+    <thead>
+      <tr>
+        <th>Row</th><th>Status</th><th>Title</th><th>Starts</th><th>Location</th>
+        <th>Point type</th><th>Other type</th><th>Points</th>
+        <th>Issues</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @preview_rows.each do |row| %>
+        <tr class="row--<%= row.status %>">
+          <td><%= row.index %></td>
+          <td>
+            <%= {
+              new: "New",
+              update: "Will update existing",
+              skip: "Skipped",
+              error: "Has issues"
+            }.fetch(row.status, row.status.to_s) %>
+          </td>
+          <td><%= row.attributes[:name] %></td>
+          <td><%= row.attributes[:starts_at]&.strftime("%b %-d, %Y %-l:%M %p") %></td>
+          <td><%= row.attributes[:location] %></td>
+          <% if row.status == :new || row.status == :update %>
+            <td>
+              <%= select_tag "assignments[#{row.index}][requirement_id]",
+                    options_for_select(
+                      [ [ "No type", "" ] ] +
+                      @requirements.map { |r| [ r.name, r.id ] },
+                      ""
+                    ),
+                    data: { other_id: @other_requirement_id } %>
+            </td>
+            <td>
+              <%= text_field_tag "assignments[#{row.index}][other_type]", "",
+                    placeholder: "e.g. Social", style: "display: none;" %>
+            </td>
+            <td>
+              <%= number_field_tag "assignments[#{row.index}][point_value]", 1, min: 0, step: 1,
+                    style: "width: 4em;" %>
+            </td>
+          <% else %>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+          <% end %>
+          <td><%= row.errors.join(", ") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= f.submit "Confirm import" %>
+<% end %>
+
+<p><%= link_to "Cancel", new_event_import_path %></p>
+
+<script>
+  (function () {
+    document.querySelectorAll('[name^="assignments["][name$="[requirement_id]"]').forEach(function (select) {
+      var row = select.closest("tr");
+      var otherInput = row.querySelector('[name$="[other_type]"]');
+      var otherId = select.dataset.otherId;
+      function toggle() {
+        otherInput.style.display = (select.value === otherId) ? "" : "none";
+      }
+      select.addEventListener("change", toggle);
+      toggle();
+    });
+  })();
+</script>

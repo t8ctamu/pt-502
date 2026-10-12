@@ -15,5 +15,9 @@ FactoryBot.define do
     trait :check_in_ready do
       check_in_radius_meters { 100 }
     end
+
+    trait :with_reference do
+      sequence(:external_reference) { |n| "EVN-TEST-#{n}" }
+    end
   end
 end
