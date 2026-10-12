@@ -579,3 +579,52 @@ textarea { resize: vertical; }
   border-radius: 6px; padding: 0.3rem 0.7rem; cursor: pointer;
 }
 .btn-danger:hover { background: #b42318; color: #fff; }
+
+/* Members table: compact so all columns fit */
+.members-table {
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.members-table th,
+.members-table td {
+  padding: 0.4rem 0.4rem;
+  vertical-align: middle;
+}
+
+/* points inputs */
+.members-table input[type="number"] {
+  width: 3.2em;
+  max-width: none;
+  padding: 0.25rem;
+}
+
+/* Promote/Demote/Remove buttons */
+.members-table button,
+.members-table input[type="submit"] {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+.members-table form { margin: 0; }
+.members-table form div { margin-bottom: 0; }
+
+/* status text under the badge: smaller and capped so it doesn't stretch the column */
+.members-table .status-badge {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.55rem;
+  white-space: nowrap;
+}
+.members-table .status-missing {
+  display: block;
+  max-width: 12rem;
+  font-size: 0.7rem;
+  line-height: 1.25;
+  margin-top: 0.25rem;
+}
+
+/* let long emails wrap instead of forcing width */
+.members-table td:nth-child(5) {
+  word-break: break-all;
+  min-width: 8rem;
+}
