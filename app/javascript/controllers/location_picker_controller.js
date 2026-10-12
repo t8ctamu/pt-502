@@ -23,6 +23,7 @@ export default class extends Controller {
   connect() {
     this.autoNamed = false
     this.timer = null
+    this.restorePending()
     this.initMap()
   }
 
@@ -32,6 +33,35 @@ export default class extends Controller {
     this.searchAbort?.abort()
     this.reverseAbort?.abort()
     this.destroyMap()
+  }
+
+  // ---- reload (map fails to load on first Turbo visit) -------------------
+
+  get pendingKey() { return `pendingLocation:${window.location.pathname}` }
+
+  maybeReload() {
+    if (this.map || this.reloaded) return   // map is fine, or we already reloaded once
+    sessionStorage.setItem(this.pendingKey, JSON.stringify({
+      lat: this.latitudeTarget.value,
+      lng: this.longitudeTarget.value,
+      name: this.nameTarget.value,
+      autoNamed: this.autoNamed
+    }))
+    window.location.reload()
+  }
+
+  restorePending() {
+    const raw = sessionStorage.getItem(this.pendingKey)
+    if (!raw) return
+    sessionStorage.removeItem(this.pendingKey)
+    this.reloaded = true
+    try {
+      const saved = JSON.parse(raw)
+      this.latitudeTarget.value = saved.lat
+      this.longitudeTarget.value = saved.lng
+      this.nameTarget.value = saved.name
+      this.autoNamed = saved.autoNamed
+    } catch (_) { /* ignore bad data */ }
   }
 
   // ---- map ---------------------------------------------------------------
@@ -162,6 +192,7 @@ export default class extends Controller {
       this.nameTarget.value = label
       this.autoNamed = true
       this.setStatus("Location selected. Drag the pin to fine-tune it.")
+      this.maybeReload()
     } else if (reverse && (this.nameTarget.value.trim() === "" || this.autoNamed)) {
       this.reverseLookup(lat, lng)
     } else {
@@ -275,9 +306,11 @@ export default class extends Controller {
       } else {
         this.setStatus("Pin placed, but no address was found. Type a name for this spot below.", { error: true })
       }
+      this.maybeReload()
     } catch (error) {
       if (error.name === "AbortError") return
       this.setStatus("Pin placed, but the address lookup failed. Type a name for this spot below.", { error: true })
+      this.maybeReload()
     }
   }
 
