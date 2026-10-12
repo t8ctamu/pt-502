@@ -54,7 +54,7 @@ group :development do
 end
 
 group :test do
-  gem "simplecov", "~> 1.2", require: false
+  gem "simplecov", "~> 1.3", require: false
   gem "capybara"
 end
 
