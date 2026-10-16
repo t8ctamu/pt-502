@@ -66,7 +66,7 @@ gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection"
 gem "dotenv-rails", "~> 3.2", groups: [ :development, :test ]
 
-gem "json", "< 3"
+gem "json", "< 4"
 gem "rqrcode", "~> 3.2"
 
 gem "pagy"
