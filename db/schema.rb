@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_12_002745) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_22_044103) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -60,6 +60,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_12_002745) do
   end
 
   create_table "events", force: :cascade do |t|
+    t.integer "check_in_radius_feet", default: 250, null: false
     t.integer "check_in_radius_meters", default: 100, null: false
     t.datetime "created_at", null: false
     t.text "description"
@@ -76,6 +77,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_12_002745) do
     t.datetime "updated_at", null: false
     t.index ["external_reference"], name: "index_events_on_external_reference", unique: true
     t.index ["requirement_id"], name: "index_events_on_requirement_id"
+    t.check_constraint "check_in_radius_feet >= 100 AND check_in_radius_feet <= 1000", name: "events_check_in_radius_feet_range"
     t.check_constraint "check_in_radius_meters > 0", name: "events_positive_radius"
     t.check_constraint "point_value >= 0", name: "events_nonnegative_points"
   end
