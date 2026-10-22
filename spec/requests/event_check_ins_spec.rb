@@ -102,6 +102,37 @@ RSpec.describe "Event check-in", type: :request do
     expect(Point.count).to eq(0)
   end
 
+  it "uses the event's proximity in feet for the nearby check" do
+    sign_in member
+    event.update!(check_in_radius_feet: 250) # 250 ft = 76.2 m
+
+    # ~200 ft (61 m) north of the event: inside a 250 ft radius.
+    post event_check_in_path(event), params: { latitude: 30.6 + 0.00055, longitude: -96.3 }
+    expect(Attendance.where(member: member, event: event).count).to eq(1)
+
+    # A second member ~400 ft (122 m) north is outside the same radius.
+    far_member = create(:member, :profile_completed)
+    sign_in far_member
+    post event_check_in_path(event), params: { latitude: 30.6 + 0.00110, longitude: -96.3 }
+    expect(response).to have_http_status(:unprocessable_content)
+    expect(response.body).to include("not nearby")
+    expect(Attendance.where(member: far_member, event: event).count).to eq(0)
+  end
+
+  it "does not change another event's check-in radius" do
+    nearby_event = create(:event, check_in_radius_feet: 500, latitude: 30.6, longitude: -96.3,
+                                   requirement: nil, point_value: 0)
+    sign_in member
+
+    # ~400 ft (122 m) away: too far for the 328 ft default event, close enough for 500 ft.
+    post event_check_in_path(nearby_event), params: { latitude: 30.6 + 0.00110, longitude: -96.3 }
+    expect(Attendance.where(member: member, event: nearby_event).count).to eq(1)
+
+    post event_check_in_path(event), params: { latitude: 30.6 + 0.00110, longitude: -96.3 }
+    expect(response).to have_http_status(:unprocessable_content)
+    expect(Attendance.where(member: member, event: event).count).to eq(0)
+  end
+
   it "explains when officers have not configured check-in" do
     sign_in member
     event.update_columns(latitude: nil, longitude: nil) # legacy row: validation would now block this
