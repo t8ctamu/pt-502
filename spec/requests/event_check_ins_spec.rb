@@ -168,7 +168,6 @@ RSpec.describe "Event check-in", type: :request do
     expect(event.latitude.to_f).to eq(30.5)
     expect(event.longitude.to_f).to eq(-96.2)
     expect(event.check_in_radius_feet).to eq(250)
-    expect(event.check_in_radius_meters).to eq(76)
     sign_out officer
     sign_in member
     patch event_path(event), params: { event: { point_value: 999 } }

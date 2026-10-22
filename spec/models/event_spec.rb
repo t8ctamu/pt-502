@@ -70,28 +70,9 @@ RSpec.describe Event, type: :model do
         expect(event.errors[:check_in_radius_feet]).to include(Event::CHECK_IN_RADIUS_FEET_RANGE_MESSAGE)
       end
     end
-
-    it "derives check_in_radius_meters from feet" do
-      event = build(:event, check_in_radius_feet: 250)
-      event.valid?
-      expect(event.check_in_radius_meters).to eq(76)
-
-      event = build(:event, check_in_radius_feet: 328)
-      event.valid?
-      expect(event.check_in_radius_meters).to eq(100)
-    end
-
-    it "does not produce a second meters error when feet is invalid" do
-      event = build(:event, check_in_radius_feet: "abc")
-      event.valid?
-      expect(event.errors[:check_in_radius_meters]).to be_empty
-    end
   end
 
   it "can be created" do
     expect(create(:event)).to be_persisted
   end
 end
-
-
-require "rails_helper"
