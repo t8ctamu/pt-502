@@ -25,8 +25,8 @@
       <th>Shared phone number</th><th>Paid dues</th><th>Status</th><th>Profile</th>
       <% if current_member.manager? %>
         <th>Change Role</th>
+        <th>Actions</th>
       <% end %>
-      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -69,34 +69,32 @@
           <% end %>
         </td>
         <td><%= link_to "Edit profile", edit_member_path(m), aria: { label: "Edit profile for #{m.first_name} #{m.last_name}" } %></td>
-        <% if current_member.manager? %>
-          <td>
-            <% if m == current_member || m.manager? %>
-              <%= m.role.description %>
-            <% elsif m.admin? %>
-              <%= button_to "Demote to Member", change_role_member_path(m),
-                    method: :patch, params: { role: "Member" },
-                    form: { data: { turbo_confirm: "Demote this admin to Member?" } } %>
-            <% else %>
-              <%= button_to "Promote to Admin", change_role_member_path(m),
-                    method: :patch, params: { role: "Admin" },
-                    form: { data: { turbo_confirm: "Promote this member to Admin?" } } %>
-            <% end %>
-          </td>
-        <% end %>
-         <td>
-           <% if m == current_member || m.manager? %>
-             <span class="muted">-</span>
-           <% else %>
-             <%= button_to "Remove", remove_member_path(m),
-                   method: :patch,
-                   form: { data: { turbo_confirm: "Remove #{m.first_name} from the roster?" } } %>
-           <% end %>
-         </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <% if current_member.manager? %>
+            <td>
+              <% if m == current_member || m.manager? %>
+                <%= m.role.description %>
+              <% elsif m.admin? %>
+                <%= button_to "Demote to Member", change_role_member_path(m),
+                      method: :patch, params: { role: "Member" },
+                      form: { data: { turbo_confirm: "Demote this admin to Member?" } } %>
+              <% else %>
+                <%= button_to "Promote to Admin", change_role_member_path(m),
+                      method: :patch, params: { role: "Admin" },
+                      form: { data: { turbo_confirm: "Promote this member to Admin?" } } %>
+              <% end %>
+            </td>
+            <td>
+              <% if m != current_member && !m.manager? %>
+                <%= button_to "Remove", remove_member_path(m),
+                      method: :patch,
+                      form: { data: { turbo_confirm: "Remove #{m.first_name} from the roster?" } } %>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 <% if @removed_members.any? %>
   <details>
