@@ -132,10 +132,10 @@ RSpec.describe "Event check-in", type: :request do
     sign_in officer
     get edit_event_path(event)
     expect(response.body).to include("event_latitude", "event_longitude", "event_point_value", "event_requirement_id")
-    patch event_path(event), params: { event: { latitude: 30.5, longitude: -96.2, point_value: 3, check_in_radius_meters: 75 } }
+    patch event_path(event), params: { event: { latitude: 30.5, longitude: -96.2, point_value: 3 } }
     expect(event.reload.point_value).to eq(3)
     expect(event.latitude.to_f).to eq(30.5)
-    expect(event.check_in_radius_meters).to eq(75)
+    expect(event.longitude.to_f).to eq(-96.2)
     sign_out officer
     sign_in member
     patch event_path(event), params: { event: { point_value: 999 } }
