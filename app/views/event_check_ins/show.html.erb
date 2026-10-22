@@ -16,7 +16,7 @@
 <% elsif !@event.check_in_configured? %>
   <p>Check-in is not configured for this event yet. Please ask an officer.</p>
 <% else %>
-  <p>Check in within <%= @event.check_in_radius_meters %> meters of the venue to earn <%= pluralize(@event.point_value, "point") %><%= " (#{@event.requirement.name})" if @event.requirement %>.</p>
+  <p>Check in within <%= @event.check_in_radius_feet %> feet of the venue to earn <%= pluralize(@event.point_value, "point") %><%= " (#{@event.requirement.name})" if @event.requirement %>.</p>
   <p>Allow location access when prompted. Your coordinates are used to check your distance and are not saved with your attendance.</p>
   <%= form_with url: event_check_in_path(@event), data: { controller: "check-in", action: "submit->check-in#submit", turbo: false } do %>
     <%= hidden_field_tag :latitude, nil, data: { check_in_target: "latitude" } %>

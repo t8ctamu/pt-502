@@ -46,7 +46,7 @@
       <li>Choose <strong>Create Event</strong> on Home or Events.</li>
       <li>Fill in the name, description, date and time, and location. If you add an end time, it must be after the start.</li>
       <li>Set both venue coordinates for check-in, or leave both blank to configure later. <strong>Use my current location</strong> fills the fields only; use it while at the actual venue, not at home.</li>
-      <li>Set a positive check-in radius in meters, a point value of zero or more, and a point type. If the type is Other, fill in the additional type detail.</li>
+      <li>Set a check-in proximity in feet (100 to 1,000), a point value of zero or more, and a point type. If the type is Other, fill in the additional type detail.</li>
       <li>Choose <strong>Save Event</strong>, then check the published details.</li>
       <li>For a correction, open the event, choose <strong>Edit</strong>, change the fields, and save. Use <strong>Delete</strong> only when the event should be removed and confirm the prompt.</li>
     </ol>
@@ -57,7 +57,7 @@
   <section id="attendance">
     <h2>QR codes and attendance</h2>
     <ol>
-      <li>Open the event and check the venue coordinates and allowed radius.</li>
+      <li>Open the event and check the venue coordinates and allowed proximity in feet.</li>
       <li>Choose <strong>Show check-in QR code</strong>. Display that page at the meeting; members can scan the code or use its check-in link.</li>
       <li>Ask members to allow location access and look for their marked-present confirmation. Opening the link alone does not record attendance.</li>
       <li>Return to the event and choose <strong>Refresh attendance</strong> to see names and check-in times.</li>
@@ -95,8 +95,8 @@
       <dt>A role or settings control is missing</dt><dd>Check the role badge. Admins cannot use Manager-only controls. A regular Member cannot use officer tools. Ask an existing Manager to verify access; do not borrow another person’s sign-in.</dd>
       <dt>A profile edit fails</dt><dd>Correct the highlighted required fields and choose a summer cycle. Previous saved details remain unchanged after an invalid save. Ask the member to correct their own shared phone if it is invalid; officers cannot edit it.</dd>
       <dt>Points or dues do not save</dt><dd>Refresh and check the current value before retrying. Set points to the desired type total, not an amount to add. Use a nonnegative whole number in a currently available point type’s field, then leave the field to save.</dd>
-      <dt>An event does not save</dt><dd>Read the errors above the form. Fill required fields, provide both coordinates or neither, use a positive radius, and check the end time. Other requires its extra description. A location button failure leaves manual coordinate entry available.</dd>
-      <dt>Attendance cannot load or nobody can check in</dt><dd>Choose Refresh attendance or Try again. Verify the meeting’s coordinates at the venue and its radius. Ask members to allow location and use the secure club URL. Do not create another event just to retry.</dd>
+      <dt>An event does not save</dt><dd>Read the errors above the form. Fill required fields, provide both coordinates or neither, use a proximity between 100 and 1,000 feet, and check the end time. Other requires its extra description. A location button failure leaves manual coordinate entry available.</dd>
+      <dt>Attendance cannot load or nobody can check in</dt><dd>Choose Refresh attendance or Try again. Verify the meeting’s coordinates at the venue and its proximity in feet. Ask members to allow location and use the secure club URL. Do not create another event just to retry.</dd>
       <dt>There are no pending requests</dt><dd>This can mean all requests have been reviewed. Ask the member to check the status on Home. If the queue reports a load error, try again before assuming it is empty.</dd>
       <dt>An approval or denial fails</dt><dd>Refresh the queue. A failed saved decision stays pending and adds no points. A successful decision disappears. Retry only if still pending; if already reviewed, do not separately add those points again. Denial needs a reason and approval needs a positive whole-number award.</dd>
       <dt>Point settings fail</dt><dd>Correct the highlighted nonnegative whole numbers. Failed validation saves none of the changes. Use a unique name for a new type. Core or in-use types cannot be removed.</dd>
