@@ -21,6 +21,8 @@
   <body class="<%= content_for(:body_class) %>">
     <% if member_signed_in? %>
       <nav>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle menu">
+
         <div class="nav-left">
           <div class="nav-user">
             <span class="nav-name">Welcome, <%= current_member.first_name %> <span class="nav-caret">▾</span></span>
@@ -32,17 +34,21 @@
             </div>
           </div>
 
-          <%= link_to "Home", root_path %>
-          <% if current_member.admin? %>
-            <%= link_to "Members", members_path %>
-            <%= link_to "Point Requests", submission_reviews_path %>
-          <% end %>
-          <%= link_to "Events", events_path %>
-          <%= link_to "Help", help_path %>
-          
-          <% if current_member&.manager? %>
-            <%= link_to "Point requirements", point_settings_path %>
-          <% end %>
+          <label for="nav-toggle" class="nav-burger" aria-hidden="true">☰</label>
+
+          <div class="nav-links">
+            <%= link_to "Home", root_path %>
+            <% if current_member.admin? %>
+              <%= link_to "Members", members_path %>
+              <%= link_to "Point Requests", submission_reviews_path %>
+            <% end %>
+            <%= link_to "Events", events_path %>
+            <%= link_to "Help", help_path %>
+            <% if current_member&.manager? %>
+              <%= link_to "Point requirements", point_settings_path %>
+            <% end %>
+            <%= link_to "Edit my profile", edit_profile_path, class: "nav-mobile-only" %>
+          </div>
         </div>
 
         <div class="nav-right">

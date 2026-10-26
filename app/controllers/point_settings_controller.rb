@@ -1,6 +1,5 @@
 class PointSettingsController < ApplicationController
      before_action :require_completed_profile
-  before_action :require_completed_profile
   before_action :require_point_settings_manager
 
   def show

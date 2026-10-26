@@ -15,7 +15,11 @@ RSpec.describe "Event attendance", type: :request do
     get event_path(event)
 
     expect(response).to have_http_status(:ok)
-    expect(response.body).to include("Alice Nguyen", checked_in_at.iso8601, "Check-in time")
+    expect(response.body).to include(
+    "Alice Nguyen",
+    checked_in_at.in_time_zone.iso8601,
+    "Check-in time"
+  )
     expect(response.body).not_to include(absent.member.last_name, other.member.last_name)
   end
 

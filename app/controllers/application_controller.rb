@@ -36,6 +36,6 @@ class ApplicationController < ActionController::Base
 
   def require_manager
     return if current_member&.manager?
-    redirect_to root_path, alert: "You're not authorized to change roles."
+    redirect_to root_path, alert: "Access denied: managers only"
   end
 end
