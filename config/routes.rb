@@ -36,6 +36,10 @@ Rails.application.routes.draw do
     delete "types/:id", to: "point_settings#destroy_type", as: :destroy_type
   end
 
+  resource :profile, only: [ :edit, :update ] do
+    patch :leave, on: :member
+  end
+
   resources :events do
     resource :check_in, only: [ :show, :create ], controller: "event_check_ins"
 
