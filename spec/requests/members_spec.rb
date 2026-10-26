@@ -158,7 +158,7 @@ RSpec.describe "Members", type: :request do
       it "redirects to root with an alert and does not change the target role" do
         patch change_role_member_path(target), params: { role: "Admin" }
         expect(response).to redirect_to(root_path)
-        expect(flash[:alert]).to eq("You're not authorized to change roles.")
+        expect(flash[:alert]).to eq("Access denied: managers only")
         expect(target.reload.role.description).to eq("Member")
       end
     end
@@ -169,7 +169,7 @@ RSpec.describe "Members", type: :request do
       it "redirects to root with an alert and does not change the target role" do
         patch change_role_member_path(target), params: { role: "Admin" }
         expect(response).to redirect_to(root_path)
-        expect(flash[:alert]).to eq("You're not authorized to change roles.")
+        expect(flash[:alert]).to eq("Access denied: managers only")
         expect(target.reload.role.description).to eq("Member")
       end
     end
@@ -317,8 +317,9 @@ RSpec.describe "Members", type: :request do
     end
   end
 
-    describe "PATCH /members/:id/remove" do
-    let(:target) { create(:member, :profile_completed) }
+      describe "PATCH /members/:id/remove" do
+    let(:target)  { create(:member, :profile_completed) }
+    let(:manager) { create(:member, :profile_completed, :manager) }
 
     context "when signed out" do
       it "redirects to sign in" do
@@ -333,12 +334,24 @@ RSpec.describe "Members", type: :request do
       it "redirects to root with an alert and does not remove the member" do
         patch remove_member_path(target)
         expect(response).to redirect_to(root_path)
+        expect(flash[:alert]).to eq("Access denied: managers only")
         expect(target.reload.removed_at).to be_nil
       end
     end
 
-    context "when signed in as an admin" do
+    context "when signed in as an admin (officer)" do
       before { sign_in admin }
+
+      it "is blocked and does not remove the member" do
+        patch remove_member_path(target)
+        expect(response).to redirect_to(root_path)
+        expect(flash[:alert]).to eq("Access denied: managers only")
+        expect(target.reload.removed_at).to be_nil
+      end
+    end
+
+    context "when signed in as a manager" do
+      before { sign_in manager }
 
       it "sets removed_at and redirects with a notice" do
         patch remove_member_path(target)
@@ -348,28 +361,27 @@ RSpec.describe "Members", type: :request do
       end
 
       it "refuses to remove self" do
-        patch remove_member_path(admin)
+        patch remove_member_path(manager)
         expect(response).to redirect_to(members_path)
         expect(flash[:alert]).to eq("You cannot remove yourself.")
-        expect(admin.reload.removed_at).to be_nil
+        expect(manager.reload.removed_at).to be_nil
       end
 
-      it "refuses to remove a manager" do
-        manager = create(:member, :manager, :profile_completed)
+      it "refuses to remove another manager" do
+        other = create(:member, :manager, :profile_completed)
 
-        patch remove_member_path(manager)
+        patch remove_member_path(other)
 
         expect(response).to redirect_to(members_path)
         expect(flash[:alert]).to eq("You cannot remove a Manager.")
-        expect(manager.reload.removed_at).to be_nil
+        expect(other.reload.removed_at).to be_nil
       end
     end
   end
 
   describe "PATCH /members/:id/restore" do
-    let(:removed_member) do
-      create(:member, :profile_completed, removed_at: 2.days.ago)
-    end
+    let(:removed_member) { create(:member, :profile_completed, removed_at: 2.days.ago) }
+    let(:manager)        { create(:member, :profile_completed, :manager) }
 
     context "when signed out" do
       it "redirects to sign in" do
@@ -384,12 +396,24 @@ RSpec.describe "Members", type: :request do
       it "redirects to root with an alert and does not restore the member" do
         patch restore_member_path(removed_member)
         expect(response).to redirect_to(root_path)
+        expect(flash[:alert]).to eq("Access denied: managers only")
         expect(removed_member.reload.removed_at).not_to be_nil
       end
     end
 
-    context "when signed in as an admin" do
+    context "when signed in as an admin (officer)" do
       before { sign_in admin }
+
+      it "is blocked and does not restore the member" do
+        patch restore_member_path(removed_member)
+        expect(response).to redirect_to(root_path)
+        expect(flash[:alert]).to eq("Access denied: managers only")
+        expect(removed_member.reload.removed_at).not_to be_nil
+      end
+    end
+
+    context "when signed in as a manager" do
+      before { sign_in manager }
 
       it "clears removed_at and redirects with a notice" do
         patch restore_member_path(removed_member)
