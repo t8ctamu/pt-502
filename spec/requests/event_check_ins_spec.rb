@@ -137,7 +137,7 @@ RSpec.describe "Event check-in", type: :request do
     sign_in member
     event.update_columns(latitude: nil, longitude: nil) # legacy row: validation would now block this
     get event_check_in_path(event)
-    expect(response.body).to include("not configured")
+    expect(CGI.unescapeHTML(response.body)).to include("Check-in isn't set up for this event yet")
     expect(response.body).not_to include("Check in using my location")
   end
 

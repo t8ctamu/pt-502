@@ -93,15 +93,29 @@
     </section>
   <% end %>
 
+  <% check_in_opens_at = @event.starts_at - 10.minutes %>
+<% check_in_closes_at = @event.ends_at || @event.starts_at + 1.hour %>
+
+
   <div class="event-primary-action">
+
     <% if @attendance&.checked_in_at? %>
       <div class="attendance-confirmed">
         ✓ You're checked in!
       </div>
-    <% else %>
+    <% elsif Time.current >= @event.starts_at - 10.minutes &&
+            Time.current <= (@event.ends_at || @event.starts_at + 1.hour) %>
       <%= link_to "Attend Meeting",
           event_check_in_path(@event),
           class: "btn btn-rsvp" %>
+    <% else %>
+      <p class="event-meta-large">
+        <% if Time.current < @event.starts_at - 10.minutes %>
+          Check-in opens 10 minutes before the meeting starts.
+        <% else %>
+          Check-in is closed for this meeting.
+        <% end %>
+      </p>
     <% end %>
   </div>
 

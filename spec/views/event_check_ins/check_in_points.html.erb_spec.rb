@@ -12,34 +12,32 @@ RSpec.describe "event_check_ins/show", type: :view do
     end
   end
 
+  def check_in!
+       EventCheckIn.call(member: member, event: event,
+                         latitude: event.latitude.to_f, longitude: event.longitude.to_f)
+  end
+
   it "shows the point type before check-in" do
        assign(:attendance, nil)
     render
-    expect(rendered).to include("2 points (Service)")
+    expect(rendered).to have_css(".stat", text: /Worth\s+2 points/)
+    expect(rendered).to have_css(".stat", text: /Type\s+Service/)
   end
 
   it "shows points awarded, total and Active status after check-in" do
-       attendance = EventCheckIn.call(member: member, event: event,
-         latitude: event.latitude.to_f, longitude: event.longitude.to_f)
-    assign(:attendance, attendance)
-
+       assign(:attendance, check_in!)
     render
-
-    expect(rendered).to include("Points awarded: 2")
-    expect(rendered).to include("Your total: 2")
-    expect(rendered).to include("Status: Active")
+    expect(rendered).to have_css(".stat", text: /Points awarded\s+\+2/)
+    expect(rendered).to have_css(".stat", text: /Your total\s+2/)
+    expect(rendered).to have_css(".status-badge.status-active", text: "Active")
   end
 
   it "shows Inactive and what is missing when another type is short" do
        create(:requirement, name: "Social", minimum_points: 2)
-    attendance = EventCheckIn.call(member: member, event: event,
-      latitude: event.latitude.to_f, longitude: event.longitude.to_f)
-    assign(:attendance, attendance)
-
+    assign(:attendance, check_in!)
     render
-
-    expect(rendered).to include("Status: Inactive")
-    expect(rendered).to include("needs 2 more social points")
+    expect(rendered).to have_css(".status-badge.status-inactive", text: "Not Active")
+    expect(rendered).to have_css(".info-box", text: "Needs 2 more social points")
   end
 
   it "shows the error message when check-in was rejected" do
