@@ -14,4 +14,13 @@ RSpec.describe AttendanceImport::Parser do
           expect(rows.size).to eq(2)
           expect(rows.first[5]).to eq("ktmd3368@email.tamu.edu")
      end
+
+     it "reads the customer's xlsx sample" do
+          path = Rails.root.join("spec/fixtures/files/attendance_customer_sample.xlsx").to_s
+          parser = described_class.new(path)
+
+          expect(parser.headers).to include("Checked In", "Email")
+          expect(parser.rows.size).to eq(2)
+          expect(parser.rows.first[5]).to eq("ktmd3368@email.tamu.edu")
+     end
 end

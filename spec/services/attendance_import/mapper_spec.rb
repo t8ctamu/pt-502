@@ -25,6 +25,20 @@ RSpec.describe AttendanceImport::Mapper do
           end
      end
 
+     context "with an Excel DateTime cell for Checked In" do
+          let(:rows) do
+               [ [ DateTime.new(2026, 10, 6, 22, 33, 31), "1", "1", "Mennah", "Dia", "ktmd3368@email.tamu.edu", "" ] ]
+          end
+
+          it "keeps the wall-clock time without shifting for the UTC offset" do
+               row = mapper.preview.first
+
+               expect(row.status).to eq(:ready)
+               expect(row.checked_in_at).to eq(Time.zone.local(2026, 10, 6, 22, 33, 31))
+               expect(row.checked_in_at.hour).to eq(22)
+          end
+     end
+
      context "with an unknown email" do
           let(:rows) { [ build_row(email: "ghost@email.tamu.edu") ] }
 

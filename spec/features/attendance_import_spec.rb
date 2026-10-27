@@ -20,6 +20,7 @@ RSpec.feature "Importing attendance for an event", type: :feature do
      let(:missing_columns_csv) { Rails.root.join("spec/fixtures/files/attendance_uat_missing_columns.csv") }
      let(:corrupt_csv) { Rails.root.join("spec/fixtures/files/attendance_uat_corrupt.csv") }
      let(:bad_xlsx) { Rails.root.join("spec/fixtures/files/attendance_uat_bad_xlsx.xlsx") }
+          let(:customer_xlsx) { Rails.root.join("spec/fixtures/files/attendance_customer_sample.xlsx") }
 
      before { AppSetting.current.update!(total_points_required: 1) }
 
@@ -33,6 +34,17 @@ RSpec.feature "Importing attendance for an event", type: :feature do
           sign_in admin
           upload(mixed_csv)
           expect(page).to have_content("3 attendance records saved")
+     end
+
+     scenario "AC1: an officer can upload the customer's xlsx export" do
+          sign_in admin
+          upload(customer_xlsx)
+
+          expect(page).to have_content("2 attendance records saved")
+
+          attendance = Attendance.find_by!(member: mennah, event: event)
+          expect(attendance.checked_in_at.hour).to eq(22)
+          expect(attendance.checked_in_at.min).to eq(33)
      end
 
      scenario "AC7: the upload form is labeled" do
