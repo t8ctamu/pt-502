@@ -22,16 +22,20 @@ RSpec.describe "Events", type: :request do
     expect(response).to redirect_to(events_path)
   end
 
-  it "does not create an event without a location pin" do
+  it "creates a named event without a pin and requires coordinates before sharing check-in" do
     expect {
       post events_path, params: { event: {
         name: "Meeting", description: "Details",
         starts_at: "2026-10-01 10:00", location: "Room 1"
       } }
-    }.not_to change(Event, :count)
+    }.to change(Event, :count).by(1)
 
-    expect(response).to have_http_status(422)
-    expect(CGI.unescapeHTML(response.body)).to include("Choose a location on the map before saving.")
+    expect(response).to redirect_to(events_path)
+    event = Event.order(:id).last
+    expect(event).not_to be_check_in_configured
+
+    get check_in_qr_event_path(event)
+    expect(response).to redirect_to(edit_event_path(event))
   end
 
   it "does not create an event when a required field is blank" do

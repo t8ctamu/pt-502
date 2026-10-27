@@ -1,18 +1,16 @@
 require "rails_helper"
 
-# Event itself already tests name presence, coordinate bounds and pairing
-# (spec/models/event_spec.rb). These cover only what the location picker added.
-RSpec.describe EventLocationValidations do
+RSpec.describe Event do
      it "is valid with a name and a pin" do
           expect(build(:event, location: "Student Center, 100 Campus Dr",
                                latitude: 30.61, longitude: -96.34)).to be_valid
      end
 
-  it "requires a pin" do
+  it "allows a named venue without a pin when the map is unavailable" do
        event = build(:event, latitude: nil, longitude: nil)
 
-    expect(event).not_to be_valid
-    expect(event.errors[:base]).to include("Choose a location on the map before saving.")
+    expect(event).to be_valid
+    expect(event.check_in_configured?).to be false
   end
 
   it "requires a readable location name" do

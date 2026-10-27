@@ -126,6 +126,8 @@ class EventsController < ApplicationController
   end
 
   def remember_location(event)
+    return unless event.check_in_configured?
+
     SavedLocation.find_or_create_by(name: event.location.strip) do |saved|
       saved.latitude = event.latitude
       saved.longitude = event.longitude

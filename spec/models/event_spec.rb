@@ -1,12 +1,12 @@
 require "rails_helper"
 
 RSpec.describe Event, type: :model do
-  it "requires a location pin, so every new event has check-in configured" do
+  it "allows a named event without a pin while leaving check-in unconfigured" do
     expect(build(:event)).to be_check_in_configured
 
     event = build(:event, latitude: nil, longitude: nil)
-    expect(event).not_to be_valid
-    expect(event.errors[:base]).to include("Choose a location on the map before saving.")
+    expect(event).to be_valid
+    expect(event).not_to be_check_in_configured
   end
 
   it "belongs to a requirement" do
