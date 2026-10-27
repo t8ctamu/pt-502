@@ -49,16 +49,17 @@ RSpec.describe "EventImports", type: :request do
        before do
             sign_in admin
          create(:requirement, name: "Service")
+         allow_any_instance_of(Geocoding::Nominatim).to receive(:search).and_return([])
        end
 
-    it "imports approved events from a CSV and skips the rest" do
+    it "imports valid events from a CSV regardless of GetInvolved status" do
          file = Rack::Test::UploadedFile.new(
            Rails.root.join("spec/fixtures/files/events.csv"), "text/csv"
          )
       post event_imports_path, params: { file: file }
       token = response.location.match(%r{/event_imports/([0-9a-f-]+)/preview})[1]
 
-      # Sample file: 1 approved (EVN-26955), 3 not approved. Only 1 should import.
+      # Sample file: one Approved, one Initiated, and two Submitted events.
       post confirm_event_import_path(token), params: {
         assignments: {
           "2" => { requirement_id: "", point_value: "1" },
@@ -69,8 +70,10 @@ RSpec.describe "EventImports", type: :request do
       }
 
       expect(Event.find_by(external_reference: "EVN-26955")).to be_present
-      expect(Event.find_by(external_reference: "EVN-26994")).to be_nil
-      expect(Event.find_by(external_reference: "EVN-27798")).to be_nil
+      expect(Event.find_by(external_reference: "EVN-26994")).to be_present
+      expect(Event.find_by(external_reference: "EVN-27798")).to be_present
+      expect(Event.find_by(external_reference: "EVN-27792")).to be_present
+      expect(flash[:notice]).to include("4 events added")
     end
   end
 end
