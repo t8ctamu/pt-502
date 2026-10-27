@@ -1,4 +1,7 @@
 <nav class="help-navigation" aria-label="Help guides">
+  <% unless member_signed_in? %>
+    <%= link_to "Back to login", new_member_session_path %>
+  <% end %>
   <%= link_to "Help home", help_path %>
   <%= link_to "Member guide", member_help_path %>
   <% if current_member&.admin? %>
