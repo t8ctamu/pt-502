@@ -5,18 +5,67 @@
         form: { data: { turbo_confirm: "This will start a new semester. Members' current points will no longer count toward the new semester's totals. Their history is preserved. Continue?" } } %>
 </div>
 
+<%# Builds a sortable <th>: the label links to this page sorted by `key`.
+    Clicking the active column toggles asc/desc; existing filters are preserved. %>
+<% sortable = lambda do |label, key|
+     current    = params[:sort] == key
+     descending = current && params[:dir] == "desc"
+     next_dir   = current && !descending ? "desc" : "asc"
+     arrow      = current ? (descending ? " ▼" : " ▲") : ""
+     aria_sort  = current ? (descending ? "descending" : "ascending") : "none"
+
+     tag.th(
+       link_to("#{label}#{arrow}",
+               members_path(request.query_parameters.merge(sort: key, dir: next_dir))),
+       aria: { sort: aria_sort }
+     )
+   end %>
+
 <h1>Members</h1>
-<table>
+
+<%= form_with url: members_path, method: :get, class: "filters", style: "margin-bottom: 16px;" do |f| %>
+  <%= f.label :car_pool, "Car pool" %>
+  <%= f.select :car_pool, [["Any", ""], ["Yes", "yes"], ["No", "no"]], selected: params[:car_pool] %>
+
+  <%= f.label :status, "Status" %>
+  <%= f.select :status, [["Any", ""], ["Active", "active"], ["Not Active", "inactive"]], selected: params[:status] %>
+
+  <%= f.label :points_requirement_id, "Points for" %>
+  <%= f.select :points_requirement_id,
+        options_from_collection_for_select(@requirements, :id, :name, params[:points_requirement_id]),
+        include_blank: "Choose requirement" %>
+  <%= f.select :points_filter,
+        [["Any amount", ""], ["0 points", "zero"], ["1+ points", "positive"]],
+        selected: params[:points_filter],
+        aria: { label: "Points filter" } %>
+
+  <%= f.hidden_field :sort, value: params[:sort], id: nil %>
+  <%= f.hidden_field :dir,  value: params[:dir],  id: nil %>
+  <%= f.submit "Apply filters" %>
+  <%= link_to "Clear", members_path %>
+<% end %>
+
+<p><%= pluralize(@members.size, "member") %> shown</p>
+
+<table class="point-sheet">
   <thead>
     <tr>
-      <th>ID</th><th>Role</th><th>First name</th><th>Last name</th><th>Email</th>
-      <th>Joined</th><th>Car pool</th>
+      <%= sortable.call("ID", "id") %>
+      <%= sortable.call("Role", "role") %>
+      <%= sortable.call("First name", "first_name") %>
+      <%= sortable.call("Last name", "last_name") %>
+      <%= sortable.call("Email", "email") %>
+      <%= sortable.call("Joined", "joined_at") %>
+      <th>Car pool</th>
       <% @requirements.each do |r| %>
-        <th><%= r.name %></th>
+        <%= sortable.call(r.name, "req_#{r.id}") %>
       <% end %>
-      <th>Total</th>
-      <th>Expected graduation</th><th>Anticipated application cycle</th>
-      <th>Shared phone number</th><th>Paid dues</th><th>Status</th><th>Profile</th>
+      <%= sortable.call("Total", "total") %>
+      <%= sortable.call("Expected graduation", "expected_graduation") %>
+      <%= sortable.call("Anticipated application cycle", "anticipated_cycle") %>
+      <th>Shared phone number</th>
+      <%= sortable.call("Paid dues", "paid_dues") %>
+      <th>Status</th><th>Profile</th>
       <% if current_member.manager? %>
         <th>Change Role</th>
       <% end %>
