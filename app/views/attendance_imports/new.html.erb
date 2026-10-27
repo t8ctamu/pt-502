@@ -1,0 +1,30 @@
+<h1>Import attendance</h1>
+
+<p>Choose the event these attendees checked in to. The file has no event column, so you select it here.</p>
+
+<%= form_with url: new_attendance_import_path, method: :get do |f| %>
+  <%= f.label :event_id, "Event" %>
+  <%= f.select :event_id,
+        @events.map { |e| [ "#{e.name} — #{e.starts_at.strftime('%b %-d, %Y')}", e.id ] },
+        { include_blank: "Select an event" },
+        { onchange: "if (this.value) window.location = '#{upload_attendance_import_path('EVENT_ID')}'.replace('EVENT_ID', this.value);" } %>
+<% end %>
+
+<h2>Search all events</h2>
+<%= form_with url: new_attendance_import_path, method: :get do |f| %>
+  <%= f.label :q, "Event name" %>
+  <%= f.text_field :q, value: params[:q] %>
+  <%= f.submit "Search" %>
+<% end %>
+
+<% if @search_results %>
+  <% if @search_results.any? %>
+    <ul>
+      <% @search_results.each do |event| %>
+        <li><%= link_to "#{event.name} — #{event.starts_at.strftime('%b %-d, %Y')}", upload_attendance_import_path(event.id) %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No events matched "<%= params[:q] %>". <%= link_to "Create it first?", new_event_path %> then import attendance.</p>
+  <% end %>
+<% end %>
