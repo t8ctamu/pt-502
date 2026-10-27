@@ -4,3 +4,14 @@
     <%= render "profiles/form", member: @member, url: profile_path %>
   </div>
 </div>
+<hr style="margin: 32px 0; border: 0; border-top: 1px solid #eee;">
+<div class="leave-org-section">
+  <h3>Leave Organization</h3>
+  <p style="color: #666; margin-bottom: 16px;">
+    Leaving the organization will remove you from the member roster and revoke your access to the dashboard.
+  </p>
+  <%= button_to "Leave Organization", leave_profile_path,
+        method: :patch,
+        form: { data: { turbo_confirm: "Are you sure you want to leave? Your profile will be removed from the member roster." } },
+        class: "btn btn-secondary" %>
+</div>
