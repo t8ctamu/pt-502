@@ -17,7 +17,7 @@ RSpec.describe "Event location picker", type: :request do
          location: "Student Center, 100 Campus Dr",
          latitude: "30.610000",
          longitude: "-96.340000",
-         check_in_radius_meters: 100,
+         check_in_radius_feet: 250,
          point_value: 1
        }
   end

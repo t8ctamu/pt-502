@@ -113,10 +113,12 @@
 
   <fieldset>
     <legend>Attendance check-in</legend>
-    <p>Members can check in within the allowed distance of the pin above.</p>
+    <p>Members can check in within this proximity (in feet) of the pin above.</p>
     <p>
-      <%= f.label :check_in_radius_meters, "Allowed distance (meters)" %><br>
-      <%= f.number_field :check_in_radius_meters, min: 1, step: 1, required: true %>
+      <%= f.label :check_in_radius_feet, "Location proximity (feet)" %><br>
+      <%= f.number_field :check_in_radius_feet, min: 100, max: 1000, step: 1, required: true,
+      oninput: "this.setCustomValidity(this.validity.rangeUnderflow || this.validity.rangeOverflow ? 'Enter a proximity between 100 and 1,000 feet.' : '')",
+      oninvalid: "this.setCustomValidity(this.validity.rangeUnderflow || this.validity.rangeOverflow ? 'Enter a proximity between 100 and 1,000 feet.' : '')" %>
     </p>
     <p>
       <%= f.label :point_value, "Points for attending" %><br>
