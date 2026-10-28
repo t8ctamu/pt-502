@@ -44,7 +44,7 @@ end
     editing_profile = attributes.except(:paid_dues).present?
     @member.assign_attributes(attributes)
     @member.profile_completed_at ||= Time.current if editing_profile
- 
+
     if save_member_profile(@member, context: editing_profile ? :profile : nil)
       detail = editing_profile ? "profile" : "dues"
       if editing_profile
@@ -154,18 +154,18 @@ end
 
   # Filters use the same Member methods the table displays (points_by_requirement,
   # active_status?, etc.), so a filter can never disagree with what's in a cell.
-  
+
   def filter_members(members)
     case params[:car_pool]
     when "yes" then members = members.select(&:car_pool_status)
     when "no"  then members = members.reject(&:car_pool_status)
     end
- 
+
     case params[:status]
     when "active"   then members = members.select { |m| m.active_status? && m.paid_dues }
     when "inactive" then members = members.reject { |m| m.active_status? && m.paid_dues }
     end
- 
+
     rid = params[:points_requirement_id].to_i
     if %w[zero positive].include?(params[:points_filter]) && @requirements.any? { |r| r.id == rid }
       members = members.select do |m|
@@ -173,10 +173,10 @@ end
         params[:points_filter] == "zero" ? pts.zero? : pts.positive?
       end
     end
- 
+
     members
   end
- 
+
   def sort_members(members)
     key = params[:sort].to_s
     getter =
@@ -187,11 +187,10 @@ end
         SORT_KEYS[key]
       end
     return members unless getter
- 
+
     with_value, blank = members.partition { |m| !getter.call(m).nil? }
-    sorted = with_value.sort_by.with_index { |m, i| [getter.call(m), i] }  # index keeps ties stable
+    sorted = with_value.sort_by.with_index { |m, i| [ getter.call(m), i ] }  # index keeps ties stable
     sorted.reverse! if params[:dir] == "desc"
     sorted + blank                                                          # blanks always last
   end
-
 end

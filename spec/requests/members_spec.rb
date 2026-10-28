@@ -91,7 +91,7 @@ RSpec.describe "Members", type: :request do
           it "'1+ points' lists only members with service points" do
             get members_path, params: { points_requirement_id: service.id, points_filter: "positive" }
 
-            expect(listed_first_names).to eq(["Withpoints"])
+            expect(listed_first_names).to eq([ "Withpoints" ])
           end
 
           it "matches what the table shows in each member's points cell" do
@@ -132,12 +132,12 @@ RSpec.describe "Members", type: :request do
 
           it "shows only members who are in the car pool" do
             get members_path, params: { car_pool: "yes" }
-            expect(listed_first_names).to eq(["Driver"])
+            expect(listed_first_names).to eq([ "Driver" ])
           end
 
           it "shows only members who are not in the car pool" do
             get members_path, params: { car_pool: "no" }
-            expect(listed_first_names).to eq(["Walker"])
+            expect(listed_first_names).to eq([ "Walker" ])
           end
 
           it "shows everyone when set to Any" do
