@@ -1,29 +1,98 @@
-<h1>Check in to <%= @event.name %></h1>
-<p><%= @event.location %></p>
-<% if @check_in_error %>
-  <p role="alert"><%= @check_in_error %></p>
-<% end %>
-
-<% if @attendance&.checked_in_at? %>
-  <h2>You're marked present</h2>
-  <p>Checked in at <%= @attendance.checked_in_at.strftime("%b %d, %Y %I:%M %p %Z") %>.</p>
-  <p>Points awarded: <%= @attendance.points_awarded %>. Your total: <%= current_member.total_points %>.</p>
-    <% if current_member.active_status? %>
-      <p>Status: Active</p>
-    <% else %>
-      <p>Status: Inactive (<%= current_member.missing_requirements_text %>)</p>
+<div class="check-in-page">
+  <div class="card check-in-card">
+    <p class="check-in-eyebrow">Event check-in</p>
+    <h1><%= @event.name %></h1>
+    <% if @event.location.present? %>
+      <p class="check-in-location">📍 <%= @event.location %></p>
     <% end %>
-<% elsif !@event.check_in_configured? %>
-  <p>Check-in is not configured for this event yet. Please ask an officer.</p>
-<% else %>
-  <p>Check in within <%= @event.check_in_radius_meters %> meters of the venue to earn <%= pluralize(@event.point_value, "point") %><%= " (#{@event.requirement.name})" if @event.requirement %>.</p>
-  <p>Allow location access when prompted. Your coordinates are used to check your distance and are not saved with your attendance.</p>
-  <%= form_with url: event_check_in_path(@event), data: { controller: "check-in", action: "submit->check-in#submit", turbo: false } do %>
-    <%= hidden_field_tag :latitude, nil, data: { check_in_target: "latitude" } %>
-    <%= hidden_field_tag :longitude, nil, data: { check_in_target: "longitude" } %>
-    <button type="submit" data-check-in-target="button">Check in using my location</button>
-    <p role="status" data-check-in-target="status"></p>
-    <noscript><p>Enable JavaScript to check in with your location.</p></noscript>
-  <% end %>
-<% end %>
-<%= link_to "Back to event", event_path(@event) %>
+
+    <% if @check_in_error %>
+      <div class="alert-box alert-box--error" role="alert">
+        <strong>Couldn't check you in.</strong>
+        <%= @check_in_error %>
+      </div>
+    <% end %>
+
+    <% if @attendance&.checked_in_at? %>
+      <div class="check-in-success">
+        <div class="check-in-success-icon" aria-hidden="true">✓</div>
+        <h2>You're marked present</h2>
+        <p class="check-in-time">
+          Checked in <%= @attendance.checked_in_at.strftime("%b %d, %Y at %I:%M %p %Z") %>
+        </p>
+      </div>
+
+      <div class="profile-stats">
+        <div class="stat">
+          <span class="stat-label">Points awarded</span>
+          <span class="stat-value">+<%= @attendance.points_awarded %></span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Your total</span>
+          <span class="stat-value"><%= current_member.total_points %></span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Status</span>
+          <span class="stat-value">
+            <% if current_member.active_status? %>
+              <span class="status-badge status-active">Active</span>
+            <% else %>
+              <span class="status-badge status-inactive">Not Active</span>
+            <% end %>
+          </span>
+        </div>
+      </div>
+
+      <% unless current_member.active_status? %>
+        <div class="info-box">
+          <p><%= current_member.missing_requirements_text.capitalize %></p>
+        </div>
+      <% end %>
+
+    <% elsif !@event.check_in_configured? %>
+      <div class="info-box">
+        <p>Check-in isn't set up for this event yet. Please ask an officer.</p>
+      </div>
+
+    <% else %>
+      <div class="profile-stats">
+        <div class="stat">
+          <span class="stat-label">Worth</span>
+          <span class="stat-value">
+            <%= pluralize(@event.point_value, "point") %>
+          </span>
+        </div>
+        <% if @event.requirement %>
+          <div class="stat">
+            <span class="stat-label">Type</span>
+            <span class="stat-value"><%= @event.requirement.name %></span>
+          </div>
+        <% end %>
+        <div class="stat">
+          <span class="stat-label">Must be within</span>
+          <span class="stat-value"><%= @event.check_in_radius_feet %> ft</span>
+        </div>
+      </div>
+
+      <%= form_with url: event_check_in_path(@event),
+            data: { controller: "check-in", action: "submit->check-in#submit", turbo: false } do %>
+        <%= hidden_field_tag :latitude, nil, data: { check_in_target: "latitude" } %>
+        <%= hidden_field_tag :longitude, nil, data: { check_in_target: "longitude" } %>
+
+        <button type="submit" class="btn btn-checkin" data-check-in-target="button">
+          Check in using my location
+        </button>
+
+        <p class="check-in-status" role="status" data-check-in-target="status"></p>
+        <noscript><p class="check-in-status is-error">Enable JavaScript to check in with your location.</p></noscript>
+      <% end %>
+
+      <p class="check-in-privacy">
+        Allow location access when prompted. Your coordinates are only used to check your
+        distance and are not saved with your attendance.
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "← Back to event", event_path(@event), class: "back-link" %>
+</div>

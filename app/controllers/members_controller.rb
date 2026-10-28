@@ -1,7 +1,7 @@
 class MembersController < ApplicationController
   before_action :require_completed_profile
-  before_action :require_admin, except: :change_role
-  before_action :require_manager, only: :change_role
+  before_action :require_admin, except: %i[change_role remove restore]
+  before_action :require_manager, only: %i[change_role remove restore]
 
   SORT_KEYS = {
   "id"                  => ->(m) { m.id },

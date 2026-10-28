@@ -36,6 +36,10 @@ Rails.application.routes.draw do
     delete "types/:id", to: "point_settings#destroy_type", as: :destroy_type
   end
 
+  resource :profile, only: [ :edit, :update ] do
+    patch :leave, on: :member
+  end
+
   resources :events do
     resource :check_in, only: [ :show, :create ], controller: "event_check_ins"
 
@@ -49,6 +53,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :event_imports, only: [ :new, :create ], param: :token do
+    get  :preview, on: :member
+    post :confirm, on: :member
+  end
+
   resources :event_submissions, only: %i[new create]
 
   resources :submission_reviews, only: :index do
@@ -56,5 +65,10 @@ Rails.application.routes.draw do
       patch :approve
       patch :deny
     end
+  end
+
+  resources :imports, only: [ :new, :create ], param: :token do
+    get  :preview, on: :member
+    post :confirm, on: :member
   end
 end

@@ -147,4 +147,17 @@ RSpec.describe "Profiles", type: :request do
       expect(Point.where(member: member)).to be_empty
     end
   end
+  describe "PATCH /profile/leave" do
+    it "sets removed_at, signs the member out, and redirects to root" do
+      patch leave_profile_path
+
+      expect(response).to redirect_to(root_path)
+      expect(flash[:notice]).to eq("You have left the organization.")
+      expect(member.reload.removed_at).to be_present
+
+      # Verify they are signed out by checking the next request
+      get edit_profile_path
+      expect(response).to redirect_to(new_member_session_path)
+    end
+  end
 end

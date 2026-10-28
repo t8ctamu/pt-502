@@ -1,0 +1,118 @@
+<h1>Preview Import</h1>
+
+<% if @requirements.empty? %>
+  <div class="flash flash__alert">
+    <strong>No point categories found.</strong>
+    Run <code>bundle exec rails runner 'Requirement.update_all(is_active: true)'</code>
+    or create requirements before importing.
+  </div>
+<% else %>
+  <p>
+    Active point categories: <%= @requirements.map(&:name).join(", ") %>
+  </p>
+<% end %>
+
+<%= form_with url: preview_import_path(params[:token]), method: :get do |f| %>
+  <div class="default-requirement">
+    <label>
+      <strong>Apply to all remaining True/False columns:</strong>
+      <%= select_tag :default_requirement_id,
+            options_for_select(
+              [["None", ""]] + @requirements.map { |r| [r.name, r.id] },
+              @default_requirement_id
+            ) %>
+    </label>
+    <small>
+      Any unmapped column whose values are only True/False will be assigned to this category.
+    </small>
+  </div>
+
+  <h2>Column mapping</h2>
+  <table>
+    <thead><tr><th>#</th><th>Header</th><th>Sample</th><th>Maps to</th></tr></thead>
+    <tbody>
+      <% @headers.each_with_index do |header, i| %>
+        <tr>
+          <td><%= i + 1 %></td>
+          <td><%= header.presence || "(blank)" %></td>
+          <td>
+            <small>
+              <% samples = @sample_rows.map { |r| r[i].to_s.strip }.reject(&:empty?).first(3) %>
+              <%= samples.any? ? samples.join(", ") : "—" %>
+            </small>
+          </td>
+          <td>
+            <%= select_tag "mapping[#{i}]",
+                  grouped_options_for_select(
+                    [
+                      [ "Member fields",
+                        [ [ "Ignore", "ignore" ],
+                          [ "Email", "email" ],
+                          [ "First name", "first_name" ],
+                          [ "Last name", "last_name" ],
+                          [ "Full name", "full_name" ],
+                          [ "Paid dues", "paid_dues" ] ] ],
+                      [ "Point categories",
+                        @requirements.map { |r| [ r.name, "requirement:#{r.id}" ] } ]
+                    ],
+                    @mapping[i.to_s]
+                  ) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= f.submit "Refresh preview" %>
+<% end %>
+
+<h2>Preview (<%= @preview_rows.size %> rows)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Row</th>
+      <th>Status</th>
+      <th>Member</th>
+      <% @requirements.each do |r| %>
+        <th><%= r.name %></th>
+      <% end %>
+      <th>Total</th>
+      <th>Issues</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @preview_rows.each do |row| %>
+      <%
+        totals = row.points.group_by { |p| p[:requirement_id] }
+                            .transform_values { |pts| pts.sum { |p| p[:point_amount] } }
+      %>
+      <tr class="row--<%= row.status %>">
+        <td><%= row.index %></td>
+        <td><%= row.status %></td>
+        <td>
+          <% name = "#{row.attributes[:first_name]} #{row.attributes[:last_name]}".strip %>
+          <strong><%= name.presence || "N/A" %></strong>
+          <% if row.attributes[:email].present? %>
+            <br><small><%= row.attributes[:email] %></small>
+          <% else %>
+            <br><small>N/A</small>
+          <% end %>
+        </td>
+        <% @requirements.each do |r| %>
+          <td><%= totals[r.id].to_i %></td>
+        <% end %>
+        <td><strong><%= totals.values.sum %></strong></td>
+        <td><%= row.errors.join(", ") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= form_with url: confirm_import_path(params[:token]), method: :post do |f| %>
+  <% @mapping.each do |col, field| %>
+    <%= hidden_field_tag "mapping[#{col}]", field %>
+  <% end %>
+  <%= f.submit "Confirm import" %>
+<% end %>
+
+<%= link_to "Cancel", new_import_path %>

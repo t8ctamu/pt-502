@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include Pagy::Method
 
   before_action :authenticate_member!
+  before_action :ensure_active_member
 
   def after_sign_in_path_for(member)
     stored_location_for(member) ||
@@ -9,6 +10,14 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def ensure_active_member
+    return unless member_signed_in?
+    return unless current_member.removed_at.present?
+
+    sign_out current_member
+    redirect_to root_path, alert: "Access denied. Your membership has been removed."
+  end
 
   # Shared by self-service profiles and authorized officer profile edits.
   def member_profile_params
@@ -36,6 +45,6 @@ class ApplicationController < ActionController::Base
 
   def require_manager
     return if current_member&.manager?
-    redirect_to root_path, alert: "You're not authorized to change roles."
+    redirect_to root_path, alert: "Access denied: managers only"
   end
 end

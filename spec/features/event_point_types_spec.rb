@@ -23,7 +23,7 @@ RSpec.feature "Officer assigns a point type to an event", type: :feature do
   {
     "event_description" => "Sorting donated cans",
     "event_ends_at" => "2026-11-01T12:00",
-    "event_check_in_radius_meters" => "100"
+    "event_check_in_radius_feet" => "250"
   }.each { |id, value| fill_in id, with: value if page.has_field?(id) }
   select "Service", from: "event_requirement_id"
   find("form[action='#{events_path}'] [type='submit']").click

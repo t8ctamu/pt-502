@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_11_000001) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_22_071510) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -56,14 +56,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_11_000001) do
     t.index ["requirement_id"], name: "index_event_submissions_on_requirement_id"
     t.index ["reviewed_by_id"], name: "index_event_submissions_on_reviewed_by_id"
     t.index ["status"], name: "index_event_submissions_on_status"
-    t.check_constraint "status::text = ANY (ARRAY['pending'::character varying::text, 'approved'::character varying::text, 'denied'::character varying::text])", name: "event_submissions_status_valid"
+    t.check_constraint "status::text = ANY (ARRAY['pending'::character varying, 'approved'::character varying, 'denied'::character varying]::text[])", name: "event_submissions_status_valid"
   end
 
   create_table "events", force: :cascade do |t|
-    t.integer "check_in_radius_meters", default: 100, null: false
+    t.integer "check_in_radius_feet", default: 250, null: false
     t.datetime "created_at", null: false
     t.text "description"
     t.datetime "ends_at"
+    t.string "external_reference"
     t.decimal "latitude", precision: 10, scale: 6
     t.string "location"
     t.decimal "longitude", precision: 10, scale: 6
@@ -73,8 +74,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_11_000001) do
     t.bigint "requirement_id"
     t.datetime "starts_at"
     t.datetime "updated_at", null: false
+    t.index ["external_reference"], name: "index_events_on_external_reference", unique: true
     t.index ["requirement_id"], name: "index_events_on_requirement_id"
-    t.check_constraint "check_in_radius_meters > 0", name: "events_positive_radius"
+    t.check_constraint "check_in_radius_feet >= 100 AND check_in_radius_feet <= 1000", name: "events_check_in_radius_feet_range"
     t.check_constraint "point_value >= 0", name: "events_nonnegative_points"
   end
 

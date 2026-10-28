@@ -1,0 +1,4 @@
+Email,Full Name,Paid Dues,Professionalism,Service
+alice@tamu.edu,Alice Nguyen,true,TRUE,FALSE
+bob@tamu.edu,Bob Ortiz,false,,TRUE
+invalid-row,Broken Person,false,,

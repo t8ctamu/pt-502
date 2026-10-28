@@ -20,7 +20,10 @@ class EventCheckIn
 
       lat = coordinate(latitude, -90..90)
       lon = coordinate(longitude, -180..180)
-      if distance_meters(event.latitude.to_f, event.longitude.to_f, lat, lon) > event.check_in_radius_meters
+      # Distance is measured in meters; convert the event's feet-denominated
+      # proximity to meters so the comparison stays in one unit.
+      proximity_meters = event.check_in_radius_feet * 0.3048
+      if distance_meters(event.latitude.to_f, event.longitude.to_f, lat, lon) > proximity_meters
         raise Rejected, "You are not nearby. Move closer to the event and try again."
       end
 

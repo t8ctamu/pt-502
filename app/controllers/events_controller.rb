@@ -134,8 +134,7 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:name, :description, :starts_at, :ends_at, :location,
-      :latitude, :longitude, :check_in_radius_meters, :point_value, :requirement_id,
-      :other_type)
+            :latitude, :longitude, :check_in_radius_feet, :point_value, :requirement_id,)
   end
 
   def require_admin!

@@ -70,3 +70,6 @@ gem "json", "< 3"
 gem "rqrcode", "~> 3.2"
 
 gem "pagy"
+gem "csv"
+
+gem "roo", "~> 3.0"
