@@ -21,7 +21,12 @@
      )
    end %>
 
-<h1>Members</h1>
+<div class="page-header">
+  <h1>Members</h1>
+  <% if current_member.admin? %>
+    <%= link_to "Import Members", new_import_path, class: "btn" %>
+  <% end %>
+</div>
 
 <%= form_with url: members_path, method: :get, class: "filters", style: "margin-bottom: 16px;" do |f| %>
   <%= f.label :car_pool, "Car pool" %>
@@ -47,7 +52,8 @@
 
 <p><%= pluralize(@members.size, "member") %> shown</p>
 
-<table class="point-sheet">
+<div class="table-scroll">
+  <table class="members-table point-sheet">
   <thead>
     <tr>
       <%= sortable.call("ID", "id") %>
@@ -68,38 +74,11 @@
       <th>Status</th><th>Profile</th>
       <% if current_member.manager? %>
         <th>Change Role</th>
+        <th>Actions</th>
       <% end %>
-      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <% @members.each do |m| %>
-<div class="page-header">
-  <h1>Members</h1>
-  <% if current_member.admin? %>
-    <%= link_to "Import Members", new_import_path, class: "btn" %>
-  <% end %>
-</div>
-
-<div class="table-scroll">
-  <table class="members-table">
-    <thead>
-      <tr>
-        <th>ID</th><th>Role</th><th>First name</th><th>Last name</th><th>Email</th>
-        <th>Joined</th><th>Car pool</th>
-        <% @requirements.each do |r| %>
-          <th><%= r.name %></th>
-        <% end %>
-        <th>Total</th>
-        <th>Expected graduation</th><th>Anticipated application cycle</th>
-        <th>Shared phone number</th><th>Paid dues</th><th>Status</th><th>Profile</th>
-        <% if current_member.manager? %>
-          <th>Change Role</th>
-          <th>Actions</th>
-        <% end %>
-      </tr>
-    </thead>
-    <tbody>
       <% @members.each do |m| %>
         <tr>
           <td><%= m.id %></td>
