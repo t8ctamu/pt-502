@@ -58,6 +58,13 @@ Rails.application.routes.draw do
     post :confirm, on: :member
   end
 
+  resources :attendance_imports, only: [ :new, :create ] do
+    collection do
+      get :results
+    end
+  end
+  get "attendance_imports/:event_id/upload", to: "attendance_imports#upload", as: :upload_attendance_import
+
   resources :event_submissions, only: %i[new create]
 
   resources :submission_reviews, only: :index do

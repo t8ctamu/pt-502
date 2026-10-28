@@ -3,28 +3,36 @@ class EventCheckIn
 
   EARTH_RADIUS_METERS = 6_371_000.0
 
-  def self.call(member:, event:, latitude:, longitude:)
-    new.call(member: member, event: event, latitude: latitude, longitude: longitude)
+  def self.call(member:, event:, latitude: nil, longitude: nil, skip_distance: false, checked_in_at: nil)
+    new.call(member: member, event: event, latitude: latitude, longitude: longitude,
+             skip_distance: skip_distance, checked_in_at: checked_in_at)
   end
 
-  def call(member:, event:, latitude:, longitude:)
+  def call(member:, event:, latitude: nil, longitude: nil, skip_distance: false, checked_in_at: nil)
     raise Rejected, "Please sign in before checking in." unless member&.persisted?
 
     # Serializing check-ins for this member protects both duplicate scans and
     # simultaneous point awards from different events.
     member.with_lock do
       attendance = Attendance.find_or_initialize_by(member: member, event: event)
+      # This guard is unconditional, even when skip_distance is true: it is the
+      # only thing preventing a member from being counted twice for one event.
       raise Rejected, "You have already checked in to this event." if attendance.checked_in_at?
 
       raise Rejected, "Check-in is not configured for this event yet." unless event.check_in_configured?
 
-      lat = coordinate(latitude, -90..90)
-      lon = coordinate(longitude, -180..180)
-      # Distance is measured in meters; convert the event's feet-denominated
-      # proximity to meters so the comparison stays in one unit.
-      proximity_meters = event.check_in_radius_feet * 0.3048
-      if distance_meters(event.latitude.to_f, event.longitude.to_f, lat, lon) > proximity_meters
-        raise Rejected, "You are not nearby. Move closer to the event and try again."
+      # skip_distance is for officer-initiated attendance imports, where there is
+      # no live device location to compare. It bypasses ONLY the proximity check;
+      # the duplicate guard above must still run.
+      unless skip_distance
+        lat = coordinate(latitude, -90..90)
+        lon = coordinate(longitude, -180..180)
+        # Distance is measured in meters; convert the event's feet-denominated
+        # proximity to meters so the comparison stays in one unit.
+        proximity_meters = event.check_in_radius_feet * 0.3048
+        if distance_meters(event.latitude.to_f, event.longitude.to_f, lat, lon) > proximity_meters
+          raise Rejected, "You are not nearby. Move closer to the event and try again."
+        end
       end
 
       point = nil
@@ -37,7 +45,7 @@ class EventCheckIn
         )
       end
 
-      attendance.update!(checked_in_at: Time.current, point: point)
+      attendance.update!(checked_in_at: checked_in_at || Time.current, point: point)
       attendance
     end
   end
