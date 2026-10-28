@@ -10,6 +10,7 @@
       <li><a href="#members">Member information, dues, and points</a></li>
       <li><a href="#roles">Manager-only role changes</a></li>
       <li><a href="#events">Create, edit, and delete events</a></li>
+      <li><a href="#event-import">Import events from GetInvolved</a></li>
       <li><a href="#attendance">QR codes and attendance</a></li>
       <li><a href="#requests">Approve or deny outside events</a></li>
       <li><a href="#requirements">Manager-only point requirements</a></li>
@@ -54,6 +55,18 @@
     <%= render "screenshot", name: "event-form", caption: "The event form includes venue coordinates, radius, point value, and point type." %>
     <%= render "screenshot", name: "event-check-in", caption: "The lower part of the form sets the allowed distance, attendance points, and point type before Save Event." %>
   </section>
+  <section id="event-import">
+    <h2>Import events from GetInvolved</h2>
+    <ol>
+      <li>Open Events and choose <strong>Import from GetInvolved</strong>. Upload the exported <code>.csv</code> or <code>.xlsx</code> file.</li>
+      <li>Review each row's <strong>GetInvolved status</strong> and <strong>Import action</strong>. Approved, Submitted, Initiated, and other statuses are allowed. Status is for reference and does not block import.</li>
+      <li>Valid events are selected by default. Uncheck any you do not want to import. Rows marked <strong>Has issues</strong> cannot be selected; use their row numbers and Issues messages to fix the export.</li>
+      <li>Assign each selected event's point type and points. Leave No type for events that do not award points. Fill in Other type when choosing Other.</li>
+      <li>Choose <strong>Confirm import</strong> and read the added, updated, skipped, and issue counts. Nothing is saved before confirmation. Re-importing an event with the same external reference updates it rather than creating a duplicate.</li>
+      <li>If the summary says an event needs a location pin, open that event to configure check-in coordinates.</li>
+    </ol>
+    <%= render "screenshot", name: "event-import", caption: "The event import preview shows original GetInvolved statuses, row selection, and validation issues before confirmation." %>
+  </section>
   <section id="attendance">
     <h2>QR codes and attendance</h2>
     <ol>
@@ -96,6 +109,7 @@
       <dt>A profile edit fails</dt><dd>Correct the highlighted required fields and choose a summer cycle. Previous saved details remain unchanged after an invalid save. Ask the member to correct their own shared phone if it is invalid; officers cannot edit it.</dd>
       <dt>Points or dues do not save</dt><dd>Refresh and check the current value before retrying. Set points to the desired type total, not an amount to add. Use a nonnegative whole number in a currently available point type’s field, then leave the field to save.</dd>
       <dt>An event does not save</dt><dd>Read the errors above the form. Fill required fields, provide both coordinates or neither, use a proximity between 100 and 1,000 feet, and check the end time. Other requires its extra description. A location button failure leaves manual coordinate entry available.</dd>
+      <dt>An imported event has issues</dt><dd>Read its row number and Issues message in the preview. Supply the missing reference, title, start time, or location, or correct an unparseable date, then upload again. Changing Approved, Submitted, or Initiated is not required. For an unreadable file, upload a fresh CSV or Excel export. Only selected valid rows import.</dd>
       <dt>Attendance cannot load or nobody can check in</dt><dd>Choose Refresh attendance or Try again. Verify the meeting’s coordinates at the venue and its proximity in feet. Ask members to allow location and use the secure club URL. Do not create another event just to retry.</dd>
       <dt>There are no pending requests</dt><dd>This can mean all requests have been reviewed. Ask the member to check the status on Home. If the queue reports a load error, try again before assuming it is empty.</dd>
       <dt>An approval or denial fails</dt><dd>Refresh the queue. A failed saved decision stays pending and adds no points. A successful decision disappears. Retry only if still pending; if already reviewed, do not separately add those points again. Denial needs a reason and approval needs a positive whole-number award.</dd>
@@ -109,10 +123,11 @@
       <li>Have the learner locate a member, explain the two tables, and identify phone consent and carpool availability.</li>
       <li>Practice a profile correction, dues change, and setting a point-type total. Refresh and verify each saved result.</li>
       <li>Create a training event, configure check-in, show its QR code, and locate attendance.</li>
+      <li>Preview a fictional export with Approved, Submitted, and Initiated events and a row missing a location. Explain the statuses, uncheck one valid row, and confirm. Re-import the same reference and verify the existing event updates without a duplicate.</li>
       <li>Review a training outside-event request. Explain why approval, denial, and retry behave differently.</li>
       <li>For a Manager, demonstrate role changes and explain total versus per-type requirements before editing them.</li>
       <li>Have the learner find the fix for an unavailable approval queue and explain how to avoid awarding twice.</li>
     </ol>
   </section>
-  <p class="help-review">Checked October 10, 2026. Follow the club’s point and access policy when using these tools.</p>
+  <p class="help-review">Event import instructions checked October 27, 2026; other sections checked October 10, 2026. Follow the club’s point and access policy when using these tools.</p>
 </main>

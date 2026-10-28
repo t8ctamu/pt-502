@@ -3,23 +3,21 @@
 <%
   new_count = @preview_rows.count { |r| r.status == :new }
   update_count = @preview_rows.count { |r| r.status == :update }
-  skip_count = @preview_rows.count { |r| r.status == :skip }
   error_count = @preview_rows.count { |r| r.status == :error }
 %>
 
 <p>
-  <strong><%= new_count %></strong> will be imported (new).
-  <strong><%= update_count %></strong> will update existing events.
-  <strong><%= skip_count %></strong> will be skipped (not approved in GetInvolved).
+  <strong><%= new_count %></strong> available to import (new).
+  <strong><%= update_count %></strong> available to update existing events.
   <% if error_count.positive? %>
     <strong><%= error_count %></strong> have issues and will not import.
   <% end %>
 </p>
 
 <p>
-  Only events with status <strong>Approved</strong> in GetInvolved are imported.
-  Events with status <em>Initiated</em> or <em>Submitted</em> are skipped.
-  Approve them in GetInvolved first, then re-import.
+  GetInvolved status is shown for reference and does not block import.
+  Uncheck any events you do not want to import. Only selected valid rows will be saved
+  when you choose <strong>Confirm import</strong>.
 </p>
 
 <p>
@@ -31,7 +29,7 @@
   <table>
     <thead>
       <tr>
-        <th>Row</th><th>Status</th><th>Title</th><th>Starts</th><th>Location</th>
+        <th>Import</th><th>Row</th><th>Import action</th><th>GetInvolved status</th><th>Title</th><th>Starts</th><th>Location</th>
         <th>Point type</th><th>Other type</th><th>Points</th>
         <th>Issues</th>
       </tr>
@@ -39,15 +37,24 @@
     <tbody>
       <% @preview_rows.each do |row| %>
         <tr class="row--<%= row.status %>">
+          <td>
+            <% if row.status == :new || row.status == :update %>
+              <%= check_box_tag "selected_rows[]", row.index, true,
+                    id: "import-row-#{row.index}",
+                    aria: { label: "Import row #{row.index}: #{row.attributes[:name]}" } %>
+            <% else %>
+              —
+            <% end %>
+          </td>
           <td><%= row.index %></td>
           <td>
             <%= {
               new: "New",
               update: "Will update existing",
-              skip: "Skipped",
               error: "Has issues"
             }.fetch(row.status, row.status.to_s) %>
           </td>
+          <td><%= row.source_status.presence || "Not provided" %></td>
           <td><%= row.attributes[:name] %></td>
           <td><%= row.attributes[:starts_at]&.strftime("%b %-d, %Y %-l:%M %p") %></td>
           <td><%= row.attributes[:location] %></td>

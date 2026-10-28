@@ -30,12 +30,32 @@ RSpec.describe EventImport::Mapper do
     end
   end
 
-  context "with status not Approved" do
-       let(:rows) { [ build_row(reference: "EVN-100", title: "Draft", starts: "Oct 14, 2026 4:30 pm", status: "Submitted") ] }
+  [ "Approved", "Submitted", "Initiated", "Cancelled", "", " submitted " ].each do |source_status|
+       context "with GetInvolved status #{source_status.inspect}" do
+            let(:rows) { [ build_row(reference: "EVN-100", title: "Test Event", starts: "Oct 14, 2026 4:30 pm", status: source_status) ] }
 
-    it "marks the row as :skip" do
-         expect(mapper.preview.first.status).to eq(:skip)
-    end
+         it "marks a valid row as :new and preserves the status for reference" do
+              row = mapper.preview.first
+           expect(row.status).to eq(:new)
+           expect(row.source_status).to eq(source_status.strip)
+           expect(row.errors).to be_empty
+           expect(row.attributes).not_to have_key(:status)
+         end
+
+         it "updates an existing event by reference regardless of status" do
+              existing = create(:event, external_reference: "EVN-100")
+
+           expect(mapper.preview.first.status).to eq(:update)
+           expect(mapper.preview.first.existing_event).to eq(existing)
+         end
+
+         it "still rejects a row with missing required details" do
+              rows.first[2] = ""
+
+           expect(mapper.preview.first.status).to eq(:error)
+           expect(mapper.preview.first.errors).to include("Missing title")
+         end
+       end
   end
 
   context "when the reference already exists on an event" do
