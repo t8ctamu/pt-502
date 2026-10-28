@@ -36,14 +36,14 @@
     <%= f.text_area :description, rows: 4 %>
   </div>
 
-  <div class="form-row">
+  <div class="form-row" data-controller="event-time">
     <div>
       <%= f.label :starts_at, "Date and time" %>
-      <%= f.datetime_local_field :starts_at %>
+      <%= f.datetime_local_field :starts_at, data: { event_time_target: "startsAt", action: "change->event-time#updateEndTime" } %>
     </div>
     <div>
       <%= f.label :ends_at, "End time (optional)" %>
-      <%= f.datetime_local_field :ends_at %>
+      <%= f.datetime_local_field :ends_at, data: { event_time_target: "endsAt" } %>
     </div>
   </div>
 

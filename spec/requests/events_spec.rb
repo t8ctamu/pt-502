@@ -45,6 +45,35 @@ RSpec.describe "Events", type: :request do
     expect(response).to have_http_status(422)
     expect(CGI.unescapeHTML(response.body)).to include("Name can't be blank")
   end
+
+  it "does not create an event when end time is before start time (Rainy)" do
+    expect {
+      post events_path, params: { event: {
+        name: "Meeting", description: "Details",
+        starts_at: "2026-10-01 10:00",
+        ends_at: "2026-10-01 09:00",
+        location: "Room 1",
+        latitude: "30.628", longitude: "-96.3344"
+      } }
+    }.not_to change(Event, :count)
+
+    expect(response).to have_http_status(422)
+    expect(CGI.unescapeHTML(response.body)).to include("End time must be after the start time")
+  end
+
+  it "blocks regular members from creating events (Rainy)" do
+    regular_member = create(:member, :profile_completed)
+    sign_in regular_member
+
+    post events_path, params: { event: {
+      name: "Meeting", description: "Details",
+      starts_at: "2026-10-01 10:00", location: "Room 1",
+      latitude: "30.628", longitude: "-96.3344"
+    } }
+
+    expect(response).to redirect_to(events_path)
+    expect(flash[:alert]).to eq("Admins only.")
+  end
 end
 
 RSpec.describe "Event calendar", type: :request do
