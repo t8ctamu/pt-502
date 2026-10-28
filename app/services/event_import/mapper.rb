@@ -1,11 +1,9 @@
 module EventImport
      class Mapper
           Row = Struct.new(
-            :index, :raw, :attributes, :status, :errors, :existing_event,
+            :index, :raw, :attributes, :status, :source_status, :errors, :existing_event,
             keyword_init: true
           )
-
-       APPROVED_STATUS = "Approved".freeze
 
        COLUMN_MAP = {
          "reference" => :external_reference,
@@ -46,7 +44,7 @@ module EventImport
               attrs[:location] = build_location(values)
               attrs[:description] = "Event details coming soon." if attrs[:description].blank?
 
-              status = status_for(values, attrs, errors)
+              status = status_for(attrs, errors)
               existing = find_existing(attrs[:external_reference])
 
               status = :update if status == :new && existing
@@ -56,6 +54,7 @@ module EventImport
                 raw: raw,
                 attributes: attrs,
                 status: status,
+                source_status: values["status"].to_s.strip,
                 errors: errors,
                 existing_event: existing
               )
@@ -84,19 +83,13 @@ end
          parts.join(" — ").presence
        end
 
-def status_for(values, attrs, errors)
+def status_for(attrs, errors)
      errors << "Missing reference" if attrs[:external_reference].blank?
   errors << "Missing title" if attrs[:name].blank?
   errors << "Missing start time" if attrs[:starts_at].blank?
   errors << "Missing location" if attrs[:location].blank?
 
   return :error if errors.any?
-
-  status_value = values["status"].to_s.strip
-  unless status_value.casecmp?(APPROVED_STATUS)
-       errors << "Status is '#{status_value.presence || 'blank'}', not Approved"
-    return :skip
-  end
 
   :new
 end

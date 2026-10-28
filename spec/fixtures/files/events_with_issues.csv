@@ -1,0 +1,6 @@
+Reference,Title,Starts,Ends,Status,Location
+EVN-VALID,Training meeting,"Oct 14, 2026 4:30 pm","Oct 14, 2026 5:30 pm",Submitted,Training Hall
+EVN-NO-LOCATION,Missing venue,"Oct 14, 2026 4:30 pm",,Initiated,
+EVN-BAD-DATE,Unparseable date,not a date,,Submitted,Training Hall
+,Missing reference,"Oct 14, 2026 4:30 pm",,Approved,Training Hall
+EVN-NO-TITLE,,"Oct 14, 2026 4:30 pm",,Initiated,Training Hall
