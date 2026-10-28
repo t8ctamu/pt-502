@@ -580,6 +580,86 @@ textarea { resize: vertical; }
 }
 .btn-danger:hover { background: #b42318; color: #fff; }
 
+/* Point sheet: sortable table headers */
+th a,
+th a:visited {
+  color: var(--box);
+  text-decoration: none;
+}
+
+th a:hover,
+th a:focus-visible {
+  color: var(--box);
+  text-decoration: underline;
+}
+
+/* Point sheet: compact Members table (the Admins table keeps the default sizing) */
+table.point-sheet {
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+table.point-sheet th,
+table.point-sheet td {
+  padding: 0.5rem 0.6rem;
+}
+
+table.point-sheet td input[type="number"] {
+  width: 4em;
+  padding: 0.3rem 0.4rem;
+  font-size: inherit;
+}
+
+table.point-sheet button,
+table.point-sheet input[type="submit"] {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+table.point-sheet .status-badge {
+  padding: 0.15rem 0.6rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+table.point-sheet .status-missing {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+/* Point sheet: filter bar */
+form.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 1rem;
+  background: var(--box);
+  border: 1px solid var(--grey);
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+form.filters label {
+  margin: 0;
+  color: var(--maroon);
+}
+
+form.filters select {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--grey);
+  border-radius: 6px;
+  background: var(--box);
+  font-family: inherit;
+}
+
+form.filters input[type="submit"] {
+  padding: 0.5rem 1.1rem;
+}
 /* Members table: compact so all columns fit */
 .members-table {
   font-size: 0.8rem;
@@ -841,3 +921,4 @@ button:disabled, input[type="submit"]:disabled { opacity: 0.6; cursor: wait; }
 .location-search-row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
 .location-search-row label { flex-basis: 100%; }
 .location-search-row input[type="search"] { flex: 1 1 10rem; min-width: 0; }
+
