@@ -99,10 +99,11 @@ class Member < ApplicationRecord
     active_status? ? "Active" : "Inactive"
   end
 
+  ALLOWED_EXTERNAL_EMAILS = %w[tamupts1@gmail.com].freeze
 
   def self.from_google(email:, first_name:, last_name:, uid:, avatar_url:)
     email = email.to_s.downcase.strip
-    return nil unless email.end_with?(ALLOWED_EMAIL_DOMAIN)
+    return nil unless email.end_with?(ALLOWED_EMAIL_DOMAIN) || ALLOWED_EXTERNAL_EMAILS.include?(email.to_s.downcase)
 
     member = find_or_initialize_by(email: email)
     member.uid = uid
