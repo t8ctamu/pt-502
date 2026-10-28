@@ -46,6 +46,17 @@ RSpec.describe Event, type: :model do
   it "can be created" do
     expect(create(:event)).to be_persisted
   end
+
+    it "requires ends_at to be after starts_at" do
+    event = build(:event, starts_at: Time.current, ends_at: 1.hour.ago)
+    expect(event).not_to be_valid
+    expect(event.errors[:base]).to include("End time must be after the start time")
+  end
+
+  it "is valid when ends_at is after starts_at" do
+    event = build(:event, starts_at: Time.current, ends_at: 1.hour.from_now)
+    expect(event).to be_valid
+  end
 end
 
 
