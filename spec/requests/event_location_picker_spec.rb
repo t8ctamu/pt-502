@@ -54,7 +54,7 @@ RSpec.describe "Event location picker", type: :request do
       expect(response.parsed_body["results"].first["label"]).to eq("Student Center, 100 Campus Dr")
     end
 
-    it "shows the map, search box and saved list, with no raw latitude/longitude inputs" do
+    it "shows the map, search box, saved list, and optional manual coordinates" do
          SavedLocation.create!(name: "PT Clinic", latitude: 30.62, longitude: -96.33)
 
       get new_event_path
@@ -64,8 +64,9 @@ RSpec.describe "Event location picker", type: :request do
       expect(doc.at_css('[data-location-picker-target="map"]')).to be_present
       expect(doc.at_css('[data-location-picker-target="query"]')).to be_present
       expect(doc.at_css('option[data-name="PT Clinic"]')).to be_present
-      expect(doc.at_css('input[name="event[latitude]"]')["type"]).to eq("hidden")
-      expect(doc.at_css('input[name="event[longitude]"]')["type"]).to eq("hidden")
+      expect(doc.at_css('input[name="event[latitude]"]')["type"]).to eq("number")
+      expect(doc.at_css('input[name="event[longitude]"]')["type"]).to eq("number")
+      expect(doc.at_css('label[for="event_latitude"]').text).to include("optional")
     end
 
     it "stores coordinates in the background and shows members a readable location" do
@@ -135,7 +136,7 @@ RSpec.describe "Event location picker", type: :request do
            get new_event_path
 
            expect(response.body).to include(
-             "The map could not be loaded. Choose from the list or try again later."
+             "The map could not be loaded. Your event details are still here."
            )
            expect(Nokogiri::HTML(response.body).at_css('option[data-name="PT Clinic"]')).to be_present
          end
@@ -146,7 +147,33 @@ RSpec.describe "Event location picker", type: :request do
            expect { post events_path, params: { event: attrs } }.not_to change(Event, :count)
 
            expect(response).to have_http_status(:unprocessable_entity)
-           expect(response.body).to include("Choose a location on the map before saving.")
+           expect(response.body).to include("Location can&#39;t be blank")
+         end
+
+         it "can save all event details without a pin when a location name is supplied" do
+              attrs = valid_attributes.merge(latitude: "", longitude: "", ends_at: 3.days.from_now)
+
+           expect { post events_path, params: { event: attrs, save_as_location: "1" } }.to change(Event, :count).by(1)
+
+           event = Event.order(:id).last
+           expect(event).to have_attributes(name: attrs[:name], description: attrs[:description], location: attrs[:location])
+           expect(event.starts_at).to be_within(1.second).of(attrs[:starts_at])
+           expect(event.ends_at).to be_within(1.second).of(attrs[:ends_at])
+           expect(event.check_in_configured?).to be false
+           expect(SavedLocation.count).to eq(0)
+         end
+
+         it "preserves every entered field when validation fails" do
+              attrs = valid_attributes.merge(ends_at: 1.day.from_now)
+           post events_path, params: { event: attrs }
+
+           expect(response).to have_http_status(:unprocessable_entity)
+           doc = Nokogiri::HTML(response.body)
+           expect(doc.at_css('#event_name')["value"]).to eq(attrs[:name])
+           expect(doc.at_css('#event_description').text.delete_prefix("\n")).to eq(attrs[:description])
+           expect(doc.at_css('#event_starts_at')["value"]).to start_with(attrs[:starts_at].strftime("%Y-%m-%dT%H:%M"))
+           expect(doc.at_css('#event_ends_at')["value"]).to start_with(attrs[:ends_at].strftime("%Y-%m-%dT%H:%M"))
+           expect(doc.at_css('#event_location')["value"]).to eq(attrs[:location])
          end
 
          it "does not save an event with a pin but no readable name" do

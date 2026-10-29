@@ -1,6 +1,19 @@
 require "rails_helper"
 
 RSpec.describe "Help guides", type: :request do
+     it "offers a direct return to login on public guides without needing a referring page" do
+          [ help_path, member_help_path ].each do |path|
+               get path
+               document = Nokogiri::HTML(response.body)
+               login = document.at_css('.help-navigation a')
+               expect(login.text).to eq("Back to login")
+               expect(login["href"]).to eq(new_member_session_path)
+
+               get login["href"]
+               expect(response).to have_http_status(:ok)
+          end
+     end
+
      it "offers sign-in help before authentication" do
           get new_member_session_path
           expect(response.body).to include(member_help_path)

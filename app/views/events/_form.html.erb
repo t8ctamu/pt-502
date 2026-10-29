@@ -1,6 +1,6 @@
-<%# Leaflet + OpenStreetMap (no API key). If the CDN is blocked the picker falls back to search/list. %>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<% content_for :head do %>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<% end %>
 
 <%= form_with model: event, class: "event-form", data: {
       controller: "location-picker",
@@ -10,9 +10,9 @@
       location_picker_default_lng_value: -96.3344,
       location_picker_default_zoom_value: 14,
       location_picker_no_results_message_value: "No locations found, try a different search.",
-      location_picker_map_error_message_value: "The map could not be loaded. Choose from the list or try again later.",
+      location_picker_map_error_message_value: "The map could not be loaded. Your event details are still here. Enter coordinates manually, choose from the list, or save a location name without a pin.",
       location_picker_search_error_message_value: "Search is unavailable right now. Choose from the list or try again later.",
-      location_picker_missing_location_message_value: "Choose a location by searching, picking from the list, or clicking the map before saving.",
+      location_picker_missing_location_message_value: "Enter valid latitude and longitude together, or leave both blank.",
       location_picker_missing_name_message_value: "Give this location a name or address that members will see."
     } do |f| %>
   <% if event.errors.any? %>
@@ -95,8 +95,20 @@
     </div>
     <p><small>Click the map to drop a pin, or drag the pin to fine-tune the spot.</small></p>
 
-    <%= f.hidden_field :latitude, data: { location_picker_target: "latitude" } %>
-    <%= f.hidden_field :longitude, data: { location_picker_target: "longitude" } %>
+    <div class="form-row">
+      <div>
+        <%= f.label :latitude, "Latitude (optional)" %>
+        <%= f.number_field :latitude, min: -90, max: 90, step: :any,
+              data: { location_picker_target: "latitude", action: "input->location-picker#coordinatesEdited" } %>
+      </div>
+      <div>
+        <%= f.label :longitude, "Longitude (optional)" %>
+        <%= f.number_field :longitude, min: -180, max: 180, step: :any,
+              data: { location_picker_target: "longitude", action: "input->location-picker#coordinatesEdited" } %>
+      </div>
+    </div>
+    <p><small>Enter both coordinates or leave both blank. A location name is always required.
+      Without a pin, the event can be saved, but attendance check-in will be unavailable until coordinates are added.</small></p>
 
     <div>
       <%= f.label :location, "Location name or address (shown to members)" %>

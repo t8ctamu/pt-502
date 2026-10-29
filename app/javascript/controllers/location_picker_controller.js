@@ -1,7 +1,9 @@
 import { Controller } from "@hotwired/stimulus"
 
+let leafletLoad
+
 // Officer-facing location picker: search -> pin on map -> drag/click to adjust,
-// or choose from a saved list. Writes latitude/longitude into hidden fields and
+// or choose from a saved list. Writes latitude/longitude into coordinate fields and
 // a readable name into the visible location field. Leaflet is loaded globally (L).
 export default class extends Controller {
   static targets = ["query", "results", "status", "map", "mapFrame", "mapError",
@@ -20,14 +22,20 @@ export default class extends Controller {
     pinZoom: { type: Number, default: 17 }
   }
 
-  connect() {
+  async connect() {
     this.autoNamed = false
     this.timer = null
-    this.restorePending()
-    this.initMap()
+    const connection = this.connection = {}
+    try {
+      await this.loadLeaflet()
+      if (this.connection === connection && this.element.isConnected) this.initMap()
+    } catch (_) {
+      if (this.connection === connection && this.element.isConnected) this.showMapError()
+    }
   }
 
   disconnect() {
+    this.connection = null
     if (this.fullscreen) this.exitFullscreen()
     clearTimeout(this.timer)
     this.searchAbort?.abort()
@@ -35,40 +43,42 @@ export default class extends Controller {
     this.destroyMap()
   }
 
-  // ---- reload (map fails to load on first Turbo visit) -------------------
+  // Share one asynchronous library request across Turbo visits. Never reload
+  // the page to recover a map: the rest of the event form is an unsaved draft.
+  loadLeaflet() {
+    if (window.L) return Promise.resolve()
+    if (leafletLoad) return leafletLoad
 
-  get pendingKey() { return `pendingLocation:${window.location.pathname}` }
-
-  maybeReload() {
-    if (this.map || this.reloaded) return   // map is fine, or we already reloaded once
-    sessionStorage.setItem(this.pendingKey, JSON.stringify({
-      lat: this.latitudeTarget.value,
-      lng: this.longitudeTarget.value,
-      name: this.nameTarget.value,
-      autoNamed: this.autoNamed
-    }))
-    window.location.reload()
-  }
-
-  restorePending() {
-    const raw = sessionStorage.getItem(this.pendingKey)
-    if (!raw) return
-    sessionStorage.removeItem(this.pendingKey)
-    this.reloaded = true
-    try {
-      const saved = JSON.parse(raw)
-      this.latitudeTarget.value = saved.lat
-      this.longitudeTarget.value = saved.lng
-      this.nameTarget.value = saved.name
-      this.autoNamed = saved.autoNamed
-    } catch (_) { /* ignore bad data */ }
+    leafletLoad = new Promise((resolve, reject) => {
+      const script = document.createElement("script")
+      script.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      script.crossOrigin = ""
+      script.async = true
+      const fail = () => {
+        clearTimeout(timeout)
+        script.remove()
+        leafletLoad = null
+        reject(new Error("The map could not be loaded"))
+      }
+      const timeout = setTimeout(fail, 10000)
+      script.addEventListener("error", fail, { once: true })
+      script.addEventListener("load", () => {
+        clearTimeout(timeout)
+        window.L ? resolve() : fail()
+      }, { once: true })
+      document.head.appendChild(script)
+    })
+    return leafletLoad
   }
 
   // ---- map ---------------------------------------------------------------
 
   initMap() {
     try {
-      if (typeof L === "undefined") throw new Error("Leaflet did not load")
+      const L = window.L
+      if (!L) throw new Error("Leaflet did not load")
+      this.mapFrameTarget.hidden = false
+      this.mapErrorTarget.hidden = true
 
       const lat = parseFloat(this.latitudeTarget.value)
       const lng = parseFloat(this.longitudeTarget.value)
@@ -169,7 +179,7 @@ export default class extends Controller {
       this.marker.setLatLng([lat, lng])
       return
     }
-    this.marker = L.marker([lat, lng], {
+    this.marker = window.L.marker([lat, lng], {
       draggable: true,
       keyboard: true,
       title: "Event location (drag to adjust)"
@@ -192,7 +202,6 @@ export default class extends Controller {
       this.nameTarget.value = label
       this.autoNamed = true
       this.setStatus("Location selected. Drag the pin to fine-tune it.")
-      this.maybeReload()
     } else if (reverse && (this.nameTarget.value.trim() === "" || this.autoNamed)) {
       this.reverseLookup(lat, lng)
     } else {
@@ -213,21 +222,34 @@ export default class extends Controller {
 
   useMyLocation() {
     if (!navigator.geolocation) {
-      this.setStatus("Your browser can't share its location. Search or use the map instead.", { error: true })
+      this.setStatus("Your browser can't share its location. Enter coordinates manually, search, or choose from the list.", { error: true })
       return
     }
     this.setStatus("Finding your location…")
     navigator.geolocation.getCurrentPosition(
       (position) => {
+        if (!this.element.isConnected) return
         this.setPoint(position.coords.latitude, position.coords.longitude, { reverse: true, recenter: true })
       },
-      () => this.setStatus("Couldn't get your location. Search or use the map instead.", { error: true }),
+      () => {
+        if (!this.element.isConnected) return
+        this.setStatus("Couldn't get your location. Your event details are still here. Enter coordinates manually, search, or choose from the list.", { error: true })
+      },
       { enableHighAccuracy: true, timeout: 10000 }
     )
   }
 
   nameEdited() {
     this.autoNamed = false
+  }
+
+  coordinatesEdited() {
+    const lat = parseFloat(this.latitudeTarget.value)
+    const lng = parseFloat(this.longitudeTarget.value)
+    if (Number.isFinite(lat) && Math.abs(lat) <= 90 && Number.isFinite(lng) && Math.abs(lng) <= 180) {
+      this.placeMarker(lat, lng)
+      if (this.map) this.map.setView([lat, lng], this.pinZoomValue)
+    }
   }
 
   // ---- search ------------------------------------------------------------
@@ -306,11 +328,9 @@ export default class extends Controller {
       } else {
         this.setStatus("Pin placed, but no address was found. Type a name for this spot below.", { error: true })
       }
-      this.maybeReload()
     } catch (error) {
       if (error.name === "AbortError") return
       this.setStatus("Pin placed, but the address lookup failed. Type a name for this spot below.", { error: true })
-      this.maybeReload()
     }
   }
 
@@ -340,13 +360,15 @@ export default class extends Controller {
   validate(event) {
     const lat = parseFloat(this.latitudeTarget.value)
     const lng = parseFloat(this.longitudeTarget.value)
+    const noPoint = this.latitudeTarget.value.trim() === "" && this.longitudeTarget.value.trim() === ""
     const pointOk = Number.isFinite(lat) && Math.abs(lat) <= 90 &&
                     Number.isFinite(lng) && Math.abs(lng) <= 180
 
-    if (!pointOk || this.nameTarget.value.trim() === "") {
+    if ((!noPoint && !pointOk) || this.nameTarget.value.trim() === "") {
       event.preventDefault()
-      this.setStatus(pointOk ? this.missingNameMessageValue : this.missingLocationMessageValue, { error: true })
-      ;(pointOk ? this.nameTarget : this.queryTarget).focus()
+      const missingName = this.nameTarget.value.trim() === ""
+      this.setStatus(missingName ? this.missingNameMessageValue : this.missingLocationMessageValue, { error: true })
+      ;(missingName ? this.nameTarget : this.latitudeTarget).focus()
     }
   }
 
