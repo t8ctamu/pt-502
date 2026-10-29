@@ -38,6 +38,14 @@ admin2.joined_at            ||= Date.current
 admin2.profile_completed_at ||= Time.current
 admin2.save!
 
+product_owner  = Member.find_or_initialize_by(email: "tamupts1@gmail.com")
+product_owner.role = manager_role unless product_owner.manager?
+product_owner.first_name           ||= "Club"
+product_owner.last_name            ||= "President"
+product_owner.joined_at            ||= Date.current
+product_owner.profile_completed_at ||= Time.current
+product_owner.save!
+
 if Rails.env.development?
   member_role = Role.find_by!(description: "Member")
   service     = Requirement.find_by!(name: "Service")

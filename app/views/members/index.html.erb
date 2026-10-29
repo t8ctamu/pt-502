@@ -1,10 +1,3 @@
-<div class="btn-group" style="margin-bottom: 16px;">
-  <%= button_to "Reset Semester",
-        reset_semesters_path,
-        method: :post,
-        form: { data: { turbo_confirm: "This will start a new semester. Members' current points will no longer count toward the new semester's totals. Their history is preserved. Continue?" } } %>
-</div>
-
 <%# Builds a sortable <th>: the label links to this page sorted by `key`.
     Clicking the active column toggles asc/desc; existing filters are preserved. %>
 <% sortable = lambda do |label, key|
@@ -26,6 +19,13 @@
   <% if current_member.admin? %>
     <%= link_to "Import Members", new_import_path, class: "btn" %>
   <% end %>
+</div>
+
+<div class="btn-group" style="margin-bottom: 16px;">
+  <%= button_to "Reset Semester",
+        reset_semesters_path,
+        method: :post,
+        form: { data: { turbo_confirm: "This will start a new semester. Members' current points will no longer count toward the new semester's totals. Their history is preserved. Continue?" } } %>
 </div>
 
 <%= form_with url: members_path, method: :get, class: "filters", style: "margin-bottom: 16px;" do |f| %>
@@ -54,31 +54,31 @@
 
 <div class="table-scroll">
   <table class="members-table point-sheet">
-  <thead>
-    <tr>
-      <%= sortable.call("ID", "id") %>
-      <%= sortable.call("Role", "role") %>
-      <%= sortable.call("First name", "first_name") %>
-      <%= sortable.call("Last name", "last_name") %>
-      <%= sortable.call("Email", "email") %>
-      <%= sortable.call("Joined", "joined_at") %>
-      <th>Car pool</th>
-      <% @requirements.each do |r| %>
-        <%= sortable.call(r.name, "req_#{r.id}") %>
-      <% end %>
-      <%= sortable.call("Total", "total") %>
-      <%= sortable.call("Expected graduation", "expected_graduation") %>
-      <%= sortable.call("Anticipated application cycle", "anticipated_cycle") %>
-      <th>Shared phone number</th>
-      <%= sortable.call("Paid dues", "paid_dues") %>
-      <th>Status</th><th>Profile</th>
-      <% if current_member.manager? %>
-        <th>Change Role</th>
-        <th>Actions</th>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
+    <thead>
+      <tr>
+        <%= sortable.call("ID", "id") %>
+        <%= sortable.call("Role", "role") %>
+        <%= sortable.call("First name", "first_name") %>
+        <%= sortable.call("Last name", "last_name") %>
+        <%= sortable.call("Email", "email") %>
+        <%= sortable.call("Joined", "joined_at") %>
+        <th>Car pool</th>
+        <% @requirements.each do |r| %>
+          <%= sortable.call(r.name, "req_#{r.id}") %>
+        <% end %>
+        <%= sortable.call("Total", "total") %>
+        <%= sortable.call("Expected graduation", "expected_graduation") %>
+        <%= sortable.call("Anticipated application cycle", "anticipated_cycle") %>
+        <th>Shared phone number</th>
+        <%= sortable.call("Paid dues", "paid_dues") %>
+        <th>Status</th><th>Profile</th>
+        <% if current_member.manager? %>
+          <th>Change Role</th>
+          <th>Actions</th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
       <% @members.each do |m| %>
         <tr>
           <td><%= m.id %></td>
