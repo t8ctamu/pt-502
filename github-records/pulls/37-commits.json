@@ -1,0 +1,417 @@
+[
+  {
+    "sha": "417e5171a69068a36b083ea3a181e9e43d8cc767",
+    "node_id": "C_kwDOUOlySdoAKDQxN2U1MTcxYTY5MDY4YTM2YjA4M2VhM2ExODFlOWU0M2Q4Y2M3Njc",
+    "commit": {
+      "author": {
+        "name": "balar0",
+        "email": "144611586+balar0@users.noreply.github.com",
+        "date": "2026-10-09T02:43:04Z"
+      },
+      "committer": {
+        "name": "balar0",
+        "email": "144611586+balar0@users.noreply.github.com",
+        "date": "2026-10-09T02:43:04Z"
+      },
+      "message": "added map for user story",
+      "tree": {
+        "sha": "d1d8c634da69a0866653215704fbcc2be3e5af0a",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/d1d8c634da69a0866653215704fbcc2be3e5af0a"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/417e5171a69068a36b083ea3a181e9e43d8cc767",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/417e5171a69068a36b083ea3a181e9e43d8cc767",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/417e5171a69068a36b083ea3a181e9e43d8cc767",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/417e5171a69068a36b083ea3a181e9e43d8cc767/comments",
+    "author": {
+      "login": "balar0",
+      "id": 144611586,
+      "node_id": "U_kgDOCJ6ZAg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/144611586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/balar0",
+      "html_url": "https://github.com/balar0",
+      "followers_url": "https://api.github.com/users/balar0/followers",
+      "following_url": "https://api.github.com/users/balar0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/balar0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/balar0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/balar0/subscriptions",
+      "organizations_url": "https://api.github.com/users/balar0/orgs",
+      "repos_url": "https://api.github.com/users/balar0/repos",
+      "events_url": "https://api.github.com/users/balar0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/balar0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "balar0",
+      "id": 144611586,
+      "node_id": "U_kgDOCJ6ZAg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/144611586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/balar0",
+      "html_url": "https://github.com/balar0",
+      "followers_url": "https://api.github.com/users/balar0/followers",
+      "following_url": "https://api.github.com/users/balar0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/balar0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/balar0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/balar0/subscriptions",
+      "organizations_url": "https://api.github.com/users/balar0/orgs",
+      "repos_url": "https://api.github.com/users/balar0/repos",
+      "events_url": "https://api.github.com/users/balar0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/balar0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "afaf26a64afb86f5ec9c52ee33ce1638a30e4c77",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/afaf26a64afb86f5ec9c52ee33ce1638a30e4c77",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/afaf26a64afb86f5ec9c52ee33ce1638a30e4c77"
+      }
+    ]
+  },
+  {
+    "sha": "cf12ea1d736dd38392e9cd09c27e17638d8dc4ea",
+    "node_id": "C_kwDOUOlySdoAKGNmMTJlYTFkNzM2ZGQzODM5MmU5Y2QwOWMyN2UxNzYzOGQ4ZGM0ZWE",
+    "commit": {
+      "author": {
+        "name": "balar0",
+        "email": "144611586+balar0@users.noreply.github.com",
+        "date": "2026-10-09T03:33:11Z"
+      },
+      "committer": {
+        "name": "balar0",
+        "email": "144611586+balar0@users.noreply.github.com",
+        "date": "2026-10-09T03:33:11Z"
+      },
+      "message": "fixing rspec test",
+      "tree": {
+        "sha": "b21af25f45447725baf34d938c352c322c266006",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/b21af25f45447725baf34d938c352c322c266006"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/cf12ea1d736dd38392e9cd09c27e17638d8dc4ea",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/cf12ea1d736dd38392e9cd09c27e17638d8dc4ea",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/cf12ea1d736dd38392e9cd09c27e17638d8dc4ea",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/cf12ea1d736dd38392e9cd09c27e17638d8dc4ea/comments",
+    "author": {
+      "login": "balar0",
+      "id": 144611586,
+      "node_id": "U_kgDOCJ6ZAg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/144611586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/balar0",
+      "html_url": "https://github.com/balar0",
+      "followers_url": "https://api.github.com/users/balar0/followers",
+      "following_url": "https://api.github.com/users/balar0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/balar0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/balar0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/balar0/subscriptions",
+      "organizations_url": "https://api.github.com/users/balar0/orgs",
+      "repos_url": "https://api.github.com/users/balar0/repos",
+      "events_url": "https://api.github.com/users/balar0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/balar0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "balar0",
+      "id": 144611586,
+      "node_id": "U_kgDOCJ6ZAg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/144611586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/balar0",
+      "html_url": "https://github.com/balar0",
+      "followers_url": "https://api.github.com/users/balar0/followers",
+      "following_url": "https://api.github.com/users/balar0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/balar0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/balar0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/balar0/subscriptions",
+      "organizations_url": "https://api.github.com/users/balar0/orgs",
+      "repos_url": "https://api.github.com/users/balar0/repos",
+      "events_url": "https://api.github.com/users/balar0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/balar0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "417e5171a69068a36b083ea3a181e9e43d8cc767",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/417e5171a69068a36b083ea3a181e9e43d8cc767",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/417e5171a69068a36b083ea3a181e9e43d8cc767"
+      }
+    ]
+  },
+  {
+    "sha": "217a869f24ed07c4e8c9f07eea3cc4ac02d67c9f",
+    "node_id": "C_kwDOUOlySdoAKDIxN2E4NjlmMjRlZDA3YzRlOGM5ZjA3ZWVhM2NjNGFjMDJkNjdjOWY",
+    "commit": {
+      "author": {
+        "name": "balar0",
+        "email": "144611586+balar0@users.noreply.github.com",
+        "date": "2026-10-09T03:36:29Z"
+      },
+      "committer": {
+        "name": "balar0",
+        "email": "144611586+balar0@users.noreply.github.com",
+        "date": "2026-10-09T03:36:29Z"
+      },
+      "message": "fixed styleing issue",
+      "tree": {
+        "sha": "754b96e08cfc5de8a8500c2b55ff1fd491a29165",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/754b96e08cfc5de8a8500c2b55ff1fd491a29165"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/217a869f24ed07c4e8c9f07eea3cc4ac02d67c9f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/217a869f24ed07c4e8c9f07eea3cc4ac02d67c9f",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/217a869f24ed07c4e8c9f07eea3cc4ac02d67c9f",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/217a869f24ed07c4e8c9f07eea3cc4ac02d67c9f/comments",
+    "author": {
+      "login": "balar0",
+      "id": 144611586,
+      "node_id": "U_kgDOCJ6ZAg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/144611586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/balar0",
+      "html_url": "https://github.com/balar0",
+      "followers_url": "https://api.github.com/users/balar0/followers",
+      "following_url": "https://api.github.com/users/balar0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/balar0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/balar0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/balar0/subscriptions",
+      "organizations_url": "https://api.github.com/users/balar0/orgs",
+      "repos_url": "https://api.github.com/users/balar0/repos",
+      "events_url": "https://api.github.com/users/balar0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/balar0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "balar0",
+      "id": 144611586,
+      "node_id": "U_kgDOCJ6ZAg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/144611586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/balar0",
+      "html_url": "https://github.com/balar0",
+      "followers_url": "https://api.github.com/users/balar0/followers",
+      "following_url": "https://api.github.com/users/balar0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/balar0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/balar0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/balar0/subscriptions",
+      "organizations_url": "https://api.github.com/users/balar0/orgs",
+      "repos_url": "https://api.github.com/users/balar0/repos",
+      "events_url": "https://api.github.com/users/balar0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/balar0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "cf12ea1d736dd38392e9cd09c27e17638d8dc4ea",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/cf12ea1d736dd38392e9cd09c27e17638d8dc4ea",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/cf12ea1d736dd38392e9cd09c27e17638d8dc4ea"
+      }
+    ]
+  },
+  {
+    "sha": "85bfa1a8ef21be360c6e865cfd47486f3a026a18",
+    "node_id": "C_kwDOUOlySdoAKDg1YmZhMWE4ZWYyMWJlMzYwYzZlODY1Y2ZkNDc0ODZmM2EwMjZhMTg",
+    "commit": {
+      "author": {
+        "name": "balar0",
+        "email": "144611586+balar0@users.noreply.github.com",
+        "date": "2026-10-11T20:59:37Z"
+      },
+      "committer": {
+        "name": "balar0",
+        "email": "144611586+balar0@users.noreply.github.com",
+        "date": "2026-10-11T20:59:37Z"
+      },
+      "message": "Merge remote-tracking branch 'origin/main' into feature/event-location-picker",
+      "tree": {
+        "sha": "c9f5251bdbb78ea32c282dde8492c926531fdcbc",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/c9f5251bdbb78ea32c282dde8492c926531fdcbc"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/85bfa1a8ef21be360c6e865cfd47486f3a026a18",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/85bfa1a8ef21be360c6e865cfd47486f3a026a18",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/85bfa1a8ef21be360c6e865cfd47486f3a026a18",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/85bfa1a8ef21be360c6e865cfd47486f3a026a18/comments",
+    "author": {
+      "login": "balar0",
+      "id": 144611586,
+      "node_id": "U_kgDOCJ6ZAg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/144611586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/balar0",
+      "html_url": "https://github.com/balar0",
+      "followers_url": "https://api.github.com/users/balar0/followers",
+      "following_url": "https://api.github.com/users/balar0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/balar0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/balar0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/balar0/subscriptions",
+      "organizations_url": "https://api.github.com/users/balar0/orgs",
+      "repos_url": "https://api.github.com/users/balar0/repos",
+      "events_url": "https://api.github.com/users/balar0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/balar0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "balar0",
+      "id": 144611586,
+      "node_id": "U_kgDOCJ6ZAg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/144611586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/balar0",
+      "html_url": "https://github.com/balar0",
+      "followers_url": "https://api.github.com/users/balar0/followers",
+      "following_url": "https://api.github.com/users/balar0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/balar0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/balar0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/balar0/subscriptions",
+      "organizations_url": "https://api.github.com/users/balar0/orgs",
+      "repos_url": "https://api.github.com/users/balar0/repos",
+      "events_url": "https://api.github.com/users/balar0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/balar0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "217a869f24ed07c4e8c9f07eea3cc4ac02d67c9f",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/217a869f24ed07c4e8c9f07eea3cc4ac02d67c9f",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/217a869f24ed07c4e8c9f07eea3cc4ac02d67c9f"
+      },
+      {
+        "sha": "3796dfd862c5ead20b5df995f2a91c96effc6d3e",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/3796dfd862c5ead20b5df995f2a91c96effc6d3e",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/3796dfd862c5ead20b5df995f2a91c96effc6d3e"
+      }
+    ]
+  },
+  {
+    "sha": "2eb1e0769093a8789936fa1762b35c19c2bf64dd",
+    "node_id": "C_kwDOUOlySdoAKDJlYjFlMDc2OTA5M2E4Nzg5OTM2ZmExNzYyYjM1YzE5YzJiZjY0ZGQ",
+    "commit": {
+      "author": {
+        "name": "balar0",
+        "email": "144611586+balar0@users.noreply.github.com",
+        "date": "2026-10-11T21:23:48Z"
+      },
+      "committer": {
+        "name": "balar0",
+        "email": "144611586+balar0@users.noreply.github.com",
+        "date": "2026-10-11T21:23:48Z"
+      },
+      "message": "fixed pipline faluires",
+      "tree": {
+        "sha": "8ed3b6e2009f617f282809f2968898ed5511a90c",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/8ed3b6e2009f617f282809f2968898ed5511a90c"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/2eb1e0769093a8789936fa1762b35c19c2bf64dd",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/2eb1e0769093a8789936fa1762b35c19c2bf64dd",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/2eb1e0769093a8789936fa1762b35c19c2bf64dd",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/2eb1e0769093a8789936fa1762b35c19c2bf64dd/comments",
+    "author": {
+      "login": "balar0",
+      "id": 144611586,
+      "node_id": "U_kgDOCJ6ZAg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/144611586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/balar0",
+      "html_url": "https://github.com/balar0",
+      "followers_url": "https://api.github.com/users/balar0/followers",
+      "following_url": "https://api.github.com/users/balar0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/balar0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/balar0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/balar0/subscriptions",
+      "organizations_url": "https://api.github.com/users/balar0/orgs",
+      "repos_url": "https://api.github.com/users/balar0/repos",
+      "events_url": "https://api.github.com/users/balar0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/balar0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "balar0",
+      "id": 144611586,
+      "node_id": "U_kgDOCJ6ZAg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/144611586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/balar0",
+      "html_url": "https://github.com/balar0",
+      "followers_url": "https://api.github.com/users/balar0/followers",
+      "following_url": "https://api.github.com/users/balar0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/balar0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/balar0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/balar0/subscriptions",
+      "organizations_url": "https://api.github.com/users/balar0/orgs",
+      "repos_url": "https://api.github.com/users/balar0/repos",
+      "events_url": "https://api.github.com/users/balar0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/balar0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "85bfa1a8ef21be360c6e865cfd47486f3a026a18",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/85bfa1a8ef21be360c6e865cfd47486f3a026a18",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/85bfa1a8ef21be360c6e865cfd47486f3a026a18"
+      }
+    ]
+  }
+]

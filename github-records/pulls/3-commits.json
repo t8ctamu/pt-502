@@ -1,0 +1,84 @@
+[
+  {
+    "sha": "672001509bc5c0678d2288f46152c82ff7f8d77e",
+    "node_id": "C_kwDOUOlySdoAKDY3MjAwMTUwOWJjNWMwNjc4ZDIyODhmNDYxNTJjODJmZjdmOGQ3N2U",
+    "commit": {
+      "author": {
+        "name": "dependabot[bot]",
+        "email": "49699333+dependabot[bot]@users.noreply.github.com",
+        "date": "2026-09-11T18:37:01Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-09-11T18:37:01Z"
+      },
+      "message": "Bump actions/upload-artifact from 4 to 7\n\nBumps [actions/upload-artifact](https://github.com/actions/upload-artifact) from 4 to 7.\n- [Release notes](https://github.com/actions/upload-artifact/releases)\n- [Commits](https://github.com/actions/upload-artifact/compare/v4...v7)\n\n---\nupdated-dependencies:\n- dependency-name: actions/upload-artifact\n  dependency-version: '7'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+      "tree": {
+        "sha": "52522b15263c48121100b7c186b528ead715d408",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/52522b15263c48121100b7c186b528ead715d408"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/672001509bc5c0678d2288f46152c82ff7f8d77e",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqpEpNCRC1aQ7uu5UhlAAA8KwQAJNJwG2ynNa+tv5NLAcd6gov\nK8kv97ycyBKVKvk4kemF50iOZOwBtwf6q7UDWaIi8nNxYs9k+SgDehYkuxB2wdMN\n6sYTJ4aBDI4r2iPYfZMRGTqA226YqJjv0ILW7Gvg2qWWawDoIBD//D77T4b/k3us\nQTMaWAaeXQv2Con9hWEz38tSQrlFhnXaOVRzpnIFtRsH16JuYP45N/C8qNGcheaz\nW4NJ4RCKxACaavPhbwHiXMKlQ6FhGtndNJwrW5mfu/rXpxo6aia8Atsbc5UKBmCL\nRmKAF+EVDrI6BER6VmgmyEXeMelXMygZ1bj3cDZgDCFiJS59rCOYfX3eTqkNxgUz\nN1XFibjGochTq++zafI5x4yL9L5RLXDUuH8d2kwYfqCTH7VClHMclMz8nEeawTOL\nVpMEI0RY8eoP4ejVpRCEVqzcqHG5ktv6sYZMIg+B++6QW/oh556O+3jfC4pfFUyX\n4RCDXoVQv1+gzyFZaLcnqvAjoVZoO/TkhOq5yUQhgPSy4Y8MLSODB2iZ04yZ1Dnl\n4CkFc71qud+L9boVdRmH0lsKyB2QxYMjyO3TweYagp0srNZooXHOEWnZhYR3i5Tv\nOyfwFkVA0bFuHQPXR+cq9X+5qrbN3d3gkK3QuxFAGA7SYxsB3085tUE5/F4iPFhD\neOolOH6UHYXJbR/KGJDT\n=85K1\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 52522b15263c48121100b7c186b528ead715d408\nparent 52fd82d053aeb7b5ccfa895be477d40c7107f8c1\nauthor dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> 1789151821 +0000\ncommitter GitHub <noreply@github.com> 1789151821 +0000\n\nBump actions/upload-artifact from 4 to 7\n\nBumps [actions/upload-artifact](https://github.com/actions/upload-artifact) from 4 to 7.\n- [Release notes](https://github.com/actions/upload-artifact/releases)\n- [Commits](https://github.com/actions/upload-artifact/compare/v4...v7)\n\n---\nupdated-dependencies:\n- dependency-name: actions/upload-artifact\n  dependency-version: '7'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+        "verified_at": "2026-09-11T18:37:01Z"
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/672001509bc5c0678d2288f46152c82ff7f8d77e",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/672001509bc5c0678d2288f46152c82ff7f8d77e",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/672001509bc5c0678d2288f46152c82ff7f8d77e/comments",
+    "author": {
+      "login": "dependabot[bot]",
+      "id": 49699333,
+      "node_id": "MDM6Qm90NDk2OTkzMzM=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dependabot%5Bbot%5D",
+      "html_url": "https://github.com/apps/dependabot",
+      "followers_url": "https://api.github.com/users/dependabot%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/dependabot%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dependabot%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dependabot%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dependabot%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/dependabot%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/dependabot%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/dependabot%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dependabot%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "52fd82d053aeb7b5ccfa895be477d40c7107f8c1",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/52fd82d053aeb7b5ccfa895be477d40c7107f8c1",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/52fd82d053aeb7b5ccfa895be477d40c7107f8c1"
+      }
+    ]
+  }
+]

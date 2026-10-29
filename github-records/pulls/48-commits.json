@@ -1,0 +1,84 @@
+[
+  {
+    "sha": "e7902b23142d06980624fa78db525f085b505cc2",
+    "node_id": "C_kwDOUOlySdoAKGU3OTAyYjIzMTQyZDA2OTgwNjI0ZmE3OGRiNTI1ZjA4NWI1MDVjYzI",
+    "commit": {
+      "author": {
+        "name": "root",
+        "email": "root@localhost",
+        "date": "2026-10-21T17:32:44Z"
+      },
+      "committer": {
+        "name": "root",
+        "email": "root@localhost",
+        "date": "2026-10-21T17:32:44Z"
+      },
+      "message": "fixed officer permissions to not be able to remove members",
+      "tree": {
+        "sha": "040b4ad00bc60882a828d7154ee8f34fb747b367",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/040b4ad00bc60882a828d7154ee8f34fb747b367"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/e7902b23142d06980624fa78db525f085b505cc2",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/e7902b23142d06980624fa78db525f085b505cc2",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/e7902b23142d06980624fa78db525f085b505cc2",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/e7902b23142d06980624fa78db525f085b505cc2/comments",
+    "author": {
+      "login": "invalid-email-address",
+      "id": 148100,
+      "node_id": "MDQ6VXNlcjE0ODEwMA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/148100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/invalid-email-address",
+      "html_url": "https://github.com/invalid-email-address",
+      "followers_url": "https://api.github.com/users/invalid-email-address/followers",
+      "following_url": "https://api.github.com/users/invalid-email-address/following{/other_user}",
+      "gists_url": "https://api.github.com/users/invalid-email-address/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/invalid-email-address/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/invalid-email-address/subscriptions",
+      "organizations_url": "https://api.github.com/users/invalid-email-address/orgs",
+      "repos_url": "https://api.github.com/users/invalid-email-address/repos",
+      "events_url": "https://api.github.com/users/invalid-email-address/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/invalid-email-address/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "invalid-email-address",
+      "id": 148100,
+      "node_id": "MDQ6VXNlcjE0ODEwMA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/148100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/invalid-email-address",
+      "html_url": "https://github.com/invalid-email-address",
+      "followers_url": "https://api.github.com/users/invalid-email-address/followers",
+      "following_url": "https://api.github.com/users/invalid-email-address/following{/other_user}",
+      "gists_url": "https://api.github.com/users/invalid-email-address/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/invalid-email-address/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/invalid-email-address/subscriptions",
+      "organizations_url": "https://api.github.com/users/invalid-email-address/orgs",
+      "repos_url": "https://api.github.com/users/invalid-email-address/repos",
+      "events_url": "https://api.github.com/users/invalid-email-address/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/invalid-email-address/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "9aba8283dce05788c32eefb9b313a2d210946eee",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/9aba8283dce05788c32eefb9b313a2d210946eee",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/9aba8283dce05788c32eefb9b313a2d210946eee"
+      }
+    ]
+  }
+]

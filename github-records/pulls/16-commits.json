@@ -1,0 +1,576 @@
+[
+  {
+    "sha": "5c7ee9b69135cb4ac70835ef1df511e839580f87",
+    "node_id": "C_kwDOUOlySdoAKDVjN2VlOWI2OTEzNWNiNGFjNzA4MzVlZjFkZjUxMWU4Mzk1ODBmODc",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-23T02:37:47Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-23T03:15:56Z"
+      },
+      "message": "Add Manager role to seeds and unique index on roles.description to prevent duplicates. Make sure to db:seed so Manager is added. Manager and manager could still exist, but use casecmp? to look up roles without having to worry.",
+      "tree": {
+        "sha": "b69517692b2058312600dac8b07eb8811dfdb4d8",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/b69517692b2058312600dac8b07eb8811dfdb4d8"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/5c7ee9b69135cb4ac70835ef1df511e839580f87",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/5c7ee9b69135cb4ac70835ef1df511e839580f87",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/5c7ee9b69135cb4ac70835ef1df511e839580f87",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/5c7ee9b69135cb4ac70835ef1df511e839580f87/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d7df5d5b780d8323ca9a8fa079ec52fe8d5ea69c",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/d7df5d5b780d8323ca9a8fa079ec52fe8d5ea69c",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/d7df5d5b780d8323ca9a8fa079ec52fe8d5ea69c"
+      }
+    ]
+  },
+  {
+    "sha": "d6c331aee5a603351506fe707482205dd3e3552a",
+    "node_id": "C_kwDOUOlySdoAKGQ2YzMzMWFlZTVhNjAzMzUxNTA2ZmU3MDc0ODIyMDVkZDNlMzU1MmE",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-23T03:07:50Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-23T03:16:14Z"
+      },
+      "message": "Added role hierarchy to Role model. LEVELS map each role to a numeric value.\n\n0,1,2 for member, admin, manager. -1 for any other role. Role can fetch the member's current level. Manager automatically inherits admin privileges with role?.",
+      "tree": {
+        "sha": "77a9c713349c672c69b9163fd17c970910a195ea",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/77a9c713349c672c69b9163fd17c970910a195ea"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/d6c331aee5a603351506fe707482205dd3e3552a",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/d6c331aee5a603351506fe707482205dd3e3552a",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/d6c331aee5a603351506fe707482205dd3e3552a",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/d6c331aee5a603351506fe707482205dd3e3552a/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "5c7ee9b69135cb4ac70835ef1df511e839580f87",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/5c7ee9b69135cb4ac70835ef1df511e839580f87",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/5c7ee9b69135cb4ac70835ef1df511e839580f87"
+      }
+    ]
+  },
+  {
+    "sha": "ef0b879abc131b226c6cf6791aad922869f3fd22",
+    "node_id": "C_kwDOUOlySdoAKGVmMGI4NzlhYmMxMzFiMjI2YzZjZjY3OTFhYWQ5MjI4NjlmM2ZkMjI",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-23T03:33:02Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-23T03:33:02Z"
+      },
+      "message": "Made Role#level case-insensitive.\n\nLEVELS keys are downcase, level downcases the role name before looking it up with to_s.downcase. (If null). Added specs for lower/mixed/uppercase role names.",
+      "tree": {
+        "sha": "42354a0f2554addb2dc8702e7f29d5071b60e12a",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/42354a0f2554addb2dc8702e7f29d5071b60e12a"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/ef0b879abc131b226c6cf6791aad922869f3fd22",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/ef0b879abc131b226c6cf6791aad922869f3fd22",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/ef0b879abc131b226c6cf6791aad922869f3fd22",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/ef0b879abc131b226c6cf6791aad922869f3fd22/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d6c331aee5a603351506fe707482205dd3e3552a",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/d6c331aee5a603351506fe707482205dd3e3552a",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/d6c331aee5a603351506fe707482205dd3e3552a"
+      }
+    ]
+  },
+  {
+    "sha": "ded1ec5d4d31d71db0c9db28a5c29b5378d6f2c0",
+    "node_id": "C_kwDOUOlySdoAKGRlZDFlYzVkNGQzMWQ3MWRiMGM5ZGIyOGE1YzI5YjUzNzhkNmYyYzA",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-23T03:48:48Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-23T03:48:48Z"
+      },
+      "message": "Member checks if its admin/manager by asking Role.\n\nDeleted duplicate admin/manager check in member, now in role. Managers are now recognized as admin via Level comparison in Role. Members without roles return nil instead of error if none. Test that expected false, now can accept nil or falsey. Added test that checks if maanager is admin now.\n\nFactoryBot can now test members with Manager roles.",
+      "tree": {
+        "sha": "da1476fe29833d551c2deb5d77af58ed42dd92e3",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/da1476fe29833d551c2deb5d77af58ed42dd92e3"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/ded1ec5d4d31d71db0c9db28a5c29b5378d6f2c0",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/ded1ec5d4d31d71db0c9db28a5c29b5378d6f2c0",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/ded1ec5d4d31d71db0c9db28a5c29b5378d6f2c0",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/ded1ec5d4d31d71db0c9db28a5c29b5378d6f2c0/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "ef0b879abc131b226c6cf6791aad922869f3fd22",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/ef0b879abc131b226c6cf6791aad922869f3fd22",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/ef0b879abc131b226c6cf6791aad922869f3fd22"
+      }
+    ]
+  },
+  {
+    "sha": "3d01a3350e02c1ff68c684b09b98454682d3ee92",
+    "node_id": "C_kwDOUOlySdoAKDNkMDFhMzM1MGUwMmMxZmY2OGM2ODRiMDliOTg0NTQ2ODJkM2VlOTI",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-23T04:41:16Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-23T04:41:16Z"
+      },
+      "message": "Add change_role action for Managers.\n\nManagers can promote member to admin or demote admin to member.\n\nGuards enforced such as only managers can change roles, manager self role change is prevented, cannot change other manager roles, cannot promote to manager (only admin and member.)\n\nRequire_manager in applicationcontroller is added, also excluding change_role so non-managers know they are not authorized to change roles.\n\nSpecs included.",
+      "tree": {
+        "sha": "dd6e070064936581f231e7ff9c0c8b915646e17e",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/dd6e070064936581f231e7ff9c0c8b915646e17e"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/3d01a3350e02c1ff68c684b09b98454682d3ee92",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/3d01a3350e02c1ff68c684b09b98454682d3ee92",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/3d01a3350e02c1ff68c684b09b98454682d3ee92",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/3d01a3350e02c1ff68c684b09b98454682d3ee92/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "ded1ec5d4d31d71db0c9db28a5c29b5378d6f2c0",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/ded1ec5d4d31d71db0c9db28a5c29b5378d6f2c0",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/ded1ec5d4d31d71db0c9db28a5c29b5378d6f2c0"
+      }
+    ]
+  },
+  {
+    "sha": "a8adadea3c58e40c1cd18378e0cbdc5912575684",
+    "node_id": "C_kwDOUOlySdoAKGE4YWRhZGVhM2M1OGU0MGMxY2QxODM3OGUwY2JkYzU5MTI1NzU2ODQ",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-23T04:54:13Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-23T04:54:13Z"
+      },
+      "message": "Fixed test setup for role seeding.\n\n1. Added before(:suite) to spec/rails_helper.rb that makes sure the three\nroles exist (Member, Admin, Manager). Test environments wasn't creating\nthe roles so any specs that relied on roles existing would fail, now\nthey exist in the entire test.\n\n2. In member_standing_spec.rb, the Role.create! is now\nfind_or_create_by! for admin and member. create! tries to insert new\nrows. Unique index in the roles db prevents it. It now reuses a role\ninstead of creating. \"member\" was also changed to \"Member\" to match\nexisting code.",
+      "tree": {
+        "sha": "e12e49b4cc5e969c1dadd51787b3f8977babf530",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/e12e49b4cc5e969c1dadd51787b3f8977babf530"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/a8adadea3c58e40c1cd18378e0cbdc5912575684",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/a8adadea3c58e40c1cd18378e0cbdc5912575684",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/a8adadea3c58e40c1cd18378e0cbdc5912575684",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/a8adadea3c58e40c1cd18378e0cbdc5912575684/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "3d01a3350e02c1ff68c684b09b98454682d3ee92",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/3d01a3350e02c1ff68c684b09b98454682d3ee92",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/3d01a3350e02c1ff68c684b09b98454682d3ee92"
+      }
+    ]
+  },
+  {
+    "sha": "0d5251e48d50fa160531085b29f979f3c5b9b3ec",
+    "node_id": "C_kwDOUOlySdoAKDBkNTI1MWU0OGQ1MGZhMTYwNTMxMDg1YjI5Zjk3OWYzYzViOWIzZWM",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-23T05:23:17Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-23T05:23:17Z"
+      },
+      "message": "Adds role-change actions to members index for Managers.\n\nChange Role column is now on the members table, only visible to managers. Non-managers see the same table as before,  no extra columns.",
+      "tree": {
+        "sha": "d324905a22fec94e11cbe776a425c6114984ce99",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/d324905a22fec94e11cbe776a425c6114984ce99"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/0d5251e48d50fa160531085b29f979f3c5b9b3ec",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/0d5251e48d50fa160531085b29f979f3c5b9b3ec",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/0d5251e48d50fa160531085b29f979f3c5b9b3ec",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/0d5251e48d50fa160531085b29f979f3c5b9b3ec/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "a8adadea3c58e40c1cd18378e0cbdc5912575684",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/a8adadea3c58e40c1cd18378e0cbdc5912575684",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/a8adadea3c58e40c1cd18378e0cbdc5912575684"
+      }
+    ]
+  }
+]

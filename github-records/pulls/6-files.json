@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "804b26074836e0d2908a098b344740446f68f488",
+    "filename": "Gemfile",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/ab2d308e6aaab9e02ae45ef4c2e08eeab35c6d37/Gemfile",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/ab2d308e6aaab9e02ae45ef4c2e08eeab35c6d37/Gemfile",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/Gemfile?ref=ab2d308e6aaab9e02ae45ef4c2e08eeab35c6d37",
+    "patch": "@@ -52,5 +52,5 @@ group :development do\n end\n \n group :test do\n-  gem \"simplecov\", \"~> 0.22\", require: false\n+  gem \"simplecov\", \"~> 1.2\", require: false\n end"
+  },
+  {
+    "sha": "8147c98137e60cb93c3868f51697fc302c28403b",
+    "filename": "Gemfile.lock",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 8,
+    "changes": 10,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/ab2d308e6aaab9e02ae45ef4c2e08eeab35c6d37/Gemfile.lock",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/ab2d308e6aaab9e02ae45ef4c2e08eeab35c6d37/Gemfile.lock",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/Gemfile.lock?ref=ab2d308e6aaab9e02ae45ef4c2e08eeab35c6d37",
+    "patch": "@@ -90,7 +90,6 @@ GEM\n       irb (~> 1.10)\n       reline (>= 0.3.8)\n     diff-lcs (1.6.2)\n-    docile (1.4.1)\n     drb (2.2.3)\n     erb (6.0.7)\n     erubi (1.13.1)\n@@ -283,12 +282,7 @@ GEM\n       rubocop-rails (>= 2.30)\n     ruby-progressbar (1.13.0)\n     securerandom (0.4.1)\n-    simplecov (0.22.0)\n-      docile (~> 1.1)\n-      simplecov-html (~> 0.11)\n-      simplecov_json_formatter (~> 0.1)\n-    simplecov-html (0.13.2)\n-    simplecov_json_formatter (0.1.4)\n+    simplecov (1.2.0)\n     solid_cable (4.0.2)\n       actioncable (>= 7.2)\n       activejob (>= 7.2)\n@@ -353,7 +347,7 @@ DEPENDENCIES\n   rails (~> 8.0.5, >= 8.0.5.1)\n   rspec-rails (~> 8.0)\n   rubocop-rails-omakase\n-  simplecov (~> 0.22)\n+  simplecov (~> 1.2)\n   solid_cable\n   solid_cache\n   solid_queue"
+  }
+]

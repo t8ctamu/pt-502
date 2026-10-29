@@ -1,0 +1,84 @@
+[
+  {
+    "sha": "9d5bb7cee054653dc515baf09c03468132af6762",
+    "node_id": "C_kwDOUOlySdoAKDlkNWJiN2NlZTA1NDY1M2RjNTE1YmFmMDljMDM0NjgxMzJhZjY3NjI",
+    "commit": {
+      "author": {
+        "name": "dependabot[bot]",
+        "email": "49699333+dependabot[bot]@users.noreply.github.com",
+        "date": "2026-10-12T14:33:05Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-12T14:33:05Z"
+      },
+      "message": "Bump simplecov from 1.2.0 to 1.3.2\n\nBumps [simplecov](https://github.com/simplecov-ruby/simplecov) from 1.2.0 to 1.3.2.\n- [Release notes](https://github.com/simplecov-ruby/simplecov/releases)\n- [Changelog](https://github.com/simplecov-ruby/simplecov/blob/main/CHANGELOG.md)\n- [Commits](https://github.com/simplecov-ruby/simplecov/compare/v1.2.0...v1.3.2)\n\n---\nupdated-dependencies:\n- dependency-name: simplecov\n  dependency-version: 1.3.2\n  dependency-type: direct:development\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+      "tree": {
+        "sha": "d65f9d2f6bf727762d45dc3e56d7201e02b4b5b1",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/d65f9d2f6bf727762d45dc3e56d7201e02b4b5b1"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/9d5bb7cee054653dc515baf09c03468132af6762",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqzO+hCRC1aQ7uu5UhlAAAIrsQADEDx1njOeJ+bzGuEPyeaVbH\nu+1CYbtfuaubh21Jx5WjJPeaAFJeZ7neMK1GOou2K/aMRnZgOZB46CLRz+wQ3ue+\ngZyYmsQ8XA4CZtFl6dpdev1homwbL/R8e+lLV7CTMWvKKhLdfmfacMdjOZ3B1HeZ\nbxWDUWBuXKWvmsZiiKTeble3vMz7S9EnzjDTjaDB2ixGQX0YEh3q0ij59pU1ToOf\n8z8aNuYYyfnOFLmmrAt7FaWdrh85hnMpmD9v4sHJcYNPPAp1H9HwTdJhg5pW9eP/\n+LSt8cWTnUwhGv6uX/FV23RUk2zTH+PRRlyj1nZc1NSsLOakHb2HbDDUmk/ReNCC\n/d3M56JBHAmlGsGNIbcGb3SD0WY63KXoyZMAZv+tRYb5XudbFC7DNUU/Xw8cR2rV\n9J7aIEbSlfyq9CLfuC6fB3qXlB33KzV//2HlFAxIQPvBqlUEBRCwID5eM51KpSoH\nfCCeDa9ZFETOYqYqhTAi4z/e7vDXRBi4Vo9HGElGrb9ZGW1QL9IFwFttKX3YJ+z1\nsMFJlIUDss6hbb+2IpCA+2CI5K6RJo9IwMfBbtl5rGCCPjKufZF+KKpcfRcXGYbF\nleu3dFbhwxdPwY266B1Vt5gy3GDf192JTApPvNSkomNCI6H7G/PB/TMQkSSbXw7S\nG/XUwVeZ9ecZZ7YCCUIL\n=K9zp\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree d65f9d2f6bf727762d45dc3e56d7201e02b4b5b1\nparent 89f548939b7c6e7decc322b384331620e6cc1da0\nauthor dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> 1791815585 +0000\ncommitter GitHub <noreply@github.com> 1791815585 +0000\n\nBump simplecov from 1.2.0 to 1.3.2\n\nBumps [simplecov](https://github.com/simplecov-ruby/simplecov) from 1.2.0 to 1.3.2.\n- [Release notes](https://github.com/simplecov-ruby/simplecov/releases)\n- [Changelog](https://github.com/simplecov-ruby/simplecov/blob/main/CHANGELOG.md)\n- [Commits](https://github.com/simplecov-ruby/simplecov/compare/v1.2.0...v1.3.2)\n\n---\nupdated-dependencies:\n- dependency-name: simplecov\n  dependency-version: 1.3.2\n  dependency-type: direct:development\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+        "verified_at": "2026-10-12T14:33:05Z"
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/9d5bb7cee054653dc515baf09c03468132af6762",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/9d5bb7cee054653dc515baf09c03468132af6762",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/9d5bb7cee054653dc515baf09c03468132af6762/comments",
+    "author": {
+      "login": "dependabot[bot]",
+      "id": 49699333,
+      "node_id": "MDM6Qm90NDk2OTkzMzM=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dependabot%5Bbot%5D",
+      "html_url": "https://github.com/apps/dependabot",
+      "followers_url": "https://api.github.com/users/dependabot%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/dependabot%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dependabot%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dependabot%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dependabot%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/dependabot%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/dependabot%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/dependabot%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dependabot%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "89f548939b7c6e7decc322b384331620e6cc1da0",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/89f548939b7c6e7decc322b384331620e6cc1da0",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/89f548939b7c6e7decc322b384331620e6cc1da0"
+      }
+    ]
+  }
+]

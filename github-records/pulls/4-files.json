@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "e651a257175e5b6ef688432fdba6264cf4393f4c",
+    "filename": ".github/workflows/ci.yml",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/e6846d38f00272cf18413e28c48c63b3362506b0/.github%2Fworkflows%2Fci.yml",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/e6846d38f00272cf18413e28c48c63b3362506b0/.github%2Fworkflows%2Fci.yml",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/.github%2Fworkflows%2Fci.yml?ref=e6846d38f00272cf18413e28c48c63b3362506b0",
+    "patch": "@@ -27,7 +27,7 @@ jobs:\n       DATABASE_PASSWORD: ci_only_password\n       DATABASE_HOST: 127.0.0.1\n     steps:\n-      - uses: actions/checkout@v4\n+      - uses: actions/checkout@v7\n       - uses: ruby/setup-ruby@v1\n         with:\n           ruby-version: .ruby-version"
+  }
+]

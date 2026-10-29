@@ -1,0 +1,166 @@
+[
+  {
+    "sha": "8171511fb7737c04e2fd55aaec4fbc40483d12d8",
+    "node_id": "C_kwDOUOlySdoAKDgxNzE1MTFmYjc3MzdjMDRlMmZkNTVhYWVjNGZiYzQwNDgzZDEyZDg",
+    "commit": {
+      "author": {
+        "name": "t8dahgr8",
+        "email": "t82020@outlook.com",
+        "date": "2026-10-11T02:36:41Z"
+      },
+      "committer": {
+        "name": "t8dahgr8",
+        "email": "t82020@outlook.com",
+        "date": "2026-10-11T02:36:41Z"
+      },
+      "message": "Revert \"Merge pull request #32 from FA26-CSCE431-software-engineering/p5-38-help-and-system-guide\"\n\nThis reverts commit 92d2498fc1aa684fd23d7373bbf575873da02a0f, reversing\nchanges made to 5dfaeb67841cc2b012ee87da3018e69e57e729de.",
+      "tree": {
+        "sha": "fff466dd53e469a2e78f442824fff0e86e69cd0d",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/fff466dd53e469a2e78f442824fff0e86e69cd0d"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/8171511fb7737c04e2fd55aaec4fbc40483d12d8",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/8171511fb7737c04e2fd55aaec4fbc40483d12d8",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/8171511fb7737c04e2fd55aaec4fbc40483d12d8",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/8171511fb7737c04e2fd55aaec4fbc40483d12d8/comments",
+    "author": {
+      "login": "t8dahgr8",
+      "id": 89672359,
+      "node_id": "MDQ6VXNlcjg5NjcyMzU5",
+      "avatar_url": "https://avatars.githubusercontent.com/u/89672359?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/t8dahgr8",
+      "html_url": "https://github.com/t8dahgr8",
+      "followers_url": "https://api.github.com/users/t8dahgr8/followers",
+      "following_url": "https://api.github.com/users/t8dahgr8/following{/other_user}",
+      "gists_url": "https://api.github.com/users/t8dahgr8/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/t8dahgr8/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/t8dahgr8/subscriptions",
+      "organizations_url": "https://api.github.com/users/t8dahgr8/orgs",
+      "repos_url": "https://api.github.com/users/t8dahgr8/repos",
+      "events_url": "https://api.github.com/users/t8dahgr8/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/t8dahgr8/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "t8dahgr8",
+      "id": 89672359,
+      "node_id": "MDQ6VXNlcjg5NjcyMzU5",
+      "avatar_url": "https://avatars.githubusercontent.com/u/89672359?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/t8dahgr8",
+      "html_url": "https://github.com/t8dahgr8",
+      "followers_url": "https://api.github.com/users/t8dahgr8/followers",
+      "following_url": "https://api.github.com/users/t8dahgr8/following{/other_user}",
+      "gists_url": "https://api.github.com/users/t8dahgr8/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/t8dahgr8/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/t8dahgr8/subscriptions",
+      "organizations_url": "https://api.github.com/users/t8dahgr8/orgs",
+      "repos_url": "https://api.github.com/users/t8dahgr8/repos",
+      "events_url": "https://api.github.com/users/t8dahgr8/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/t8dahgr8/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "92d2498fc1aa684fd23d7373bbf575873da02a0f",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/92d2498fc1aa684fd23d7373bbf575873da02a0f",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/92d2498fc1aa684fd23d7373bbf575873da02a0f"
+      }
+    ]
+  },
+  {
+    "sha": "1bb6c4f2fffc0255e1c76231f698abd0f4433401",
+    "node_id": "C_kwDOUOlySdoAKDFiYjZjNGYyZmZmYzAyNTVlMWM3NjIzMWY2OThhYmQwZjQ0MzM0MDE",
+    "commit": {
+      "author": {
+        "name": "t8dahgr8",
+        "email": "t82020@outlook.com",
+        "date": "2026-10-11T02:36:41Z"
+      },
+      "committer": {
+        "name": "t8dahgr8",
+        "email": "t82020@outlook.com",
+        "date": "2026-10-11T02:36:41Z"
+      },
+      "message": "Revert \"Merge pull request #31 from FA26-CSCE431-software-engineering/p5-31-profile-details\"\n\nThis reverts commit 5dfaeb67841cc2b012ee87da3018e69e57e729de, reversing\nchanges made to db8eab0bde1dab68e97374097e2bad76ca11923e.",
+      "tree": {
+        "sha": "415ba3d51a0bcef863f6ee713a86dad32ecee209",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/415ba3d51a0bcef863f6ee713a86dad32ecee209"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/1bb6c4f2fffc0255e1c76231f698abd0f4433401",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/1bb6c4f2fffc0255e1c76231f698abd0f4433401",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/1bb6c4f2fffc0255e1c76231f698abd0f4433401",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/1bb6c4f2fffc0255e1c76231f698abd0f4433401/comments",
+    "author": {
+      "login": "t8dahgr8",
+      "id": 89672359,
+      "node_id": "MDQ6VXNlcjg5NjcyMzU5",
+      "avatar_url": "https://avatars.githubusercontent.com/u/89672359?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/t8dahgr8",
+      "html_url": "https://github.com/t8dahgr8",
+      "followers_url": "https://api.github.com/users/t8dahgr8/followers",
+      "following_url": "https://api.github.com/users/t8dahgr8/following{/other_user}",
+      "gists_url": "https://api.github.com/users/t8dahgr8/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/t8dahgr8/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/t8dahgr8/subscriptions",
+      "organizations_url": "https://api.github.com/users/t8dahgr8/orgs",
+      "repos_url": "https://api.github.com/users/t8dahgr8/repos",
+      "events_url": "https://api.github.com/users/t8dahgr8/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/t8dahgr8/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "t8dahgr8",
+      "id": 89672359,
+      "node_id": "MDQ6VXNlcjg5NjcyMzU5",
+      "avatar_url": "https://avatars.githubusercontent.com/u/89672359?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/t8dahgr8",
+      "html_url": "https://github.com/t8dahgr8",
+      "followers_url": "https://api.github.com/users/t8dahgr8/followers",
+      "following_url": "https://api.github.com/users/t8dahgr8/following{/other_user}",
+      "gists_url": "https://api.github.com/users/t8dahgr8/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/t8dahgr8/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/t8dahgr8/subscriptions",
+      "organizations_url": "https://api.github.com/users/t8dahgr8/orgs",
+      "repos_url": "https://api.github.com/users/t8dahgr8/repos",
+      "events_url": "https://api.github.com/users/t8dahgr8/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/t8dahgr8/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "8171511fb7737c04e2fd55aaec4fbc40483d12d8",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/8171511fb7737c04e2fd55aaec4fbc40483d12d8",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/8171511fb7737c04e2fd55aaec4fbc40483d12d8"
+      }
+    ]
+  }
+]

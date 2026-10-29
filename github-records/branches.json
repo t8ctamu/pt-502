@@ -1,0 +1,461 @@
+[
+  {
+    "name": "DepartingMembers",
+    "commit": {
+      "sha": "89ecb57b746559915fff557b6824b4020c5c422f",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/89ecb57b746559915fff557b6824b4020c5c422f"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/DepartingMembers/protection"
+  },
+  {
+    "name": "P5-32_Revise_sign_in_up_page",
+    "commit": {
+      "sha": "e9aea4af392c57530c2c4deaf085d87008033db1",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/e9aea4af392c57530c2c4deaf085d87008033db1"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/P5-32_Revise_sign_in_up_page/protection"
+  },
+  {
+    "name": "P5-41_Add_A_higher-level_manager",
+    "commit": {
+      "sha": "4ed8a3a635b79dc4c8372dec9288c1541c95e134",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/4ed8a3a635b79dc4c8372dec9288c1541c95e134"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/P5-41_Add_A_higher-level_manager/protection"
+  },
+  {
+    "name": "chore/configure-rubocop",
+    "commit": {
+      "sha": "8c654ebadc0db988e420bb7462baf559fca1ed35",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/8c654ebadc0db988e420bb7462baf559fca1ed35"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/chore/configure-rubocop/protection"
+  },
+  {
+    "name": "create-events",
+    "commit": {
+      "sha": "27146b030ea7342bb9ebf786d2615e51a2d8c512",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/27146b030ea7342bb9ebf786d2615e51a2d8c512"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/create-events/protection"
+  },
+  {
+    "name": "dependabot/bundler/bootsnap-1.26.1",
+    "commit": {
+      "sha": "7dc0da52997cca608fe877e0b897b44e48d5b6d7",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/7dc0da52997cca608fe877e0b897b44e48d5b6d7"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/dependabot/bundler/bootsnap-1.26.1/protection"
+  },
+  {
+    "name": "dependabot/bundler/brakeman-8.1.0",
+    "commit": {
+      "sha": "9eb6c6a7e60a16fade51a57b9671e9c81d977add",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/9eb6c6a7e60a16fade51a57b9671e9c81d977add"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/dependabot/bundler/brakeman-8.1.0/protection"
+  },
+  {
+    "name": "dependabot/bundler/json-3.1.0",
+    "commit": {
+      "sha": "1d02d1007f3bc9c9bd91a0623d7c0db077a10711",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/1d02d1007f3bc9c9bd91a0623d7c0db077a10711"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/dependabot/bundler/json-3.1.0/protection"
+  },
+  {
+    "name": "dependabot/bundler/omniauth-2.3.1",
+    "commit": {
+      "sha": "8aad16b25847138326b3c88d982154c99c697b38",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/8aad16b25847138326b3c88d982154c99c697b38"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/dependabot/bundler/omniauth-2.3.1/protection"
+  },
+  {
+    "name": "dependabot/bundler/pagy-43.8.1",
+    "commit": {
+      "sha": "66d88846f90925d5a86fbc1976b4176cb65bc1ee",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/66d88846f90925d5a86fbc1976b4176cb65bc1ee"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/dependabot/bundler/pagy-43.8.1/protection"
+  },
+  {
+    "name": "dependabot/bundler/pg-1.7.0",
+    "commit": {
+      "sha": "8f22cb9f9dcdfe3302791da9d10687c5d8b6a85c",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/8f22cb9f9dcdfe3302791da9d10687c5d8b6a85c"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/dependabot/bundler/pg-1.7.0/protection"
+  },
+  {
+    "name": "dependabot/bundler/rails-8.1.4",
+    "commit": {
+      "sha": "53094edf71ea47fb94303b6ccc4b69723b4f12a1",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/53094edf71ea47fb94303b6ccc4b69723b4f12a1"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/dependabot/bundler/rails-8.1.4/protection"
+  },
+  {
+    "name": "dependabot/bundler/roo-4.0.0",
+    "commit": {
+      "sha": "884863d06d40ab0e46c542e097ec32fdd3dc6313",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/884863d06d40ab0e46c542e097ec32fdd3dc6313"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/dependabot/bundler/roo-4.0.0/protection"
+  },
+  {
+    "name": "dependabot/bundler/simplecov-1.3.2",
+    "commit": {
+      "sha": "9d5bb7cee054653dc515baf09c03468132af6762",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/9d5bb7cee054653dc515baf09c03468132af6762"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/dependabot/bundler/simplecov-1.3.2/protection"
+  },
+  {
+    "name": "dependabot/bundler/solid_cable-4.1.0",
+    "commit": {
+      "sha": "b7bc97093fe450ba8e766df07507af4a482cc5e9",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/b7bc97093fe450ba8e766df07507af4a482cc5e9"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/dependabot/bundler/solid_cable-4.1.0/protection"
+  },
+  {
+    "name": "dependabot/github_actions/actions/setup-node-7",
+    "commit": {
+      "sha": "1c9d1323e223d4d7f692302802a208218c04bfc3",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/1c9d1323e223d4d7f692302802a208218c04bfc3"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/dependabot/github_actions/actions/setup-node-7/protection"
+  },
+  {
+    "name": "dev",
+    "commit": {
+      "sha": "d68adc1ec77f5d5e05e247c82c7be75cdd7c71e5",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/d68adc1ec77f5d5e05e247c82c7be75cdd7c71e5"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/dev/protection"
+  },
+  {
+    "name": "feat/semester-reset",
+    "commit": {
+      "sha": "2278363f497ca55356d269b866fa6852184a342e",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/2278363f497ca55356d269b866fa6852184a342e"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/feat/semester-reset/protection"
+  },
+  {
+    "name": "feature/event-location-picker",
+    "commit": {
+      "sha": "2eb1e0769093a8789936fa1762b35c19c2bf64dd",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/2eb1e0769093a8789936fa1762b35c19c2bf64dd"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/feature/event-location-picker/protection"
+  },
+  {
+    "name": "main",
+    "commit": {
+      "sha": "4c6276fcec829c8763c9722c5dd51e1183093c79",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/4c6276fcec829c8763c9722c5dd51e1183093c79"
+    },
+    "protected": true,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/main/protection"
+  },
+  {
+    "name": "officer-tweak",
+    "commit": {
+      "sha": "e7902b23142d06980624fa78db525f085b505cc2",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/e7902b23142d06980624fa78db525f085b505cc2"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/officer-tweak/protection"
+  },
+  {
+    "name": "p5-31-profile-details",
+    "commit": {
+      "sha": "5e86a66f2c85435c3232a7b565c1825647da726b",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/5e86a66f2c85435c3232a7b565c1825647da726b"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/p5-31-profile-details/protection"
+  },
+  {
+    "name": "p5-31-profile-review",
+    "commit": {
+      "sha": "004b98e67b3fdfd392148d63418f331dc0f42f7a",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/004b98e67b3fdfd392148d63418f331dc0f42f7a"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/p5-31-profile-review/protection"
+  },
+  {
+    "name": "p5-38-help-and-system-guide",
+    "commit": {
+      "sha": "a474dc2f9eebfc43ebcfd759a934490d35ac3765",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/a474dc2f9eebfc43ebcfd759a934490d35ac3765"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/p5-38-help-and-system-guide/protection"
+  },
+  {
+    "name": "p5-45-ui-bug-fixes",
+    "commit": {
+      "sha": "8341009f549d04a0b847bb535500d9914eb54f91",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/8341009f549d04a0b847bb535500d9914eb54f91"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/p5-45-ui-bug-fixes/protection"
+  },
+  {
+    "name": "test",
+    "commit": {
+      "sha": "eace9ed0caadf826cd2ed9309ab45467a99d7a18",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/eace9ed0caadf826cd2ed9309ab45467a99d7a18"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/test/protection"
+  },
+  {
+    "name": "undo-p5-31-and-p5-38",
+    "commit": {
+      "sha": "1bb6c4f2fffc0255e1c76231f698abd0f4433401",
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/1bb6c4f2fffc0255e1c76231f698abd0f4433401"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/branches/undo-p5-31-and-p5-38/protection"
+  }
+]

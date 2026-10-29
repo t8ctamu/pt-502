@@ -1,0 +1,29 @@
+{
+  "source": "https://github.com/FA26-CSCE431-software-engineering/PT-502",
+  "captured_at": "2026-10-29T16:52:49.782575+00:00",
+  "counts": {
+    "issues": 60,
+    "issue-comments": 22,
+    "issue-events": 252,
+    "pulls": 60,
+    "review-comments": 0,
+    "labels": 13,
+    "milestones": 0,
+    "releases": 0,
+    "deployments": 109,
+    "branches": 27,
+    "tags": 0,
+    "collaborators": 8,
+    "rulesets": 3,
+    "environments": 1,
+    "actions-runs": 4,
+    "artifacts": 2
+  },
+  "errors": [],
+  "limitations": [
+    "GitHub records are archived with original identities and timestamps; they are not recreated as live issues or pull requests.",
+    "Secrets, credentials, production databases, webhooks, and external account configuration are not copied.",
+    "Actions artifacts and runs have metadata only; expired logs and artifacts cannot be recovered.",
+    "Organization project boards and external attachments are not included."
+  ]
+}

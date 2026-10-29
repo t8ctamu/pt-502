@@ -1,0 +1,145 @@
+[
+  {
+    "id": 12066750073,
+    "node_id": "LA_kwDOUOlySc8AAAACzzv-eQ",
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/labels/accessibility",
+    "name": "accessibility",
+    "color": "f143ab",
+    "default": true,
+    "description": "Barrier affecting people with disabilities",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 12066750080,
+    "node_id": "LA_kwDOUOlySc8AAAACzzv-gA",
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/labels/bug",
+    "name": "bug",
+    "color": "d73a4a",
+    "default": true,
+    "description": "Something isn't working",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 12158117431,
+    "node_id": "LA_kwDOUOlySc8AAAAC1K4mNw",
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/labels/dependencies",
+    "name": "dependencies",
+    "color": "0366d6",
+    "default": false,
+    "description": "Pull requests that update a dependency file",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 12066750089,
+    "node_id": "LA_kwDOUOlySc8AAAACzzv-iQ",
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/labels/documentation",
+    "name": "documentation",
+    "color": "0075ca",
+    "default": true,
+    "description": "Improvements or additions to documentation",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 12066750099,
+    "node_id": "LA_kwDOUOlySc8AAAACzzv-kw",
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/labels/duplicate",
+    "name": "duplicate",
+    "color": "cfd3d7",
+    "default": true,
+    "description": "This issue or pull request already exists",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 12066750109,
+    "node_id": "LA_kwDOUOlySc8AAAACzzv-nQ",
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/labels/enhancement",
+    "name": "enhancement",
+    "color": "a2eeef",
+    "default": true,
+    "description": "New feature or request",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 12158117443,
+    "node_id": "LA_kwDOUOlySc8AAAAC1K4mQw",
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/labels/github_actions",
+    "name": "github_actions",
+    "color": "000000",
+    "default": false,
+    "description": "Pull requests that update GitHub Actions code",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 12066750121,
+    "node_id": "LA_kwDOUOlySc8AAAACzzv-qQ",
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/labels/good%20first%20issue",
+    "name": "good first issue",
+    "color": "7057ff",
+    "default": true,
+    "description": "Good for newcomers",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 12066750144,
+    "node_id": "LA_kwDOUOlySc8AAAACzzv-wA",
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/labels/help%20wanted",
+    "name": "help wanted",
+    "color": "008672",
+    "default": true,
+    "description": "Extra attention is needed",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 12066750162,
+    "node_id": "LA_kwDOUOlySc8AAAACzzv-0g",
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/labels/invalid",
+    "name": "invalid",
+    "color": "e4e669",
+    "default": true,
+    "description": "This doesn't seem right",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 12066750174,
+    "node_id": "LA_kwDOUOlySc8AAAACzzv-3g",
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/labels/question",
+    "name": "question",
+    "color": "d876e3",
+    "default": true,
+    "description": "Further information is requested",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 12158119705,
+    "node_id": "LA_kwDOUOlySc8AAAAC1K4vGQ",
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/labels/ruby",
+    "name": "ruby",
+    "color": "ce2d2d",
+    "default": false,
+    "description": "Pull requests that update ruby code",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 12066750184,
+    "node_id": "LA_kwDOUOlySc8AAAACzzv-6A",
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/labels/wontfix",
+    "name": "wontfix",
+    "color": "ffffff",
+    "default": true,
+    "description": "This will not be worked on",
+    "archived_at": null,
+    "archived_by": null
+  }
+]

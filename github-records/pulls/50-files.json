@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "819637b5cca916e5813587127e266292d3d46cd7",
+    "filename": "Gemfile.lock",
+    "status": "modified",
+    "additions": 5,
+    "deletions": 5,
+    "changes": 10,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/8aad16b25847138326b3c88d982154c99c697b38/Gemfile.lock",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/8aad16b25847138326b3c88d982154c99c697b38/Gemfile.lock",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/Gemfile.lock?ref=8aad16b25847138326b3c88d982154c99c697b38",
+    "patch": "@@ -141,7 +141,7 @@ GEM\n       raabro (~> 1.4)\n     globalid (1.4.0)\n       activesupport (>= 6.1)\n-    hashie (5.1.0)\n+    hashie (5.2.0)\n       logger\n     i18n (1.15.2)\n       concurrent-ruby (~> 1.0)\n@@ -222,11 +222,11 @@ GEM\n       rack (>= 1.2, < 4)\n       snaky_hash (~> 2.0, >= 2.0.7)\n       version_gem (~> 1.1, >= 1.1.14)\n-    omniauth (2.1.4)\n-      hashie (>= 3.4.6)\n+    omniauth (2.3.1)\n+      hashie (>= 3.5.2)\n       logger\n-      rack (>= 2.2.3)\n-      rack-protection\n+      rack (>= 2.2.8)\n+      rack-protection (>= 2.2.0)\n     omniauth-google-oauth2 (1.2.3)\n       jwt (>= 2.9.2, < 4)\n       oauth2 (~> 2.0)"
+  }
+]

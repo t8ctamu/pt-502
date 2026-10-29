@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "08396deefc82b9d1c17e5643a34bfa067ed6ee16",
+    "filename": "Gemfile.lock",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/af3ef91b7524f3f5213f9092f05fae775d4747d6/Gemfile.lock",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/af3ef91b7524f3f5213f9092f05fae775d4747d6/Gemfile.lock",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/Gemfile.lock?ref=af3ef91b7524f3f5213f9092f05fae775d4747d6",
+    "patch": "@@ -239,7 +239,7 @@ GEM\n       actionpack (>= 4.2)\n       omniauth (~> 2.0)\n     orm_adapter (0.5.0)\n-    pagy (43.7.0)\n+    pagy (43.8.0)\n       json\n       uri\n       yaml\n@@ -420,7 +420,7 @@ GEM\n     unicode-display_width (3.2.0)\n       unicode-emoji (~> 4.1)\n     unicode-emoji (4.2.0)\n-    uri (1.1.1)\n+    uri (1.1.2)\n     useragent (0.16.11)\n     version_gem (1.1.15)\n     warden (1.2.9)"
+  }
+]

@@ -1,0 +1,84 @@
+[
+  {
+    "sha": "9eb6c6a7e60a16fade51a57b9671e9c81d977add",
+    "node_id": "C_kwDOUOlySdoAKDllYjZjNmE3ZTYwYTE2ZmFkZTUxYTU3Yjk2NzFlOWM4MWQ5NzdhZGQ",
+    "commit": {
+      "author": {
+        "name": "dependabot[bot]",
+        "email": "49699333+dependabot[bot]@users.noreply.github.com",
+        "date": "2026-10-11T23:15:16Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-11T23:15:16Z"
+      },
+      "message": "Bump brakeman from 8.0.6 to 8.1.0\n\nBumps [brakeman](https://github.com/presidentbeef/brakeman) from 8.0.6 to 8.1.0.\n- [Release notes](https://github.com/presidentbeef/brakeman/releases)\n- [Changelog](https://github.com/presidentbeef/brakeman/blob/main/CHANGES.md)\n- [Commits](https://github.com/presidentbeef/brakeman/compare/v8.0.6...v8.1.0)\n\n---\nupdated-dependencies:\n- dependency-name: brakeman\n  dependency-version: 8.1.0\n  dependency-type: direct:development\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+      "tree": {
+        "sha": "a6bacd90a5fb43d5406b6a2a002fda5ddf4157f8",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/a6bacd90a5fb43d5406b6a2a002fda5ddf4157f8"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/9eb6c6a7e60a16fade51a57b9671e9c81d977add",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqzBiECRC1aQ7uu5UhlAAADUwQAFioQMcPHC9ljl2ri9yWQ7JX\nZy+JZI7iTizYIS4xZ4fGWEqfxVArj8coNGbva/9nF8/E10GE1corWYw5cVoSOzoN\nFAwts6ww++Ohazfci36ZbdRoYjjEx3UB9HYx7+ZhZyDt58sNG37DGOsVSkp/T77M\njDobe7Zc7DIRBcmBkwUVvZjWA8rGvKHvsDVMoVlchossSFtYX90Nx2eOVImT7bbK\nlTM8tzfkqFnH5kmwa6apm5HcmBWTDZ6r/KivremvKuixP6/OJT/F7YO8DUxDlMpr\nhnDJiAUyEtLvFPQ6jjk2Jeqf8tAo/F7xvcteQJxC7a3Ib40Lr07juUuRw6jXUEKU\nblhctOM5rh6rwNdV24kkyYrbwAwafZnVovW28rzn9Mu+myqi86K+F2W/406enoJg\nc/UiXJWTpiCl+b4nk9V073lmzpX6ql13v4xjPJyv72lb7nmn0tJ5h0GRVmLvkZDv\nEKRUen5Oi3oto5IYAqdY829JME5DBl5DOprxmci3XMtQjwyO4lkwtQBquHVTJGUD\nTofW3f+eeN3iiAB4lLFj/krG+qHATIu+cwGaqnQrGr6g0reCzesVey7SG99BxOEe\nphHqTL7izJcAPFaLRVtWMUbAuoGLhrNs5SdZBnvzEHn+2FN3MZQFE9eKlj1YN1+Q\nqmEvumnsZbMdsuvuq91u\n=Pysv\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree a6bacd90a5fb43d5406b6a2a002fda5ddf4157f8\nparent d3f0b62925fc1e280ebb16059f1c438a746e2085\nauthor dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> 1791760516 +0000\ncommitter GitHub <noreply@github.com> 1791760516 +0000\n\nBump brakeman from 8.0.6 to 8.1.0\n\nBumps [brakeman](https://github.com/presidentbeef/brakeman) from 8.0.6 to 8.1.0.\n- [Release notes](https://github.com/presidentbeef/brakeman/releases)\n- [Changelog](https://github.com/presidentbeef/brakeman/blob/main/CHANGES.md)\n- [Commits](https://github.com/presidentbeef/brakeman/compare/v8.0.6...v8.1.0)\n\n---\nupdated-dependencies:\n- dependency-name: brakeman\n  dependency-version: 8.1.0\n  dependency-type: direct:development\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+        "verified_at": "2026-10-11T23:15:16Z"
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/9eb6c6a7e60a16fade51a57b9671e9c81d977add",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/9eb6c6a7e60a16fade51a57b9671e9c81d977add",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/9eb6c6a7e60a16fade51a57b9671e9c81d977add/comments",
+    "author": {
+      "login": "dependabot[bot]",
+      "id": 49699333,
+      "node_id": "MDM6Qm90NDk2OTkzMzM=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dependabot%5Bbot%5D",
+      "html_url": "https://github.com/apps/dependabot",
+      "followers_url": "https://api.github.com/users/dependabot%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/dependabot%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dependabot%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dependabot%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dependabot%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/dependabot%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/dependabot%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/dependabot%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dependabot%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d3f0b62925fc1e280ebb16059f1c438a746e2085",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/d3f0b62925fc1e280ebb16059f1c438a746e2085",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/d3f0b62925fc1e280ebb16059f1c438a746e2085"
+      }
+    ]
+  }
+]

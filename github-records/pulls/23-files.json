@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "1393153bef12be2d9609edc109c3ba90077c7d08",
+    "filename": "Gemfile",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/8f22cb9f9dcdfe3302791da9d10687c5d8b6a85c/Gemfile",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/8f22cb9f9dcdfe3302791da9d10687c5d8b6a85c/Gemfile",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/Gemfile?ref=8f22cb9f9dcdfe3302791da9d10687c5d8b6a85c",
+    "patch": "@@ -5,7 +5,7 @@ gem \"rails\", \"~> 8.1.3\"\n # The modern asset pipeline for Rails [https://github.com/rails/propshaft]\n gem \"propshaft\"\n # Use postgresql as the database for Active Record\n-gem \"pg\", \"~> 1.1\"\n+gem \"pg\", \"~> 1.7\"\n # Use the Puma web server [https://github.com/puma/puma]\n gem \"puma\", \">= 5.0\"\n # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]"
+  },
+  {
+    "sha": "369f69872a75ef16aecdf4cfcc50b7c0d37cebcb",
+    "filename": "Gemfile.lock",
+    "status": "modified",
+    "additions": 9,
+    "deletions": 9,
+    "changes": 18,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/8f22cb9f9dcdfe3302791da9d10687c5d8b6a85c/Gemfile.lock",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/8f22cb9f9dcdfe3302791da9d10687c5d8b6a85c/Gemfile.lock",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/Gemfile.lock?ref=8f22cb9f9dcdfe3302791da9d10687c5d8b6a85c",
+    "patch": "@@ -246,14 +246,14 @@ GEM\n     parser (3.3.12.0)\n       ast (~> 2.4.1)\n       racc\n-    pg (1.6.3)\n-    pg (1.6.3-aarch64-linux)\n-    pg (1.6.3-aarch64-linux-musl)\n-    pg (1.6.3-arm64-darwin)\n-    pg (1.6.3-x64-mingw-ucrt)\n-    pg (1.6.3-x86_64-darwin)\n-    pg (1.6.3-x86_64-linux)\n-    pg (1.6.3-x86_64-linux-musl)\n+    pg (1.7.0)\n+    pg (1.7.0-aarch64-linux)\n+    pg (1.7.0-aarch64-linux-musl)\n+    pg (1.7.0-arm64-darwin)\n+    pg (1.7.0-x64-mingw-ucrt)\n+    pg (1.7.0-x86_64-darwin)\n+    pg (1.7.0-x86_64-linux)\n+    pg (1.7.0-x86_64-linux-musl)\n     pp (0.6.4)\n       prettyprint\n     prettyprint (0.2.0)\n@@ -458,7 +458,7 @@ DEPENDENCIES\n   omniauth-google-oauth2\n   omniauth-rails_csrf_protection\n   pagy\n-  pg (~> 1.1)\n+  pg (~> 1.7)\n   propshaft\n   puma (>= 5.0)\n   rails (~> 8.1.3)"
+  }
+]

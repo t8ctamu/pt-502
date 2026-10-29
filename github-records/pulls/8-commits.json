@@ -1,0 +1,84 @@
+[
+  {
+    "sha": "27146b030ea7342bb9ebf786d2615e51a2d8c512",
+    "node_id": "C_kwDOUOlySdoAKDI3MTQ2YjAzMGVhNzM0MmJiOWViZjc4NmQyNjE1ZTUxYTJkOGM1MTI",
+    "commit": {
+      "author": {
+        "name": "Luke",
+        "email": "lukechambers0217@gmail.com",
+        "date": "2026-09-20T16:09:54Z"
+      },
+      "committer": {
+        "name": "Luke",
+        "email": "lukechambers0217@gmail.com",
+        "date": "2026-09-20T16:09:54Z"
+      },
+      "message": "changed readme for purposes of creating PR for a jira story for lab 4",
+      "tree": {
+        "sha": "c0f2d1c568194c50269dbb7919d80d9d89201d77",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/c0f2d1c568194c50269dbb7919d80d9d89201d77"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/27146b030ea7342bb9ebf786d2615e51a2d8c512",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/27146b030ea7342bb9ebf786d2615e51a2d8c512",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/27146b030ea7342bb9ebf786d2615e51a2d8c512",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/27146b030ea7342bb9ebf786d2615e51a2d8c512/comments",
+    "author": {
+      "login": "lukechambers5",
+      "id": 180369527,
+      "node_id": "U_kgDOCsA4dw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/180369527?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lukechambers5",
+      "html_url": "https://github.com/lukechambers5",
+      "followers_url": "https://api.github.com/users/lukechambers5/followers",
+      "following_url": "https://api.github.com/users/lukechambers5/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lukechambers5/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lukechambers5/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lukechambers5/subscriptions",
+      "organizations_url": "https://api.github.com/users/lukechambers5/orgs",
+      "repos_url": "https://api.github.com/users/lukechambers5/repos",
+      "events_url": "https://api.github.com/users/lukechambers5/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lukechambers5/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "lukechambers5",
+      "id": 180369527,
+      "node_id": "U_kgDOCsA4dw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/180369527?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lukechambers5",
+      "html_url": "https://github.com/lukechambers5",
+      "followers_url": "https://api.github.com/users/lukechambers5/followers",
+      "following_url": "https://api.github.com/users/lukechambers5/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lukechambers5/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lukechambers5/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lukechambers5/subscriptions",
+      "organizations_url": "https://api.github.com/users/lukechambers5/orgs",
+      "repos_url": "https://api.github.com/users/lukechambers5/repos",
+      "events_url": "https://api.github.com/users/lukechambers5/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lukechambers5/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "86a1dfb3ba35e34853dbd5566725a171d8c91b5b",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/86a1dfb3ba35e34853dbd5566725a171d8c91b5b",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/86a1dfb3ba35e34853dbd5566725a171d8c91b5b"
+      }
+    ]
+  }
+]

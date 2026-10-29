@@ -1,0 +1,84 @@
+[
+  {
+    "sha": "e9aea4af392c57530c2c4deaf085d87008033db1",
+    "node_id": "C_kwDOUOlySdoAKGU5YWVhNGFmMzkyYzU3NTMwYzJjNGRlYWYwODVkODcwMDgwMzNkYjE",
+    "commit": {
+      "author": {
+        "name": "balar0",
+        "email": "144611586+balar0@users.noreply.github.com",
+        "date": "2026-10-11T22:02:06Z"
+      },
+      "committer": {
+        "name": "balar0",
+        "email": "144611586+balar0@users.noreply.github.com",
+        "date": "2026-10-11T22:02:06Z"
+      },
+      "message": "removed contact us from sign in",
+      "tree": {
+        "sha": "db5c039111f02e925465ba195d1c366da94562dc",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/db5c039111f02e925465ba195d1c366da94562dc"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/e9aea4af392c57530c2c4deaf085d87008033db1",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/e9aea4af392c57530c2c4deaf085d87008033db1",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/e9aea4af392c57530c2c4deaf085d87008033db1",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/e9aea4af392c57530c2c4deaf085d87008033db1/comments",
+    "author": {
+      "login": "balar0",
+      "id": 144611586,
+      "node_id": "U_kgDOCJ6ZAg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/144611586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/balar0",
+      "html_url": "https://github.com/balar0",
+      "followers_url": "https://api.github.com/users/balar0/followers",
+      "following_url": "https://api.github.com/users/balar0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/balar0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/balar0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/balar0/subscriptions",
+      "organizations_url": "https://api.github.com/users/balar0/orgs",
+      "repos_url": "https://api.github.com/users/balar0/repos",
+      "events_url": "https://api.github.com/users/balar0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/balar0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "balar0",
+      "id": 144611586,
+      "node_id": "U_kgDOCJ6ZAg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/144611586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/balar0",
+      "html_url": "https://github.com/balar0",
+      "followers_url": "https://api.github.com/users/balar0/followers",
+      "following_url": "https://api.github.com/users/balar0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/balar0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/balar0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/balar0/subscriptions",
+      "organizations_url": "https://api.github.com/users/balar0/orgs",
+      "repos_url": "https://api.github.com/users/balar0/repos",
+      "events_url": "https://api.github.com/users/balar0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/balar0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "df20c0794a6586069a6afc0afbf393ed30edbf02",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/df20c0794a6586069a6afc0afbf393ed30edbf02",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/df20c0794a6586069a6afc0afbf393ed30edbf02"
+      }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "01ce17b8ff1d87f921f2b2ee445c81308a9bfe7a",
+    "filename": "Gemfile",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/9d5bb7cee054653dc515baf09c03468132af6762/Gemfile",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/9d5bb7cee054653dc515baf09c03468132af6762/Gemfile",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/Gemfile?ref=9d5bb7cee054653dc515baf09c03468132af6762",
+    "patch": "@@ -54,7 +54,7 @@ group :development do\n end\n \n group :test do\n-  gem \"simplecov\", \"~> 1.2\", require: false\n+  gem \"simplecov\", \"~> 1.3\", require: false\n   gem \"capybara\"\n end\n "
+  },
+  {
+    "sha": "82c2db46339b96a796a7d12073f21b053982c7ab",
+    "filename": "Gemfile.lock",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/9d5bb7cee054653dc515baf09c03468132af6762/Gemfile.lock",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/9d5bb7cee054653dc515baf09c03468132af6762/Gemfile.lock",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/Gemfile.lock?ref=9d5bb7cee054653dc515baf09c03468132af6762",
+    "patch": "@@ -385,7 +385,7 @@ GEM\n     ruby-progressbar (1.13.0)\n     rubyzip (3.7.0)\n     securerandom (0.4.1)\n-    simplecov (1.2.0)\n+    simplecov (1.3.2)\n     snaky_hash (2.0.7)\n       hashie (>= 0.1.0, < 6)\n       version_gem (~> 1.1, >= 1.1.14)\n@@ -475,7 +475,7 @@ DEPENDENCIES\n   rqrcode (~> 3.2)\n   rspec-rails (~> 8.0)\n   rubocop-rails-omakase\n-  simplecov (~> 1.2)\n+  simplecov (~> 1.3)\n   solid_cable\n   solid_cache\n   solid_queue"
+  }
+]

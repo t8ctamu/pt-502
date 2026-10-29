@@ -1,0 +1,44 @@
+[
+  {
+    "id": 5484434471,
+    "node_id": "PRR_kwDOUOlySc8AAAABRuXUJw",
+    "user": {
+      "login": "lukechambers5",
+      "id": 180369527,
+      "node_id": "U_kgDOCsA4dw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/180369527?u=5040f1029427d4f0cbd9c4f41e7a8864d3c40ebc&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lukechambers5",
+      "html_url": "https://github.com/lukechambers5",
+      "followers_url": "https://api.github.com/users/lukechambers5/followers",
+      "following_url": "https://api.github.com/users/lukechambers5/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lukechambers5/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lukechambers5/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lukechambers5/subscriptions",
+      "organizations_url": "https://api.github.com/users/lukechambers5/orgs",
+      "repos_url": "https://api.github.com/users/lukechambers5/repos",
+      "events_url": "https://api.github.com/users/lukechambers5/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lukechambers5/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "Fix merge conficts",
+    "state": "CHANGES_REQUESTED",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/pull/37#pullrequestreview-5484434471",
+    "pull_request_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/pulls/37",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/FA26-CSCE431-software-engineering/PT-502/pull/37#pullrequestreview-5484434471"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/pulls/37"
+      }
+    },
+    "is_copilot_code_review": false,
+    "copilot_code_review_effort": null,
+    "submitted_at": "2026-10-11T18:32:44Z",
+    "commit_id": "217a869f24ed07c4e8c9f07eea3cc4ac02d67c9f"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "sha": "b8b0be89c8c799e3ba0ec973a037de02a67b5e87",
+    "filename": "app/assets/stylesheets/application.css",
+    "status": "modified",
+    "additions": 50,
+    "deletions": 1,
+    "changes": 51,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/23c6639a6b534e61d7a5cfdd8f99004ab93276ae/app%2Fassets%2Fstylesheets%2Fapplication.css",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/23c6639a6b534e61d7a5cfdd8f99004ab93276ae/app%2Fassets%2Fstylesheets%2Fapplication.css",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fassets%2Fstylesheets%2Fapplication.css?ref=23c6639a6b534e61d7a5cfdd8f99004ab93276ae",
+    "patch": "@@ -578,4 +578,53 @@ textarea { resize: vertical; }\n   background: transparent; color: #b42318; border: 1px solid #b42318;\n   border-radius: 6px; padding: 0.3rem 0.7rem; cursor: pointer;\n }\n-.btn-danger:hover { background: #b42318; color: #fff; }\n\\ No newline at end of file\n+.btn-danger:hover { background: #b42318; color: #fff; }\n+\n+/* Members table: compact so all columns fit */\n+.members-table {\n+  font-size: 0.8rem;\n+  line-height: 1.3;\n+}\n+\n+.members-table th,\n+.members-table td {\n+  padding: 0.4rem 0.4rem;\n+  vertical-align: middle;\n+}\n+\n+/* points inputs */\n+.members-table input[type=\"number\"] {\n+  width: 3.2em;\n+  max-width: none;\n+  padding: 0.25rem;\n+}\n+\n+/* Promote/Demote/Remove buttons */\n+.members-table button,\n+.members-table input[type=\"submit\"] {\n+  padding: 0.3rem 0.6rem;\n+  font-size: 0.75rem;\n+  white-space: nowrap;\n+}\n+.members-table form { margin: 0; }\n+.members-table form div { margin-bottom: 0; }\n+\n+/* status text under the badge: smaller and capped so it doesn't stretch the column */\n+.members-table .status-badge {\n+  font-size: 0.75rem;\n+  padding: 0.15rem 0.55rem;\n+  white-space: nowrap;\n+}\n+.members-table .status-missing {\n+  display: block;\n+  max-width: 12rem;\n+  font-size: 0.7rem;\n+  line-height: 1.25;\n+  margin-top: 0.25rem;\n+}\n+\n+/* let long emails wrap instead of forcing width */\n+.members-table td:nth-child(5) {\n+  word-break: break-all;\n+  min-width: 8rem;\n+}\n\\ No newline at end of file"
+  },
+  {
+    "sha": "868bb13d632bcde1c7224df7d8ba30a1dd1fe154",
+    "filename": "app/javascript/controllers/location_picker_controller.js",
+    "status": "modified",
+    "additions": 33,
+    "deletions": 0,
+    "changes": 33,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/23c6639a6b534e61d7a5cfdd8f99004ab93276ae/app%2Fjavascript%2Fcontrollers%2Flocation_picker_controller.js",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/23c6639a6b534e61d7a5cfdd8f99004ab93276ae/app%2Fjavascript%2Fcontrollers%2Flocation_picker_controller.js",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fjavascript%2Fcontrollers%2Flocation_picker_controller.js?ref=23c6639a6b534e61d7a5cfdd8f99004ab93276ae",
+    "patch": "@@ -23,6 +23,7 @@ export default class extends Controller {\n   connect() {\n     this.autoNamed = false\n     this.timer = null\n+    this.restorePending()\n     this.initMap()\n   }\n \n@@ -34,6 +35,35 @@ export default class extends Controller {\n     this.destroyMap()\n   }\n \n+  // ---- reload (map fails to load on first Turbo visit) -------------------\n+\n+  get pendingKey() { return `pendingLocation:${window.location.pathname}` }\n+\n+  maybeReload() {\n+    if (this.map || this.reloaded) return   // map is fine, or we already reloaded once\n+    sessionStorage.setItem(this.pendingKey, JSON.stringify({\n+      lat: this.latitudeTarget.value,\n+      lng: this.longitudeTarget.value,\n+      name: this.nameTarget.value,\n+      autoNamed: this.autoNamed\n+    }))\n+    window.location.reload()\n+  }\n+\n+  restorePending() {\n+    const raw = sessionStorage.getItem(this.pendingKey)\n+    if (!raw) return\n+    sessionStorage.removeItem(this.pendingKey)\n+    this.reloaded = true\n+    try {\n+      const saved = JSON.parse(raw)\n+      this.latitudeTarget.value = saved.lat\n+      this.longitudeTarget.value = saved.lng\n+      this.nameTarget.value = saved.name\n+      this.autoNamed = saved.autoNamed\n+    } catch (_) { /* ignore bad data */ }\n+  }\n+\n   // ---- map ---------------------------------------------------------------\n \n   initMap() {\n@@ -162,6 +192,7 @@ export default class extends Controller {\n       this.nameTarget.value = label\n       this.autoNamed = true\n       this.setStatus(\"Location selected. Drag the pin to fine-tune it.\")\n+      this.maybeReload()\n     } else if (reverse && (this.nameTarget.value.trim() === \"\" || this.autoNamed)) {\n       this.reverseLookup(lat, lng)\n     } else {\n@@ -275,9 +306,11 @@ export default class extends Controller {\n       } else {\n         this.setStatus(\"Pin placed, but no address was found. Type a name for this spot below.\", { error: true })\n       }\n+      this.maybeReload()\n     } catch (error) {\n       if (error.name === \"AbortError\") return\n       this.setStatus(\"Pin placed, but the address lookup failed. Type a name for this spot below.\", { error: true })\n+      this.maybeReload()\n     }\n   }\n "
+  },
+  {
+    "sha": "4453d8ed012c3ef63db58a3bb1f1f2a0602890d7",
+    "filename": "app/views/members/index.html.erb",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/23c6639a6b534e61d7a5cfdd8f99004ab93276ae/app%2Fviews%2Fmembers%2Findex.html.erb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/23c6639a6b534e61d7a5cfdd8f99004ab93276ae/app%2Fviews%2Fmembers%2Findex.html.erb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fviews%2Fmembers%2Findex.html.erb?ref=23c6639a6b534e61d7a5cfdd8f99004ab93276ae",
+    "patch": "@@ -12,7 +12,7 @@\n   <% end %>\n </div>\n \n-<table>\n+<table class=\"members-table\">\n   <thead>\n     <tr>\n       <th>ID</th><th>Role</th><th>First name</th><th>Last name</th><th>Email</th>"
+  }
+]

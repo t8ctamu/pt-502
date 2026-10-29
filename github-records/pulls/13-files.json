@@ -1,0 +1,86 @@
+[
+  {
+    "sha": "da02ee0d68ae8a1eb51726f72fd1df5e5a81a293",
+    "filename": "app/controllers/members_controller.rb",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/7322e16ba5cdaed92fa8fe93c214a52f4688f426/app%2Fcontrollers%2Fmembers_controller.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/7322e16ba5cdaed92fa8fe93c214a52f4688f426/app%2Fcontrollers%2Fmembers_controller.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fcontrollers%2Fmembers_controller.rb?ref=7322e16ba5cdaed92fa8fe93c214a52f4688f426",
+    "patch": "@@ -20,6 +20,6 @@ def update\n \n   # Only the fields admins are allowed to change from the dashboard\n   def member_params\n-    params.require(:member).permit(:paid_dues)\n+    params.require(:member).permit(:paid_dues, :points)\n   end\n end"
+  },
+  {
+    "sha": "eeb68dbf80b77080a73a4a098c139671fd0350b3",
+    "filename": "app/views/home/index.html.erb",
+    "status": "modified",
+    "additions": 13,
+    "deletions": 0,
+    "changes": 13,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/7322e16ba5cdaed92fa8fe93c214a52f4688f426/app%2Fviews%2Fhome%2Findex.html.erb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/7322e16ba5cdaed92fa8fe93c214a52f4688f426/app%2Fviews%2Fhome%2Findex.html.erb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fviews%2Fhome%2Findex.html.erb?ref=7322e16ba5cdaed92fa8fe93c214a52f4688f426",
+    "patch": "@@ -1,5 +1,18 @@\n <h1>Welcome, <%= current_member.first_name %></h1>\n <p>Role: <strong><%= current_member.role.description %></strong></p>\n+<p>Active Member Status: \n+  <% if current_member.points >= 7 && current_member.paid_dues%>\n+    <span style=\"color: green;\">Active</span>\n+  <% else %>\n+    <span style=\"color: red;\">Not Active</span>\n+  <% end %> \n+</p>\n+<p>To be considered an active member you must have paid semester dues and have a total of 7 points by the end of the semester. This can be any combination of meeting, service, and social points.  The points sheet for members can be found in the GroupMe and will be updated periodically. Service points can  also be  earned by donating canned goods to the Brazos Valley Food Bank (5 cans for 1pt, 10 for 2pts), shadowing at a PT clinic (10 hrs for 1pt, 20 for 2pts),  or by sending proof of independent volunteering  and tagging @tamuptsociety.</p>\n+<p>email: <%= current_member.email %></p>\n+<p>joined at: <%= current_member.joined_at %></p>\n+<p>car pool status: <%= current_member.car_pool_status ? \"Yes\" : \"No\" %></p>\n+<p>Total points <%= current_member.points %></p>\n+<p>Application time: <%= current_member.pt_school_application_date&.strftime(\"%b %Y\") %></p>\n <p><%= link_to \"Edit my profile\", edit_profile_path %></p>\n \n <% if current_member.admin? %>"
+  },
+  {
+    "sha": "48593936fb6e9553018dbe443589785cc4442df3",
+    "filename": "app/views/members/index.html.erb",
+    "status": "modified",
+    "additions": 13,
+    "deletions": 1,
+    "changes": 14,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/7322e16ba5cdaed92fa8fe93c214a52f4688f426/app%2Fviews%2Fmembers%2Findex.html.erb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/7322e16ba5cdaed92fa8fe93c214a52f4688f426/app%2Fviews%2Fmembers%2Findex.html.erb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fviews%2Fmembers%2Findex.html.erb?ref=7322e16ba5cdaed92fa8fe93c214a52f4688f426",
+    "patch": "@@ -7,6 +7,7 @@\n       <th>ID</th><th>Role</th><th>First name</th><th>Last name</th><th>Email</th>\n       <th>Joined</th><th>Car pool</th><th>Points</th>\n       <th>Plans to apply to PT school</th><th>Paid dues</th>\n+      <th>Active Member</th>\n     </tr>\n   </thead>\n   <tbody>\n@@ -19,13 +20,24 @@\n         <td><%= m.email %></td>\n         <td><%= m.joined_at %></td>\n         <td><%= m.car_pool_status ? \"Yes\" : \"No\" %></td>\n-        <td><%= m.points %></td>\n+        <td>\n+          <%= form_with model: m, url: member_path(m), method: :patch do |f| %>\n+            <%= f.number_field :points, style: \"width: 4em;\", onchange: \"this.form.requestSubmit()\" %>\n+          <% end %>\n+        </td>\n         <td><%= m.pt_school_application_date&.strftime(\"%b %Y\") %></td>\n         <td>\n           <%= form_with model: m, url: member_path(m), method: :patch do |f| %>\n             <%= f.check_box :paid_dues, onchange: \"this.form.requestSubmit()\" %>\n           <% end %>\n         </td>\n+        <td>\n+            <% if m.points >= 7 && m.paid_dues%>\n+              <span style=\"color: green;\">Yes</span>\n+            <% else %>\n+              <span style=\"color: red;\">No</span>\n+            <% end %>\n+        </td>\n       </tr>\n     <% end %>\n   </tbody>"
+  },
+  {
+    "sha": "dd50e7155bb44e86605866a978d0ee32c5bccd15",
+    "filename": "spec/features/home_member_info_spec.rb",
+    "status": "added",
+    "additions": 33,
+    "deletions": 0,
+    "changes": 33,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/7322e16ba5cdaed92fa8fe93c214a52f4688f426/spec%2Ffeatures%2Fhome_member_info_spec.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/7322e16ba5cdaed92fa8fe93c214a52f4688f426/spec%2Ffeatures%2Fhome_member_info_spec.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/spec%2Ffeatures%2Fhome_member_info_spec.rb?ref=7322e16ba5cdaed92fa8fe93c214a52f4688f426",
+    "patch": "@@ -0,0 +1,33 @@\n+# spec/requests/home_member_info_spec.rb\n+require \"rails_helper\"\n+\n+RSpec.describe \"Home page member info\", type: :request do\n+  let(:role) { Role.create!(description: \"member\") }\n+  let!(:member) do\n+    Member.create!(\n+      uid: \"111222\",\n+      first_name: \"Jane\",\n+      last_name: \"Doe\",\n+      email: \"jane@example.com\",\n+      role: role,\n+      points: 12,\n+      paid_dues: true,\n+      car_pool_status: true,\n+      joined_at: Date.new(2024, 8, 15),\n+      profile_completed_at: Time.current,\n+      pt_school_application_date: Date.new(2027, 1, 1)\n+    )\n+  end\n+\n+  before { sign_in member }\n+\n+  it \"displays all of the signed-in member's information\" do\n+    get root_path\n+\n+    expect(response.body).to include(member.first_name)\n+    expect(response.body).to include(member.email)\n+    expect(response.body).to include(member.points.to_s)\n+    expect(response.body).to include(member.role.description)\n+    expect(response.body).to include(member.joined_at.strftime(\"%b %Y\")).or include(member.joined_at.to_s)\n+  end\n+end"
+  },
+  {
+    "sha": "ce34cac06f7e6e1285fca88af6ab2ef3a59bd0a5",
+    "filename": "spec/features/member_standing_spec.rb",
+    "status": "added",
+    "additions": 76,
+    "deletions": 0,
+    "changes": 76,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/7322e16ba5cdaed92fa8fe93c214a52f4688f426/spec%2Ffeatures%2Fmember_standing_spec.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/7322e16ba5cdaed92fa8fe93c214a52f4688f426/spec%2Ffeatures%2Fmember_standing_spec.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/spec%2Ffeatures%2Fmember_standing_spec.rb?ref=7322e16ba5cdaed92fa8fe93c214a52f4688f426",
+    "patch": "@@ -0,0 +1,76 @@\n+# spec/requests/member_standing_spec.rb\n+require \"rails_helper\"\n+\n+RSpec.describe \"Editing member points\", type: :request do\n+  let(:admin_role) { Role.create!(description: \"Admin\") }\n+  let!(:admin) do\n+    Member.create!(\n+      uid: \"123545\",\n+      first_name: \"Ad\",\n+      last_name: \"Min\",\n+      email: \"admin@example.com\",\n+      role: admin_role,\n+      points: 0,\n+      paid_dues: true,\n+      profile_completed_at: Time.current\n+    )\n+  end\n+\n+  let(:member_role) { Role.create!(description: \"member\") }\n+  let!(:member) do\n+    Member.create!(\n+      uid: \"987654\",\n+      first_name: \"Jane\",\n+      last_name: \"Doe\",\n+      email: \"jane@example.com\",\n+      role: member_role,\n+      points: 3,\n+      paid_dues: false,\n+      profile_completed_at: Time.current\n+    )\n+  end\n+\n+  context \"as an admin\" do\n+    before { sign_in admin }\n+\n+    it \"updates points and reflects it on the members page\" do\n+      patch member_path(member), params: { member: { points: 8 } }\n+\n+      member.reload\n+      expect(member.points).to eq(8)\n+\n+      get members_path\n+      member_row = response.body[/<tr>.*?#{Regexp.escape(member.email)}.*?<\\/tr>/m]\n+      expect(member_row).to include(\"8\")\n+    end\n+\n+    it \"rejects a non-integer value for points and does not persist it\" do\n+      patch member_path(member), params: { member: { points: \"abc\" } }\n+\n+      member.reload\n+      expect(member.points).to eq(0)\n+    end\n+  end\n+\n+  context \"as a non-admin\" do\n+    before { sign_in member }\n+\n+    it \"does not update another member's points\" do\n+      other = Member.create!(\n+        uid: \"555555\",\n+        first_name: \"Sam\",\n+        last_name: \"Lee\",\n+        email: \"sam@example.com\",\n+        role: member_role,\n+        points: 2,\n+        paid_dues: false,\n+        profile_completed_at: Time.current\n+      )\n+\n+      patch member_path(other), params: { member: { points: 8 } }\n+\n+      other.reload\n+      expect(other.points).to eq(2)\n+    end\n+  end\n+end"
+  },
+  {
+    "sha": "8b87b89640ec2c46734e5b4d6a8030040c61cfa9",
+    "filename": "spec/rails_helper.rb",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 0,
+    "changes": 2,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/7322e16ba5cdaed92fa8fe93c214a52f4688f426/spec%2Frails_helper.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/7322e16ba5cdaed92fa8fe93c214a52f4688f426/spec%2Frails_helper.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/spec%2Frails_helper.rb?ref=7322e16ba5cdaed92fa8fe93c214a52f4688f426",
+    "patch": "@@ -9,6 +9,8 @@\n RSpec.configure do |config|\n   config.use_transactional_fixtures = true\n   config.filter_rails_from_backtrace!\n+  OmniAuth.config.test_mode = true\n+\n \n   config.include Devise::Test::IntegrationHelpers, type: :request\n   config.include FactoryBot::Syntax::Methods"
+  },
+  {
+    "sha": "9f807f282b01507c3844ea4da449e4d29e1fe6cc",
+    "filename": "spec/requests/members_spec.rb",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 3,
+    "changes": 4,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/7322e16ba5cdaed92fa8fe93c214a52f4688f426/spec%2Frequests%2Fmembers_spec.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/7322e16ba5cdaed92fa8fe93c214a52f4688f426/spec%2Frequests%2Fmembers_spec.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/spec%2Frequests%2Fmembers_spec.rb?ref=7322e16ba5cdaed92fa8fe93c214a52f4688f426",
+    "patch": "@@ -56,13 +56,11 @@\n       expect(target.reload.paid_dues).to be true\n     end\n \n-    # This test is no longer true now that the admin can edit points \n+    # This test is no longer true now that the admin can edit points\n     # it \"ignores attributes other than paid_dues\" do\n     #   target = create(:member, :profile_completed, points: 5)\n \n     #   patch member_path(target), params: { member: { paid_dues: true, points: 999 } }\n-\n     #   expect(target.reload.points).to eq(5)\n-    end\n   end\n end"
+  }
+]

@@ -1,0 +1,340 @@
+[
+  {
+    "sha": "70acb61fe153b7d7191a2c9963ef41a6596a45c2",
+    "node_id": "C_kwDOUOlySdoAKDcwYWNiNjFmZTE1M2I3ZDcxOTFhMmM5OTYzZWY0MWE2NTk2YTQ1YzI",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-27T23:02:58Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-09-27T23:02:58Z"
+      },
+      "message": "Configured Lab 5 coding standards into rubocop.yml, and generated todo file.",
+      "tree": {
+        "sha": "8e569dec040c14c6cf6a3550b63b55d8bdf7b446",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/8e569dec040c14c6cf6a3550b63b55d8bdf7b446"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/70acb61fe153b7d7191a2c9963ef41a6596a45c2",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/70acb61fe153b7d7191a2c9963ef41a6596a45c2",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/70acb61fe153b7d7191a2c9963ef41a6596a45c2",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/70acb61fe153b7d7191a2c9963ef41a6596a45c2/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "72ee3d8aea0c32d46bff013f339fabfe0e5c681f",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/72ee3d8aea0c32d46bff013f339fabfe0e5c681f",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/72ee3d8aea0c32d46bff013f339fabfe0e5c681f"
+      }
+    ]
+  },
+  {
+    "sha": "8c654ebadc0db988e420bb7462baf559fca1ed35",
+    "node_id": "C_kwDOUOlySdoAKDhjNjU0ZWJhZGMwZGI5ODhlNDIwYmI3NDYyYmFmNTU5ZmNhMWVkMzU",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-09T09:04:11Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-09T09:04:11Z"
+      },
+      "message": "Enable Layout/IndentationWidth and Style/For in .rubocop.yml since it was disabled at a higher level that overrided the manual configurations. rubocop_todo.yml grandfathers in 2-space indentation offenses. 5-spaces are now enforced for new files and non-todo files.",
+      "tree": {
+        "sha": "e35c362935b089c01e021ce06c4335bdd755f9a5",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/e35c362935b089c01e021ce06c4335bdd755f9a5"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/8c654ebadc0db988e420bb7462baf559fca1ed35",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/8c654ebadc0db988e420bb7462baf559fca1ed35",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/8c654ebadc0db988e420bb7462baf559fca1ed35",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/8c654ebadc0db988e420bb7462baf559fca1ed35/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "70acb61fe153b7d7191a2c9963ef41a6596a45c2",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/70acb61fe153b7d7191a2c9963ef41a6596a45c2",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/70acb61fe153b7d7191a2c9963ef41a6596a45c2"
+      }
+    ]
+  },
+  {
+    "sha": "d68adc1ec77f5d5e05e247c82c7be75cdd7c71e5",
+    "node_id": "C_kwDOUOlySdoAKGQ2OGFkYzFlYzc3ZjVkNWUwNWUyNDdjODJjN2JlNzVjZGQ3YzcxZTU",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-09T09:09:59Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-09T09:09:59Z"
+      },
+      "message": "Merge chore/configure-rubocop: enforce class coding standards",
+      "tree": {
+        "sha": "e35c362935b089c01e021ce06c4335bdd755f9a5",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/e35c362935b089c01e021ce06c4335bdd755f9a5"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/d68adc1ec77f5d5e05e247c82c7be75cdd7c71e5",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/d68adc1ec77f5d5e05e247c82c7be75cdd7c71e5",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/d68adc1ec77f5d5e05e247c82c7be75cdd7c71e5",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/d68adc1ec77f5d5e05e247c82c7be75cdd7c71e5/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "72ee3d8aea0c32d46bff013f339fabfe0e5c681f",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/72ee3d8aea0c32d46bff013f339fabfe0e5c681f",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/72ee3d8aea0c32d46bff013f339fabfe0e5c681f"
+      },
+      {
+        "sha": "8c654ebadc0db988e420bb7462baf559fca1ed35",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/8c654ebadc0db988e420bb7462baf559fca1ed35",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/8c654ebadc0db988e420bb7462baf559fca1ed35"
+      }
+    ]
+  },
+  {
+    "sha": "9d3bc61f86033379358a9974a2cf9995191e9c67",
+    "node_id": "C_kwDOUOlySdoAKDlkM2JjNjFmODYwMzMzNzkzNThhOTk3NGEyY2Y5OTk1MTkxZTljNjc",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-09T09:16:04Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-09T09:16:04Z"
+      },
+      "message": "Promote dev to test: RuboCop house style",
+      "tree": {
+        "sha": "e35c362935b089c01e021ce06c4335bdd755f9a5",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/e35c362935b089c01e021ce06c4335bdd755f9a5"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/9d3bc61f86033379358a9974a2cf9995191e9c67",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/9d3bc61f86033379358a9974a2cf9995191e9c67",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/9d3bc61f86033379358a9974a2cf9995191e9c67",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/9d3bc61f86033379358a9974a2cf9995191e9c67/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "72ee3d8aea0c32d46bff013f339fabfe0e5c681f",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/72ee3d8aea0c32d46bff013f339fabfe0e5c681f",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/72ee3d8aea0c32d46bff013f339fabfe0e5c681f"
+      },
+      {
+        "sha": "d68adc1ec77f5d5e05e247c82c7be75cdd7c71e5",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/d68adc1ec77f5d5e05e247c82c7be75cdd7c71e5",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/d68adc1ec77f5d5e05e247c82c7be75cdd7c71e5"
+      }
+    ]
+  }
+]

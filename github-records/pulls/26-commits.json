@@ -1,0 +1,412 @@
+[
+  {
+    "sha": "6e7c4fd30994abf13481d11dc7057559455620fe",
+    "node_id": "C_kwDOUOlySdoAKDZlN2M0ZmQzMDk5NGFiZjEzNDgxZDExZGM3MDU3NTU5NDU1NjIwZmU",
+    "commit": {
+      "author": {
+        "name": "Luke Chambers",
+        "email": "lukechambers0217@gmail.com",
+        "date": "2026-09-30T14:46:26Z"
+      },
+      "committer": {
+        "name": "Richard_Ngo",
+        "email": "richard.ng135@gmail.com",
+        "date": "2026-10-09T09:23:28Z"
+      },
+      "message": "make luke admin for audit demo\n\nAdded admin member creation with default attributes in seeds.rb.",
+      "tree": {
+        "sha": "c7e2d5aeb4312c2fbfafd996633df3873bdf4227",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/c7e2d5aeb4312c2fbfafd996633df3873bdf4227"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/6e7c4fd30994abf13481d11dc7057559455620fe",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/6e7c4fd30994abf13481d11dc7057559455620fe",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/6e7c4fd30994abf13481d11dc7057559455620fe",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/6e7c4fd30994abf13481d11dc7057559455620fe/comments",
+    "author": {
+      "login": "lukechambers5",
+      "id": 180369527,
+      "node_id": "U_kgDOCsA4dw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/180369527?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lukechambers5",
+      "html_url": "https://github.com/lukechambers5",
+      "followers_url": "https://api.github.com/users/lukechambers5/followers",
+      "following_url": "https://api.github.com/users/lukechambers5/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lukechambers5/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lukechambers5/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lukechambers5/subscriptions",
+      "organizations_url": "https://api.github.com/users/lukechambers5/orgs",
+      "repos_url": "https://api.github.com/users/lukechambers5/repos",
+      "events_url": "https://api.github.com/users/lukechambers5/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lukechambers5/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "RichardN-Git",
+      "id": 228883945,
+      "node_id": "U_kgDODaR96Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/228883945?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/RichardN-Git",
+      "html_url": "https://github.com/RichardN-Git",
+      "followers_url": "https://api.github.com/users/RichardN-Git/followers",
+      "following_url": "https://api.github.com/users/RichardN-Git/following{/other_user}",
+      "gists_url": "https://api.github.com/users/RichardN-Git/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/RichardN-Git/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/RichardN-Git/subscriptions",
+      "organizations_url": "https://api.github.com/users/RichardN-Git/orgs",
+      "repos_url": "https://api.github.com/users/RichardN-Git/repos",
+      "events_url": "https://api.github.com/users/RichardN-Git/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/RichardN-Git/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "9d3bc61f86033379358a9974a2cf9995191e9c67",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/9d3bc61f86033379358a9974a2cf9995191e9c67",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/9d3bc61f86033379358a9974a2cf9995191e9c67"
+      }
+    ]
+  },
+  {
+    "sha": "af50a81f28991f178ac694abf8bd80cf6c573855",
+    "node_id": "C_kwDOUOlySdoAKGFmNTBhODFmMjg5OTFmMTc4YWM2OTRhYmY4YmQ4MGNmNmM1NzM4NTU",
+    "commit": {
+      "author": {
+        "name": "Richard_Ngo",
+        "email": "richard.ng135@gmail.com",
+        "date": "2026-10-09T08:49:22Z"
+      },
+      "committer": {
+        "name": "Richard_Ngo",
+        "email": "richard.ng135@gmail.com",
+        "date": "2026-10-09T09:23:28Z"
+      },
+      "message": "Added phone field to schema, just in case",
+      "tree": {
+        "sha": "6ee16dc7c480e61709d9df5dbd3112be45035c2d",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/6ee16dc7c480e61709d9df5dbd3112be45035c2d"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/af50a81f28991f178ac694abf8bd80cf6c573855",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/af50a81f28991f178ac694abf8bd80cf6c573855",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/af50a81f28991f178ac694abf8bd80cf6c573855",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/af50a81f28991f178ac694abf8bd80cf6c573855/comments",
+    "author": {
+      "login": "RichardN-Git",
+      "id": 228883945,
+      "node_id": "U_kgDODaR96Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/228883945?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/RichardN-Git",
+      "html_url": "https://github.com/RichardN-Git",
+      "followers_url": "https://api.github.com/users/RichardN-Git/followers",
+      "following_url": "https://api.github.com/users/RichardN-Git/following{/other_user}",
+      "gists_url": "https://api.github.com/users/RichardN-Git/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/RichardN-Git/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/RichardN-Git/subscriptions",
+      "organizations_url": "https://api.github.com/users/RichardN-Git/orgs",
+      "repos_url": "https://api.github.com/users/RichardN-Git/repos",
+      "events_url": "https://api.github.com/users/RichardN-Git/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/RichardN-Git/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "RichardN-Git",
+      "id": 228883945,
+      "node_id": "U_kgDODaR96Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/228883945?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/RichardN-Git",
+      "html_url": "https://github.com/RichardN-Git",
+      "followers_url": "https://api.github.com/users/RichardN-Git/followers",
+      "following_url": "https://api.github.com/users/RichardN-Git/following{/other_user}",
+      "gists_url": "https://api.github.com/users/RichardN-Git/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/RichardN-Git/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/RichardN-Git/subscriptions",
+      "organizations_url": "https://api.github.com/users/RichardN-Git/orgs",
+      "repos_url": "https://api.github.com/users/RichardN-Git/repos",
+      "events_url": "https://api.github.com/users/RichardN-Git/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/RichardN-Git/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "6e7c4fd30994abf13481d11dc7057559455620fe",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/6e7c4fd30994abf13481d11dc7057559455620fe",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/6e7c4fd30994abf13481d11dc7057559455620fe"
+      }
+    ]
+  },
+  {
+    "sha": "feebc039f39695f9829e89f9933c964de8f5dc68",
+    "node_id": "C_kwDOUOlySdoAKGZlZWJjMDM5ZjM5Njk1Zjk4MjllODlmOTkzM2M5NjRkZThmNWRjNjg",
+    "commit": {
+      "author": {
+        "name": "Richard_Ngo",
+        "email": "richard.ng135@gmail.com",
+        "date": "2026-10-09T09:09:16Z"
+      },
+      "committer": {
+        "name": "Richard_Ngo",
+        "email": "richard.ng135@gmail.com",
+        "date": "2026-10-09T09:23:28Z"
+      },
+      "message": "Added in the seperate table for admin/manager members. Tested locally as well.",
+      "tree": {
+        "sha": "5a9f6475462caba6b1d57b43f6b1651b68d46706",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/5a9f6475462caba6b1d57b43f6b1651b68d46706"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/feebc039f39695f9829e89f9933c964de8f5dc68",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/feebc039f39695f9829e89f9933c964de8f5dc68",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/feebc039f39695f9829e89f9933c964de8f5dc68",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/feebc039f39695f9829e89f9933c964de8f5dc68/comments",
+    "author": {
+      "login": "RichardN-Git",
+      "id": 228883945,
+      "node_id": "U_kgDODaR96Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/228883945?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/RichardN-Git",
+      "html_url": "https://github.com/RichardN-Git",
+      "followers_url": "https://api.github.com/users/RichardN-Git/followers",
+      "following_url": "https://api.github.com/users/RichardN-Git/following{/other_user}",
+      "gists_url": "https://api.github.com/users/RichardN-Git/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/RichardN-Git/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/RichardN-Git/subscriptions",
+      "organizations_url": "https://api.github.com/users/RichardN-Git/orgs",
+      "repos_url": "https://api.github.com/users/RichardN-Git/repos",
+      "events_url": "https://api.github.com/users/RichardN-Git/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/RichardN-Git/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "RichardN-Git",
+      "id": 228883945,
+      "node_id": "U_kgDODaR96Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/228883945?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/RichardN-Git",
+      "html_url": "https://github.com/RichardN-Git",
+      "followers_url": "https://api.github.com/users/RichardN-Git/followers",
+      "following_url": "https://api.github.com/users/RichardN-Git/following{/other_user}",
+      "gists_url": "https://api.github.com/users/RichardN-Git/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/RichardN-Git/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/RichardN-Git/subscriptions",
+      "organizations_url": "https://api.github.com/users/RichardN-Git/orgs",
+      "repos_url": "https://api.github.com/users/RichardN-Git/repos",
+      "events_url": "https://api.github.com/users/RichardN-Git/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/RichardN-Git/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "af50a81f28991f178ac694abf8bd80cf6c573855",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/af50a81f28991f178ac694abf8bd80cf6c573855",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/af50a81f28991f178ac694abf8bd80cf6c573855"
+      }
+    ]
+  },
+  {
+    "sha": "ab612797f8ace0bbd549b99e608f9e2337efe17f",
+    "node_id": "C_kwDOUOlySdoAKGFiNjEyNzk3ZjhhY2UwYmJkNTQ5Yjk5ZTYwOGY5ZTIzMzdlZmUxN2Y",
+    "commit": {
+      "author": {
+        "name": "Richard_Ngo",
+        "email": "richard.ng135@gmail.com",
+        "date": "2026-10-09T09:13:19Z"
+      },
+      "committer": {
+        "name": "Richard_Ngo",
+        "email": "richard.ng135@gmail.com",
+        "date": "2026-10-09T09:23:28Z"
+      },
+      "message": "Made it so that both admins and managers are able to view the new table instead of just managers",
+      "tree": {
+        "sha": "6040eda5e63b8f954b484a4c5acb25b61958e1a7",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/6040eda5e63b8f954b484a4c5acb25b61958e1a7"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/ab612797f8ace0bbd549b99e608f9e2337efe17f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/ab612797f8ace0bbd549b99e608f9e2337efe17f",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/ab612797f8ace0bbd549b99e608f9e2337efe17f",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/ab612797f8ace0bbd549b99e608f9e2337efe17f/comments",
+    "author": {
+      "login": "RichardN-Git",
+      "id": 228883945,
+      "node_id": "U_kgDODaR96Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/228883945?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/RichardN-Git",
+      "html_url": "https://github.com/RichardN-Git",
+      "followers_url": "https://api.github.com/users/RichardN-Git/followers",
+      "following_url": "https://api.github.com/users/RichardN-Git/following{/other_user}",
+      "gists_url": "https://api.github.com/users/RichardN-Git/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/RichardN-Git/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/RichardN-Git/subscriptions",
+      "organizations_url": "https://api.github.com/users/RichardN-Git/orgs",
+      "repos_url": "https://api.github.com/users/RichardN-Git/repos",
+      "events_url": "https://api.github.com/users/RichardN-Git/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/RichardN-Git/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "RichardN-Git",
+      "id": 228883945,
+      "node_id": "U_kgDODaR96Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/228883945?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/RichardN-Git",
+      "html_url": "https://github.com/RichardN-Git",
+      "followers_url": "https://api.github.com/users/RichardN-Git/followers",
+      "following_url": "https://api.github.com/users/RichardN-Git/following{/other_user}",
+      "gists_url": "https://api.github.com/users/RichardN-Git/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/RichardN-Git/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/RichardN-Git/subscriptions",
+      "organizations_url": "https://api.github.com/users/RichardN-Git/orgs",
+      "repos_url": "https://api.github.com/users/RichardN-Git/repos",
+      "events_url": "https://api.github.com/users/RichardN-Git/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/RichardN-Git/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "feebc039f39695f9829e89f9933c964de8f5dc68",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/feebc039f39695f9829e89f9933c964de8f5dc68",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/feebc039f39695f9829e89f9933c964de8f5dc68"
+      }
+    ]
+  },
+  {
+    "sha": "7f2a3ce958feefce032dfeb135123ab868f200c8",
+    "node_id": "C_kwDOUOlySdoAKDdmMmEzY2U5NThmZWVmY2UwMzJkZmViMTM1MTIzYWI4NjhmMjAwYzg",
+    "commit": {
+      "author": {
+        "name": "Richard_Ngo",
+        "email": "richard.ng135@gmail.com",
+        "date": "2026-10-09T09:46:35Z"
+      },
+      "committer": {
+        "name": "Richard_Ngo",
+        "email": "richard.ng135@gmail.com",
+        "date": "2026-10-09T09:46:35Z"
+      },
+      "message": "rubocop -a fixes",
+      "tree": {
+        "sha": "1dee06529b6ed77f7772f52026065186662b4406",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/1dee06529b6ed77f7772f52026065186662b4406"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/7f2a3ce958feefce032dfeb135123ab868f200c8",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/7f2a3ce958feefce032dfeb135123ab868f200c8",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/7f2a3ce958feefce032dfeb135123ab868f200c8",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/7f2a3ce958feefce032dfeb135123ab868f200c8/comments",
+    "author": {
+      "login": "RichardN-Git",
+      "id": 228883945,
+      "node_id": "U_kgDODaR96Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/228883945?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/RichardN-Git",
+      "html_url": "https://github.com/RichardN-Git",
+      "followers_url": "https://api.github.com/users/RichardN-Git/followers",
+      "following_url": "https://api.github.com/users/RichardN-Git/following{/other_user}",
+      "gists_url": "https://api.github.com/users/RichardN-Git/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/RichardN-Git/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/RichardN-Git/subscriptions",
+      "organizations_url": "https://api.github.com/users/RichardN-Git/orgs",
+      "repos_url": "https://api.github.com/users/RichardN-Git/repos",
+      "events_url": "https://api.github.com/users/RichardN-Git/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/RichardN-Git/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "RichardN-Git",
+      "id": 228883945,
+      "node_id": "U_kgDODaR96Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/228883945?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/RichardN-Git",
+      "html_url": "https://github.com/RichardN-Git",
+      "followers_url": "https://api.github.com/users/RichardN-Git/followers",
+      "following_url": "https://api.github.com/users/RichardN-Git/following{/other_user}",
+      "gists_url": "https://api.github.com/users/RichardN-Git/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/RichardN-Git/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/RichardN-Git/subscriptions",
+      "organizations_url": "https://api.github.com/users/RichardN-Git/orgs",
+      "repos_url": "https://api.github.com/users/RichardN-Git/repos",
+      "events_url": "https://api.github.com/users/RichardN-Git/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/RichardN-Git/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "ab612797f8ace0bbd549b99e608f9e2337efe17f",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/ab612797f8ace0bbd549b99e608f9e2337efe17f",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/ab612797f8ace0bbd549b99e608f9e2337efe17f"
+      }
+    ]
+  }
+]

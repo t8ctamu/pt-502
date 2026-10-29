@@ -1,0 +1,84 @@
+[
+  {
+    "sha": "2b2ad64f525a9e83b56e3a6c08a04f9d5b8be82b",
+    "node_id": "C_kwDOUOlySdoAKDJiMmFkNjRmNTI1YTllODNiNTZlM2E2YzA4YTA0ZjlkNWI4YmU4MmI",
+    "commit": {
+      "author": {
+        "name": "t8dahgr8",
+        "email": "t82020@outlook.com",
+        "date": "2026-10-11T20:28:14Z"
+      },
+      "committer": {
+        "name": "t8dahgr8",
+        "email": "t82020@outlook.com",
+        "date": "2026-10-11T20:28:14Z"
+      },
+      "message": "Use existing profile styles for officer summary",
+      "tree": {
+        "sha": "c1ebbb4770b4333f92937a0f027a1d4fe18e378a",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/c1ebbb4770b4333f92937a0f027a1d4fe18e378a"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/2b2ad64f525a9e83b56e3a6c08a04f9d5b8be82b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/2b2ad64f525a9e83b56e3a6c08a04f9d5b8be82b",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/2b2ad64f525a9e83b56e3a6c08a04f9d5b8be82b",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/2b2ad64f525a9e83b56e3a6c08a04f9d5b8be82b/comments",
+    "author": {
+      "login": "t8dahgr8",
+      "id": 89672359,
+      "node_id": "MDQ6VXNlcjg5NjcyMzU5",
+      "avatar_url": "https://avatars.githubusercontent.com/u/89672359?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/t8dahgr8",
+      "html_url": "https://github.com/t8dahgr8",
+      "followers_url": "https://api.github.com/users/t8dahgr8/followers",
+      "following_url": "https://api.github.com/users/t8dahgr8/following{/other_user}",
+      "gists_url": "https://api.github.com/users/t8dahgr8/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/t8dahgr8/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/t8dahgr8/subscriptions",
+      "organizations_url": "https://api.github.com/users/t8dahgr8/orgs",
+      "repos_url": "https://api.github.com/users/t8dahgr8/repos",
+      "events_url": "https://api.github.com/users/t8dahgr8/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/t8dahgr8/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "t8dahgr8",
+      "id": 89672359,
+      "node_id": "MDQ6VXNlcjg5NjcyMzU5",
+      "avatar_url": "https://avatars.githubusercontent.com/u/89672359?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/t8dahgr8",
+      "html_url": "https://github.com/t8dahgr8",
+      "followers_url": "https://api.github.com/users/t8dahgr8/followers",
+      "following_url": "https://api.github.com/users/t8dahgr8/following{/other_user}",
+      "gists_url": "https://api.github.com/users/t8dahgr8/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/t8dahgr8/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/t8dahgr8/subscriptions",
+      "organizations_url": "https://api.github.com/users/t8dahgr8/orgs",
+      "repos_url": "https://api.github.com/users/t8dahgr8/repos",
+      "events_url": "https://api.github.com/users/t8dahgr8/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/t8dahgr8/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "3796dfd862c5ead20b5df995f2a91c96effc6d3e",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/3796dfd862c5ead20b5df995f2a91c96effc6d3e",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/3796dfd862c5ead20b5df995f2a91c96effc6d3e"
+      }
+    ]
+  }
+]

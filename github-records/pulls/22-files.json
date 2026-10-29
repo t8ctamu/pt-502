@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "55bf23b291aa63e846152d7420f7d82de6500120",
+    "filename": "Gemfile.lock",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/9eb6c6a7e60a16fade51a57b9671e9c81d977add/Gemfile.lock",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/9eb6c6a7e60a16fade51a57b9671e9c81d977add/Gemfile.lock",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/Gemfile.lock?ref=9eb6c6a7e60a16fade51a57b9671e9c81d977add",
+    "patch": "@@ -88,7 +88,7 @@ GEM\n     bindex (0.8.1)\n     bootsnap (1.26.0)\n       msgpack (~> 1.5)\n-    brakeman (8.0.6)\n+    brakeman (8.1.0)\n       racc\n     builder (3.3.0)\n     capybara (3.40.0)"
+  }
+]

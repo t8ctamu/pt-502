@@ -1,0 +1,84 @@
+[
+  {
+    "sha": "e6846d38f00272cf18413e28c48c63b3362506b0",
+    "node_id": "C_kwDOUOlySdoAKGU2ODQ2ZDM4ZjAwMjcyY2YxODQxM2UyOGM0OGM2M2IzMzYyNTA2YjA",
+    "commit": {
+      "author": {
+        "name": "dependabot[bot]",
+        "email": "49699333+dependabot[bot]@users.noreply.github.com",
+        "date": "2026-09-11T18:37:04Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-09-11T18:37:04Z"
+      },
+      "message": "Bump actions/checkout from 4 to 7\n\nBumps [actions/checkout](https://github.com/actions/checkout) from 4 to 7.\n- [Release notes](https://github.com/actions/checkout/releases)\n- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)\n- [Commits](https://github.com/actions/checkout/compare/v4...v7)\n\n---\nupdated-dependencies:\n- dependency-name: actions/checkout\n  dependency-version: '7'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+      "tree": {
+        "sha": "db445a3ac6638d27751b64be9582bc13fe3a0743",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/db445a3ac6638d27751b64be9582bc13fe3a0743"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/e6846d38f00272cf18413e28c48c63b3362506b0",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqpEpRCRC1aQ7uu5UhlAAAYNoQAJS6TTL9eGLCXx6OI6eTwAnw\nWk1BkG7R6ySuKjZoa9FiAEELZs0C7W4FOQPnoziEw2YuevG+LFKG4nkbv26qFbIW\nwNpHFexLbB69OF+XqH6cUSkNtJhT6CnW2gArzm/ZRRdbnPCPs5PDaDlubaEzT383\nXfDzofceY06UJwY90uEuuGL+CDFD7X82YsfCbRXDS0GH66V7ydOg9neKK/f2pJ+3\n0S6xMqwphrrF+VDP+tkbcmAI6xXC0dIeH5q8XFqvK9FPxhixQDsXhNgYx0cTpWN7\nCQ2vQvjgQfgXtTwG7hCmBhsdjmy0/CKZQAUjVN9YV77YlR86+JThfQu14K4dXDUM\nMRZoykQPqtslNt7L99f6kYd27uvnGhNsz8pLPpse3uAK4zSgRVi6AgojRjSD68rO\nhxEOCVxmCNXDbg9oJGZk4aJZa5ktOSMzqG+dPhNJR5ewg+fEWqEn+PH8n3TZ5elc\nzMkV0UTqUm387FyQ5QcITviUVZZNcue0Xf5RK5Iq77eNjOp9ZPhD3yq3pGtyeEOY\n5z0znhl9UEbxf8OZhcNUZy4UKXObWvFpzCyMWDGO6jmfvm2kcKZG8tvTXNCQxLmk\nCa4HrTkO/FUCEpygKvdZQNSQjsXrhcNbHqvoK6t0uJzGaWxvrNoSzFloVzlcauzV\nktecBORgB2YVv1fThbSY\n=Sgda\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree db445a3ac6638d27751b64be9582bc13fe3a0743\nparent 52fd82d053aeb7b5ccfa895be477d40c7107f8c1\nauthor dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> 1789151824 +0000\ncommitter GitHub <noreply@github.com> 1789151824 +0000\n\nBump actions/checkout from 4 to 7\n\nBumps [actions/checkout](https://github.com/actions/checkout) from 4 to 7.\n- [Release notes](https://github.com/actions/checkout/releases)\n- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)\n- [Commits](https://github.com/actions/checkout/compare/v4...v7)\n\n---\nupdated-dependencies:\n- dependency-name: actions/checkout\n  dependency-version: '7'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+        "verified_at": "2026-09-11T18:37:05Z"
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/e6846d38f00272cf18413e28c48c63b3362506b0",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/e6846d38f00272cf18413e28c48c63b3362506b0",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/e6846d38f00272cf18413e28c48c63b3362506b0/comments",
+    "author": {
+      "login": "dependabot[bot]",
+      "id": 49699333,
+      "node_id": "MDM6Qm90NDk2OTkzMzM=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dependabot%5Bbot%5D",
+      "html_url": "https://github.com/apps/dependabot",
+      "followers_url": "https://api.github.com/users/dependabot%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/dependabot%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dependabot%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dependabot%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dependabot%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/dependabot%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/dependabot%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/dependabot%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dependabot%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "52fd82d053aeb7b5ccfa895be477d40c7107f8c1",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/52fd82d053aeb7b5ccfa895be477d40c7107f8c1",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/52fd82d053aeb7b5ccfa895be477d40c7107f8c1"
+      }
+    ]
+  }
+]

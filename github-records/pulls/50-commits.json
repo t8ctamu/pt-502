@@ -1,0 +1,84 @@
+[
+  {
+    "sha": "8aad16b25847138326b3c88d982154c99c697b38",
+    "node_id": "C_kwDOUOlySdoAKDhhYWQxNmIyNTg0NzEzODMyNmIzYzg4ZDk4MjE1NGM5OWM2OTdiMzg",
+    "commit": {
+      "author": {
+        "name": "dependabot[bot]",
+        "email": "49699333+dependabot[bot]@users.noreply.github.com",
+        "date": "2026-10-26T16:26:49Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-26T16:26:49Z"
+      },
+      "message": "Bump omniauth from 2.1.4 to 2.3.1\n\nBumps [omniauth](https://github.com/omniauth/omniauth) from 2.1.4 to 2.3.1.\n- [Release notes](https://github.com/omniauth/omniauth/releases)\n- [Changelog](https://github.com/omniauth/omniauth/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/omniauth/omniauth/compare/v2.1.4...v2.3.1)\n\n---\nupdated-dependencies:\n- dependency-name: omniauth\n  dependency-version: 2.3.1\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+      "tree": {
+        "sha": "4bf818d22ca370d3633fbc06f19098b2c2d35295",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/4bf818d22ca370d3633fbc06f19098b2c2d35295"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/8aad16b25847138326b3c88d982154c99c697b38",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq339JCRC1aQ7uu5UhlAAAv90QAAe+RkeuYqNnYS20ZcinKpJv\ncBAJSTJR9GYY/56C6FNK49UZchmsVx2mEC2n1BxoiN2LILXG8KztIWP3J/HS/wA/\nMNQUcaDxBG/rZkCQgd5TvSV6+b9cKS+88CMdfI2N1ttbxZwGKlRG/AAS46M09tOb\nM/eay5qUG34BMSLBZ26A53oSjGJC7q1uyS9s7gEQlvZgy2nE0kvcm+8tNQfH74lt\ndwLL2Cs3hYnISxmcTiM9rzi1t3RNHz/73WZZL/QRCItBcnhWBb/wceZV0d5jI3DY\nH+STuuPeJ8lKQ1hw7UuoXc7/BPxBQRqXhFxP97U4gtEE2aX3Dvh+bu8TeltSvSmB\nZlKdS2y++O6vL43GjEBEz9ZKehzHNRfMDjuv7yVciqdwrSZ8hj4Di7Bc1woJEzJN\nsSmteOX3y97sMxLOfX22utfUUjRLRQnNlRKxwIxa7YeOlXU4BQni8t4GbXUdLL8z\ngxsAx6bMvZMTrXEn1qxLq3AhJuhOi9zMd2fA6uQwBZGUPeTYYLhUb0ZzqorsE98p\n3z25BNiq8Ac34VJ38s7fEkL049bHEMnamVFyx0uMAYQ08VFBSJk2geQVAOOLt9op\njVdApaLVujS5C351TOPAugyJLyqRMKpmGLCRac6V2ymoWGsDwzHhs1x2XCA8sm0p\num61oYVPOxhjSMn81Z0y\n=6b4l\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 4bf818d22ca370d3633fbc06f19098b2c2d35295\nparent 7e77ff2f6f0bd9005e9ff5dac4d9ff00fc0192d2\nauthor dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> 1793032009 +0000\ncommitter GitHub <noreply@github.com> 1793032009 +0000\n\nBump omniauth from 2.1.4 to 2.3.1\n\nBumps [omniauth](https://github.com/omniauth/omniauth) from 2.1.4 to 2.3.1.\n- [Release notes](https://github.com/omniauth/omniauth/releases)\n- [Changelog](https://github.com/omniauth/omniauth/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/omniauth/omniauth/compare/v2.1.4...v2.3.1)\n\n---\nupdated-dependencies:\n- dependency-name: omniauth\n  dependency-version: 2.3.1\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+        "verified_at": "2026-10-26T16:26:49Z"
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/8aad16b25847138326b3c88d982154c99c697b38",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/8aad16b25847138326b3c88d982154c99c697b38",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/8aad16b25847138326b3c88d982154c99c697b38/comments",
+    "author": {
+      "login": "dependabot[bot]",
+      "id": 49699333,
+      "node_id": "MDM6Qm90NDk2OTkzMzM=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dependabot%5Bbot%5D",
+      "html_url": "https://github.com/apps/dependabot",
+      "followers_url": "https://api.github.com/users/dependabot%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/dependabot%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dependabot%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dependabot%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dependabot%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/dependabot%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/dependabot%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/dependabot%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dependabot%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "7e77ff2f6f0bd9005e9ff5dac4d9ff00fc0192d2",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/7e77ff2f6f0bd9005e9ff5dac4d9ff00fc0192d2",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/7e77ff2f6f0bd9005e9ff5dac4d9ff00fc0192d2"
+      }
+    ]
+  }
+]

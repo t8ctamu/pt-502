@@ -1,0 +1,84 @@
+[
+  {
+    "sha": "7dc0da52997cca608fe877e0b897b44e48d5b6d7",
+    "node_id": "C_kwDOUOlySdoAKDdkYzBkYTUyOTk3Y2NhNjA4ZmU4NzdlMGI4OTdiNDRlNDhkNWI2ZDc",
+    "commit": {
+      "author": {
+        "name": "dependabot[bot]",
+        "email": "49699333+dependabot[bot]@users.noreply.github.com",
+        "date": "2026-10-29T16:25:22Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-29T16:25:22Z"
+      },
+      "message": "Bump bootsnap from 1.26.0 to 1.26.1\n\nBumps [bootsnap](https://github.com/rails/bootsnap) from 1.26.0 to 1.26.1.\n- [Release notes](https://github.com/rails/bootsnap/releases)\n- [Changelog](https://github.com/rails/bootsnap/blob/main/CHANGELOG.md)\n- [Commits](https://github.com/rails/bootsnap/compare/v1.26.0...v1.26.1)\n\n---\nupdated-dependencies:\n- dependency-name: bootsnap\n  dependency-version: 1.26.1\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+      "tree": {
+        "sha": "7cd413509969c951a79202f35cad517cca143c91",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/7cd413509969c951a79202f35cad517cca143c91"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/7dc0da52997cca608fe877e0b897b44e48d5b6d7",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq43NyCRC1aQ7uu5UhlAAAe4IQAJpCu/w513F3TlCMtOht9ECX\nrweaiP/AyhVXbPfxYJ8F41qXcZLHn14gaFx73W3tRkkrLYQRIoLeXm6GcjgDINBB\nmWspYuWsn779Yp7/znJ01AdQJBt4v5rnQO8tHKdPTMrG+laJ7FhwOM/GPDEKMaUb\nF78TEMcEGpupvhuWCutPmF5sPRYrPhv0G+KAVQ9vKZZo3dhv+dDMF+cbVN1vaeda\nvknK1toG5eFrL4IRC1UsxqeKTJHHzEIpkxOwBSVia8RG31oo4CbPiHOcSc6ffQLI\n5gOvqHU08yvgVLm6wmmBfAMo/a4TdYYAS3gC6eD+fHRaQx77qEu0qHXYcoA6X5g3\nHHnQrzcp7ncdqGHEiOxUvS11mem/P/abB5IXS75bWFIRCWaIv0UcQiKm8elYQAlW\nWnba98TKFcckt6RjWiLJpeOMLFpXmYPh1P0OmuDCnmPlEnXcvENIoypxAhXhB4MU\nQXhvhlArqkn4Oa6OOVOXFbCj9DHjR/nv0ZJKvU6Lfx8s1QNvj9yijEiIS3JMoLHH\n6ZE9TTCr9o5rakN9rwhvLo3AwGbUxSzCzqYhf6qLVnaxdheK+CUEO8FhVu95THn2\nF4wcqd2vCdbh9JBctwxQ69Vn2pYykoBizc7Cg0Stdjl8lRzX5/Adj+4wa6O/fTat\nI9S84icvUjgXoXQdu6xl\n=Hf70\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 7cd413509969c951a79202f35cad517cca143c91\nparent 4c6276fcec829c8763c9722c5dd51e1183093c79\nauthor dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> 1793291122 +0000\ncommitter GitHub <noreply@github.com> 1793291122 +0000\n\nBump bootsnap from 1.26.0 to 1.26.1\n\nBumps [bootsnap](https://github.com/rails/bootsnap) from 1.26.0 to 1.26.1.\n- [Release notes](https://github.com/rails/bootsnap/releases)\n- [Changelog](https://github.com/rails/bootsnap/blob/main/CHANGELOG.md)\n- [Commits](https://github.com/rails/bootsnap/compare/v1.26.0...v1.26.1)\n\n---\nupdated-dependencies:\n- dependency-name: bootsnap\n  dependency-version: 1.26.1\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+        "verified_at": "2026-10-29T16:25:22Z"
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/7dc0da52997cca608fe877e0b897b44e48d5b6d7",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/7dc0da52997cca608fe877e0b897b44e48d5b6d7",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/7dc0da52997cca608fe877e0b897b44e48d5b6d7/comments",
+    "author": {
+      "login": "dependabot[bot]",
+      "id": 49699333,
+      "node_id": "MDM6Qm90NDk2OTkzMzM=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dependabot%5Bbot%5D",
+      "html_url": "https://github.com/apps/dependabot",
+      "followers_url": "https://api.github.com/users/dependabot%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/dependabot%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dependabot%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dependabot%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dependabot%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/dependabot%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/dependabot%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/dependabot%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dependabot%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "4c6276fcec829c8763c9722c5dd51e1183093c79",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/4c6276fcec829c8763c9722c5dd51e1183093c79",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/4c6276fcec829c8763c9722c5dd51e1183093c79"
+      }
+    ]
+  }
+]

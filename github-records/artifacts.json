@@ -1,0 +1,2672 @@
+[
+  {
+    "total_count": 133,
+    "artifacts": [
+      {
+        "id": 12411547635,
+        "node_id": "MDg6QXJ0aWZhY3QxMjQxMTU0NzYzNQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 77141,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12411547635",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12411547635/zip",
+        "expired": false,
+        "digest": "sha256:88a99c9250a9d6cd3b92f12fa923ec3b7da835b8fe20ea6c3f822a89aa90dd8f",
+        "created_at": "2026-10-22T08:16:01Z",
+        "updated_at": "2026-10-22T08:16:01Z",
+        "expires_at": "2026-11-06T08:15:06Z",
+        "workflow_run": {
+          "id": 39746351989,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "7e77ff2f6f0bd9005e9ff5dac4d9ff00fc0192d2"
+        }
+      },
+      {
+        "id": 12411118774,
+        "node_id": "MDg6QXJ0aWZhY3QxMjQxMTExODc3NA==",
+        "name": "coverage-report",
+        "size_in_bytes": 77695,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12411118774",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12411118774/zip",
+        "expired": false,
+        "digest": "sha256:83ceef43207ee69b91cacee2dd4006fe287d176c6536236b6f2e1175528f74e7",
+        "created_at": "2026-10-22T08:15:20Z",
+        "updated_at": "2026-10-22T08:15:20Z",
+        "expires_at": "2026-11-06T08:14:18Z",
+        "workflow_run": {
+          "id": 39746255740,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "feat/event-location-proximity",
+          "head_sha": "0d7abdd2469c62bafb8379f476eadd8256e0a0d3"
+        }
+      },
+      {
+        "id": 12411113717,
+        "node_id": "MDg6QXJ0aWZhY3QxMjQxMTExMzcxNw==",
+        "name": "coverage-report",
+        "size_in_bytes": 77693,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12411113717",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12411113717/zip",
+        "expired": false,
+        "digest": "sha256:cb940366c30d33bb4187d0e2935856bdf4138d649e85706578ee1228cc582aa3",
+        "created_at": "2026-10-22T08:15:17Z",
+        "updated_at": "2026-10-22T08:15:17Z",
+        "expires_at": "2026-11-06T08:14:16Z",
+        "workflow_run": {
+          "id": 39746251294,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "feat/event-location-proximity",
+          "head_sha": "0d7abdd2469c62bafb8379f476eadd8256e0a0d3"
+        }
+      },
+      {
+        "id": 12409447154,
+        "node_id": "MDg6QXJ0aWZhY3QxMjQwOTQ0NzE1NA==",
+        "name": "coverage-report",
+        "size_in_bytes": 77703,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12409447154",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12409447154/zip",
+        "expired": false,
+        "digest": "sha256:96aa509ff3f7443b60f09558b7fb42cbb140dad9522232d410b37267dcf530b2",
+        "created_at": "2026-10-22T07:40:33Z",
+        "updated_at": "2026-10-22T07:40:33Z",
+        "expires_at": "2026-11-06T07:39:33Z",
+        "workflow_run": {
+          "id": 39742018805,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "feat/event-location-proximity",
+          "head_sha": "87cb60710296b1f10cec75979a1cdc5afacb211f"
+        }
+      },
+      {
+        "id": 12409343132,
+        "node_id": "MDg6QXJ0aWZhY3QxMjQwOTM0MzEzMg==",
+        "name": "coverage-report",
+        "size_in_bytes": 77688,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12409343132",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12409343132/zip",
+        "expired": false,
+        "digest": "sha256:0135977cf9bfaa411e30e4359b9bb3bae4159b46b4dbe5ff2c878dcdd5e6ce50",
+        "created_at": "2026-10-22T07:45:56Z",
+        "updated_at": "2026-10-22T07:45:56Z",
+        "expires_at": "2026-11-06T07:44:51Z",
+        "workflow_run": {
+          "id": 39742654997,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "feat/event-location-proximity",
+          "head_sha": "87cb60710296b1f10cec75979a1cdc5afacb211f"
+        }
+      },
+      {
+        "id": 12367121692,
+        "node_id": "MDg6QXJ0aWZhY3QxMjM2NzEyMTY5Mg==",
+        "name": "coverage-report",
+        "size_in_bytes": 77158,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12367121692",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12367121692/zip",
+        "expired": false,
+        "digest": "sha256:d740805f18ec7cef39c077a1a7ab7dbabf0b2b5cf93356ae0a2023c24e139ebe",
+        "created_at": "2026-10-21T17:34:49Z",
+        "updated_at": "2026-10-21T17:34:49Z",
+        "expires_at": "2026-11-05T17:33:51Z",
+        "workflow_run": {
+          "id": 39644908437,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "officer-tweak",
+          "head_sha": "e7902b23142d06980624fa78db525f085b505cc2"
+        }
+      },
+      {
+        "id": 12366228413,
+        "node_id": "MDg6QXJ0aWZhY3QxMjM2NjIyODQxMw==",
+        "name": "coverage-report",
+        "size_in_bytes": 77141,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12366228413",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12366228413/zip",
+        "expired": false,
+        "digest": "sha256:7d476442765e252f1ea3688d71a24cb33619a29550867ec5b6747a4f39ee5704",
+        "created_at": "2026-10-21T17:33:53Z",
+        "updated_at": "2026-10-21T17:33:53Z",
+        "expires_at": "2026-11-05T17:32:59Z",
+        "workflow_run": {
+          "id": 39644779112,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "officer-tweak",
+          "head_sha": "e7902b23142d06980624fa78db525f085b505cc2"
+        }
+      },
+      {
+        "id": 12361465471,
+        "node_id": "MDg6QXJ0aWZhY3QxMjM2MTQ2NTQ3MQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 77154,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12361465471",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12361465471/zip",
+        "expired": false,
+        "digest": "sha256:724c5e72bf46305a5cdf1a5a43a19f510bdd9c791eb02c9dc1f908b308ee71b1",
+        "created_at": "2026-10-21T16:26:35Z",
+        "updated_at": "2026-10-21T16:26:35Z",
+        "expires_at": "2026-11-05T16:25:18Z",
+        "workflow_run": {
+          "id": 39634615143,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/pagy-43.8.1",
+          "head_sha": "66d88846f90925d5a86fbc1976b4176cb65bc1ee"
+        }
+      },
+      {
+        "id": 12361031742,
+        "node_id": "MDg6QXJ0aWZhY3QxMjM2MTAzMTc0Mg==",
+        "name": "coverage-report",
+        "size_in_bytes": 77168,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12361031742",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12361031742/zip",
+        "expired": false,
+        "digest": "sha256:35cd474b63d7622613bbc098b9f4c233f972d1948a77ca7c6dc40b4e704c347a",
+        "created_at": "2026-10-21T16:26:22Z",
+        "updated_at": "2026-10-21T16:26:22Z",
+        "expires_at": "2026-11-05T16:25:12Z",
+        "workflow_run": {
+          "id": 39634597605,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/pagy-43.8.1",
+          "head_sha": "66d88846f90925d5a86fbc1976b4176cb65bc1ee"
+        }
+      },
+      {
+        "id": 12280089091,
+        "node_id": "MDg6QXJ0aWZhY3QxMjI4MDA4OTA5MQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 77170,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12280089091",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12280089091/zip",
+        "expired": false,
+        "digest": "sha256:60d73e1ee84f013f34d137381568cf8bf97bd37b6a51b794986831dd4eac6cb9",
+        "created_at": "2026-10-20T16:25:40Z",
+        "updated_at": "2026-10-20T16:25:40Z",
+        "expires_at": "2026-11-04T16:24:29Z",
+        "workflow_run": {
+          "id": 39457155727,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/pagy-43.8.0",
+          "head_sha": "af3ef91b7524f3f5213f9092f05fae775d4747d6"
+        }
+      },
+      {
+        "id": 12279958723,
+        "node_id": "MDg6QXJ0aWZhY3QxMjI3OTk1ODcyMw==",
+        "name": "coverage-report",
+        "size_in_bytes": 77170,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12279958723",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12279958723/zip",
+        "expired": false,
+        "digest": "sha256:d9be0f03999553b6f5b9251ca1a1156e0c50910b3f9a19b52013b2162239ced5",
+        "created_at": "2026-10-20T16:25:30Z",
+        "updated_at": "2026-10-20T16:25:30Z",
+        "expires_at": "2026-11-04T16:24:33Z",
+        "workflow_run": {
+          "id": 39457166551,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/pagy-43.8.0",
+          "head_sha": "af3ef91b7524f3f5213f9092f05fae775d4747d6"
+        }
+      },
+      {
+        "id": 12059870610,
+        "node_id": "MDg6QXJ0aWZhY3QxMjA1OTg3MDYxMA==",
+        "name": "coverage-report",
+        "size_in_bytes": 76977,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12059870610",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12059870610/zip",
+        "expired": false,
+        "digest": "sha256:0b940f039e8b86d8840db4458c2a44a2841bdc512c413a8bdd4596d8ac4b7ab3",
+        "created_at": "2026-10-16T16:26:00Z",
+        "updated_at": "2026-10-16T16:26:00Z",
+        "expires_at": "2026-10-31T16:24:44Z",
+        "workflow_run": {
+          "id": 38931731876,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/json-3.1.0",
+          "head_sha": "1d02d1007f3bc9c9bd91a0623d7c0db077a10711"
+        }
+      },
+      {
+        "id": 12059840546,
+        "node_id": "MDg6QXJ0aWZhY3QxMjA1OTg0MDU0Ng==",
+        "name": "coverage-report",
+        "size_in_bytes": 77166,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12059840546",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12059840546/zip",
+        "expired": false,
+        "digest": "sha256:ad8479c68916e85bbe66872ae5eae55eef3680e8e2a635491cbea1246ee9abaf",
+        "created_at": "2026-10-16T16:25:20Z",
+        "updated_at": "2026-10-16T16:25:20Z",
+        "expires_at": "2026-10-31T16:24:19Z",
+        "workflow_run": {
+          "id": 38931678801,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/pagy-43.7.1",
+          "head_sha": "859ed7bd5f3ffb85977df49fa3830c5e9dd789c3"
+        }
+      },
+      {
+        "id": 12059680895,
+        "node_id": "MDg6QXJ0aWZhY3QxMjA1OTY4MDg5NQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 77169,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12059680895",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12059680895/zip",
+        "expired": false,
+        "digest": "sha256:dbda28f356b5e5b5b972624575026f58977851ed161b834e672961d455e0907d",
+        "created_at": "2026-10-16T16:25:25Z",
+        "updated_at": "2026-10-16T16:25:25Z",
+        "expires_at": "2026-10-31T16:24:14Z",
+        "workflow_run": {
+          "id": 38931667834,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/pagy-43.7.1",
+          "head_sha": "859ed7bd5f3ffb85977df49fa3830c5e9dd789c3"
+        }
+      },
+      {
+        "id": 12059536250,
+        "node_id": "MDg6QXJ0aWZhY3QxMjA1OTUzNjI1MA==",
+        "name": "coverage-report",
+        "size_in_bytes": 77005,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12059536250",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12059536250/zip",
+        "expired": false,
+        "digest": "sha256:cb8b7900f3522dc04b3553decd53126549c6e08c83f39302d589bba0538fb557",
+        "created_at": "2026-10-16T16:26:01Z",
+        "updated_at": "2026-10-16T16:26:01Z",
+        "expires_at": "2026-10-31T16:24:48Z",
+        "workflow_run": {
+          "id": 38931742111,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/json-3.1.0",
+          "head_sha": "1d02d1007f3bc9c9bd91a0623d7c0db077a10711"
+        }
+      },
+      {
+        "id": 12031438107,
+        "node_id": "MDg6QXJ0aWZhY3QxMjAzMTQzODEwNw==",
+        "name": "coverage-report",
+        "size_in_bytes": 77160,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12031438107",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12031438107/zip",
+        "expired": false,
+        "digest": "sha256:26b466d6190371df57eeaf66fb4adb2fdbcbc2742d5c8382595305d3b44fab8d",
+        "created_at": "2026-10-16T07:30:16Z",
+        "updated_at": "2026-10-16T07:30:16Z",
+        "expires_at": "2026-10-31T07:29:14Z",
+        "workflow_run": {
+          "id": 38867519340,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "7123e8e8644a643581dad25006443505dc828131"
+        }
+      },
+      {
+        "id": 12031273445,
+        "node_id": "MDg6QXJ0aWZhY3QxMjAzMTI3MzQ0NQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 77163,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12031273445",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12031273445/zip",
+        "expired": false,
+        "digest": "sha256:f992d1f093d5d32fac5e4a0dc7f48cb7160b585e402516ab438e81c76a26a669",
+        "created_at": "2026-10-16T07:31:00Z",
+        "updated_at": "2026-10-16T07:31:00Z",
+        "expires_at": "2026-10-31T07:30:00Z",
+        "workflow_run": {
+          "id": 38867596113,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "9aba8283dce05788c32eefb9b313a2d210946eee"
+        }
+      },
+      {
+        "id": 12030174359,
+        "node_id": "MDg6QXJ0aWZhY3QxMjAzMDE3NDM1OQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 77170,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12030174359",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12030174359/zip",
+        "expired": false,
+        "digest": "sha256:4cf0932cabc3c9d8bcfecee96d5fcd6279c953015dedd87bbeb85579ec420109",
+        "created_at": "2026-10-16T07:09:12Z",
+        "updated_at": "2026-10-16T07:09:12Z",
+        "expires_at": "2026-10-31T07:08:13Z",
+        "workflow_run": {
+          "id": 38865302409,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "d0ac6f7bddc343f8c1933315adb67bea70be070c"
+        }
+      },
+      {
+        "id": 12030164458,
+        "node_id": "MDg6QXJ0aWZhY3QxMjAzMDE2NDQ1OA==",
+        "name": "coverage-report",
+        "size_in_bytes": 77171,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12030164458",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12030164458/zip",
+        "expired": false,
+        "digest": "sha256:c040ea2073deaefb8e0eee6179151e8d0b4a091637347c42c87658a5b8fa7427",
+        "created_at": "2026-10-16T07:09:02Z",
+        "updated_at": "2026-10-16T07:09:02Z",
+        "expires_at": "2026-10-31T07:07:53Z",
+        "workflow_run": {
+          "id": 38865269241,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "bbca6a93832952f095fdb047a801a846a078ba5f"
+        }
+      },
+      {
+        "id": 12030049282,
+        "node_id": "MDg6QXJ0aWZhY3QxMjAzMDA0OTI4Mg==",
+        "name": "coverage-report",
+        "size_in_bytes": 77178,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12030049282",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/12030049282/zip",
+        "expired": false,
+        "digest": "sha256:faa8be9797f2401931c06a97277a791ad77126ed38909a51693c25e0e1c6f6c8",
+        "created_at": "2026-10-16T07:06:27Z",
+        "updated_at": "2026-10-16T07:06:27Z",
+        "expires_at": "2026-10-31T07:05:34Z",
+        "workflow_run": {
+          "id": 38865026294,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "2904591a28adcd17d36ef67aafdee9946714edde"
+        }
+      },
+      {
+        "id": 10943993019,
+        "node_id": "MDg6QXJ0aWZhY3QxMDk0Mzk5MzAxOQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 42233,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10943993019",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10943993019/zip",
+        "expired": false,
+        "digest": "sha256:a0f9b2de108007f4ca5a68c4ccd11d0c2079fa7d53ee2a3eb0a01c82ad76fdf9",
+        "created_at": "2026-09-27T23:04:10Z",
+        "updated_at": "2026-09-27T23:04:10Z",
+        "expires_at": "2026-12-26T23:03:17Z",
+        "workflow_run": {
+          "id": 36357376562,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "chore/configure-rubocop",
+          "head_sha": "70acb61fe153b7d7191a2c9963ef41a6596a45c2"
+        }
+      },
+      {
+        "id": 10909763600,
+        "node_id": "MDg6QXJ0aWZhY3QxMDkwOTc2MzYwMA==",
+        "name": "coverage-report",
+        "size_in_bytes": 42232,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10909763600",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10909763600/zip",
+        "expired": false,
+        "digest": "sha256:5a2252fd97ec8d91097525ed7a753baa9acebf0e072bbded157f4bd1005ab1e3",
+        "created_at": "2026-09-26T15:52:58Z",
+        "updated_at": "2026-09-26T15:52:58Z",
+        "expires_at": "2026-12-25T15:52:06Z",
+        "workflow_run": {
+          "id": 36253428851,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "test",
+          "head_sha": "72ee3d8aea0c32d46bff013f339fabfe0e5c681f"
+        }
+      },
+      {
+        "id": 10909567736,
+        "node_id": "MDg6QXJ0aWZhY3QxMDkwOTU2NzczNg==",
+        "name": "coverage-report",
+        "size_in_bytes": 42232,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10909567736",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10909567736/zip",
+        "expired": false,
+        "digest": "sha256:a122d1ed0ca8f815ee504f0840bfd776bbf25802c49aa95872eacda330dceee6",
+        "created_at": "2026-09-26T15:52:58Z",
+        "updated_at": "2026-09-26T15:52:58Z",
+        "expires_at": "2026-12-25T15:52:11Z",
+        "workflow_run": {
+          "id": 36253434887,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dev",
+          "head_sha": "72ee3d8aea0c32d46bff013f339fabfe0e5c681f"
+        }
+      },
+      {
+        "id": 10763557249,
+        "node_id": "MDg6QXJ0aWZhY3QxMDc2MzU1NzI0OQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 42233,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10763557249",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10763557249/zip",
+        "expired": false,
+        "digest": "sha256:28b40e28294f5230ba38a7ba92ee3f30a03ab466d983e7b02f78d974c0413fe8",
+        "created_at": "2026-09-23T16:25:47Z",
+        "updated_at": "2026-09-23T16:25:47Z",
+        "expires_at": "2026-12-22T16:24:42Z",
+        "workflow_run": {
+          "id": 35888551857,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/solid_cable-4.0.2",
+          "head_sha": "8625192ec9f2eb0b6909c23eddcba02e8d77d04f"
+        }
+      },
+      {
+        "id": 10763248388,
+        "node_id": "MDg6QXJ0aWZhY3QxMDc2MzI0ODM4OA==",
+        "name": "coverage-report",
+        "size_in_bytes": 42232,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10763248388",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10763248388/zip",
+        "expired": false,
+        "digest": "sha256:11cbcc15062fbec89e8b5431eaa40702ce5e45f28b02646d95ff5b2d00aca61f",
+        "created_at": "2026-09-23T16:26:09Z",
+        "updated_at": "2026-09-23T16:26:09Z",
+        "expires_at": "2026-12-22T16:24:46Z",
+        "workflow_run": {
+          "id": 35888560267,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/solid_cable-4.0.2",
+          "head_sha": "8625192ec9f2eb0b6909c23eddcba02e8d77d04f"
+        }
+      },
+      {
+        "id": 10753280903,
+        "node_id": "MDg6QXJ0aWZhY3QxMDc1MzI4MDkwMw==",
+        "name": "coverage-report",
+        "size_in_bytes": 42233,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10753280903",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10753280903/zip",
+        "expired": false,
+        "digest": "sha256:8a07b778746b808779d6391fb529e5f5eb8a580b59fdaccba135966961c5dee5",
+        "created_at": "2026-09-23T13:32:13Z",
+        "updated_at": "2026-09-23T13:32:13Z",
+        "expires_at": "2026-12-22T13:31:29Z",
+        "workflow_run": {
+          "id": 35867661178,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "cleanup",
+          "head_sha": "e70ab082d2ac397914da924fb482ddf77a2805d7"
+        }
+      },
+      {
+        "id": 10752997310,
+        "node_id": "MDg6QXJ0aWZhY3QxMDc1Mjk5NzMxMA==",
+        "name": "coverage-report",
+        "size_in_bytes": 42230,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10752997310",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10752997310/zip",
+        "expired": false,
+        "digest": "sha256:f4a555acd422a724260b4cf5970b2e441d837205747a578d0b18498417af34ec",
+        "created_at": "2026-09-23T13:33:33Z",
+        "updated_at": "2026-09-23T13:33:33Z",
+        "expires_at": "2026-12-22T13:32:33Z",
+        "workflow_run": {
+          "id": 35867786246,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "cleanup",
+          "head_sha": "e70ab082d2ac397914da924fb482ddf77a2805d7"
+        }
+      },
+      {
+        "id": 10752832552,
+        "node_id": "MDg6QXJ0aWZhY3QxMDc1MjgzMjU1Mg==",
+        "name": "coverage-report",
+        "size_in_bytes": 42232,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10752832552",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10752832552/zip",
+        "expired": false,
+        "digest": "sha256:0dfc0868ea18cc91b8ca1ce8f349f197a59d5ce13e7433996ac34abf8f80139d",
+        "created_at": "2026-09-23T13:34:52Z",
+        "updated_at": "2026-09-23T13:34:52Z",
+        "expires_at": "2026-12-22T13:34:05Z",
+        "workflow_run": {
+          "id": 35867965664,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "72ee3d8aea0c32d46bff013f339fabfe0e5c681f"
+        }
+      },
+      {
+        "id": 10751987649,
+        "node_id": "MDg6QXJ0aWZhY3QxMDc1MTk4NzY0OQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 42232,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10751987649",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10751987649/zip",
+        "expired": false,
+        "digest": "sha256:5138014505f921170e354f69b46010dabb1e401198950911ccd5f6411365ec95",
+        "created_at": "2026-09-23T13:13:31Z",
+        "updated_at": "2026-09-23T13:13:31Z",
+        "expires_at": "2026-12-22T13:12:40Z",
+        "workflow_run": {
+          "id": 35865496685,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "8954b0f16d0b73fd6f9b653beb6c66e43d51d3fc"
+        }
+      },
+      {
+        "id": 10734173283,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczNDE3MzI4Mw==",
+        "name": "coverage-report",
+        "size_in_bytes": 42231,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10734173283",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10734173283/zip",
+        "expired": false,
+        "digest": "sha256:438400d9c7acbdd59beb5dd3962ef820522823aafaf8c46747f1edd6e95cc176",
+        "created_at": "2026-09-23T06:04:58Z",
+        "updated_at": "2026-09-23T06:04:58Z",
+        "expires_at": "2026-12-22T06:04:11Z",
+        "workflow_run": {
+          "id": 35825068638,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "feat/manager-role-elevation",
+          "head_sha": "0d5251e48d50fa160531085b29f979f3c5b9b3ec"
+        }
+      },
+      {
+        "id": 10733542394,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMzU0MjM5NA==",
+        "name": "coverage-report",
+        "size_in_bytes": 42231,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10733542394",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10733542394/zip",
+        "expired": false,
+        "digest": "sha256:5f9693878ac84ef8bde0d9a3c40e5d3265ec5288ac72e968c47b79f3ab08440c",
+        "created_at": "2026-09-23T05:24:47Z",
+        "updated_at": "2026-09-23T05:24:47Z",
+        "expires_at": "2026-12-22T05:23:52Z",
+        "workflow_run": {
+          "id": 35822236217,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "feat/manager-role-elevation",
+          "head_sha": "0d5251e48d50fa160531085b29f979f3c5b9b3ec"
+        }
+      },
+      {
+        "id": 10732719424,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMjcxOTQyNA==",
+        "name": "coverage-report",
+        "size_in_bytes": 42231,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10732719424",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10732719424/zip",
+        "expired": false,
+        "digest": "sha256:18b6fa45e1eec4fad81fab2422bd91299709e25f038e2fd37f4384d6a8b0ec72",
+        "created_at": "2026-09-23T04:55:36Z",
+        "updated_at": "2026-09-23T04:55:36Z",
+        "expires_at": "2026-12-22T04:54:50Z",
+        "workflow_run": {
+          "id": 35820257424,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "feat/manager-role-elevation",
+          "head_sha": "a8adadea3c58e40c1cd18378e0cbdc5912575684"
+        }
+      },
+      {
+        "id": 10731756808,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMTc1NjgwOA==",
+        "name": "coverage-report",
+        "size_in_bytes": 41559,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10731756808",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10731756808/zip",
+        "expired": false,
+        "digest": "sha256:2e57e669e69e270b59832918d1495eaa0fc4737ac48f188df21f99016538d0f5",
+        "created_at": "2026-09-23T03:49:58Z",
+        "updated_at": "2026-09-23T03:49:58Z",
+        "expires_at": "2026-12-22T03:49:13Z",
+        "workflow_run": {
+          "id": 35815841008,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "feat/manager-role-elevation",
+          "head_sha": "ded1ec5d4d31d71db0c9db28a5c29b5378d6f2c0"
+        }
+      },
+      {
+        "id": 10731005883,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMTAwNTg4Mw==",
+        "name": "coverage-report",
+        "size_in_bytes": 37504,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10731005883",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10731005883/zip",
+        "expired": false,
+        "digest": "sha256:1517ac0988fe32a2c828a13931afa68be6bf1c345d79bb753a02c7d76cb82bd7",
+        "created_at": "2026-09-23T03:09:17Z",
+        "updated_at": "2026-09-23T03:09:17Z",
+        "expires_at": "2026-12-22T03:08:36Z",
+        "workflow_run": {
+          "id": 35813160231,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "feat/manager-role-elevation",
+          "head_sha": "4e170071737cebacb67eed26c4069490eec73dfb"
+        }
+      },
+      {
+        "id": 10730996840,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMDk5Njg0MA==",
+        "name": "coverage-report",
+        "size_in_bytes": 41282,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730996840",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730996840/zip",
+        "expired": false,
+        "digest": "sha256:c79b12d7725a2ab63693eb7979899b08cc2c517ffae2aaec8d7890fde74c84a3",
+        "created_at": "2026-09-23T03:11:54Z",
+        "updated_at": "2026-09-23T03:11:54Z",
+        "expires_at": "2026-12-22T03:10:57Z",
+        "workflow_run": {
+          "id": 35813314641,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/simplecov-1.3.0",
+          "head_sha": "6ad4f690e1cb9cbc4b7286419da95b9619917254"
+        }
+      },
+      {
+        "id": 10730916541,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMDkxNjU0MQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 41317,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730916541",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730916541/zip",
+        "expired": false,
+        "digest": "sha256:36c7116d0420ebee072f474a35ae9faf851fb5e32a7aae3b7fc64d8db9d5fbe1",
+        "created_at": "2026-09-23T03:07:43Z",
+        "updated_at": "2026-09-23T03:07:43Z",
+        "expires_at": "2026-12-22T03:06:58Z",
+        "workflow_run": {
+          "id": 35813051415,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "p5-1-attendance",
+          "head_sha": "ba4646d68df3856cd921988cb32f44394f858893"
+        }
+      },
+      {
+        "id": 10730890880,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMDg5MDg4MA==",
+        "name": "coverage-report",
+        "size_in_bytes": 41316,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730890880",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730890880/zip",
+        "expired": false,
+        "digest": "sha256:2ed307d77ff254731e770bc1094b2f2afd8dd26225da077bbdfbe2a0e3fac813",
+        "created_at": "2026-09-23T03:07:45Z",
+        "updated_at": "2026-09-23T03:07:45Z",
+        "expires_at": "2026-12-22T03:07:01Z",
+        "workflow_run": {
+          "id": 35813054339,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "p5-1-attendance",
+          "head_sha": "ba4646d68df3856cd921988cb32f44394f858893"
+        }
+      },
+      {
+        "id": 10730798317,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMDc5ODMxNw==",
+        "name": "coverage-report",
+        "size_in_bytes": 41490,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730798317",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730798317/zip",
+        "expired": false,
+        "digest": "sha256:93c6c2cc63c15d38d27afd41ffd62c066d84fe28d9153ad203b5bfbc9c6aaf40",
+        "created_at": "2026-09-23T03:34:52Z",
+        "updated_at": "2026-09-23T03:34:52Z",
+        "expires_at": "2026-12-22T03:34:00Z",
+        "workflow_run": {
+          "id": 35814834338,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "feat/manager-role-elevation",
+          "head_sha": "ef0b879abc131b226c6cf6791aad922869f3fd22"
+        }
+      },
+      {
+        "id": 10730792358,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMDc5MjM1OA==",
+        "name": "coverage-report",
+        "size_in_bytes": 41285,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730792358",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730792358/zip",
+        "expired": false,
+        "digest": "sha256:669ebedd123783ee1700174233d451155c87fe8779aaee338bd67298718c7281",
+        "created_at": "2026-09-23T03:11:53Z",
+        "updated_at": "2026-09-23T03:11:53Z",
+        "expires_at": "2026-12-22T03:10:52Z",
+        "workflow_run": {
+          "id": 35813309525,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/simplecov-1.3.0",
+          "head_sha": "6ad4f690e1cb9cbc4b7286419da95b9619917254"
+        }
+      },
+      {
+        "id": 10730512331,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMDUxMjMzMQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 41314,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730512331",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730512331/zip",
+        "expired": false,
+        "digest": "sha256:c656c976801de91756e2ddab4174069847b5c48db311a819f105be50269e3e57",
+        "created_at": "2026-09-23T03:09:18Z",
+        "updated_at": "2026-09-23T03:09:18Z",
+        "expires_at": "2026-12-22T03:08:28Z",
+        "workflow_run": {
+          "id": 35813151674,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "d7df5d5b780d8323ca9a8fa079ec52fe8d5ea69c"
+        }
+      },
+      {
+        "id": 10730486845,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMDQ4Njg0NQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 41295,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730486845",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730486845/zip",
+        "expired": false,
+        "digest": "sha256:44a9cc67b5576eedc28a80509b7f23111b69a5c484714a1cd481537cd8a95d70",
+        "created_at": "2026-09-23T03:11:56Z",
+        "updated_at": "2026-09-23T03:11:56Z",
+        "expires_at": "2026-12-22T03:10:57Z",
+        "workflow_run": {
+          "id": 35813314246,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/json-3.0.2",
+          "head_sha": "22afc14468e075ba12f9285c1d2bfc38797d5790"
+        }
+      },
+      {
+        "id": 10730413041,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMDQxMzA0MQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 41297,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730413041",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730413041/zip",
+        "expired": false,
+        "digest": "sha256:ccfffd91781138f0f6312d92e2dd5d7a9ffc2672db1c1024817d3f3a8493b8ae",
+        "created_at": "2026-09-23T03:11:57Z",
+        "updated_at": "2026-09-23T03:11:57Z",
+        "expires_at": "2026-12-22T03:10:58Z",
+        "workflow_run": {
+          "id": 35813315440,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/json-3.0.2",
+          "head_sha": "22afc14468e075ba12f9285c1d2bfc38797d5790"
+        }
+      },
+      {
+        "id": 10730280214,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMDI4MDIxNA==",
+        "name": "coverage-report",
+        "size_in_bytes": 41310,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730280214",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730280214/zip",
+        "expired": false,
+        "digest": "sha256:d9e8fb5e6c8c720f60ce3cc747853f19b17c6a0578b60c1e328a82e446e2470f",
+        "created_at": "2026-09-23T02:47:36Z",
+        "updated_at": "2026-09-23T02:47:36Z",
+        "expires_at": "2026-12-22T02:46:45Z",
+        "workflow_run": {
+          "id": 35811715996,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "p5-1-attendance",
+          "head_sha": "93d533ab1c1e7406b8be6b15af127eb17a9cb0d6"
+        }
+      },
+      {
+        "id": 10730197353,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMDE5NzM1Mw==",
+        "name": "coverage-report",
+        "size_in_bytes": 41336,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730197353",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730197353/zip",
+        "expired": false,
+        "digest": "sha256:b5618be5801dc5e81810c389371b43ca88180a9b74d38ff3883b68d2670748e4",
+        "created_at": "2026-09-23T03:05:57Z",
+        "updated_at": "2026-09-23T03:05:57Z",
+        "expires_at": "2026-12-22T03:05:16Z",
+        "workflow_run": {
+          "id": 35812941597,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "p5-1-attendance",
+          "head_sha": "6520b6ff3875ea2043e16245ef6f47eae4f5dca0"
+        }
+      },
+      {
+        "id": 10730142433,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMDE0MjQzMw==",
+        "name": "coverage-report",
+        "size_in_bytes": 41331,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730142433",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730142433/zip",
+        "expired": false,
+        "digest": "sha256:394d7ddd5a89345a26d1bac47f4a5e635594268b6b9e2e978744ae793dcd50dc",
+        "created_at": "2026-09-23T03:06:05Z",
+        "updated_at": "2026-09-23T03:06:05Z",
+        "expires_at": "2026-12-22T03:05:13Z",
+        "workflow_run": {
+          "id": 35812937806,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "p5-1-attendance",
+          "head_sha": "6520b6ff3875ea2043e16245ef6f47eae4f5dca0"
+        }
+      },
+      {
+        "id": 10730103743,
+        "node_id": "MDg6QXJ0aWZhY3QxMDczMDEwMzc0Mw==",
+        "name": "coverage-report",
+        "size_in_bytes": 41508,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730103743",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10730103743/zip",
+        "expired": false,
+        "digest": "sha256:c911886e9589d0cffae22537d5aa30233c5bd0f17e494501c067ff1004065ee7",
+        "created_at": "2026-09-23T03:19:50Z",
+        "updated_at": "2026-09-23T03:19:50Z",
+        "expires_at": "2026-12-22T03:19:04Z",
+        "workflow_run": {
+          "id": 35813838721,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "feat/manager-role-elevation",
+          "head_sha": "d6c331aee5a603351506fe707482205dd3e3552a"
+        }
+      },
+      {
+        "id": 10729514862,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyOTUxNDg2Mg==",
+        "name": "coverage-report",
+        "size_in_bytes": 41313,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10729514862",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10729514862/zip",
+        "expired": false,
+        "digest": "sha256:9c653e3b6faf7a2d459c0fee3afb70fe339a547fe6849cdcb8f2fa0c3124b231",
+        "created_at": "2026-09-23T02:47:28Z",
+        "updated_at": "2026-09-23T02:47:28Z",
+        "expires_at": "2026-12-22T02:46:42Z",
+        "workflow_run": {
+          "id": 35811713228,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "p5-1-attendance",
+          "head_sha": "93d533ab1c1e7406b8be6b15af127eb17a9cb0d6"
+        }
+      },
+      {
+        "id": 10729508743,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyOTUwODc0Mw==",
+        "name": "coverage-report",
+        "size_in_bytes": 36972,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10729508743",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10729508743/zip",
+        "expired": false,
+        "digest": "sha256:d45712e2986c2ba32254d1e68b414b25308f5f82a6ac45319b9da80e523ed967",
+        "created_at": "2026-09-23T02:39:55Z",
+        "updated_at": "2026-09-23T02:39:55Z",
+        "expires_at": "2026-12-22T02:39:08Z",
+        "workflow_run": {
+          "id": 35811201752,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "feat/manager-role-elevation",
+          "head_sha": "4e15644d634fb6338faeeffd44836606bb8d5248"
+        }
+      },
+      {
+        "id": 10729470150,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyOTQ3MDE1MA==",
+        "name": "coverage-report",
+        "size_in_bytes": 37274,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10729470150",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10729470150/zip",
+        "expired": false,
+        "digest": "sha256:b2969513ea0170a0d123547f6ac5a6ac72cad4eff9e72d482322874001f981e5",
+        "created_at": "2026-09-23T02:09:14Z",
+        "updated_at": "2026-09-23T02:09:14Z",
+        "expires_at": "2026-12-22T02:08:27Z",
+        "workflow_run": {
+          "id": 35809162225,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "04e86c355d7d0c59a9a440b0fb79952ad0dc4865"
+        }
+      },
+      {
+        "id": 10729365137,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyOTM2NTEzNw==",
+        "name": "coverage-report",
+        "size_in_bytes": 37275,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10729365137",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10729365137/zip",
+        "expired": false,
+        "digest": "sha256:d5499a6c2ea6d42ff53aec5c1b6142c4a4605a458e3ea04c3b48fcf94efabacf",
+        "created_at": "2026-09-23T02:06:44Z",
+        "updated_at": "2026-09-23T02:06:44Z",
+        "expires_at": "2026-12-22T02:05:52Z",
+        "workflow_run": {
+          "id": 35808991533,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "add-css",
+          "head_sha": "1588c4ffd236d5042bcf071723226cbe947d2606"
+        }
+      },
+      {
+        "id": 10729084784,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyOTA4NDc4NA==",
+        "name": "coverage-report",
+        "size_in_bytes": 37272,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10729084784",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10729084784/zip",
+        "expired": false,
+        "digest": "sha256:b6d365c400a81388a8246ba8a2117fc3432121dc9a6177661cf500399bfb570f",
+        "created_at": "2026-09-23T02:43:29Z",
+        "updated_at": "2026-09-23T02:43:29Z",
+        "expires_at": "2026-12-22T02:42:41Z",
+        "workflow_run": {
+          "id": 35811439993,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "feat/manager-role-elevation",
+          "head_sha": "4ccc9711bc832a547e0105e30a279db43ddbd5f6"
+        }
+      },
+      {
+        "id": 10729081559,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyOTA4MTU1OQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 37274,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10729081559",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10729081559/zip",
+        "expired": false,
+        "digest": "sha256:15c15027ccca5abb0c1053f81ebab4b98787bc8b5ded829f65b98dafcd4053ab",
+        "created_at": "2026-09-23T02:06:38Z",
+        "updated_at": "2026-09-23T02:06:38Z",
+        "expires_at": "2026-12-22T02:05:49Z",
+        "workflow_run": {
+          "id": 35808988430,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "add-css",
+          "head_sha": "1588c4ffd236d5042bcf071723226cbe947d2606"
+        }
+      },
+      {
+        "id": 10728841998,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyODg0MTk5OA==",
+        "name": "coverage-report",
+        "size_in_bytes": 37269,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728841998",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728841998/zip",
+        "expired": false,
+        "digest": "sha256:e79411232344d71b1401fd5a647588a9ae6fc3d2788d727f99b192785d9591c7",
+        "created_at": "2026-09-23T02:02:04Z",
+        "updated_at": "2026-09-23T02:02:04Z",
+        "expires_at": "2026-12-22T02:01:22Z",
+        "workflow_run": {
+          "id": 35808684153,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "add-css",
+          "head_sha": "7eb75c1b11815ea4f23a169f3e51d5692a324ee2"
+        }
+      },
+      {
+        "id": 10728763135,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyODc2MzEzNQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 37271,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728763135",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728763135/zip",
+        "expired": false,
+        "digest": "sha256:1202f06c6dbfa50b0fa038ad6fd052b17b12e07fd305d0fcf816f5b219da36af",
+        "created_at": "2026-09-23T01:59:53Z",
+        "updated_at": "2026-09-23T01:59:53Z",
+        "expires_at": "2026-12-22T01:59:10Z",
+        "workflow_run": {
+          "id": 35808531563,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "add-css",
+          "head_sha": "7eb75c1b11815ea4f23a169f3e51d5692a324ee2"
+        }
+      },
+      {
+        "id": 10728713750,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyODcxMzc1MA==",
+        "name": "coverage-report",
+        "size_in_bytes": 37273,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728713750",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728713750/zip",
+        "expired": false,
+        "digest": "sha256:369cfc54e795b562b61fcca79d6b8ec49bb8ae71a5aa2eddf1018dba73d5b8b5",
+        "created_at": "2026-09-23T02:05:18Z",
+        "updated_at": "2026-09-23T02:05:18Z",
+        "expires_at": "2026-12-22T02:04:25Z",
+        "workflow_run": {
+          "id": 35808890898,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "add-css",
+          "head_sha": "39997f1b0efef4a733e3ad8bdd6f9f96c15434a6"
+        }
+      },
+      {
+        "id": 10728579118,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyODU3OTExOA==",
+        "name": "coverage-report",
+        "size_in_bytes": 40950,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728579118",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728579118/zip",
+        "expired": false,
+        "digest": "sha256:7e2c4c46f21e981dedc91c49aa5e2694d9f0c5afd913f0c5c547a64eab44f34e",
+        "created_at": "2026-09-23T02:04:16Z",
+        "updated_at": "2026-09-23T02:04:16Z",
+        "expires_at": "2026-12-22T02:03:31Z",
+        "workflow_run": {
+          "id": 35808829541,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "p5-1-attendance",
+          "head_sha": "c02b339f371f0fb9a3057703825ad7c46be52c7c"
+        }
+      },
+      {
+        "id": 10728410740,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyODQxMDc0MA==",
+        "name": "coverage-report",
+        "size_in_bytes": 39756,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728410740",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728410740/zip",
+        "expired": false,
+        "digest": "sha256:360ea1255a6beb80ff123c09552ebb9d4ddbac84dcd4df293120c6f29942567c",
+        "created_at": "2026-09-23T01:37:16Z",
+        "updated_at": "2026-09-23T01:37:16Z",
+        "expires_at": "2026-12-22T01:36:33Z",
+        "workflow_run": {
+          "id": 35806993851,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "p5-1-attendance",
+          "head_sha": "7b7113f81db186757511748b1c8210e2354b6c1d"
+        }
+      },
+      {
+        "id": 10728369374,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyODM2OTM3NA==",
+        "name": "coverage-report",
+        "size_in_bytes": 37272,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728369374",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728369374/zip",
+        "expired": false,
+        "digest": "sha256:129a1bfbd98d3d67a7150095408914fc2c48a9930a02ced134e36bed8f42608c",
+        "created_at": "2026-09-23T02:05:16Z",
+        "updated_at": "2026-09-23T02:05:16Z",
+        "expires_at": "2026-12-22T02:04:28Z",
+        "workflow_run": {
+          "id": 35808895032,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "add-css",
+          "head_sha": "39997f1b0efef4a733e3ad8bdd6f9f96c15434a6"
+        }
+      },
+      {
+        "id": 10728158640,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyODE1ODY0MA==",
+        "name": "coverage-report",
+        "size_in_bytes": 40787,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728158640",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728158640/zip",
+        "expired": false,
+        "digest": "sha256:514bc25059f2accc8f329566542f3568ab1b01a3c5f90f657721e5fdc9b9d092",
+        "created_at": "2026-09-23T01:53:21Z",
+        "updated_at": "2026-09-23T01:53:21Z",
+        "expires_at": "2026-12-22T01:52:28Z",
+        "workflow_run": {
+          "id": 35808087918,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "p5-1-attendance",
+          "head_sha": "bff2fec41de3ce5edb4b48da70523be25d9b8707"
+        }
+      },
+      {
+        "id": 10728000200,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyODAwMDIwMA==",
+        "name": "coverage-report",
+        "size_in_bytes": 36991,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728000200",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10728000200/zip",
+        "expired": false,
+        "digest": "sha256:89610d6e15d84267a61d2b2996f7205ae9bfb2a9dd6c2e7a7994e47c61cb2014",
+        "created_at": "2026-09-23T01:07:10Z",
+        "updated_at": "2026-09-23T01:07:10Z",
+        "expires_at": "2026-12-22T01:06:25Z",
+        "workflow_run": {
+          "id": 35803614232,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "member_standing",
+          "head_sha": "ed2a4cd716570bd2463726f4c5e9bfb973080918"
+        }
+      },
+      {
+        "id": 10727906507,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNzkwNjUwNw==",
+        "name": "coverage-report",
+        "size_in_bytes": 34983,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727906507",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727906507/zip",
+        "expired": false,
+        "digest": "sha256:01157af83a51d3a02f36b7bb53578e0e3e12fb82bafe36db93aedfb4e1ba9a1f",
+        "created_at": "2026-09-23T01:17:59Z",
+        "updated_at": "2026-09-23T01:17:59Z",
+        "expires_at": "2026-12-22T01:17:13Z",
+        "workflow_run": {
+          "id": 35805666407,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "member_standing",
+          "head_sha": "2285eac7217afd85dcfe4a8bba688a2e8551b6b2"
+        }
+      },
+      {
+        "id": 10727818601,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNzgxODYwMQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 36966,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727818601",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727818601/zip",
+        "expired": false,
+        "digest": "sha256:4925a15e1ca9f4b6c13d22b1fe3f132e5ed1271d17798f916b24a8a4a3199c06",
+        "created_at": "2026-09-23T01:24:39Z",
+        "updated_at": "2026-09-23T01:24:39Z",
+        "expires_at": "2026-12-22T01:23:41Z",
+        "workflow_run": {
+          "id": 35806103690,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "member_standing",
+          "head_sha": "7322e16ba5cdaed92fa8fe93c214a52f4688f426"
+        }
+      },
+      {
+        "id": 10727806752,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNzgwNjc1Mg==",
+        "name": "coverage-report",
+        "size_in_bytes": 36987,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727806752",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727806752/zip",
+        "expired": false,
+        "digest": "sha256:be85c3577fa77d401fa2afa123f178c875193760defa3a00f95cfdd990497d22",
+        "created_at": "2026-09-23T01:19:20Z",
+        "updated_at": "2026-09-23T01:19:20Z",
+        "expires_at": "2026-12-22T01:18:31Z",
+        "workflow_run": {
+          "id": 35805752957,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "member_standing",
+          "head_sha": "c1c3b14947118bb6766272f07451fb4ba0eeb742"
+        }
+      },
+      {
+        "id": 10727668974,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNzY2ODk3NA==",
+        "name": "coverage-report",
+        "size_in_bytes": 36970,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727668974",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727668974/zip",
+        "expired": false,
+        "digest": "sha256:ae1e742f4db0ded08d20803a3aa08a2d2f28f3286ff8bc5954ec88ce6a9a9bef",
+        "created_at": "2026-09-23T01:24:27Z",
+        "updated_at": "2026-09-23T01:24:27Z",
+        "expires_at": "2026-12-22T01:23:44Z",
+        "workflow_run": {
+          "id": 35806106798,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "member_standing",
+          "head_sha": "7322e16ba5cdaed92fa8fe93c214a52f4688f426"
+        }
+      },
+      {
+        "id": 10727589636,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNzU4OTYzNg==",
+        "name": "coverage-report",
+        "size_in_bytes": 36968,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727589636",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727589636/zip",
+        "expired": false,
+        "digest": "sha256:6e1798d03c7e2a9b2876a71a76280583b77fc9341029c947a2b0ef32229bdef2",
+        "created_at": "2026-09-23T01:29:01Z",
+        "updated_at": "2026-09-23T01:29:01Z",
+        "expires_at": "2026-12-22T01:28:11Z",
+        "workflow_run": {
+          "id": 35806406323,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "30814e1c5e1e8972bdaa1fd031cab52c08df0408"
+        }
+      },
+      {
+        "id": 10727568224,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNzU2ODIyNA==",
+        "name": "coverage-report",
+        "size_in_bytes": 37090,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727568224",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727568224/zip",
+        "expired": false,
+        "digest": "sha256:a50eb8c052959d7667789c558387e796443c048a310ec70affb6ad04b024ccde",
+        "created_at": "2026-09-23T01:18:29Z",
+        "updated_at": "2026-09-23T01:18:29Z",
+        "expires_at": "2026-12-22T01:17:44Z",
+        "workflow_run": {
+          "id": 35805702778,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "p5-1-attendance",
+          "head_sha": "cff4e46941a19e5309cca82658da74009cd580a5"
+        }
+      },
+      {
+        "id": 10727394834,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNzM5NDgzNA==",
+        "name": "coverage-report",
+        "size_in_bytes": 37405,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727394834",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727394834/zip",
+        "expired": false,
+        "digest": "sha256:4b119e8f3c391ce737de467745bcf795eef83d52a0bd11f324dc357e87371cae",
+        "created_at": "2026-09-23T01:28:21Z",
+        "updated_at": "2026-09-23T01:28:21Z",
+        "expires_at": "2026-12-22T01:27:38Z",
+        "workflow_run": {
+          "id": 35806368861,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "p5-1-attendance",
+          "head_sha": "7ac9f61bbbb4915b5c945ba1483df8e43f263440"
+        }
+      },
+      {
+        "id": 10727212917,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNzIxMjkxNw==",
+        "name": "coverage-report",
+        "size_in_bytes": 36987,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727212917",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727212917/zip",
+        "expired": false,
+        "digest": "sha256:3e2a9898beb810d8775acb0b877fedfa1fa5b5c190aac7f3f976745a12e2650a",
+        "created_at": "2026-09-23T01:19:13Z",
+        "updated_at": "2026-09-23T01:19:13Z",
+        "expires_at": "2026-12-22T01:18:29Z",
+        "workflow_run": {
+          "id": 35805750381,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "member_standing",
+          "head_sha": "c1c3b14947118bb6766272f07451fb4ba0eeb742"
+        }
+      },
+      {
+        "id": 10727041985,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNzA0MTk4NQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 36947,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727041985",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10727041985/zip",
+        "expired": false,
+        "digest": "sha256:c6f692dba17c831f35ea3ef4a609197afe43d517e098cef48d39e49ce72260a6",
+        "created_at": "2026-09-23T01:04:20Z",
+        "updated_at": "2026-09-23T01:04:20Z",
+        "expires_at": "2026-12-22T01:03:38Z",
+        "workflow_run": {
+          "id": 35804715491,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "a33d55138036808a3e057391f9ca51fd009c1415"
+        }
+      },
+      {
+        "id": 10726823719,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNjgyMzcxOQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 34987,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10726823719",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10726823719/zip",
+        "expired": false,
+        "digest": "sha256:27137824cce649d71173ed77e7a93a6d4dc3fbf3ab00010858e07580404bb95a",
+        "created_at": "2026-09-23T00:48:14Z",
+        "updated_at": "2026-09-23T00:48:14Z",
+        "expires_at": "2026-12-22T00:47:26Z",
+        "workflow_run": {
+          "id": 35803574891,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "member_standing",
+          "head_sha": "ed2a4cd716570bd2463726f4c5e9bfb973080918"
+        }
+      },
+      {
+        "id": 10726719234,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNjcxOTIzNA==",
+        "name": "coverage-report",
+        "size_in_bytes": 36991,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10726719234",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10726719234/zip",
+        "expired": false,
+        "digest": "sha256:42391e1e18d93d6b7056757dde0734dab3a7d635770f4a4b248d154d154d6d49",
+        "created_at": "2026-09-23T01:04:37Z",
+        "updated_at": "2026-09-23T01:04:37Z",
+        "expires_at": "2026-12-22T01:03:54Z",
+        "workflow_run": {
+          "id": 35803614232,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "member_standing",
+          "head_sha": "ed2a4cd716570bd2463726f4c5e9bfb973080918"
+        }
+      },
+      {
+        "id": 10726441488,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNjQ0MTQ4OA==",
+        "name": "coverage-report",
+        "size_in_bytes": 34982,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10726441488",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10726441488/zip",
+        "expired": false,
+        "digest": "sha256:4a191bad2fa40130c14d7b33002d70112c0a438b9e07e6d21d53f847c4dfba7c",
+        "created_at": "2026-09-23T00:27:59Z",
+        "updated_at": "2026-09-23T00:27:59Z",
+        "expires_at": "2026-12-22T00:27:14Z",
+        "workflow_run": {
+          "id": 35802120846,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "member_standing",
+          "head_sha": "e23f10a6610798b10425efa043f4faf672e25312"
+        }
+      },
+      {
+        "id": 10725874311,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNTg3NDMxMQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 34985,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10725874311",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10725874311/zip",
+        "expired": false,
+        "digest": "sha256:d2df43c73b0b57996d952cb84885f9c97d6ee60ac9e92c1f9b4005db4d543aef",
+        "created_at": "2026-09-23T00:39:09Z",
+        "updated_at": "2026-09-23T00:39:09Z",
+        "expires_at": "2026-12-22T00:38:23Z",
+        "workflow_run": {
+          "id": 35802930391,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "member_standing",
+          "head_sha": "9c3d532ae5b50c064deec2933f348c7f4e1f21bd"
+        }
+      },
+      {
+        "id": 10724880293,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNDg4MDI5Mw==",
+        "name": "coverage-report",
+        "size_in_bytes": 36973,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10724880293",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10724880293/zip",
+        "expired": false,
+        "digest": "sha256:e0f71388a071287f3c06b0cc43eb5532779141fe343baa55818e44c64a9ebb33",
+        "created_at": "2026-09-22T23:17:15Z",
+        "updated_at": "2026-09-22T23:17:15Z",
+        "expires_at": "2026-12-21T23:16:29Z",
+        "workflow_run": {
+          "id": 35796619446,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "EventCreation",
+          "head_sha": "d9cc832bcef5065f4631d3cc2cde0916cf4dfbd2"
+        }
+      },
+      {
+        "id": 10724825913,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNDgyNTkxMw==",
+        "name": "coverage-report",
+        "size_in_bytes": 36971,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10724825913",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10724825913/zip",
+        "expired": false,
+        "digest": "sha256:c28ea32b525851a3d5f956fbce722486aeb391845a28b2fa6ee19b0a90f45cce",
+        "created_at": "2026-09-22T23:20:14Z",
+        "updated_at": "2026-09-22T23:20:14Z",
+        "expires_at": "2026-12-21T23:19:15Z",
+        "workflow_run": {
+          "id": 35796836970,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "c392de0f2139f0796237ed36d2271dcd0140d9fe"
+        }
+      },
+      {
+        "id": 10724256306,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyNDI1NjMwNg==",
+        "name": "coverage-report",
+        "size_in_bytes": 36972,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10724256306",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10724256306/zip",
+        "expired": false,
+        "digest": "sha256:c8603034fb13a6dd19a45b998062a792322f9c6069adc96bafb713128ad78fbf",
+        "created_at": "2026-09-22T23:17:25Z",
+        "updated_at": "2026-09-22T23:17:25Z",
+        "expires_at": "2026-12-21T23:16:27Z",
+        "workflow_run": {
+          "id": 35796615963,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "EventCreation",
+          "head_sha": "d9cc832bcef5065f4631d3cc2cde0916cf4dfbd2"
+        }
+      },
+      {
+        "id": 10723682445,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyMzY4MjQ0NQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 37037,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10723682445",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10723682445/zip",
+        "expired": false,
+        "digest": "sha256:a2d2074c3ab9482260409726103651a859727a52815e2b33b677dfde751d9532",
+        "created_at": "2026-09-22T22:55:38Z",
+        "updated_at": "2026-09-22T22:55:38Z",
+        "expires_at": "2026-12-21T22:54:41Z",
+        "workflow_run": {
+          "id": 35794827010,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "EventCreation",
+          "head_sha": "edd9ca736691c787de1a9fb286f25e5e064b794f"
+        }
+      },
+      {
+        "id": 10723597478,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyMzU5NzQ3OA==",
+        "name": "coverage-report",
+        "size_in_bytes": 36977,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10723597478",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10723597478/zip",
+        "expired": false,
+        "digest": "sha256:ad04958218e5e16ce10032e3e886bc1f2a6cccea4a66c66ec4cd6fde5ad335a3",
+        "created_at": "2026-09-22T22:55:25Z",
+        "updated_at": "2026-09-22T22:55:25Z",
+        "expires_at": "2026-12-21T22:54:39Z",
+        "workflow_run": {
+          "id": 35794823683,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "EventCreation",
+          "head_sha": "edd9ca736691c787de1a9fb286f25e5e064b794f"
+        }
+      },
+      {
+        "id": 10723550245,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyMzU1MDI0NQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 36977,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10723550245",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10723550245/zip",
+        "expired": false,
+        "digest": "sha256:7f4a484b2ca23221088b103934b812de6f80ec7134bde420ed67b654592508d0",
+        "created_at": "2026-09-22T22:44:24Z",
+        "updated_at": "2026-09-22T22:44:24Z",
+        "expires_at": "2026-12-21T22:43:39Z",
+        "workflow_run": {
+          "id": 35793894621,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "EventCreation",
+          "head_sha": "f29faab6d450a5abb44bfa816d7f21fc379bf507"
+        }
+      },
+      {
+        "id": 10723337462,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyMzMzNzQ2Mg==",
+        "name": "coverage-report",
+        "size_in_bytes": 34925,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10723337462",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10723337462/zip",
+        "expired": false,
+        "digest": "sha256:4f4f8d05e2836324cdc163f3e1f77ad2e96d8312af0d44a7e2e234c1052b5e90",
+        "created_at": "2026-09-22T22:52:54Z",
+        "updated_at": "2026-09-22T22:52:54Z",
+        "expires_at": "2026-12-21T22:51:56Z",
+        "workflow_run": {
+          "id": 35794596675,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "01cc7885d4d15507ee981a4694461557a128bf69"
+        }
+      },
+      {
+        "id": 10723287043,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyMzI4NzA0Mw==",
+        "name": "coverage-report",
+        "size_in_bytes": 36976,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10723287043",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10723287043/zip",
+        "expired": false,
+        "digest": "sha256:8914b8d12b776c2bd3d259b0c8352b218aa0c859992ba293c306bc9d48b99f3c",
+        "created_at": "2026-09-22T22:49:51Z",
+        "updated_at": "2026-09-22T22:49:51Z",
+        "expires_at": "2026-12-21T22:48:48Z",
+        "workflow_run": {
+          "id": 35794329622,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "EventCreation",
+          "head_sha": "f29faab6d450a5abb44bfa816d7f21fc379bf507"
+        }
+      },
+      {
+        "id": 10723043595,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyMzA0MzU5NQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 36878,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10723043595",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10723043595/zip",
+        "expired": false,
+        "digest": "sha256:8fb5294796ffa523d0e8b487f48a08f82d4ed6519dd7e3eee3c34f7ae6f9a941",
+        "created_at": "2026-09-22T23:00:30Z",
+        "updated_at": "2026-09-22T23:00:30Z",
+        "expires_at": "2026-12-21T22:59:44Z",
+        "workflow_run": {
+          "id": 35795218194,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "EventCreation",
+          "head_sha": "3329ebd7db266319410295ddf9c5f380a2dab88a"
+        }
+      },
+      {
+        "id": 10722971692,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyMjk3MTY5Mg==",
+        "name": "coverage-report",
+        "size_in_bytes": 34928,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10722971692",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10722971692/zip",
+        "expired": false,
+        "digest": "sha256:68d0ad6aab4c3e6f4006660fdbaba7435bc39b1d27711f129be05e853e63fe35",
+        "created_at": "2026-09-22T22:41:54Z",
+        "updated_at": "2026-09-22T22:41:54Z",
+        "expires_at": "2026-12-21T22:41:03Z",
+        "workflow_run": {
+          "id": 35793673279,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-spec-files",
+          "head_sha": "46f32d5cdb0de211e7c37f61eda00931d7e5a431"
+        }
+      },
+      {
+        "id": 10722749487,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyMjc0OTQ4Nw==",
+        "name": "coverage-report",
+        "size_in_bytes": 34926,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10722749487",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10722749487/zip",
+        "expired": false,
+        "digest": "sha256:a0af8bf6c664785a1cafb2fb56cc3aead393c4dd3e18e39330f33f92a80c6299",
+        "created_at": "2026-09-22T22:39:58Z",
+        "updated_at": "2026-09-22T22:39:58Z",
+        "expires_at": "2026-12-21T22:39:15Z",
+        "workflow_run": {
+          "id": 35793514314,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-spec-files",
+          "head_sha": "5099f8bfe84014f67cae1df3cfeeed4d0b173bc1"
+        }
+      },
+      {
+        "id": 10722298674,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyMjI5ODY3NA==",
+        "name": "coverage-report",
+        "size_in_bytes": 34926,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10722298674",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10722298674/zip",
+        "expired": false,
+        "digest": "sha256:c15662c6c8f3853a5fe3ac6218ffe0ba89de0d0420667ab83aeba08993ec1cdf",
+        "created_at": "2026-09-22T22:37:45Z",
+        "updated_at": "2026-09-22T22:37:45Z",
+        "expires_at": "2026-12-21T22:37:02Z",
+        "workflow_run": {
+          "id": 35793324927,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-spec-files",
+          "head_sha": "5099f8bfe84014f67cae1df3cfeeed4d0b173bc1"
+        }
+      },
+      {
+        "id": 10722209513,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyMjIwOTUxMw==",
+        "name": "coverage-report",
+        "size_in_bytes": 34924,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10722209513",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10722209513/zip",
+        "expired": false,
+        "digest": "sha256:afee7ac1a72ed37bfe64b5e298f702c779ec0f26ecefde25e178b84bcee42045",
+        "created_at": "2026-09-22T22:41:44Z",
+        "updated_at": "2026-09-22T22:41:44Z",
+        "expires_at": "2026-12-21T22:41:00Z",
+        "workflow_run": {
+          "id": 35793669053,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-spec-files",
+          "head_sha": "46f32d5cdb0de211e7c37f61eda00931d7e5a431"
+        }
+      },
+      {
+        "id": 10720096298,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcyMDA5NjI5OA==",
+        "name": "coverage-report",
+        "size_in_bytes": 34871,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10720096298",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10720096298/zip",
+        "expired": false,
+        "digest": "sha256:e957213a591e64003f1a2993ca93662f23b7c2a0baab1892563ecd601560429a",
+        "created_at": "2026-09-22T21:20:46Z",
+        "updated_at": "2026-09-22T21:20:46Z",
+        "expires_at": "2026-12-21T21:19:56Z",
+        "workflow_run": {
+          "id": 35785973082,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "member_standing",
+          "head_sha": "097f3185d1cb692f770fa0e91442fb2c04a4c4e7"
+        }
+      },
+      {
+        "id": 10707372598,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcwNzM3MjU5OA==",
+        "name": "coverage-report",
+        "size_in_bytes": 34872,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10707372598",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10707372598/zip",
+        "expired": false,
+        "digest": "sha256:e6e954353c7aeb368f014bb897d6e071b7710032c7534f1569849a1f1a2e1a14",
+        "created_at": "2026-09-22T16:25:36Z",
+        "updated_at": "2026-09-22T16:25:36Z",
+        "expires_at": "2026-12-21T16:24:37Z",
+        "workflow_run": {
+          "id": 35753918436,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/json-3.0.2",
+          "head_sha": "2c9522449d06fef03c9a0485276b4778c3eb9642"
+        }
+      },
+      {
+        "id": 10707347852,
+        "node_id": "MDg6QXJ0aWZhY3QxMDcwNzM0Nzg1Mg==",
+        "name": "coverage-report",
+        "size_in_bytes": 34870,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10707347852",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10707347852/zip",
+        "expired": false,
+        "digest": "sha256:827dd37dfe469412e59c10df8409dbb227e2ead43116650e6c5fddc8bba358e5",
+        "created_at": "2026-09-22T16:25:38Z",
+        "updated_at": "2026-09-22T16:25:38Z",
+        "expires_at": "2026-12-21T16:24:33Z",
+        "workflow_run": {
+          "id": 35753912641,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/json-3.0.2",
+          "head_sha": "2c9522449d06fef03c9a0485276b4778c3eb9642"
+        }
+      },
+      {
+        "id": 10679568334,
+        "node_id": "MDg6QXJ0aWZhY3QxMDY3OTU2ODMzNA==",
+        "name": "coverage-report",
+        "size_in_bytes": 36830,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10679568334",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10679568334/zip",
+        "expired": false,
+        "digest": "sha256:18272df13ecace92d7ad0014ae4a8bd68b7e3fb1773ee4977b15ac75da90966d",
+        "created_at": "2026-09-22T06:04:39Z",
+        "updated_at": "2026-09-22T06:04:39Z",
+        "expires_at": "2026-12-21T06:03:55Z",
+        "workflow_run": {
+          "id": 35693194127,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "EventCreation",
+          "head_sha": "3ade0ded4c52d8f18767f26476067d2b44c9a6e2"
+        }
+      },
+      {
+        "id": 10679515856,
+        "node_id": "MDg6QXJ0aWZhY3QxMDY3OTUxNTg1Ng==",
+        "name": "coverage-report",
+        "size_in_bytes": 36719,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10679515856",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10679515856/zip",
+        "expired": false,
+        "digest": "sha256:9d2bd70092396a5b816311027fd93cc7ed701510b45a4a4b1b52eb9aa90c5526",
+        "created_at": "2026-09-22T05:42:43Z",
+        "updated_at": "2026-09-22T05:42:43Z",
+        "expires_at": "2026-12-21T05:42:01Z",
+        "workflow_run": {
+          "id": 35691728455,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "EventCreation",
+          "head_sha": "d125b1a417fdcb5c068fc27ba456c4e3b94563de"
+        }
+      },
+      {
+        "id": 10677335069,
+        "node_id": "MDg6QXJ0aWZhY3QxMDY3NzMzNTA2OQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 35261,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10677335069",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10677335069/zip",
+        "expired": false,
+        "digest": "sha256:78bde4a1dcce4bb27f79ecc5f3d2a95afff2a99091ccb5c4e7e25461f833a9d3",
+        "created_at": "2026-09-22T04:30:11Z",
+        "updated_at": "2026-09-22T04:30:11Z",
+        "expires_at": "2026-12-21T04:29:20Z",
+        "workflow_run": {
+          "id": 35687065230,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "EventCreation",
+          "head_sha": "d58b8d99cb67fa395790f2c8d220a908db41b479"
+        }
+      },
+      {
+        "id": 10675978272,
+        "node_id": "MDg6QXJ0aWZhY3QxMDY3NTk3ODI3Mg==",
+        "name": "coverage-report",
+        "size_in_bytes": 34870,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10675978272",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10675978272/zip",
+        "expired": false,
+        "digest": "sha256:22866eed65491fb5d0f3a1be284687eeebca4ab1a4979acca8bf250f8ce6498f",
+        "created_at": "2026-09-22T03:45:51Z",
+        "updated_at": "2026-09-22T03:45:51Z",
+        "expires_at": "2026-12-21T03:45:02Z",
+        "workflow_run": {
+          "id": 35684295050,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "EventCreation",
+          "head_sha": "097f3185d1cb692f770fa0e91442fb2c04a4c4e7"
+        }
+      },
+      {
+        "id": 10654090984,
+        "node_id": "MDg6QXJ0aWZhY3QxMDY1NDA5MDk4NA==",
+        "name": "coverage-report",
+        "size_in_bytes": 34847,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10654090984",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10654090984/zip",
+        "expired": false,
+        "digest": "sha256:0ee5a3b702c4c1447a29b5b35ec14c3cc9d8f9101b4f39dfc85b2933c71c0c1a",
+        "created_at": "2026-09-21T16:58:54Z",
+        "updated_at": "2026-09-21T16:58:54Z",
+        "expires_at": "2026-12-20T16:57:48Z",
+        "workflow_run": {
+          "id": 35628936925,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/simplecov-1.3.0",
+          "head_sha": "a45dae2564b830cb8a6f0cc92ed91a2dfc1a634e"
+        }
+      },
+      {
+        "id": 10653620233,
+        "node_id": "MDg6QXJ0aWZhY3QxMDY1MzYyMDIzMw==",
+        "name": "coverage-report",
+        "size_in_bytes": 34870,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10653620233",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10653620233/zip",
+        "expired": false,
+        "digest": "sha256:2cfb50ee70b21069c216387af950990c5fb3cf162649305de9b3c4346c154de2",
+        "created_at": "2026-09-21T16:54:17Z",
+        "updated_at": "2026-09-21T16:54:17Z",
+        "expires_at": "2026-12-20T16:53:34Z",
+        "workflow_run": {
+          "id": 35628493800,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-members",
+          "head_sha": "8fbad04335ae6da0e6902a1f51c249c76e28ba5a"
+        }
+      },
+      {
+        "id": 10653495474,
+        "node_id": "MDg6QXJ0aWZhY3QxMDY1MzQ5NTQ3NA==",
+        "name": "coverage-report",
+        "size_in_bytes": 34868,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10653495474",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10653495474/zip",
+        "expired": false,
+        "digest": "sha256:0fb0693bf3087838293c68ac78569c581b7abf64eaf3304cc9e83995c00f41f0",
+        "created_at": "2026-09-21T16:54:15Z",
+        "updated_at": "2026-09-21T16:54:15Z",
+        "expires_at": "2026-12-20T16:53:31Z",
+        "workflow_run": {
+          "id": 35628489319,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-members",
+          "head_sha": "8fbad04335ae6da0e6902a1f51c249c76e28ba5a"
+        }
+      },
+      {
+        "id": 10653450685,
+        "node_id": "MDg6QXJ0aWZhY3QxMDY1MzQ1MDY4NQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 34870,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10653450685",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10653450685/zip",
+        "expired": false,
+        "digest": "sha256:4755b508e0283afa0e71d539c16addad76521d369ff44c726eae44c20a7262ca",
+        "created_at": "2026-09-21T16:56:24Z",
+        "updated_at": "2026-09-21T16:56:24Z",
+        "expires_at": "2026-12-20T16:55:20Z",
+        "workflow_run": {
+          "id": 35628685968,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "097f3185d1cb692f770fa0e91442fb2c04a4c4e7"
+        }
+      },
+      {
+        "id": 10653306110,
+        "node_id": "MDg6QXJ0aWZhY3QxMDY1MzMwNjExMA==",
+        "name": "coverage-report",
+        "size_in_bytes": 34846,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10653306110",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10653306110/zip",
+        "expired": false,
+        "digest": "sha256:f86b450cd3787ae96c04eca03a3952526397e24dbb7615ce93288a838449da17",
+        "created_at": "2026-09-21T16:58:50Z",
+        "updated_at": "2026-09-21T16:58:50Z",
+        "expires_at": "2026-12-20T16:57:43Z",
+        "workflow_run": {
+          "id": 35628929516,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/simplecov-1.3.0",
+          "head_sha": "a45dae2564b830cb8a6f0cc92ed91a2dfc1a634e"
+        }
+      },
+      {
+        "id": 10653071628,
+        "node_id": "MDg6QXJ0aWZhY3QxMDY1MzA3MTYyOA==",
+        "name": "coverage-report",
+        "size_in_bytes": 34665,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10653071628",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10653071628/zip",
+        "expired": false,
+        "digest": "sha256:829e1c62563a755e77bc16f77bcfee12f619243f6e1c9ac8e2caf8ed0e31ce01",
+        "created_at": "2026-09-21T16:35:14Z",
+        "updated_at": "2026-09-21T16:35:14Z",
+        "expires_at": "2026-12-20T16:34:31Z",
+        "workflow_run": {
+          "id": 35626468333,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-members",
+          "head_sha": "7cc7fe0beeee462ca246c60e64d4f01cdd64567c"
+        }
+      },
+      {
+        "id": 10652997372,
+        "node_id": "MDg6QXJ0aWZhY3QxMDY1Mjk5NzM3Mg==",
+        "name": "coverage-report",
+        "size_in_bytes": 34669,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10652997372",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10652997372/zip",
+        "expired": false,
+        "digest": "sha256:b79fd419c32eb49c59ab99565ec7993130cb3078ad51d99fdafb5dcccc634395",
+        "created_at": "2026-09-21T16:39:18Z",
+        "updated_at": "2026-09-21T16:39:18Z",
+        "expires_at": "2026-12-20T16:38:30Z",
+        "workflow_run": {
+          "id": 35626901369,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-members",
+          "head_sha": "2924e935605e73252565d27c750bc24090fa0a32"
+        }
+      }
+    ]
+  },
+  {
+    "total_count": 133,
+    "artifacts": [
+      {
+        "id": 10652594958,
+        "node_id": "MDg6QXJ0aWZhY3QxMDY1MjU5NDk1OA==",
+        "name": "coverage-report",
+        "size_in_bytes": 34865,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10652594958",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10652594958/zip",
+        "expired": false,
+        "digest": "sha256:b10e149b1c208dbe66c155037b5e1960fd9d4002c434408a249dca9e4c9208ee",
+        "created_at": "2026-09-21T16:51:23Z",
+        "updated_at": "2026-09-21T16:51:23Z",
+        "expires_at": "2026-12-20T16:50:31Z",
+        "workflow_run": {
+          "id": 35628171613,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-members",
+          "head_sha": "2ab5e0d83ccd3e3d37ee114b158bffdbf2a88245"
+        }
+      },
+      {
+        "id": 10652449832,
+        "node_id": "MDg6QXJ0aWZhY3QxMDY1MjQ0OTgzMg==",
+        "name": "coverage-report",
+        "size_in_bytes": 34866,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10652449832",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10652449832/zip",
+        "expired": false,
+        "digest": "sha256:6774b49433e83add2a4de202ad8a740f614aceb530992f3b157bc0680d3bcdcf",
+        "created_at": "2026-09-21T16:51:18Z",
+        "updated_at": "2026-09-21T16:51:18Z",
+        "expires_at": "2026-12-20T16:50:29Z",
+        "workflow_run": {
+          "id": 35628168199,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-members",
+          "head_sha": "2ab5e0d83ccd3e3d37ee114b158bffdbf2a88245"
+        }
+      },
+      {
+        "id": 10652092835,
+        "node_id": "MDg6QXJ0aWZhY3QxMDY1MjA5MjgzNQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 34668,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10652092835",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10652092835/zip",
+        "expired": false,
+        "digest": "sha256:f1f7d7854aefb1eec00d89353f84daf4acf299357472a0947816c5a85cd474c4",
+        "created_at": "2026-09-21T16:35:21Z",
+        "updated_at": "2026-09-21T16:35:21Z",
+        "expires_at": "2026-12-20T16:34:35Z",
+        "workflow_run": {
+          "id": 35626476630,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-members",
+          "head_sha": "7cc7fe0beeee462ca246c60e64d4f01cdd64567c"
+        }
+      },
+      {
+        "id": 10652013447,
+        "node_id": "MDg6QXJ0aWZhY3QxMDY1MjAxMzQ0Nw==",
+        "name": "coverage-report",
+        "size_in_bytes": 34669,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10652013447",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10652013447/zip",
+        "expired": false,
+        "digest": "sha256:3c3a42e01474f468e70aa2fb7a8effda45fc8bb27646f58d651875f0d6f0c73f",
+        "created_at": "2026-09-21T16:39:24Z",
+        "updated_at": "2026-09-21T16:39:24Z",
+        "expires_at": "2026-12-20T16:38:34Z",
+        "workflow_run": {
+          "id": 35626908348,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-members",
+          "head_sha": "2924e935605e73252565d27c750bc24090fa0a32"
+        }
+      },
+      {
+        "id": 10617675569,
+        "node_id": "MDg6QXJ0aWZhY3QxMDYxNzY3NTU2OQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 34666,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10617675569",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10617675569/zip",
+        "expired": false,
+        "digest": "sha256:20c5c1a7d1a18f5c30d78f906da0a8ed81a62c50766a8148a4cd2b110b399d17",
+        "created_at": "2026-09-21T00:27:05Z",
+        "updated_at": "2026-09-21T00:27:05Z",
+        "expires_at": "2026-12-20T00:25:54Z",
+        "workflow_run": {
+          "id": 35547679056,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-members",
+          "head_sha": "f16fe05d98a62139c0a3efd18b6763986184c85d"
+        }
+      },
+      {
+        "id": 10616204127,
+        "node_id": "MDg6QXJ0aWZhY3QxMDYxNjIwNDEyNw==",
+        "name": "coverage-report",
+        "size_in_bytes": 34668,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10616204127",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10616204127/zip",
+        "expired": false,
+        "digest": "sha256:65f065528a07caed1a04ff3f48cdbece5fb8c9dd368a978233d15ee5d162de27",
+        "created_at": "2026-09-21T00:21:20Z",
+        "updated_at": "2026-09-21T00:21:20Z",
+        "expires_at": "2026-12-20T00:20:41Z",
+        "workflow_run": {
+          "id": 35547405113,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-members",
+          "head_sha": "f16fe05d98a62139c0a3efd18b6763986184c85d"
+        }
+      },
+      {
+        "id": 10615827445,
+        "node_id": "MDg6QXJ0aWZhY3QxMDYxNTgyNzQ0NQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 34652,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10615827445",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10615827445/zip",
+        "expired": false,
+        "digest": "sha256:f58b7921672420169c82fbdd80ef89d29484ada15b69107fdc36c5e32f2c6434",
+        "created_at": "2026-09-20T23:42:03Z",
+        "updated_at": "2026-09-20T23:42:03Z",
+        "expires_at": "2026-12-19T23:41:03Z",
+        "workflow_run": {
+          "id": 35545368773,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-members",
+          "head_sha": "75629efa9baa497f691e00002fe6e09dedb99373"
+        }
+      },
+      {
+        "id": 10613423152,
+        "node_id": "MDg6QXJ0aWZhY3QxMDYxMzQyMzE1Mg==",
+        "name": "coverage-report",
+        "size_in_bytes": 30817,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10613423152",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10613423152/zip",
+        "expired": false,
+        "digest": "sha256:768363bfa0867f91f7aeb2e83f57cd17bbd16385e4d218b93f9f28980692677e",
+        "created_at": "2026-09-20T20:58:31Z",
+        "updated_at": "2026-09-20T20:58:31Z",
+        "expires_at": "2026-12-19T20:57:34Z",
+        "workflow_run": {
+          "id": 35537177871,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "new-members",
+          "head_sha": "a8d4d83b63e8067c246e7857644f1f86dad8e468"
+        }
+      },
+      {
+        "id": 10608423136,
+        "node_id": "MDg6QXJ0aWZhY3QxMDYwODQyMzEzNg==",
+        "name": "coverage-report",
+        "size_in_bytes": 30670,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10608423136",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10608423136/zip",
+        "expired": false,
+        "digest": "sha256:006835308f2b84c0d622c19c9a8a491f5627e1efe7f672c4851821962826df08",
+        "created_at": "2026-09-20T16:41:02Z",
+        "updated_at": "2026-09-20T16:41:02Z",
+        "expires_at": "2026-12-19T16:40:19Z",
+        "workflow_run": {
+          "id": 35523443300,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "create-events",
+          "head_sha": "27146b030ea7342bb9ebf786d2615e51a2d8c512"
+        }
+      },
+      {
+        "id": 10608147283,
+        "node_id": "MDg6QXJ0aWZhY3QxMDYwODE0NzI4Mw==",
+        "name": "coverage-report",
+        "size_in_bytes": 30666,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10608147283",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10608147283/zip",
+        "expired": false,
+        "digest": "sha256:755ca5f1f402dce546cb4d0019bc258317a3b6f7e95b2da53fae7e30327e5c32",
+        "created_at": "2026-09-20T16:10:49Z",
+        "updated_at": "2026-09-20T16:10:49Z",
+        "expires_at": "2026-12-19T16:10:08Z",
+        "workflow_run": {
+          "id": 35521853781,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "create-events",
+          "head_sha": "27146b030ea7342bb9ebf786d2615e51a2d8c512"
+        }
+      },
+      {
+        "id": 10458490416,
+        "node_id": "MDg6QXJ0aWZhY3QxMDQ1ODQ5MDQxNg==",
+        "name": "coverage-report",
+        "size_in_bytes": 30643,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10458490416",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10458490416/zip",
+        "expired": false,
+        "digest": "sha256:05fe5f136150b0bd6a97e45e584dc1d9092c00b7a71437efd2038076e5ef7d22",
+        "created_at": "2026-09-16T16:25:07Z",
+        "updated_at": "2026-09-16T16:25:07Z",
+        "expires_at": "2026-12-15T16:24:16Z",
+        "workflow_run": {
+          "id": 35121668531,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/simplecov-1.3.0",
+          "head_sha": "f99ed505c775300f591de80b3cb17f2ee3996ee7"
+        }
+      },
+      {
+        "id": 10457209066,
+        "node_id": "MDg6QXJ0aWZhY3QxMDQ1NzIwOTA2Ng==",
+        "name": "coverage-report",
+        "size_in_bytes": 30642,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10457209066",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10457209066/zip",
+        "expired": false,
+        "digest": "sha256:afc49444c6d176e0dca68c65651d65a0ede186ca6ea967c87589f7d36e9ae4bf",
+        "created_at": "2026-09-16T16:25:04Z",
+        "updated_at": "2026-09-16T16:25:04Z",
+        "expires_at": "2026-12-15T16:24:13Z",
+        "workflow_run": {
+          "id": 35121663138,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/simplecov-1.3.0",
+          "head_sha": "f99ed505c775300f591de80b3cb17f2ee3996ee7"
+        }
+      },
+      {
+        "id": 10308655109,
+        "node_id": "MDg6QXJ0aWZhY3QxMDMwODY1NTEwOQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 30666,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10308655109",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10308655109/zip",
+        "expired": false,
+        "digest": "sha256:1f3d6a37aab57f555a9912a0a1e26c5b1bff6b1e1621223a9aeea7af69a28dcb",
+        "created_at": "2026-09-13T00:07:52Z",
+        "updated_at": "2026-09-13T00:07:52Z",
+        "expires_at": "2026-12-12T00:07:03Z",
+        "workflow_run": {
+          "id": 34727145401,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "8a49d5da080f80d08e786485de616645ba02c15c"
+        }
+      },
+      {
+        "id": 10308266324,
+        "node_id": "MDg6QXJ0aWZhY3QxMDMwODI2NjMyNA==",
+        "name": "coverage-report",
+        "size_in_bytes": 30668,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10308266324",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10308266324/zip",
+        "expired": false,
+        "digest": "sha256:6891ffab6ad47acf60840b41fb7b4d9b2dc185a8a0b1bc23eeda926881e3283a",
+        "created_at": "2026-09-13T00:23:36Z",
+        "updated_at": "2026-09-13T00:23:36Z",
+        "expires_at": "2026-12-12T00:22:49Z",
+        "workflow_run": {
+          "id": 34727814428,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "86a1dfb3ba35e34853dbd5566725a171d8c91b5b"
+        }
+      },
+      {
+        "id": 10278870551,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3ODg3MDU1MQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 30522,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278870551",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278870551/zip",
+        "expired": false,
+        "digest": "sha256:40b9883c1e2cf83c8395558bc0851afc3a0a96ebe5ed77446047509c35ee4d65",
+        "created_at": "2026-09-11T18:52:56Z",
+        "updated_at": "2026-09-11T18:52:56Z",
+        "expires_at": "2026-12-10T18:52:03Z",
+        "workflow_run": {
+          "id": 34635688783,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "887ec5d3a93c104f2d5fa423185a97a4025f54d6"
+        }
+      },
+      {
+        "id": 10278500591,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3ODUwMDU5MQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 144792,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278500591",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278500591/zip",
+        "expired": false,
+        "digest": "sha256:71c3e5fcfce0d2978631ee5a227c5e74ec1722532c029401719378fda4cb6ab1",
+        "created_at": "2026-09-11T18:52:40Z",
+        "updated_at": "2026-09-11T18:52:40Z",
+        "expires_at": "2026-12-10T18:51:45Z",
+        "workflow_run": {
+          "id": 34635661445,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "813777530b3b79895e2fa8a6a1f4b2155efe2f12"
+        }
+      },
+      {
+        "id": 10278355358,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3ODM1NTM1OA==",
+        "name": "coverage-report",
+        "size_in_bytes": 30521,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278355358",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278355358/zip",
+        "expired": false,
+        "digest": "sha256:28ea2a22a89716af305618dd5c31f284792925b686ed1998eac444d92c6f11f5",
+        "created_at": "2026-09-11T18:53:22Z",
+        "updated_at": "2026-09-11T18:53:22Z",
+        "expires_at": "2026-12-10T18:52:41Z",
+        "workflow_run": {
+          "id": 34635748488,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "3a04ed51315811139b414796d74a10aff0e711c8"
+        }
+      },
+      {
+        "id": 10278335120,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3ODMzNTEyMA==",
+        "name": "coverage-report",
+        "size_in_bytes": 144793,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278335120",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278335120/zip",
+        "expired": false,
+        "digest": "sha256:f16e8c45d63e5d992c7158bebd605c4b58af706ec626b513764ede5cd7f2f706",
+        "created_at": "2026-09-11T18:51:18Z",
+        "updated_at": "2026-09-11T18:51:18Z",
+        "expires_at": "2026-12-10T18:50:24Z",
+        "workflow_run": {
+          "id": 34635537665,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "week3-testing-setup",
+          "head_sha": "1a14499ce1a10263128493ab049bbdc06c6de8b4"
+        }
+      },
+      {
+        "id": 10278320782,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3ODMyMDc4Mg==",
+        "name": "coverage-report",
+        "size_in_bytes": 144792,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278320782",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278320782/zip",
+        "expired": false,
+        "digest": "sha256:b961e104c5be5a28d11fd05c18d511a03c315a5e99b63c6c7e2a80ebac44a940",
+        "created_at": "2026-09-11T18:52:25Z",
+        "updated_at": "2026-09-11T18:52:25Z",
+        "expires_at": "2026-12-10T18:51:34Z",
+        "workflow_run": {
+          "id": 34635644090,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "0ce1e0e9f66397b7502ba08aa66782d6c88ab6a7"
+        }
+      },
+      {
+        "id": 10278230601,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3ODIzMDYwMQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 144792,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278230601",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278230601/zip",
+        "expired": false,
+        "digest": "sha256:e651ea01aefd004f1fe64f2613445b5bbdd1f58a4508c1b77845f96bf7a72904",
+        "created_at": "2026-09-11T18:51:04Z",
+        "updated_at": "2026-09-11T18:51:04Z",
+        "expires_at": "2026-12-10T18:50:23Z",
+        "workflow_run": {
+          "id": 34635536176,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "week3-testing-setup",
+          "head_sha": "1a14499ce1a10263128493ab049bbdc06c6de8b4"
+        }
+      },
+      {
+        "id": 10278165378,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3ODE2NTM3OA==",
+        "name": "coverage-report",
+        "size_in_bytes": 144792,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278165378",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278165378/zip",
+        "expired": false,
+        "digest": "sha256:3e039921f58185ae2edccfb85bdc75fdf7e7ffdc280f709cb7a49c09a121909b",
+        "created_at": "2026-09-11T18:52:45Z",
+        "updated_at": "2026-09-11T18:52:45Z",
+        "expires_at": "2026-12-10T18:51:52Z",
+        "workflow_run": {
+          "id": 34635673115,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "04d21ddd7af6a25ed5a1ac61d52ef2bef8963ff4"
+        }
+      },
+      {
+        "id": 10278070608,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3ODA3MDYwOA==",
+        "name": "coverage-report",
+        "size_in_bytes": 30520,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278070608",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10278070608/zip",
+        "expired": false,
+        "digest": "sha256:b6e2fcfe0168f50ecb5e2ae6c142b087265c38d3e6ec60bb40d53651bb64c763",
+        "created_at": "2026-09-11T18:54:05Z",
+        "updated_at": "2026-09-11T18:54:05Z",
+        "expires_at": "2026-12-10T18:53:22Z",
+        "workflow_run": {
+          "id": 34635810326,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "44e2550335b5e07a92acf22687fb65c12186fe6b"
+        }
+      },
+      {
+        "id": 10277787879,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3Nzc4Nzg3OQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 144792,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10277787879",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10277787879/zip",
+        "expired": false,
+        "digest": "sha256:5bf4122288cbbaa261ea770c57e20f13f83aef3931da065dc20ea6f435d74bb0",
+        "created_at": "2026-09-11T18:38:16Z",
+        "updated_at": "2026-09-11T18:38:16Z",
+        "expires_at": "2026-12-10T18:37:21Z",
+        "workflow_run": {
+          "id": 34634309574,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/rails-8.1.3.1",
+          "head_sha": "0a9b00c853f309550a3231adbdce8105903146e5"
+        }
+      },
+      {
+        "id": 10277742903,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3Nzc0MjkwMw==",
+        "name": "coverage-report",
+        "size_in_bytes": 144792,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10277742903",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10277742903/zip",
+        "expired": false,
+        "digest": "sha256:4142351dbec1311df8d7acd313ef2788d48411edbe258baf8b32e1bcc0b70b42",
+        "created_at": "2026-09-11T18:38:50Z",
+        "updated_at": "2026-09-11T18:38:50Z",
+        "expires_at": "2026-12-10T18:37:07Z",
+        "workflow_run": {
+          "id": 34634286548,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/github_actions/actions/checkout-7",
+          "head_sha": "e6846d38f00272cf18413e28c48c63b3362506b0"
+        }
+      },
+      {
+        "id": 10277628157,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3NzYyODE1Nw==",
+        "name": "coverage-report",
+        "size_in_bytes": 144792,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10277628157",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10277628157/zip",
+        "expired": false,
+        "digest": "sha256:71511bc1a6478836a4f0e765ebed9c2b12ded11e64db72e3619f0cd760b728da",
+        "created_at": "2026-09-11T18:38:50Z",
+        "updated_at": "2026-09-11T18:38:50Z",
+        "expires_at": "2026-12-10T18:37:06Z",
+        "workflow_run": {
+          "id": 34634284819,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/github_actions/actions/upload-artifact-7",
+          "head_sha": "672001509bc5c0678d2288f46152c82ff7f8d77e"
+        }
+      },
+      {
+        "id": 10277548304,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3NzU0ODMwNA==",
+        "name": "coverage-report",
+        "size_in_bytes": 30515,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10277548304",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10277548304/zip",
+        "expired": false,
+        "digest": "sha256:c26de7842f9f77db0dac45ee1b1973d0fe9cbd8b702aa79bdda26f869de0ccc6",
+        "created_at": "2026-09-11T18:38:47Z",
+        "updated_at": "2026-09-11T18:38:47Z",
+        "expires_at": "2026-12-10T18:37:34Z",
+        "workflow_run": {
+          "id": 34634329863,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/simplecov-1.2.0",
+          "head_sha": "ab2d308e6aaab9e02ae45ef4c2e08eeab35c6d37"
+        }
+      },
+      {
+        "id": 10277488236,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3NzQ4ODIzNg==",
+        "name": "coverage-report",
+        "size_in_bytes": 144792,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10277488236",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10277488236/zip",
+        "expired": false,
+        "digest": "sha256:0a88137c85096d2a0a2e15823b1ca0b0d6faf26de619835ad2fb2ac73fd907b8",
+        "created_at": "2026-09-11T18:37:51Z",
+        "updated_at": "2026-09-11T18:37:51Z",
+        "expires_at": "2026-12-10T18:36:10Z",
+        "workflow_run": {
+          "id": 34634195454,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "main",
+          "head_sha": "52fd82d053aeb7b5ccfa895be477d40c7107f8c1"
+        }
+      },
+      {
+        "id": 10277402209,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3NzQwMjIwOQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 144792,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10277402209",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10277402209/zip",
+        "expired": false,
+        "digest": "sha256:929523ab28b51416207c18be53bb5d7a9f5a97c987625757fdd49a83c0eb315c",
+        "created_at": "2026-09-11T18:31:23Z",
+        "updated_at": "2026-09-11T18:31:23Z",
+        "expires_at": "2026-12-10T18:29:39Z",
+        "workflow_run": {
+          "id": 34633567622,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "week3-testing-setup",
+          "head_sha": "5efcb6f179d575446519915e850f251ebe4e5e40"
+        }
+      },
+      {
+        "id": 10277033551,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3NzAzMzU1MQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 144792,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10277033551",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10277033551/zip",
+        "expired": false,
+        "digest": "sha256:5fe304c37b88e9f85a8e76450330e86d2516be2878f397884bdd4eb2c78fc731",
+        "created_at": "2026-09-11T18:38:06Z",
+        "updated_at": "2026-09-11T18:38:06Z",
+        "expires_at": "2026-12-10T18:37:17Z",
+        "workflow_run": {
+          "id": 34634303345,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/rails-8.1.3.1",
+          "head_sha": "0a9b00c853f309550a3231adbdce8105903146e5"
+        }
+      },
+      {
+        "id": 10276957144,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3Njk1NzE0NA==",
+        "name": "coverage-report",
+        "size_in_bytes": 144793,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10276957144",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10276957144/zip",
+        "expired": false,
+        "digest": "sha256:4af46d8691d53930f707561d000b302adab49a696b3488da4bacc6447ee3e0f9",
+        "created_at": "2026-09-11T18:26:17Z",
+        "updated_at": "2026-09-11T18:26:17Z",
+        "expires_at": "2026-12-10T18:24:28Z",
+        "workflow_run": {
+          "id": 34633087471,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "week3-testing-setup",
+          "head_sha": "5efcb6f179d575446519915e850f251ebe4e5e40"
+        }
+      },
+      {
+        "id": 10276923711,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3NjkyMzcxMQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 144792,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10276923711",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10276923711/zip",
+        "expired": false,
+        "digest": "sha256:39a53d185ec4cd495069454201ce70ccf3f5bb4a45464f72dc003cc47ca6db12",
+        "created_at": "2026-09-11T18:38:04Z",
+        "updated_at": "2026-09-11T18:38:04Z",
+        "expires_at": "2026-12-10T18:37:11Z",
+        "workflow_run": {
+          "id": 34634293414,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/github_actions/actions/checkout-7",
+          "head_sha": "e6846d38f00272cf18413e28c48c63b3362506b0"
+        }
+      },
+      {
+        "id": 10276808905,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3NjgwODkwNQ==",
+        "name": "coverage-report",
+        "size_in_bytes": 30522,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10276808905",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10276808905/zip",
+        "expired": false,
+        "digest": "sha256:c020763979eec94c0579f2f043f934fd470ddd7cb0cfb0a7c17f201f8a2919a1",
+        "created_at": "2026-09-11T18:38:33Z",
+        "updated_at": "2026-09-11T18:38:33Z",
+        "expires_at": "2026-12-10T18:37:36Z",
+        "workflow_run": {
+          "id": 34634334050,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/bundler/simplecov-1.2.0",
+          "head_sha": "ab2d308e6aaab9e02ae45ef4c2e08eeab35c6d37"
+        }
+      },
+      {
+        "id": 10276773947,
+        "node_id": "MDg6QXJ0aWZhY3QxMDI3Njc3Mzk0Nw==",
+        "name": "coverage-report",
+        "size_in_bytes": 144792,
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10276773947",
+        "archive_download_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/actions/artifacts/10276773947/zip",
+        "expired": false,
+        "digest": "sha256:f9d8dce5470cfa4996941352b9f19a2d3ea9766a4ef36e2a05cf34e79ee4e23d",
+        "created_at": "2026-09-11T18:38:43Z",
+        "updated_at": "2026-09-11T18:38:43Z",
+        "expires_at": "2026-12-10T18:37:04Z",
+        "workflow_run": {
+          "id": 34634281338,
+          "repository_id": 1357476425,
+          "head_repository_id": 1357476425,
+          "head_branch": "dependabot/github_actions/actions/upload-artifact-7",
+          "head_sha": "672001509bc5c0678d2288f46152c82ff7f8d77e"
+        }
+      }
+    ]
+  }
+]

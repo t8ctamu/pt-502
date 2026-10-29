@@ -1,0 +1,98 @@
+[
+  {
+    "sha": "9a6a1818a32366a4fc3bfc15d09d40b281c2dc32",
+    "filename": "app/controllers/members_controller.rb",
+    "status": "modified",
+    "additions": 13,
+    "deletions": 1,
+    "changes": 14,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/7f2a3ce958feefce032dfeb135123ab868f200c8/app%2Fcontrollers%2Fmembers_controller.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/7f2a3ce958feefce032dfeb135123ab868f200c8/app%2Fcontrollers%2Fmembers_controller.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fcontrollers%2Fmembers_controller.rb?ref=7f2a3ce958feefce032dfeb135123ab868f200c8",
+    "patch": "@@ -4,7 +4,19 @@ class MembersController < ApplicationController\n   before_action :require_manager, only: :change_role\n \n   def index\n-    @members = Member.includes(:role).order(:last_name, :first_name)\n+    @members = Member.non_admins.includes(:role).order(:last_name, :first_name)\n+\n+    @admins = nil\n+    @admins_error = nil\n+\n+    if current_member.admin?\n+      begin\n+        @admins = Member.admins.includes(:role).order(:last_name, :first_name)\n+      rescue StandardError => e\n+        Rails.logger.error(\"Admins table failed to load: #{e.message}\")\n+        @admins_error = \"Admins could not be loaded, try again later.\"\n+      end\n+    end\n   end\n \n   def update"
+  },
+  {
+    "sha": "09fb77c63f90f7647c17ca318e11fed41316701d",
+    "filename": "app/controllers/profiles_controller.rb",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 1,
+    "changes": 3,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/7f2a3ce958feefce032dfeb135123ab868f200c8/app%2Fcontrollers%2Fprofiles_controller.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/7f2a3ce958feefce032dfeb135123ab868f200c8/app%2Fcontrollers%2Fprofiles_controller.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fcontrollers%2Fprofiles_controller.rb?ref=7f2a3ce958feefce032dfeb135123ab868f200c8",
+    "patch": "@@ -20,6 +20,7 @@ def update\n   # Only fields the member may change. Never role_id or points.\n   def profile_params\n     params.require(:member).permit(:first_name, :last_name,\n-                                   :pt_school_application_date, :car_pool_status)\n+                                 :pt_school_application_date, :car_pool_status,\n+                                 :phone_number, :phone_visible)\n   end\n end"
+  },
+  {
+    "sha": "9d551982ae79dcbf0695b48bd0e40e40d7d3613b",
+    "filename": "app/models/member.rb",
+    "status": "modified",
+    "additions": 9,
+    "deletions": 0,
+    "changes": 9,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/7f2a3ce958feefce032dfeb135123ab868f200c8/app%2Fmodels%2Fmember.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/7f2a3ce958feefce032dfeb135123ab868f200c8/app%2Fmodels%2Fmember.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fmodels%2Fmember.rb?ref=7f2a3ce958feefce032dfeb135123ab868f200c8",
+    "patch": "@@ -9,6 +9,15 @@ class Member < ApplicationRecord\n   has_many :rsvps, dependent: :destroy\n   has_many :attendances, dependent: :destroy\n \n+  scope :admins, -> {\n+    admin_names = Role::LEVELS.select { |_, lvl| lvl >= 1 }.keys\n+    joins(:role).where(\"LOWER(roles.description) IN (?)\", admin_names)\n+  }\n+  scope :non_admins, -> {\n+    admin_names = Role::LEVELS.select { |_, lvl| lvl >= 1 }.keys\n+    joins(:role).where(\"LOWER(roles.description) NOT IN (?)\", admin_names)\n+  }\n+\n   validates :pt_school_application_date, presence: true, on: :profile\n   validates :email, presence: true\n "
+  },
+  {
+    "sha": "6828f8d412e066c52509e9f72cf5ac7f15f6399e",
+    "filename": "app/views/members/index.html.erb",
+    "status": "modified",
+    "additions": 43,
+    "deletions": 20,
+    "changes": 63,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/7f2a3ce958feefce032dfeb135123ab868f200c8/app%2Fviews%2Fmembers%2Findex.html.erb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/7f2a3ce958feefce032dfeb135123ab868f200c8/app%2Fviews%2Fmembers%2Findex.html.erb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fviews%2Fmembers%2Findex.html.erb?ref=7f2a3ce958feefce032dfeb135123ab868f200c8",
+    "patch": "@@ -2,9 +2,9 @@\n <table>\n   <thead>\n     <tr>\n-      <th>ID</th><th>Role</th><th>First name</th><th>Last name</th><th>Email</th>\n+      <th>ID</th><th>First name</th><th>Last name</th><th>Email</th>\n       <th>Joined</th><th>Car pool</th><th>Points</th>\n-      <th>Plans to apply to PT school</th><th>Paid dues</th>\n+      <th>Plans to apply to PT school</th><th>Paid dues</th><th>Status</th>\n       <th>Status</th>\n       <% if current_member.manager? %>\n         <th>Change Role</th>\n@@ -15,7 +15,6 @@\n     <% @members.each do |m| %>\n       <tr>\n         <td><%= m.id %></td>\n-        <td><%= m.role.description %></td>\n         <td><%= m.first_name %></td>\n         <td><%= m.last_name %></td>\n         <td><%= m.email %></td>\n@@ -33,24 +32,48 @@\n           <% end %>\n         </td>\n         <td>\n-            <% if m.points >= 7 && m.paid_dues %>\n-              <span class=\"status-badge status-active\">Active</span>\n-            <% else %>\n-              <span class=\"status-badge status-inactive\">Not Active</span>\n-            <% end %>\n+          <% if m.points >= 7 && m.paid_dues %>\n+            <span class=\"status-badge status-active\">Active</span>\n+          <% else %>\n+            <span class=\"status-badge status-inactive\">Not Active</span>\n+          <% end %>\n         </td>\n-        <% if current_member.manager? %>\n-          <td>\n-            <% if m == current_member || m.manager? %>\n-              <%= m.role.description %>\n-            <% else %>\n-              <%= form_with url: change_role_member_path(m), method: :patch do |f| %>\n-                <%= select_tag :role, options_for_select([[\"Member\", \"Member\"], [\"Admin\", \"Admin\"]], m.role.description), onchange: \"this.form.requestSubmit()\" %>\n-              <% end %>\n-            <% end %>\n-          </td>\n-        <% end %>\n       </tr>\n     <% end %>\n   </tbody>\n-</table>\n\\ No newline at end of file\n+</table>\n+\n+<% if current_member.admin? %>\n+  <h2>Admins</h2>\n+\n+  <% if @admins_error %>\n+    <p class=\"flash flash__alert\"><%= @admins_error %></p>\n+  <% elsif @admins.blank? %>\n+    <p>No admins to display.</p>\n+  <% else %>\n+    <table>\n+      <thead>\n+        <tr>\n+          <th>ID</th><th>Role</th><th>First name</th><th>Last name</th><th>Email</th>\n+          <th>Joined</th><th>Car pool</th>\n+          <th>Plans to apply to PT school</th><th>Phone</th>\n+        </tr>\n+      </thead>\n+      <tbody>\n+        <% @admins.each do |a| %>\n+          <tr>\n+            <td><%= a.id %></td>\n+            <td><%= a.role.description %></td>\n+            <td><%= a.first_name %></td>\n+            <td><%= a.last_name %></td>\n+            <td><%= a.email %></td>\n+            <td><%= a.joined_at %></td>\n+            <td><%= a.car_pool_status ? \"Yes\" : \"No\" %></td>\n+            <td><%= a.pt_school_application_date&.strftime(\"%b %Y\") %></td>\n+            <td><%= a.phone_visible? ? a.phone_number.presence || \"—\" : \"—\" %></td>\n+          </tr>\n+        <% end %>\n+      </tbody>\n+    </table>\n+  <% end %>\n+<% end %>\n\\ No newline at end of file"
+  },
+  {
+    "sha": "194ea84f5e76d477a88310df7e931333cba040b5",
+    "filename": "db/migrate/20261009084832_add_contact_fields_to_members.rb",
+    "status": "added",
+    "additions": 6,
+    "deletions": 0,
+    "changes": 6,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/7f2a3ce958feefce032dfeb135123ab868f200c8/db%2Fmigrate%2F20261009084832_add_contact_fields_to_members.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/7f2a3ce958feefce032dfeb135123ab868f200c8/db%2Fmigrate%2F20261009084832_add_contact_fields_to_members.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/db%2Fmigrate%2F20261009084832_add_contact_fields_to_members.rb?ref=7f2a3ce958feefce032dfeb135123ab868f200c8",
+    "patch": "@@ -0,0 +1,6 @@\n+class AddContactFieldsToMembers < ActiveRecord::Migration[8.1]\n+     def change\n+          add_column :members, :phone_number, :string\n+       add_column :members, :phone_visible, :boolean, default: false, null: false\n+     end\n+end"
+  },
+  {
+    "sha": "bd1b160e3e521df90e841c8a22bef8c96beaea64",
+    "filename": "db/schema.rb",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 1,
+    "changes": 4,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/7f2a3ce958feefce032dfeb135123ab868f200c8/db%2Fschema.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/7f2a3ce958feefce032dfeb135123ab868f200c8/db%2Fschema.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/db%2Fschema.rb?ref=7f2a3ce958feefce032dfeb135123ab868f200c8",
+    "patch": "@@ -10,7 +10,7 @@\n #\n # It's strongly recommended that you check this file into your version control system.\n \n-ActiveRecord::Schema[8.1].define(version: 2026_09_23_021639) do\n+ActiveRecord::Schema[8.1].define(version: 2026_10_09_084832) do\n   # These are extensions that must be enabled in order to support this database\n   enable_extension \"pg_catalog.plpgsql\"\n \n@@ -52,6 +52,8 @@\n     t.date \"joined_at\"\n     t.string \"last_name\"\n     t.boolean \"paid_dues\", default: false, null: false\n+    t.string \"phone_number\"\n+    t.boolean \"phone_visible\", default: false, null: false\n     t.integer \"points\", default: 0\n     t.datetime \"profile_completed_at\"\n     t.date \"pt_school_application_date\""
+  },
+  {
+    "sha": "5217c1f9eeceb678f2dcffa63721134954b16e42",
+    "filename": "db/seeds.rb",
+    "status": "modified",
+    "additions": 10,
+    "deletions": 1,
+    "changes": 11,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/7f2a3ce958feefce032dfeb135123ab868f200c8/db%2Fseeds.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/7f2a3ce958feefce032dfeb135123ab868f200c8/db%2Fseeds.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/db%2Fseeds.rb?ref=7f2a3ce958feefce032dfeb135123ab868f200c8",
+    "patch": "@@ -1,6 +1,15 @@\n %w[Admin Manager Member].each { |r| Role.find_or_create_by!(description: r) }\n \n-# Fake sample data: development only, never in production\n+admin_role = Role.find_by!(description: \"Admin\")\n+\n+admin = Member.find_or_initialize_by(email: \"lukechambers0217@tamu.edu\")\n+admin.role = admin_role\n+admin.first_name           ||= \"Luke\"\n+admin.last_name            ||= \"Chambers\"\n+admin.joined_at            ||= Date.current\n+admin.profile_completed_at ||= Time.current\n+admin.save!\n+\n if Rails.env.development?\n   member_role = Role.find_by!(description: \"Member\")\n "
+  },
+  {
+    "sha": "cef3de904f81cda234618ade4dafa7db15ffce12",
+    "filename": "spec/requests/members_spec.rb",
+    "status": "modified",
+    "additions": 84,
+    "deletions": 0,
+    "changes": 84,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/7f2a3ce958feefce032dfeb135123ab868f200c8/spec%2Frequests%2Fmembers_spec.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/7f2a3ce958feefce032dfeb135123ab868f200c8/spec%2Frequests%2Fmembers_spec.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/spec%2Frequests%2Fmembers_spec.rb?ref=7f2a3ce958feefce032dfeb135123ab868f200c8",
+    "patch": "@@ -96,6 +96,90 @@\n       end\n     end\n \n+    context \"when signed in as a manager\" do\n+      let(:manager) { create(:member, :manager, :profile_completed) }\n+\n+      before { sign_in manager }\n+\n+      it \"shows admins in a separate table and excludes them from the members table\" do\n+        create(:member, :admin,  :profile_completed, first_name: \"Ada\")\n+        create(:member,          :profile_completed, first_name: \"Bob\")\n+\n+        get members_path\n+\n+        expect(response.body).to include(\"Admins\")\n+        expect(response.body).to include(\"Ada\")\n+        expect(response.body).to include(\"Bob\")\n+\n+        # Ada's name appears exactly once — in the admins table, not duplicated\n+        expect(response.body.scan(\"Ada\").size).to eq(1)\n+      end\n+\n+      it \"moves a member between tables when their role changes\" do\n+        promoted = create(:member, :profile_completed, first_name: \"Carol\")\n+        get members_path\n+        expect(response.body).to include(\"Carol\")\n+\n+        promoted.update!(role: Role.find_by!(description: \"Admin\"))\n+\n+        get members_path\n+        expect(response.body.scan(\"Carol\").size).to eq(1)\n+        expect(response.body.index(\"Carol\")).to be > response.body.index(\"Admins\")\n+      end\n+\n+      it \"shows 'No admins to display' when there are no admins\" do\n+        Member.admins.update_all(role_id: Role.find_by!(description: \"Member\").id)\n+\n+        get members_path\n+\n+        expect(response.body).to include(\"No admins to display\")\n+      end\n+\n+      it \"hides phone numbers for admins who haven't opted in\" do\n+        create(:member, :admin, :profile_completed,\n+              phone_number: \"555-1234\", phone_visible: false)\n+\n+        get members_path\n+\n+        expect(response.body).not_to include(\"555-1234\")\n+      end\n+\n+      it \"shows phone numbers for admins who opted in\" do\n+        create(:member, :admin, :profile_completed,\n+              phone_number: \"555-1234\", phone_visible: true)\n+\n+        get members_path\n+\n+        expect(response.body).to include(\"555-1234\")\n+      end\n+\n+      it \"renders members table with a clear message when admins fail to load\" do\n+        create(:member, :admin,  :profile_completed, first_name: \"Ada\")\n+        create(:member,          :profile_completed, first_name: \"Bob\")\n+\n+        allow(Member).to receive(:admins).and_raise(StandardError, \"boom\")\n+\n+        get members_path\n+\n+        expect(response).to have_http_status(:success)\n+        expect(response.body).to include(\"Bob\")\n+        expect(response.body).to include(\"Admins could not be loaded\")\n+      end\n+    end\n+\n+    context \"when signed in as an admin (not a manager)\" do\n+      before { sign_in admin }\n+\n+      it \"shows the admins table\" do\n+        create(:member, :admin, :profile_completed, first_name: \"Ada\")\n+\n+        get members_path\n+\n+        expect(response.body).to include(\"Admins\")\n+        expect(response.body).to include(\"Ada\")\n+      end\n+    end\n+\n     context \"when signed in as a manager\" do\n       before { sign_in manager }\n "
+  }
+]

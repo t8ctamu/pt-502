@@ -1,0 +1,39 @@
+[
+  {
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/deployments/7403833340/statuses/20879225688",
+    "id": 20879225688,
+    "node_id": "DES_kwDOUOlySc8AAAAE3H-zWA",
+    "state": "success",
+    "creator": {
+      "login": "lukechambers5",
+      "id": 180369527,
+      "node_id": "U_kgDOCsA4dw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/180369527?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lukechambers5",
+      "html_url": "https://github.com/lukechambers5",
+      "followers_url": "https://api.github.com/users/lukechambers5/followers",
+      "following_url": "https://api.github.com/users/lukechambers5/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lukechambers5/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lukechambers5/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lukechambers5/subscriptions",
+      "organizations_url": "https://api.github.com/users/lukechambers5/orgs",
+      "repos_url": "https://api.github.com/users/lukechambers5/repos",
+      "events_url": "https://api.github.com/users/lukechambers5/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lukechambers5/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "description": "Heroku",
+    "environment": "pt-502-staging",
+    "target_url": "https://dashboard.heroku.com/apps/pt-502-staging/activity/builds/c023d921-ccdb-403f-afd0-ba396862ca14",
+    "created_at": "2026-10-29T04:12:10Z",
+    "updated_at": "2026-10-29T04:12:10Z",
+    "deployment_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/deployments/7403833340",
+    "repository_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502",
+    "environment_url": "https://pt-502-staging-72bf8fe2fdec.herokuapp.com/",
+    "log_url": "https://dashboard.heroku.com/apps/pt-502-staging/activity/builds/c023d921-ccdb-403f-afd0-ba396862ca14",
+    "performed_via_github_app": null
+  }
+]

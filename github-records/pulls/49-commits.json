@@ -1,0 +1,581 @@
+[
+  {
+    "sha": "466bffa3ca0213dd76ff21ccf2af14b41b04d935",
+    "node_id": "C_kwDOUOlySdoAKDQ2NmJmZmEzY2EwMjEzZGQ3NmZmMjFjY2YyYWYxNGI0MWIwNGQ5MzU",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-22T05:25:16Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-22T05:57:23Z"
+      },
+      "message": "Add check_in_radius_feet alongside meters for events.\n\nAdds the feet-determined check-in proximity on events, default is 250 feet, but doesn't change behavior yet. check_in_radius_meters column  is still in place, but will change later.\n\nExisting data is backfilled with meters * 3.28084, rounding to the nearest foot, and clamping between 100 to 1000 feet.\n\nAny data outside of the range is clamped, counted, and printed for data integrity. A check now enforces a 100-1000 range.\n\nMeters column will be dropped soon, but separate commits will ensure it's revertible just in case and never fail a test.",
+      "tree": {
+        "sha": "ce87274f44ab8b126e3d58d488041067bf0f8af9",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/ce87274f44ab8b126e3d58d488041067bf0f8af9"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/466bffa3ca0213dd76ff21ccf2af14b41b04d935",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/466bffa3ca0213dd76ff21ccf2af14b41b04d935",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/466bffa3ca0213dd76ff21ccf2af14b41b04d935",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/466bffa3ca0213dd76ff21ccf2af14b41b04d935/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "9aba8283dce05788c32eefb9b313a2d210946eee",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/9aba8283dce05788c32eefb9b313a2d210946eee",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/9aba8283dce05788c32eefb9b313a2d210946eee"
+      }
+    ]
+  },
+  {
+    "sha": "41669091c081d90d2d3f8e0e14abd3b38cb59e6d",
+    "node_id": "C_kwDOUOlySdoAKDQxNjY5MDkxYzA4MWQ5MGQyZDNmOGUwZTE0YWJkM2IzOGNiNTllNmQ",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-22T06:01:36Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-22T06:01:36Z"
+      },
+      "message": "Model check-in proximity uses feet as source of truth.\n\nadds a feet-denominated check_in_radius_feet validation with 100-1000 range and customer error messages for blanks, decimals, and out of range values.\n\nKeeps existing check_radius_in_meters column valid during transition by deriving it from feet in a before_validation. It only runs for a valid whole-number feet value in range, so invalid entries will give an error and won't trip meter validations.\n\nUpdate the :check_in_ready factory trait to 328 feet, which equals 100 meters, so distance specs see the same radius as before. Radius assertions are moved to the model spec to feet and add coverage for defaults, failure messages, and meters derivation.\n\nDropped the two radius expectations from check-in request spec, feet cannot be done over until strong params are changed later in a future commit.",
+      "tree": {
+        "sha": "b1bef498a10b42b94a8de1994a24ff56c3815725",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/b1bef498a10b42b94a8de1994a24ff56c3815725"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/41669091c081d90d2d3f8e0e14abd3b38cb59e6d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/41669091c081d90d2d3f8e0e14abd3b38cb59e6d",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/41669091c081d90d2d3f8e0e14abd3b38cb59e6d",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/41669091c081d90d2d3f8e0e14abd3b38cb59e6d/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "466bffa3ca0213dd76ff21ccf2af14b41b04d935",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/466bffa3ca0213dd76ff21ccf2af14b41b04d935",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/466bffa3ca0213dd76ff21ccf2af14b41b04d935"
+      }
+    ]
+  },
+  {
+    "sha": "02ac4487b11070958ff75792c00526b8e609989d",
+    "node_id": "C_kwDOUOlySdoAKDAyYWM0NDg3YjExMDcwOTU4ZmY3NTc5MmMwMDUyNmI4ZTYwOTk4OWQ",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-22T06:29:54Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-22T06:29:54Z"
+      },
+      "message": "Compare check-in distance against the event's proximity in feet\n\nPreviously compared haversine distance for check-in service, in meters, against check_in_radius_meters.\n\nConvert's the feet-determined proximity to meters at comparison point so feet is the true comparison for nearby checks, while distance math stays in its optimal unit. Comments are left so future devs can determine the feet conversion and comparison.\n\nAdds request specs for rejection/acceptance depending on proximity. Events with different proximities are tested so they both correctly reject/approve members without affecting each other.\n\nMeters column is still working and kept for now, and is compatible with previous behaviors. Will be changed later in a future commit.",
+      "tree": {
+        "sha": "12f28593511c8ebd988e046088911f7227a64728",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/12f28593511c8ebd988e046088911f7227a64728"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/02ac4487b11070958ff75792c00526b8e609989d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/02ac4487b11070958ff75792c00526b8e609989d",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/02ac4487b11070958ff75792c00526b8e609989d",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/02ac4487b11070958ff75792c00526b8e609989d/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "41669091c081d90d2d3f8e0e14abd3b38cb59e6d",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/41669091c081d90d2d3f8e0e14abd3b38cb59e6d",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/41669091c081d90d2d3f8e0e14abd3b38cb59e6d"
+      }
+    ]
+  },
+  {
+    "sha": "556988bd010875f7aced91156fe770791d17fe8a",
+    "node_id": "C_kwDOUOlySdoAKDU1Njk4OGJkMDEwODc1ZjdhY2VkOTExNTZmZTc3MDc5MWQxN2ZlOGE",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-22T07:13:03Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-22T07:13:03Z"
+      },
+      "message": "Show and edit check-in proximity in feet.\n\nSwitch event form, check-in views, and office/member help text from meters to feet. Form field is now check_in_radius_feet with a 100-1000 range enforced by min/max, relies on column default and no hardcoded values.\n\nCheck_in_radius_feet now replaces check_in_radius_meters in events controller. Form no longer submits meters and is no longer allowed.\n\nAdded feet-over-HTTP assertions to check check-in request spec so strong params allow it, and updated location picker and point type feature to use feet.\n\nHelp page wording is updated where it names meters instead of feet. Anything else is deferred.",
+      "tree": {
+        "sha": "3fd3996aa33d508350a8e70a6e5f50ea4ec96c6b",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/3fd3996aa33d508350a8e70a6e5f50ea4ec96c6b"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/556988bd010875f7aced91156fe770791d17fe8a",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/556988bd010875f7aced91156fe770791d17fe8a",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/556988bd010875f7aced91156fe770791d17fe8a",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/556988bd010875f7aced91156fe770791d17fe8a/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "02ac4487b11070958ff75792c00526b8e609989d",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/02ac4487b11070958ff75792c00526b8e609989d",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/02ac4487b11070958ff75792c00526b8e609989d"
+      }
+    ]
+  },
+  {
+    "sha": "87cb60710296b1f10cec75979a1cdc5afacb211f",
+    "node_id": "C_kwDOUOlySdoAKDg3Y2I2MDcxMDI5NmIxZjEwY2VjNzU5NzlhMWNkYzVhZmFjYjIxMWY",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-22T07:35:01Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-22T07:35:01Z"
+      },
+      "message": "Drops meters radius column so feet is used.\n\nRemove check_in_radius_meters and its positive-radius constraint. The model no longer validates meters or derives it from feet, so feet is only left. Only the migration references feet since it was introduced.\n\nDown migration is reversible but will not be precise. It re-adds meters column and backfills it with feet values, rounded/floored, and satisfies the positive constraint. It cannot restore the exact pre-drop meters value.\n\nSpecs for meters derivation and the second-meters error case are removed. Invalid feet still produces a clear error, blank, whole-number, and range examples are also tested.",
+      "tree": {
+        "sha": "87557eb84fa7c67963c5dae641b6a0d8b9024c53",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/87557eb84fa7c67963c5dae641b6a0d8b9024c53"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/87cb60710296b1f10cec75979a1cdc5afacb211f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/87cb60710296b1f10cec75979a1cdc5afacb211f",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/87cb60710296b1f10cec75979a1cdc5afacb211f",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/87cb60710296b1f10cec75979a1cdc5afacb211f/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "556988bd010875f7aced91156fe770791d17fe8a",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/556988bd010875f7aced91156fe770791d17fe8a",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/556988bd010875f7aced91156fe770791d17fe8a"
+      }
+    ]
+  },
+  {
+    "sha": "0d7abdd2469c62bafb8379f476eadd8256e0a0d3",
+    "node_id": "C_kwDOUOlySdoAKDBkN2FiZGQyNDY5YzYyYmFmYjgzNzlmNDc2ZWFkZDgyNTZlMGEwZDM",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-22T08:13:52Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-22T08:13:52Z"
+      },
+      "message": "Uses the expected acceptance criteria message for out-of-range proximity on submit.\n\nOut of range values are still blocked by min/max but the messages that appear do change. A single range message appears instead of >100 and <1000. The hover tip when still appears but is drawn by the browser and not controllable. Not in scope.",
+      "tree": {
+        "sha": "f2f2d1ccb827b86ab3c2ff0b39f8620671daecef",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/f2f2d1ccb827b86ab3c2ff0b39f8620671daecef"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/0d7abdd2469c62bafb8379f476eadd8256e0a0d3",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/0d7abdd2469c62bafb8379f476eadd8256e0a0d3",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/0d7abdd2469c62bafb8379f476eadd8256e0a0d3",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/0d7abdd2469c62bafb8379f476eadd8256e0a0d3/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "87cb60710296b1f10cec75979a1cdc5afacb211f",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/87cb60710296b1f10cec75979a1cdc5afacb211f",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/87cb60710296b1f10cec75979a1cdc5afacb211f"
+      }
+    ]
+  },
+  {
+    "sha": "c88be1b4f0eb56eccbb1a0297cbb0a6b5baa794e",
+    "node_id": "C_kwDOUOlySdoAKGM4OGJlMWI0ZjBlYjU2ZWNjYmIxYTAyOTdjYmIwYTZiNWJhYTc5NGU",
+    "commit": {
+      "author": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-27T00:24:36Z"
+      },
+      "committer": {
+        "name": "fernandomunozgarza",
+        "email": "fer.munoz2012@gmail.com",
+        "date": "2026-10-27T00:24:36Z"
+      },
+      "message": "Merge remote-tracking branch 'origin/main' into feat/event-location-proximity\n\n# Conflicts:\n#\tapp/views/event_check_ins/show.html.erb",
+      "tree": {
+        "sha": "341a00c787e33455fe8298c9b7b22ae16c1ea931",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/341a00c787e33455fe8298c9b7b22ae16c1ea931"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/c88be1b4f0eb56eccbb1a0297cbb0a6b5baa794e",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/c88be1b4f0eb56eccbb1a0297cbb0a6b5baa794e",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/c88be1b4f0eb56eccbb1a0297cbb0a6b5baa794e",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/c88be1b4f0eb56eccbb1a0297cbb0a6b5baa794e/comments",
+    "author": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "fernandomunozgarza",
+      "id": 149981391,
+      "node_id": "U_kgDOCPCIzw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149981391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fernandomunozgarza",
+      "html_url": "https://github.com/fernandomunozgarza",
+      "followers_url": "https://api.github.com/users/fernandomunozgarza/followers",
+      "following_url": "https://api.github.com/users/fernandomunozgarza/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fernandomunozgarza/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fernandomunozgarza/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fernandomunozgarza/subscriptions",
+      "organizations_url": "https://api.github.com/users/fernandomunozgarza/orgs",
+      "repos_url": "https://api.github.com/users/fernandomunozgarza/repos",
+      "events_url": "https://api.github.com/users/fernandomunozgarza/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fernandomunozgarza/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "0d7abdd2469c62bafb8379f476eadd8256e0a0d3",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/0d7abdd2469c62bafb8379f476eadd8256e0a0d3",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/0d7abdd2469c62bafb8379f476eadd8256e0a0d3"
+      },
+      {
+        "sha": "7b991c565a7b89b951ea7764607565da8afe7ef5",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/7b991c565a7b89b951ea7764607565da8afe7ef5",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/7b991c565a7b89b951ea7764607565da8afe7ef5"
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "881ec1241de5ff90e9a8f79a11c06c4f77cdc6fb",
+    "filename": ".github/workflows/ci.yml",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/1c9d1323e223d4d7f692302802a208218c04bfc3/.github%2Fworkflows%2Fci.yml",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/1c9d1323e223d4d7f692302802a208218c04bfc3/.github%2Fworkflows%2Fci.yml",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/.github%2Fworkflows%2Fci.yml?ref=1c9d1323e223d4d7f692302802a208218c04bfc3",
+    "patch": "@@ -36,7 +36,7 @@ jobs:\n       - run: bundle exec rake db:test:prepare\n       - run: bundle exec rspec spec/\n       - run: bundle exec rubocop\n-      - uses: actions/setup-node@v4\n+      - uses: actions/setup-node@v7\n         with:\n           node-version: '22'\n       - run: node --test spec/javascript/*.cjs"
+  }
+]

@@ -1,0 +1,84 @@
+[
+  {
+    "sha": "8f22cb9f9dcdfe3302791da9d10687c5d8b6a85c",
+    "node_id": "C_kwDOUOlySdoAKDhmMjJjYjlmOWRjZGZlMzMwMjc5MWRhOWQxMDY4N2M1ZDhiNmE4NWM",
+    "commit": {
+      "author": {
+        "name": "dependabot[bot]",
+        "email": "49699333+dependabot[bot]@users.noreply.github.com",
+        "date": "2026-10-11T06:27:02Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-11T06:27:02Z"
+      },
+      "message": "Bump pg from 1.6.3 to 1.7.0\n\nBumps [pg](https://github.com/ged/ruby-pg) from 1.6.3 to 1.7.0.\n- [Changelog](https://github.com/ged/ruby-pg/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/ged/ruby-pg/compare/v1.6.3...v1.7.0)\n\n---\nupdated-dependencies:\n- dependency-name: pg\n  dependency-version: 1.7.0\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+      "tree": {
+        "sha": "86b56d868fb4d238e3c6abe20ff9206d4ea3979b",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/86b56d868fb4d238e3c6abe20ff9206d4ea3979b"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/8f22cb9f9dcdfe3302791da9d10687c5d8b6a85c",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqyyw2CRC1aQ7uu5UhlAAA+HYQAFe+6n+UyLC5V/eXDtwJZ7RE\nc0mZZ5PkHLbyRNucNjP0b6Of6Dn2E1TexTD0TJmVuRX2uRd0ClHl7fYGtG6qt1hJ\nKN+nLZfKB1zc6judOhAA2JcL9OT0a3NMLRYhBGeNAjpCNSptIXua50/L6IC9Yhqy\n2A0KnNtti9KgLsWl3Ssmiv4MrPxeX+z9RRn3qa5DgOl5Msd0POnW3uWp/S4qWzhs\nwQ3DzL+GC/O3UNrJBOBdh4vXzN/T/+Zml0yur5GT2cC24IahmW/m+7IPzcc80/xC\nR7gohC/Sue5UaE1dKyISAuhn79O05dzP9O0IDQU8Qha8qvu4UqRsT5xO3YTfmwJU\nhC51888wYfXNbcV3jfGBlzSbHT39OT5Qk+jvi6xg7ZcGIxQv062HIkmd1qppa7qp\nPh2KWDzcRMlAoHGcol7U9iz+DgIYG/5jR67mQYLmz3cbxoYPJXFw0phEDoVTCyJg\ntWxDwE4uBjh6qnl54cekpdp6QhDbU5EWEYJBq7MM5OYUU1kPnh3U+bGGNBc6UxTc\nPypdJs5NQAziJnQfQBAibfLqy0fr/dynJrWLXlthRn7Zy+nBB8bG3L8Og7DalswN\n3ae2uhqC76hGPAqCBjYpBx8LLt999zWcQe0xRhRM8g3cv/7fn4mYbifhevbhf2I2\nZEEgi8ioL8UWjfQ2I0BS\n=iyXQ\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 86b56d868fb4d238e3c6abe20ff9206d4ea3979b\nparent 308b537e65c91e6595ec11271a2c615cf567562c\nauthor dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> 1791700022 +0000\ncommitter GitHub <noreply@github.com> 1791700022 +0000\n\nBump pg from 1.6.3 to 1.7.0\n\nBumps [pg](https://github.com/ged/ruby-pg) from 1.6.3 to 1.7.0.\n- [Changelog](https://github.com/ged/ruby-pg/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/ged/ruby-pg/compare/v1.6.3...v1.7.0)\n\n---\nupdated-dependencies:\n- dependency-name: pg\n  dependency-version: 1.7.0\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+        "verified_at": "2026-10-11T06:27:02Z"
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/8f22cb9f9dcdfe3302791da9d10687c5d8b6a85c",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/8f22cb9f9dcdfe3302791da9d10687c5d8b6a85c",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/8f22cb9f9dcdfe3302791da9d10687c5d8b6a85c/comments",
+    "author": {
+      "login": "dependabot[bot]",
+      "id": 49699333,
+      "node_id": "MDM6Qm90NDk2OTkzMzM=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dependabot%5Bbot%5D",
+      "html_url": "https://github.com/apps/dependabot",
+      "followers_url": "https://api.github.com/users/dependabot%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/dependabot%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dependabot%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dependabot%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dependabot%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/dependabot%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/dependabot%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/dependabot%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dependabot%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "308b537e65c91e6595ec11271a2c615cf567562c",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/308b537e65c91e6595ec11271a2c615cf567562c",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/308b537e65c91e6595ec11271a2c615cf567562c"
+      }
+    ]
+  }
+]

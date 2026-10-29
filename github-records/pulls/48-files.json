@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "2c5b4afb5b73f8c6fec7e51309f5d102253531bd",
+    "filename": "app/views/members/index.html.erb",
+    "status": "modified",
+    "additions": 27,
+    "deletions": 29,
+    "changes": 56,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/e7902b23142d06980624fa78db525f085b505cc2/app%2Fviews%2Fmembers%2Findex.html.erb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/e7902b23142d06980624fa78db525f085b505cc2/app%2Fviews%2Fmembers%2Findex.html.erb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fviews%2Fmembers%2Findex.html.erb?ref=e7902b23142d06980624fa78db525f085b505cc2",
+    "patch": "@@ -25,8 +25,8 @@\n       <th>Shared phone number</th><th>Paid dues</th><th>Status</th><th>Profile</th>\n       <% if current_member.manager? %>\n         <th>Change Role</th>\n+        <th>Actions</th>\n       <% end %>\n-      <th>Actions</th>\n     </tr>\n   </thead>\n   <tbody>\n@@ -69,34 +69,32 @@\n           <% end %>\n         </td>\n         <td><%= link_to \"Edit profile\", edit_member_path(m), aria: { label: \"Edit profile for #{m.first_name} #{m.last_name}\" } %></td>\n-        <% if current_member.manager? %>\n-          <td>\n-            <% if m == current_member || m.manager? %>\n-              <%= m.role.description %>\n-            <% elsif m.admin? %>\n-              <%= button_to \"Demote to Member\", change_role_member_path(m),\n-                    method: :patch, params: { role: \"Member\" },\n-                    form: { data: { turbo_confirm: \"Demote this admin to Member?\" } } %>\n-            <% else %>\n-              <%= button_to \"Promote to Admin\", change_role_member_path(m),\n-                    method: :patch, params: { role: \"Admin\" },\n-                    form: { data: { turbo_confirm: \"Promote this member to Admin?\" } } %>\n-            <% end %>\n-          </td>\n-        <% end %>\n-         <td>\n-           <% if m == current_member || m.manager? %>\n-             <span class=\"muted\">-</span>\n-           <% else %>\n-             <%= button_to \"Remove\", remove_member_path(m),\n-                   method: :patch,\n-                   form: { data: { turbo_confirm: \"Remove #{m.first_name} from the roster?\" } } %>\n-           <% end %>\n-         </td>\n-      </tr>\n-    <% end %>\n-  </tbody>\n-</table>\n+          <% if current_member.manager? %>\n+            <td>\n+              <% if m == current_member || m.manager? %>\n+                <%= m.role.description %>\n+              <% elsif m.admin? %>\n+                <%= button_to \"Demote to Member\", change_role_member_path(m),\n+                      method: :patch, params: { role: \"Member\" },\n+                      form: { data: { turbo_confirm: \"Demote this admin to Member?\" } } %>\n+              <% else %>\n+                <%= button_to \"Promote to Admin\", change_role_member_path(m),\n+                      method: :patch, params: { role: \"Admin\" },\n+                      form: { data: { turbo_confirm: \"Promote this member to Admin?\" } } %>\n+              <% end %>\n+            </td>\n+            <td>\n+              <% if m != current_member && !m.manager? %>\n+                <%= button_to \"Remove\", remove_member_path(m),\n+                      method: :patch,\n+                      form: { data: { turbo_confirm: \"Remove #{m.first_name} from the roster?\" } } %>\n+              <% end %>\n+            </td>\n+          <% end %>\n+        </tr>\n+      <% end %>\n+    </tbody>\n+  </table>\n \n <% if @removed_members.any? %>\n   <details>"
+  },
+  {
+    "sha": "e62e17a318fef80e9f8067c84ba3b7ae0a67f196",
+    "filename": "db/schema.rb",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/e7902b23142d06980624fa78db525f085b505cc2/db%2Fschema.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/e7902b23142d06980624fa78db525f085b505cc2/db%2Fschema.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/db%2Fschema.rb?ref=e7902b23142d06980624fa78db525f085b505cc2",
+    "patch": "@@ -56,7 +56,7 @@\n     t.index [\"requirement_id\"], name: \"index_event_submissions_on_requirement_id\"\n     t.index [\"reviewed_by_id\"], name: \"index_event_submissions_on_reviewed_by_id\"\n     t.index [\"status\"], name: \"index_event_submissions_on_status\"\n-    t.check_constraint \"status::text = ANY (ARRAY['pending'::character varying, 'approved'::character varying, 'denied'::character varying]::text[])\", name: \"event_submissions_status_valid\"\n+    t.check_constraint \"status::text = ANY (ARRAY['pending'::character varying::text, 'approved'::character varying::text, 'denied'::character varying::text])\", name: \"event_submissions_status_valid\"\n   end\n \n   create_table \"events\", force: :cascade do |t|"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "3fac6a5a968fc828458444f314d7c7c4b0c6d9ca",
+    "filename": "Gemfile",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/1d02d1007f3bc9c9bd91a0623d7c0db077a10711/Gemfile",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/1d02d1007f3bc9c9bd91a0623d7c0db077a10711/Gemfile",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/Gemfile?ref=1d02d1007f3bc9c9bd91a0623d7c0db077a10711",
+    "patch": "@@ -66,7 +66,7 @@ gem \"omniauth-google-oauth2\"\n gem \"omniauth-rails_csrf_protection\"\n gem \"dotenv-rails\", \"~> 3.2\", groups: [ :development, :test ]\n \n-gem \"json\", \"< 3\"\n+gem \"json\", \"< 4\"\n gem \"rqrcode\", \"~> 3.2\"\n \n gem \"pagy\""
+  },
+  {
+    "sha": "3ad0c49af18d4dce04afdea5bf7878668a699029",
+    "filename": "Gemfile.lock",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/1d02d1007f3bc9c9bd91a0623d7c0db077a10711/Gemfile.lock",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/1d02d1007f3bc9c9bd91a0623d7c0db077a10711/Gemfile.lock",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/Gemfile.lock?ref=1d02d1007f3bc9c9bd91a0623d7c0db077a10711",
+    "patch": "@@ -158,7 +158,7 @@ GEM\n     jbuilder (2.15.1)\n       actionview (>= 7.0.0)\n       activesupport (>= 7.0.0)\n-    json (2.21.2)\n+    json (3.1.0)\n     jwt (3.3.0)\n       base64\n     language_server-protocol (3.17.0.6)\n@@ -462,7 +462,7 @@ DEPENDENCIES\n   factory_bot_rails\n   importmap-rails\n   jbuilder\n-  json (< 3)\n+  json (< 4)\n   omniauth\n   omniauth-google-oauth2\n   omniauth-rails_csrf_protection"
+  }
+]

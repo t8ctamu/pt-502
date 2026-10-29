@@ -1,0 +1,86 @@
+[
+  {
+    "sha": "50bcf0660ef8db7ea249b89d3e30aa856160790c",
+    "filename": "app/controllers/application_controller.rb",
+    "status": "modified",
+    "additions": 9,
+    "deletions": 0,
+    "changes": 9,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/89ecb57b746559915fff557b6824b4020c5c422f/app%2Fcontrollers%2Fapplication_controller.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/89ecb57b746559915fff557b6824b4020c5c422f/app%2Fcontrollers%2Fapplication_controller.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fcontrollers%2Fapplication_controller.rb?ref=89ecb57b746559915fff557b6824b4020c5c422f",
+    "patch": "@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base\n   include Pagy::Method\n \n   before_action :authenticate_member!\n+  before_action :ensure_active_member\n \n   def after_sign_in_path_for(member)\n     stored_location_for(member) ||\n@@ -10,6 +11,14 @@ def after_sign_in_path_for(member)\n \n   private\n \n+  def ensure_active_member\n+    return unless member_signed_in?\n+    return unless current_member.removed_at.present?\n+\n+    sign_out current_member\n+    redirect_to root_path, alert: \"Access denied. Your membership has been removed.\"\n+  end\n+\n   # Shared by self-service profiles and authorized officer profile edits.\n   def member_profile_params\n     params.require(:member).permit(:first_name, :last_name, :expected_graduation_term,"
+  },
+  {
+    "sha": "5cd9831d311146ed20643e658e0a931e417d4bf9",
+    "filename": "app/controllers/profiles_controller.rb",
+    "status": "modified",
+    "additions": 9,
+    "deletions": 0,
+    "changes": 9,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/89ecb57b746559915fff557b6824b4020c5c422f/app%2Fcontrollers%2Fprofiles_controller.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/89ecb57b746559915fff557b6824b4020c5c422f/app%2Fcontrollers%2Fprofiles_controller.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fcontrollers%2Fprofiles_controller.rb?ref=89ecb57b746559915fff557b6824b4020c5c422f",
+    "patch": "@@ -16,4 +16,13 @@ def update\n       render :edit, status: :unprocessable_entity\n     end\n   end\n+\n+  def leave\n+    if current_member.update(removed_at: Time.current)\n+      sign_out current_member\n+      redirect_to root_path, notice: \"You have left the organization.\"\n+    else\n+      redirect_to root_path, alert: \"Could not leave the organization. Please try again.\"\n+    end\n+  end\n end"
+  },
+  {
+    "sha": "4dfd2b85dbd562b7118e7b9624b22d2558933d9d",
+    "filename": "app/views/profiles/edit.html.erb",
+    "status": "modified",
+    "additions": 11,
+    "deletions": 0,
+    "changes": 11,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/89ecb57b746559915fff557b6824b4020c5c422f/app%2Fviews%2Fprofiles%2Fedit.html.erb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/89ecb57b746559915fff557b6824b4020c5c422f/app%2Fviews%2Fprofiles%2Fedit.html.erb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fviews%2Fprofiles%2Fedit.html.erb?ref=89ecb57b746559915fff557b6824b4020c5c422f",
+    "patch": "@@ -4,3 +4,14 @@\n     <%= render \"profiles/form\", member: @member, url: profile_path %>\n   </div>\n </div>\n+<hr style=\"margin: 32px 0; border: 0; border-top: 1px solid #eee;\">\n+<div class=\"leave-org-section\">\n+  <h3>Leave Organization</h3>\n+  <p style=\"color: #666; margin-bottom: 16px;\">\n+    Leaving the organization will remove you from the member roster and revoke your access to the dashboard.\n+  </p>\n+  <%= button_to \"Leave Organization\", leave_profile_path,\n+        method: :patch,\n+        form: { data: { turbo_confirm: \"Are you sure you want to leave? Your profile will be removed from the member roster.\" } },\n+        class: \"btn btn-secondary\" %>\n+</div>\n\\ No newline at end of file"
+  },
+  {
+    "sha": "ce7233d5ff87ef3cb15cf337d3e06e0bf9aa218b",
+    "filename": "config/routes.rb",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 0,
+    "changes": 4,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/89ecb57b746559915fff557b6824b4020c5c422f/config%2Froutes.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/89ecb57b746559915fff557b6824b4020c5c422f/config%2Froutes.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/config%2Froutes.rb?ref=89ecb57b746559915fff557b6824b4020c5c422f",
+    "patch": "@@ -36,6 +36,10 @@\n     delete \"types/:id\", to: \"point_settings#destroy_type\", as: :destroy_type\n   end\n \n+  resource :profile, only: [ :edit, :update ] do\n+    patch :leave, on: :member\n+  end\n+\n   resources :events do\n     resource :check_in, only: [ :show, :create ], controller: \"event_check_ins\"\n "
+  },
+  {
+    "sha": "adad37ae5d8aeb73ea54854dafa0a9741c79c190",
+    "filename": "db/schema.rb",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/89ecb57b746559915fff557b6824b4020c5c422f/db%2Fschema.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/89ecb57b746559915fff557b6824b4020c5c422f/db%2Fschema.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/db%2Fschema.rb?ref=89ecb57b746559915fff557b6824b4020c5c422f",
+    "patch": "@@ -56,7 +56,7 @@\n     t.index [\"requirement_id\"], name: \"index_event_submissions_on_requirement_id\"\n     t.index [\"reviewed_by_id\"], name: \"index_event_submissions_on_reviewed_by_id\"\n     t.index [\"status\"], name: \"index_event_submissions_on_status\"\n-    t.check_constraint \"status::text = ANY (ARRAY['pending'::character varying::text, 'approved'::character varying::text, 'denied'::character varying::text])\", name: \"event_submissions_status_valid\"\n+    t.check_constraint \"status::text = ANY (ARRAY['pending'::character varying, 'approved'::character varying, 'denied'::character varying]::text[])\", name: \"event_submissions_status_valid\"\n   end\n \n   create_table \"events\", force: :cascade do |t|"
+  },
+  {
+    "sha": "710a55e87d443f30883d37b41404f77684be8a32",
+    "filename": "spec/models/member_spec.rb",
+    "status": "modified",
+    "additions": 10,
+    "deletions": 0,
+    "changes": 10,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/89ecb57b746559915fff557b6824b4020c5c422f/spec%2Fmodels%2Fmember_spec.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/89ecb57b746559915fff557b6824b4020c5c422f/spec%2Fmodels%2Fmember_spec.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/spec%2Fmodels%2Fmember_spec.rb?ref=89ecb57b746559915fff557b6824b4020c5c422f",
+    "patch": "@@ -325,6 +325,16 @@ def award_all_minimums\n     end\n   end\n \n+  describe \".active\" do\n+    it \"returns only members who have not been removed\" do\n+      active_member = create(:member, removed_at: nil)\n+      removed_member = create(:member, removed_at: Time.current)\n+\n+      expect(Member.active).to include(active_member)\n+      expect(Member.active).not_to include(removed_member)\n+    end\n+  end\n+\n   describe \"validations\" do\n     it \"requires an email\" do\n       expect(build(:member, email: nil)).not_to be_valid"
+  },
+  {
+    "sha": "d22be671197780396e2c595b2efbf8009e75df07",
+    "filename": "spec/requests/profiles_spec.rb",
+    "status": "modified",
+    "additions": 13,
+    "deletions": 0,
+    "changes": 13,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/89ecb57b746559915fff557b6824b4020c5c422f/spec%2Frequests%2Fprofiles_spec.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/89ecb57b746559915fff557b6824b4020c5c422f/spec%2Frequests%2Fprofiles_spec.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/spec%2Frequests%2Fprofiles_spec.rb?ref=89ecb57b746559915fff557b6824b4020c5c422f",
+    "patch": "@@ -147,4 +147,17 @@\n       expect(Point.where(member: member)).to be_empty\n     end\n   end\n+  describe \"PATCH /profile/leave\" do\n+    it \"sets removed_at, signs the member out, and redirects to root\" do\n+      patch leave_profile_path\n+\n+      expect(response).to redirect_to(root_path)\n+      expect(flash[:notice]).to eq(\"You have left the organization.\")\n+      expect(member.reload.removed_at).to be_present\n+\n+      # Verify they are signed out by checking the next request\n+      get edit_profile_path\n+      expect(response).to redirect_to(new_member_session_path)\n+    end\n+  end\n end"
+  }
+]

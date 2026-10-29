@@ -1,0 +1,62 @@
+[
+  {
+    "sha": "df0652e63ce07fa9d436396b38bc1bad3eb5ae7b",
+    "filename": "app/javascript/controllers/event_time_controller.js",
+    "status": "added",
+    "additions": 20,
+    "deletions": 0,
+    "changes": 20,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/63b8ae81cdabcfd833228278b761d68dd89ee29e/app%2Fjavascript%2Fcontrollers%2Fevent_time_controller.js",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/63b8ae81cdabcfd833228278b761d68dd89ee29e/app%2Fjavascript%2Fcontrollers%2Fevent_time_controller.js",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fjavascript%2Fcontrollers%2Fevent_time_controller.js?ref=63b8ae81cdabcfd833228278b761d68dd89ee29e",
+    "patch": "@@ -0,0 +1,20 @@\n+import { Controller } from \"@hotwired/stimulus\"\n+\n+export default class extends Controller {\n+  static targets = [\"startsAt\", \"endsAt\"]\n+\n+  connect() {\n+    this.updateEndTime()\n+  }\n+\n+  updateEndTime() {\n+    const startValue = this.startsAtTarget.value\n+    if (!startValue) return\n+\n+    this.endsAtTarget.min = startValue\n+\n+    if (this.endsAtTarget.value && this.endsAtTarget.value <= startValue) {\n+      this.endsAtTarget.value = \"\"\n+    }\n+  }\n+}\n\\ No newline at end of file"
+  },
+  {
+    "sha": "561e1464877649267b35100a93b7791d936aa272",
+    "filename": "app/models/event.rb",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/63b8ae81cdabcfd833228278b761d68dd89ee29e/app%2Fmodels%2Fevent.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/63b8ae81cdabcfd833228278b761d68dd89ee29e/app%2Fmodels%2Fevent.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fmodels%2Fevent.rb?ref=63b8ae81cdabcfd833228278b761d68dd89ee29e",
+    "patch": "@@ -39,7 +39,7 @@ def coordinates_provided_together\n   def ends_at_after_starts_at\n     return if ends_at.blank? || starts_at.blank?\n     if ends_at <= starts_at\n-      errors.add(:ends_at, \"must be after the start time\")\n+      errors.add(:base, \"End time must be after the start time\")\n     end\n   end\n end"
+  },
+  {
+    "sha": "b7cda2ef9f3c2f6001c1034717ff7fecb03e559d",
+    "filename": "app/views/events/_form.html.erb",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 3,
+    "changes": 6,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/63b8ae81cdabcfd833228278b761d68dd89ee29e/app%2Fviews%2Fevents%2F_form.html.erb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/63b8ae81cdabcfd833228278b761d68dd89ee29e/app%2Fviews%2Fevents%2F_form.html.erb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fviews%2Fevents%2F_form.html.erb?ref=63b8ae81cdabcfd833228278b761d68dd89ee29e",
+    "patch": "@@ -36,14 +36,14 @@\n     <%= f.text_area :description, rows: 4 %>\n   </div>\n \n-  <div class=\"form-row\">\n+  <div class=\"form-row\" data-controller=\"event-time\">\n     <div>\n       <%= f.label :starts_at, \"Date and time\" %>\n-      <%= f.datetime_local_field :starts_at %>\n+      <%= f.datetime_local_field :starts_at, data: { event_time_target: \"startsAt\", action: \"change->event-time#updateEndTime\" } %>\n     </div>\n     <div>\n       <%= f.label :ends_at, \"End time (optional)\" %>\n-      <%= f.datetime_local_field :ends_at %>\n+      <%= f.datetime_local_field :ends_at, data: { event_time_target: \"endsAt\" } %>\n     </div>\n   </div>\n "
+  },
+  {
+    "sha": "379fe758da3576098d2e15d234666923fe5a5d58",
+    "filename": "spec/models/event_spec.rb",
+    "status": "modified",
+    "additions": 11,
+    "deletions": 0,
+    "changes": 11,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/63b8ae81cdabcfd833228278b761d68dd89ee29e/spec%2Fmodels%2Fevent_spec.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/63b8ae81cdabcfd833228278b761d68dd89ee29e/spec%2Fmodels%2Fevent_spec.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/spec%2Fmodels%2Fevent_spec.rb?ref=63b8ae81cdabcfd833228278b761d68dd89ee29e",
+    "patch": "@@ -75,4 +75,15 @@\n   it \"can be created\" do\n     expect(create(:event)).to be_persisted\n   end\n+\n+    it \"requires ends_at to be after starts_at\" do\n+    event = build(:event, starts_at: Time.current, ends_at: 1.hour.ago)\n+    expect(event).not_to be_valid\n+    expect(event.errors[:base]).to include(\"End time must be after the start time\")\n+  end\n+\n+  it \"is valid when ends_at is after starts_at\" do\n+    event = build(:event, starts_at: Time.current, ends_at: 1.hour.from_now)\n+    expect(event).to be_valid\n+  end\n end"
+  },
+  {
+    "sha": "3d851656010aa22c1cd712c311a161e05434916e",
+    "filename": "spec/requests/events_spec.rb",
+    "status": "modified",
+    "additions": 29,
+    "deletions": 0,
+    "changes": 29,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/63b8ae81cdabcfd833228278b761d68dd89ee29e/spec%2Frequests%2Fevents_spec.rb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/63b8ae81cdabcfd833228278b761d68dd89ee29e/spec%2Frequests%2Fevents_spec.rb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/spec%2Frequests%2Fevents_spec.rb?ref=63b8ae81cdabcfd833228278b761d68dd89ee29e",
+    "patch": "@@ -45,6 +45,35 @@\n     expect(response).to have_http_status(422)\n     expect(CGI.unescapeHTML(response.body)).to include(\"Name can't be blank\")\n   end\n+\n+  it \"does not create an event when end time is before start time (Rainy)\" do\n+    expect {\n+      post events_path, params: { event: {\n+        name: \"Meeting\", description: \"Details\",\n+        starts_at: \"2026-10-01 10:00\",\n+        ends_at: \"2026-10-01 09:00\",\n+        location: \"Room 1\",\n+        latitude: \"30.628\", longitude: \"-96.3344\"\n+      } }\n+    }.not_to change(Event, :count)\n+\n+    expect(response).to have_http_status(422)\n+    expect(CGI.unescapeHTML(response.body)).to include(\"End time must be after the start time\")\n+  end\n+\n+  it \"blocks regular members from creating events (Rainy)\" do\n+    regular_member = create(:member, :profile_completed)\n+    sign_in regular_member\n+\n+    post events_path, params: { event: {\n+      name: \"Meeting\", description: \"Details\",\n+      starts_at: \"2026-10-01 10:00\", location: \"Room 1\",\n+      latitude: \"30.628\", longitude: \"-96.3344\"\n+    } }\n+\n+    expect(response).to redirect_to(events_path)\n+    expect(flash[:alert]).to eq(\"Admins only.\")\n+  end\n end\n \n RSpec.describe \"Event calendar\", type: :request do"
+  }
+]

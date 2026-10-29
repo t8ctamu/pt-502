@@ -1,0 +1,84 @@
+[
+  {
+    "sha": "b7bc97093fe450ba8e766df07507af4a482cc5e9",
+    "node_id": "C_kwDOUOlySdoAKGI3YmM5NzA5M2ZlNDUwYmE4ZTc2NmRmMDc1MDdhZjRhNDgyY2M1ZTk",
+    "commit": {
+      "author": {
+        "name": "dependabot[bot]",
+        "email": "49699333+dependabot[bot]@users.noreply.github.com",
+        "date": "2026-09-28T16:26:16Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-09-28T16:26:16Z"
+      },
+      "message": "Bump solid_cable from 3.0.12 to 4.1.0\n\nBumps [solid_cable](https://github.com/rails/solid_cable) from 3.0.12 to 4.1.0.\n- [Release notes](https://github.com/rails/solid_cable/releases)\n- [Commits](https://github.com/rails/solid_cable/compare/v3.0.12...v4.1.0)\n\n---\nupdated-dependencies:\n- dependency-name: solid_cable\n  dependency-version: 4.1.0\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+      "tree": {
+        "sha": "89a5ad856b9dc12b1cef82827a2830c46176e785",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/trees/89a5ad856b9dc12b1cef82827a2830c46176e785"
+      },
+      "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/git/commits/b7bc97093fe450ba8e766df07507af4a482cc5e9",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqupUoCRC1aQ7uu5UhlAAAm0IQAHTYm7Ob2/TvNEGF9bnTxqij\nLpdThcdJ3Qyic0mzTuLCwCnQVlqDVa2XL2rg6X4ijybsP0uadte+Bh2+jMBya/tJ\njUsmNTaG7C/QDaj5QMMPO2mQBtPmY/6+ipMRpjXov0eMcZucimFMmihLJc3YIELf\nK0Fpj4VcUareLIE36Rn9hl1Gcut70xixkoTdfYjcenOldQ/9/aAHlepfpfea7lnQ\nWSZnkonLFLsej19NBtB2V+g78evZ5K+RbHfLppCvalxdsJIYAUvwRjoMUwMBd8TL\nK02iCkuAkMOdIh7IU2/mydR4bwaTjry9Zf6ZEF7Qdq668okEHHw36+zskDZPS7Zi\ndADfPpnNnoQ0abfoP0sfgr0ZQmG5tF0jNeYTEASmjNrRcPhhAWSlZS44VPK2rBRd\nJ0zPDRndNOMmFZtyLUWgVGx8dq6CHyHtHQWQ4eadRFtIfYaljvAahvTsA4pbQs+1\nMbCe8foXAi/Scry7JuoS8sAccPRBcHyVJ84YvWrE7fbhEwWgkVTGcQDWEFUmO13X\n16hLfvxivCpMHAFIAsng+HoWLPJ/77dksU+K1O666hkueqYOfh9L6XG/7bv5cD9S\nKNQordHKxe5Slhxvad/QYTPx7RjNVf6jRtcAw91FUNn2D8Iu5cYRtlHq3nyNWOwz\nVFVZtK0Ep2iJ85eyETfs\n=ZjOQ\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 89a5ad856b9dc12b1cef82827a2830c46176e785\nparent 72ee3d8aea0c32d46bff013f339fabfe0e5c681f\nauthor dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> 1790612776 +0000\ncommitter GitHub <noreply@github.com> 1790612776 +0000\n\nBump solid_cable from 3.0.12 to 4.1.0\n\nBumps [solid_cable](https://github.com/rails/solid_cable) from 3.0.12 to 4.1.0.\n- [Release notes](https://github.com/rails/solid_cable/releases)\n- [Commits](https://github.com/rails/solid_cable/compare/v3.0.12...v4.1.0)\n\n---\nupdated-dependencies:\n- dependency-name: solid_cable\n  dependency-version: 4.1.0\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+        "verified_at": "2026-09-28T16:26:17Z"
+      }
+    },
+    "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/b7bc97093fe450ba8e766df07507af4a482cc5e9",
+    "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/b7bc97093fe450ba8e766df07507af4a482cc5e9",
+    "comments_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/b7bc97093fe450ba8e766df07507af4a482cc5e9/comments",
+    "author": {
+      "login": "dependabot[bot]",
+      "id": 49699333,
+      "node_id": "MDM6Qm90NDk2OTkzMzM=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dependabot%5Bbot%5D",
+      "html_url": "https://github.com/apps/dependabot",
+      "followers_url": "https://api.github.com/users/dependabot%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/dependabot%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dependabot%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dependabot%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dependabot%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/dependabot%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/dependabot%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/dependabot%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dependabot%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "72ee3d8aea0c32d46bff013f339fabfe0e5c681f",
+        "url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/commits/72ee3d8aea0c32d46bff013f339fabfe0e5c681f",
+        "html_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/commit/72ee3d8aea0c32d46bff013f339fabfe0e5c681f"
+      }
+    ]
+  }
+]

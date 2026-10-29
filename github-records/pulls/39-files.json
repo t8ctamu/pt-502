@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "a01736239cfea136d2d88e4742b2d9bdc0b4b850",
+    "filename": "app/views/home/index.html.erb",
+    "status": "modified",
+    "additions": 18,
+    "deletions": 10,
+    "changes": 28,
+    "blob_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/blob/2b2ad64f525a9e83b56e3a6c08a04f9d5b8be82b/app%2Fviews%2Fhome%2Findex.html.erb",
+    "raw_url": "https://github.com/FA26-CSCE431-software-engineering/PT-502/raw/2b2ad64f525a9e83b56e3a6c08a04f9d5b8be82b/app%2Fviews%2Fhome%2Findex.html.erb",
+    "contents_url": "https://api.github.com/repos/FA26-CSCE431-software-engineering/PT-502/contents/app%2Fviews%2Fhome%2Findex.html.erb?ref=2b2ad64f525a9e83b56e3a6c08a04f9d5b8be82b",
+    "patch": "@@ -110,16 +110,24 @@\n <% if current_member.admin? %>\n   <div class=\"card\">\n     <h2>My profile</h2>\n-    <dl>\n-      <dt>Expected graduation</dt>\n-      <dd><%= current_member.expected_graduation_term.presence || \"Not provided\" %></dd>\n-      <dt>Anticipated application cycle</dt>\n-      <dd><%= current_member.anticipated_application_cycle || \"Not provided\" %></dd>\n-      <dt>Available to carpool for field trips</dt>\n-      <dd><%= current_member.car_pool_status? ? \"Yes\" : \"No\" %></dd>\n-      <dt>Phone sharing</dt>\n-      <dd><%= current_member.shared_phone_number || \"Not shared\" %></dd>\n-    </dl>\n+    <div class=\"profile-stats\">\n+      <div class=\"stat\">\n+        <span class=\"stat-label\">Expected graduation</span>\n+        <span class=\"stat-value\"><%= current_member.expected_graduation_term.presence || \"Not provided\" %></span>\n+      </div>\n+      <div class=\"stat\">\n+        <span class=\"stat-label\">Anticipated application cycle</span>\n+        <span class=\"stat-value\"><%= current_member.anticipated_application_cycle || \"Not provided\" %></span>\n+      </div>\n+      <div class=\"stat\">\n+        <span class=\"stat-label\">Available to carpool for field trips</span>\n+        <span class=\"stat-value\"><%= current_member.car_pool_status? ? \"Yes\" : \"No\" %></span>\n+      </div>\n+      <div class=\"stat\">\n+        <span class=\"stat-label\">Phone sharing</span>\n+        <span class=\"stat-value\"><%= current_member.shared_phone_number || \"Not shared\" %></span>\n+      </div>\n+    </div>\n   </div>\n   <div class=\"card\">\n     <h2>Officer tools</h2>"
+  }
+]
