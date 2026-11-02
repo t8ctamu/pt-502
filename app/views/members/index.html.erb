@@ -77,9 +77,9 @@
       <tr>
         <td><%= m.id %></td>
         <td><%= m.role.description %></td>
-        <td><%= m.first_name %></td>
-        <td><%= m.last_name %></td>
-        <td><%= m.email %></td>
+        <td><%= m.first_name.presence || "N/A" %></td>
+        <td><%= m.last_name.presence || "N/A" %></td>
+        <td><%= m.email.presence || "N/A" %></td>
         <td><%= m.joined_at %></td>
         <td><%= m.car_pool_status ? "Yes" : "No" %></td>
         <% @requirements.each do |r| %>
@@ -192,9 +192,9 @@
           <tr>
             <td><%= a.id %></td>
             <td><%= a.role.description %></td>
-            <td><%= a.first_name %></td>
-            <td><%= a.last_name %></td>
-            <td><%= a.email %></td>
+            <td><%= a.first_name.presence || "N/A" %></td>
+            <td><%= a.last_name.presence || "N/A" %></td>
+            <td><%= a.email.presence || "N/A" %></td>
             <td><%= a.joined_at %></td>
             <td><%= a.car_pool_status ? "Yes" : "No" %></td>
             <td><%= a.expected_graduation_term.presence || "Not provided" %></td>
