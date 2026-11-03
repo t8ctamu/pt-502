@@ -68,4 +68,36 @@ RSpec.describe AttendanceImport::Mapper do
                expect(row.errors).to include(/Missing Checked In/)
           end
      end
+
+     context "when the file uses @email.tamu.edu but the member is stored @tamu.edu" do
+          let!(:hudson) { create(:member, email: "hudson@tamu.edu") }
+          let(:rows) { [ build_row(email: "hudson@email.tamu.edu") ] }
+
+          it "matches the member" do
+               row = mapper.preview.first
+               expect(row.status).to eq(:ready)
+               expect(row.member).to eq(hudson)
+          end
+     end
+
+     context "when the file uses @tamu.edu but the member is stored @email.tamu.edu" do
+          let!(:hudson) { create(:member, email: "hudson@email.tamu.edu") }
+          let(:rows) { [ build_row(email: "hudson@tamu.edu") ] }
+
+          it "matches the member" do
+               row = mapper.preview.first
+               expect(row.status).to eq(:ready)
+               expect(row.member).to eq(hudson)
+          end
+     end
+
+     context "when both TAMU formats exist for different members" do
+          let!(:a) { create(:member, email: "hudson@tamu.edu") }
+          let!(:b) { create(:member, email: "hudson@email.tamu.edu") }
+          let(:rows) { [ build_row(email: "hudson@email.tamu.edu") ] }
+
+          it "matches the exact one" do
+               expect(mapper.preview.first.member).to eq(b)
+          end
+     end
 end
