@@ -126,7 +126,7 @@ class MembersController < ApplicationController
 
   # Members control their own phone number and sharing consent.
   def member_params
-    permitted_extra = [:paid_dues]
+    permitted_extra = [ :paid_dues ]
     permitted_extra << :tshirt_size if current_member.admin?
 
     member_profile_params.except(:phone_number, :share_phone_number, :phone_visible)

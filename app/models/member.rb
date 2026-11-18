@@ -37,11 +37,11 @@ class Member < ApplicationRecord
   validate :shared_phone_number_is_valid, on: :profile
   validates :email, presence: true
   TSHIRT_SIZES = [
-    ["Small", "S"],
-    ["Medium", "M"],
-    ["Large", "L"],
-    ["XL", "XL"],
-    ["XXL", "XXL"]
+    [ "Small", "S" ],
+    [ "Medium", "M" ],
+    [ "Large", "L" ],
+    [ "XL", "XL" ],
+    [ "XXL", "XXL" ]
   ].freeze
 
   validates :tshirt_size,
