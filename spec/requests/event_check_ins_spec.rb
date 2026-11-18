@@ -102,6 +102,37 @@ RSpec.describe "Event check-in", type: :request do
     expect(Point.count).to eq(0)
   end
 
+  it "uses the event's proximity in feet for the nearby check" do
+    sign_in member
+    event.update!(check_in_radius_feet: 250) # 250 ft = 76.2 m
+
+    # ~200 ft (61 m) north of the event: inside a 250 ft radius.
+    post event_check_in_path(event), params: { latitude: 30.6 + 0.00055, longitude: -96.3 }
+    expect(Attendance.where(member: member, event: event).count).to eq(1)
+
+    # A second member ~400 ft (122 m) north is outside the same radius.
+    far_member = create(:member, :profile_completed)
+    sign_in far_member
+    post event_check_in_path(event), params: { latitude: 30.6 + 0.00110, longitude: -96.3 }
+    expect(response).to have_http_status(:unprocessable_content)
+    expect(response.body).to include("not nearby")
+    expect(Attendance.where(member: far_member, event: event).count).to eq(0)
+  end
+
+  it "does not change another event's check-in radius" do
+    nearby_event = create(:event, check_in_radius_feet: 500, latitude: 30.6, longitude: -96.3,
+                                   requirement: nil, point_value: 0)
+    sign_in member
+
+    # ~400 ft (122 m) away: too far for the 328 ft default event, close enough for 500 ft.
+    post event_check_in_path(nearby_event), params: { latitude: 30.6 + 0.00110, longitude: -96.3 }
+    expect(Attendance.where(member: member, event: nearby_event).count).to eq(1)
+
+    post event_check_in_path(event), params: { latitude: 30.6 + 0.00110, longitude: -96.3 }
+    expect(response).to have_http_status(:unprocessable_content)
+    expect(Attendance.where(member: member, event: event).count).to eq(0)
+  end
+
   it "explains when officers have not configured check-in" do
     sign_in member
     event.update_columns(latitude: nil, longitude: nil) # legacy row: validation would now block this
@@ -132,10 +163,11 @@ RSpec.describe "Event check-in", type: :request do
     sign_in officer
     get edit_event_path(event)
     expect(response.body).to include("event_latitude", "event_longitude", "event_point_value", "event_requirement_id")
-    patch event_path(event), params: { event: { latitude: 30.5, longitude: -96.2, point_value: 3, check_in_radius_meters: 75 } }
+    patch event_path(event), params: { event: { latitude: 30.5, longitude: -96.2, point_value: 3, check_in_radius_feet: 250 } }
     expect(event.reload.point_value).to eq(3)
     expect(event.latitude.to_f).to eq(30.5)
-    expect(event.check_in_radius_meters).to eq(75)
+    expect(event.longitude.to_f).to eq(-96.2)
+    expect(event.check_in_radius_feet).to eq(250)
     sign_out officer
     sign_in member
     patch event_path(event), params: { event: { point_value: 999 } }

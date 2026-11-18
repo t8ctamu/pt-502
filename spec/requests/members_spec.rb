@@ -52,6 +52,216 @@ RSpec.describe "Members", type: :request do
         expect(response.body).to include("Carpooler", "Fall 2028", "Summer 2027", "979-555-0134", "Not shared")
         expect(response.body).not_to include("979-555-0199")
       end
+
+      describe "filtering and sorting the point sheet" do
+        let(:service) { create(:requirement, name: "Service") }
+        let(:other_requirement) { create(:requirement, name: "Social") }
+
+        # First names in the members table, in the order they are displayed.
+        # Columns are: ID, Role, First name, ...
+        def listed_first_names
+          Nokogiri::HTML(response.body).css("table").first
+                  .css("tbody tr").map { |row| row.css("td")[2].text.strip }
+        end
+
+        def give_points(member, requirement, amount)
+          create(:point, member: member, requirement: requirement, point_amount: amount)
+        end
+
+        context "filtering by points for a requirement" do
+          let!(:with_points)    { create(:member, :profile_completed, first_name: "Withpoints") }
+          let!(:without_points) { create(:member, :profile_completed, first_name: "Nopoints") }
+          let!(:net_zero)       { create(:member, :profile_completed, first_name: "Netzero") }
+          let!(:other_only)     { create(:member, :profile_completed, first_name: "Otheronly") }
+
+          before do
+            give_points(with_points, service, 5)
+            give_points(net_zero, service, 5)
+            give_points(net_zero, service, -5)
+            give_points(other_only, other_requirement, 3)
+          end
+
+          it "'0 points' lists only members with no service points (rainy scenario)" do
+            get members_path, params: { points_requirement_id: service.id, points_filter: "zero" }
+
+            expect(listed_first_names).to contain_exactly("Nopoints", "Netzero", "Otheronly")
+            expect(listed_first_names).not_to include("Withpoints")
+          end
+
+          it "'1+ points' lists only members with service points" do
+            get members_path, params: { points_requirement_id: service.id, points_filter: "positive" }
+
+            expect(listed_first_names).to eq([ "Withpoints" ])
+          end
+
+          it "matches what the table shows in each member's points cell" do
+            get members_path, params: { points_requirement_id: service.id, points_filter: "zero" }
+
+            table = Nokogiri::HTML(response.body).css("table").first
+            service_cell_index = table.css("thead th").index { |th| th.text.strip.start_with?("Service") }
+            expect(service_cell_index).not_to be_nil
+
+            table.css("tbody tr").each do |row|
+              # The cell also holds hidden inputs (_method, requirement_id), so target the number field.
+              input = row.css("td")[service_cell_index].at_css("input[type='number']")
+              expect(input["value"]).to eq("0")
+            end
+          end
+
+          it "ignores the points filter when no requirement is chosen" do
+            get members_path, params: { points_filter: "zero" }
+
+            expect(listed_first_names).to include("Withpoints", "Nopoints", "Netzero", "Otheronly")
+          end
+
+          it "ignores an unknown points filter value or requirement id" do
+            get members_path, params: { points_requirement_id: service.id, points_filter: "bogus" }
+            expect(listed_first_names).to include("Withpoints", "Nopoints")
+
+            get members_path, params: { points_requirement_id: 0, points_filter: "zero" }
+            expect(response).to have_http_status(:success)
+            expect(listed_first_names).to include("Withpoints", "Nopoints")
+          end
+        end
+
+        context "filtering by car pool" do
+          before do
+            create(:member, :profile_completed, first_name: "Driver", car_pool_status: true)
+            create(:member, :profile_completed, first_name: "Walker", car_pool_status: false)
+          end
+
+          it "shows only members who are in the car pool" do
+            get members_path, params: { car_pool: "yes" }
+            expect(listed_first_names).to eq([ "Driver" ])
+          end
+
+          it "shows only members who are not in the car pool" do
+            get members_path, params: { car_pool: "no" }
+            expect(listed_first_names).to eq([ "Walker" ])
+          end
+
+          it "shows everyone when set to Any" do
+            get members_path, params: { car_pool: "" }
+            expect(listed_first_names).to contain_exactly("Driver", "Walker")
+          end
+        end
+
+        context "filtering by active status" do
+          let!(:unpaid) { create(:member, :profile_completed, first_name: "Unpaid", paid_dues: false) }
+
+          # A member who has not paid dues is never "Active" on the roster.
+          it "'Active' excludes members who have not paid dues" do
+            get members_path, params: { status: "active" }
+            expect(listed_first_names).not_to include("Unpaid")
+          end
+
+          it "'Not Active' includes members who have not paid dues" do
+            get members_path, params: { status: "inactive" }
+            expect(listed_first_names).to include("Unpaid")
+          end
+
+          it "keeps the Active and Not Active lists from overlapping" do
+            create(:member, :profile_completed, first_name: "Other")
+
+            get members_path, params: { status: "active" }
+            active = listed_first_names
+            get members_path, params: { status: "inactive" }
+            inactive = listed_first_names
+
+            expect(active & inactive).to be_empty
+            expect((active + inactive)).to include("Unpaid", "Other")
+          end
+        end
+
+        context "sorting" do
+          let!(:charlie) { create(:member, :profile_completed, first_name: "Charlie", last_name: "Zimmer") }
+          let!(:alice)   { create(:member, :profile_completed, first_name: "Alice",   last_name: "Young") }
+          let!(:bob)     { create(:member, :profile_completed, first_name: "Bob",     last_name: "Adams") }
+
+          it "defaults to last name, then first name" do
+            get members_path
+            expect(listed_first_names).to eq(%w[Bob Alice Charlie])
+          end
+
+          it "sorts ascending and descending by a column" do
+            get members_path, params: { sort: "first_name", dir: "asc" }
+            expect(listed_first_names).to eq(%w[Alice Bob Charlie])
+
+            get members_path, params: { sort: "first_name", dir: "desc" }
+            expect(listed_first_names).to eq(%w[Charlie Bob Alice])
+          end
+
+          it "sorts by a requirement's points" do
+            give_points(alice, service, 2)
+            give_points(bob, service, 9)
+
+            get members_path, params: { sort: "req_#{service.id}", dir: "desc" }
+
+            expect(listed_first_names).to eq(%w[Bob Alice Charlie])
+          end
+
+          it "sorts by total points" do
+            give_points(charlie, service, 4)
+            give_points(alice, service, 1)
+
+            get members_path, params: { sort: "total", dir: "asc" }
+
+            expect(listed_first_names.last).to eq("Charlie")
+          end
+
+          it "keeps members with a blank value last in both directions" do
+            charlie.update_columns(expected_graduation_term: nil)
+            alice.update_columns(expected_graduation_term: "Fall 2028")
+            bob.update_columns(expected_graduation_term: "Spring 2027")
+
+            get members_path, params: { sort: "expected_graduation", dir: "asc" }
+            expect(listed_first_names.last).to eq("Charlie")
+
+            get members_path, params: { sort: "expected_graduation", dir: "desc" }
+            expect(listed_first_names.last).to eq("Charlie")
+          end
+
+          it "ignores unknown sort keys and unknown requirement columns" do
+            get members_path, params: { sort: "drop_table" }
+            expect(response).to have_http_status(:success)
+            expect(listed_first_names).to eq(%w[Bob Alice Charlie])
+
+            get members_path, params: { sort: "req_999999" }
+            expect(response).to have_http_status(:success)
+          end
+
+          it "marks the active column header and toggles its direction" do
+            get members_path, params: { sort: "last_name", dir: "asc" }
+
+            header = Nokogiri::HTML(response.body).at_css("th[aria-sort='ascending']")
+            expect(header.text).to include("Last name")
+            expect(header.at_css("a")["href"]).to include("dir=desc")
+          end
+        end
+
+        context "combining filters and sorting" do
+          it "applies the filter and then the sort, and header links keep the filter" do
+            create(:member, :profile_completed, first_name: "Zed",  last_name: "Aaa", car_pool_status: true)
+            create(:member, :profile_completed, first_name: "Amy",  last_name: "Zzz", car_pool_status: true)
+            create(:member, :profile_completed, first_name: "Skip", last_name: "Mmm", car_pool_status: false)
+
+            get members_path, params: { car_pool: "yes", sort: "last_name", dir: "desc" }
+
+            expect(listed_first_names).to eq(%w[Amy Zed])
+            link = Nokogiri::HTML(response.body).at_css("th a[href*='sort=first_name']")
+            expect(link["href"]).to include("car_pool=yes")
+          end
+
+          it "shows how many members match" do
+            create(:member, :profile_completed, car_pool_status: true)
+            create(:member, :profile_completed, car_pool_status: false)
+
+            get members_path, params: { car_pool: "yes" }
+
+            expect(response.body).to include("1 member shown")
+          end
+        end
+      end
     end
   end
 
@@ -138,6 +348,52 @@ RSpec.describe "Members", type: :request do
       patch member_path(admin), params: { member: { expected_graduation_term: "Fall 2030" } }
       expect(response).to redirect_to(root_path)
       expect(admin.reload.expected_graduation_term).not_to eq("Fall 2030")
+    end
+  end
+
+  describe "inline roster edits keep the current filters and sort" do
+    let(:filtered_roster_url) { "http://www.example.com#{members_path(car_pool: 'yes', sort: 'last_name', dir: 'desc')}" }
+    let(:target) { create(:member, :profile_completed, paid_dues: false) }
+
+    before { sign_in admin }
+
+    it "returns to the filtered roster after setting points" do
+      requirement = create(:requirement, name: "Service")
+
+      patch set_points_member_path(target),
+            params: { requirement_id: requirement.id, total: 3 },
+            headers: { "HTTP_REFERER" => filtered_roster_url }
+
+      expect(response).to redirect_to(filtered_roster_url)
+      expect(target.reload.total_points).to eq(3)
+    end
+
+    it "returns to the filtered roster after an invalid points entry" do
+      requirement = create(:requirement, name: "Service")
+
+      patch set_points_member_path(target),
+            params: { requirement_id: requirement.id, total: -1 },
+            headers: { "HTTP_REFERER" => filtered_roster_url }
+
+      expect(response).to redirect_to(filtered_roster_url)
+      expect(flash[:alert]).to eq("Enter a whole number of 0 or more.")
+    end
+
+    it "returns to the filtered roster after toggling dues" do
+      patch member_path(target),
+            params: { member: { paid_dues: true } },
+            headers: { "HTTP_REFERER" => filtered_roster_url }
+
+      expect(response).to redirect_to(filtered_roster_url)
+      expect(target.reload.paid_dues).to be true
+    end
+
+    it "still goes to the roster (not back to the edit page) after a profile edit" do
+      patch member_path(target),
+            params: { member: { expected_graduation_term: "Fall 2029", pt_school_application_date: "2028-06-01" } },
+            headers: { "HTTP_REFERER" => "http://www.example.com#{edit_member_path(target)}" }
+
+      expect(response).to redirect_to(members_path)
     end
   end
 

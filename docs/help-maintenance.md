@@ -42,6 +42,7 @@ For each feature PR:
 | officer-profile.jpg | Officer profile editing |
 | event-form.jpg | Event creation and venue configuration |
 | event-check-in.jpg | Event radius, attendance points, and point type |
+| event-import.jpg | GetInvolved statuses, selected import rows, and validation issues |
 | qr.jpg | Event check-in QR code and link |
 | attendance.jpg | Officer attendance list |
 | requests.jpg | Pending approval and denial controls |

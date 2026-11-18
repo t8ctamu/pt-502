@@ -126,6 +126,8 @@ class EventsController < ApplicationController
   end
 
   def remember_location(event)
+    return unless event.check_in_configured?
+
     SavedLocation.find_or_create_by(name: event.location.strip) do |saved|
       saved.latitude = event.latitude
       saved.longitude = event.longitude
@@ -134,8 +136,7 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:name, :description, :starts_at, :ends_at, :location,
-      :latitude, :longitude, :check_in_radius_meters, :point_value, :requirement_id,
-      :other_type)
+            :latitude, :longitude, :check_in_radius_feet, :point_value, :requirement_id,)
   end
 
   def require_admin!

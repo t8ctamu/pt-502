@@ -1,0 +1,23 @@
+<h1>Import complete</h1>
+
+<p><strong><%= pluralize(@result[:saved], "attendance record") %> saved</strong><%= " for #{@event.name}" if @event %>.</p>
+
+<% if @result[:errors].any? %>
+  <h2>Rows that could not be saved</h2>
+  <table>
+    <thead>
+      <tr><th>Row</th><th>Email</th><th>Reason</th></tr>
+    </thead>
+    <tbody>
+      <% @result[:errors].each do |error| %>
+        <tr>
+          <td><%= error[:row] %></td>
+          <td><%= error[:email] %></td>
+          <td><%= error[:reason] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<p><%= link_to "Back to events", events_path %></p>

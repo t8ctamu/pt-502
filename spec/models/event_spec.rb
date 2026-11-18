@@ -1,12 +1,12 @@
 require "rails_helper"
 
 RSpec.describe Event, type: :model do
-  it "requires a location pin, so every new event has check-in configured" do
+  it "allows a named event without a pin while leaving check-in unconfigured" do
     expect(build(:event)).to be_check_in_configured
 
     event = build(:event, latitude: nil, longitude: nil)
-    expect(event).not_to be_valid
-    expect(event.errors[:base]).to include("Choose a location on the map before saving.")
+    expect(event).to be_valid
+    expect(event).not_to be_check_in_configured
   end
 
   it "belongs to a requirement" do
@@ -35,18 +35,55 @@ RSpec.describe Event, type: :model do
     expect(build(:event, latitude: 0, longitude: 0)).to be_valid
   end
 
-  it "requires nonnegative integer points and a positive integer radius" do
+  it "requires nonnegative integer points and a valid check-in proximity in feet" do
     expect(build(:event, point_value: -1)).not_to be_valid
     expect(build(:event, point_value: 1.5)).not_to be_valid
-    expect(build(:event, check_in_radius_meters: 0)).not_to be_valid
-    expect(build(:event, check_in_radius_meters: 1.5)).not_to be_valid
     expect(build(:event, point_value: 0)).to be_valid
+    expect(build(:event, check_in_radius_feet: 100)).to be_valid
+    expect(build(:event, check_in_radius_feet: 250)).to be_valid
+    expect(build(:event, check_in_radius_feet: 1000)).to be_valid
+  end
+
+  describe "check_in_radius_feet" do
+    it "defaults to 250 feet" do
+      expect(Event.new.check_in_radius_feet).to eq(250)
+    end
+
+    it "rejects a blank value with the blank message" do
+      event = build(:event, check_in_radius_feet: nil)
+      expect(event).not_to be_valid
+      expect(event.errors[:check_in_radius_feet]).to include(Event::CHECK_IN_RADIUS_FEET_BLANK_MESSAGE)
+    end
+
+    it "rejects words and non-whole numbers with the whole-number message" do
+      [ "abc", 1.5, "12ft" ].each do |feet|
+        event = build(:event, check_in_radius_feet: feet)
+        expect(event).not_to be_valid
+        expect(event.errors[:check_in_radius_feet]).to include(Event::CHECK_IN_RADIUS_FEET_WHOLE_NUMBER_MESSAGE)
+      end
+    end
+
+    it "rejects out-of-range values with the range message" do
+      [ 0, -5, 99, 1001 ].each do |feet|
+        event = build(:event, check_in_radius_feet: feet)
+        expect(event).not_to be_valid
+        expect(event.errors[:check_in_radius_feet]).to include(Event::CHECK_IN_RADIUS_FEET_RANGE_MESSAGE)
+      end
+    end
   end
 
   it "can be created" do
     expect(create(:event)).to be_persisted
   end
+
+    it "requires ends_at to be after starts_at" do
+    event = build(:event, starts_at: Time.current, ends_at: 1.hour.ago)
+    expect(event).not_to be_valid
+    expect(event.errors[:base]).to include("End time must be after the start time")
+  end
+
+  it "is valid when ends_at is after starts_at" do
+    event = build(:event, starts_at: Time.current, ends_at: 1.hour.from_now)
+    expect(event).to be_valid
+  end
 end
-
-
-require "rails_helper"

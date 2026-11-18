@@ -38,6 +38,12 @@ class EventImportsController < ApplicationController
   def confirm
        parser = EventImport::Parser.new(@path)
     rows = EventImport::Mapper.new(headers: parser.headers, rows: parser.rows).preview
+    selected_rows = Array(params[:selected_rows]).map(&:to_s)
+    rows.each do |row|
+         if %i[new update].include?(row.status) && !selected_rows.include?(row.index.to_s)
+              row.status = :skip
+         end
+    end
 
     result = EventImport::Executor.new(
       rows: rows,

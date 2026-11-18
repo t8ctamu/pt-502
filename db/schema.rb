@@ -60,7 +60,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_18_013450) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.integer "check_in_radius_meters", default: 100, null: false
+    t.integer "check_in_radius_feet", default: 250, null: false
     t.datetime "created_at", null: false
     t.text "description"
     t.datetime "ends_at"
@@ -76,7 +76,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_18_013450) do
     t.datetime "updated_at", null: false
     t.index ["external_reference"], name: "index_events_on_external_reference", unique: true
     t.index ["requirement_id"], name: "index_events_on_requirement_id"
-    t.check_constraint "check_in_radius_meters > 0", name: "events_positive_radius"
+    t.check_constraint "check_in_radius_feet >= 100 AND check_in_radius_feet <= 1000", name: "events_check_in_radius_feet_range"
     t.check_constraint "point_value >= 0", name: "events_nonnegative_points"
   end
 

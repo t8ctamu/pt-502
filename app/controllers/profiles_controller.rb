@@ -16,4 +16,13 @@ class ProfilesController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
+
+  def leave
+    if current_member.update(removed_at: Time.current)
+      sign_out current_member
+      redirect_to root_path, notice: "You have left the organization."
+    else
+      redirect_to root_path, alert: "Could not leave the organization. Please try again."
+    end
+  end
 end

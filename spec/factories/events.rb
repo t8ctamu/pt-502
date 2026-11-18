@@ -11,9 +11,10 @@ FactoryBot.define do
     requirement { nil }
 
     # Kept so specs on main that use `create(:event, :check_in_ready)` still work.
-    # Coordinates are now always set, so this only adds the radius.
+    # Now expressed in feet; the meters column is derived by the model.
+    # 328 ft ~= 100 m; keeps distance-based specs seeing the same radius as before.
     trait :check_in_ready do
-      check_in_radius_meters { 100 }
+      check_in_radius_feet { 328 }
     end
 
     trait :with_reference do

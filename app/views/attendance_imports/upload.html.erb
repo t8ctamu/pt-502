@@ -1,0 +1,16 @@
+<h1>Import attendance</h1>
+
+<p>
+  <strong><%= @event.name %></strong><br>
+  <%= @event.starts_at.strftime("%b %-d, %Y %-l:%M %p") %><br>
+  <%= @event.location %>
+</p>
+
+<%= form_with url: attendance_imports_path, method: :post, multipart: true do |f| %>
+  <%= hidden_field_tag :event_id, @event.id %>
+  <%= f.label :file, "Attendance file (.csv or .xlsx)" %>
+  <%= f.file_field :file, accept: ".csv,.xlsx,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" %>
+  <%= f.submit "Import attendance" %>
+<% end %>
+
+<p><%= link_to "Choose a different event", new_attendance_import_path %></p>

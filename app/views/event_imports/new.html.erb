@@ -2,7 +2,9 @@
 
 <p>
   Upload a <code>.csv</code> or <code>.xlsx</code> file exported from GetInvolved.
-  Only events with status <strong>Approved</strong> will be imported.
+  Valid events can be imported regardless of their GetInvolved status, including
+  <strong>Approved</strong>, <strong>Submitted</strong>, and <strong>Initiated</strong>.
+  Review and select events in the preview before confirming. Nothing is saved until you confirm.
 </p>
 
 <%= form_with url: event_imports_path, method: :post, multipart: true do |f| %>

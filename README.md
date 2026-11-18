@@ -26,7 +26,7 @@ bundle exec rails db:prepare
 RAILS_ENV=test bundle exec rails db:prepare
 bundle exec rspec spec/
 bundle exec rubocop
-node --test spec/javascript/location_controllers_test.cjs
+node --test spec/javascript/*.cjs
 ```
 
 The test database is `pt502_test` and is disposable. The Procfile starts Puma

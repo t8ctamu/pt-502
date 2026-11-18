@@ -325,6 +325,16 @@ RSpec.describe Member, type: :model do
     end
   end
 
+  describe ".active" do
+    it "returns only members who have not been removed" do
+      active_member = create(:member, removed_at: nil)
+      removed_member = create(:member, removed_at: Time.current)
+
+      expect(Member.active).to include(active_member)
+      expect(Member.active).not_to include(removed_member)
+    end
+  end
+
   describe "validations" do
     it "requires an email" do
       expect(build(:member, email: nil)).not_to be_valid

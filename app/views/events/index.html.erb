@@ -3,6 +3,7 @@
   <% if current_member.admin? %>
     <%= link_to "Create Event", new_event_path, class: "btn" %>
     <%= link_to "Import from GetInvolved", new_event_import_path, class: "btn" %>
+    <%= link_to "Import attendance", new_attendance_import_path, class: "btn" %>
   <% end %>
 </div>
 
