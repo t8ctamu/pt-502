@@ -148,8 +148,11 @@ end
 
   # Members control their own phone number and sharing consent.
   def member_params
+    permitted_extra = [ :paid_dues ]
+    permitted_extra << :tshirt_size if current_member.admin?
+
     member_profile_params.except(:phone_number, :share_phone_number, :phone_visible)
-                         .merge(params.require(:member).permit(:paid_dues))
+                        .merge(params.require(:member).permit(permitted_extra))
   end
 
   # Filters use the same Member methods the table displays (points_by_requirement,

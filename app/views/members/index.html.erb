@@ -71,7 +71,7 @@
         <%= sortable.call("Anticipated application cycle", "anticipated_cycle") %>
         <th>Shared phone number</th>
         <%= sortable.call("Paid dues", "paid_dues") %>
-        <th>Status</th><th>Profile</th>
+        <th>Status</th><th>T-shirt size</th><th>Profile</th>
         <% if current_member.manager? %>
           <th>Change Role</th>
           <th>Actions</th>
@@ -115,6 +115,19 @@
               <% unless m.active_status? %>
                 <small class="status-missing"><%= m.missing_requirements_text.capitalize %></small>
               <% end %>
+            <% end %>
+          </td>
+          <td>
+            <% if current_member.admin? %>
+              <%= form_with model: m, url: member_path(m), method: :patch do |f| %>
+                <%= f.select :tshirt_size,
+                      options_for_select(Member::TSHIRT_SIZES, m.tshirt_size),
+                      { include_blank: "—" },
+                      id: nil,
+                      onchange: "this.form.requestSubmit()" %>
+              <% end %>
+            <% else %>
+              <%= m.tshirt_size.presence || "Not set" %>
             <% end %>
           </td>
           <td><%= link_to "Edit profile", edit_member_path(m), aria: { label: "Edit profile for #{m.first_name} #{m.last_name}" } %></td>

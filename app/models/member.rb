@@ -36,6 +36,17 @@ class Member < ApplicationRecord
   validate :application_cycle_is_summer, on: :profile
   validate :shared_phone_number_is_valid, on: :profile
   validates :email, presence: true
+  TSHIRT_SIZES = [
+    [ "Small", "S" ],
+    [ "Medium", "M" ],
+    [ "Large", "L" ],
+    [ "XL", "XL" ],
+    [ "XXL", "XXL" ]
+  ].freeze
+
+  validates :tshirt_size,
+            inclusion: { in: TSHIRT_SIZES.map(&:last) },
+            allow_blank: true
 
   def reload(*)
     @points_by_requirement = nil

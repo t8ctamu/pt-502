@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_22_071510) do
+ActiveRecord::Schema[8.1].define(version: 2026_11_18_013450) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -96,6 +96,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_22_071510) do
     t.date "pt_school_application_date"
     t.datetime "removed_at"
     t.bigint "role_id", null: false
+    t.string "tshirt_size"
     t.string "uid"
     t.datetime "updated_at", null: false
     t.index ["removed_at"], name: "index_members_on_removed_at"
