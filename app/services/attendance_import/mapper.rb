@@ -21,7 +21,7 @@ module AttendanceImport
                     errors = []
 
                     email = values["email"].to_s.strip.downcase
-                    member = email.present? ? Member.find_by(email: email) : nil
+                    member = email.present? ? find_member_by_email(email) : nil
                     errors << "No member found for #{email.presence || 'blank email'}" if member.nil?
 
                     checked_in_at = parse_time(values["checked in"], errors)
@@ -70,6 +70,31 @@ module AttendanceImport
                rescue ArgumentError, TypeError
                     errors << "Could not read Checked In timestamp: #{raw_value.inspect}"
                     nil
+               end
+
+               # GetInvolved exports TAMU addresses as user@email.tamu.edu while
+               # the app often stores the same person as user@tamu.edu (and vice
+               # versa), so an exact match reports members as unknown. Try the
+               # exact address first, then the other known TAMU form, and only
+               # accept a single match so points are never given to the wrong
+               # person when both forms exist.
+               def find_member_by_email(email)
+                    exact = Member.find_by(email: email)
+                    return exact if exact
+
+                    alternate = alternate_tamu_email(email)
+                    return nil unless alternate
+
+                    matches = Member.where(email: [ email, alternate ]).limit(2).to_a
+                    matches.size == 1 ? matches.first : nil
+               end
+
+               def alternate_tamu_email(email)
+                    if email.end_with?("@email.tamu.edu")
+                         email.sub("@email.tamu.edu", "@tamu.edu")
+                    elsif email.end_with?("@tamu.edu")
+                         email.sub("@tamu.edu", "@email.tamu.edu")
+                    end
                end
      end
 end
