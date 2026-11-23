@@ -122,16 +122,17 @@ class EventsController < ApplicationController
   end
 
   def load_saved_locations
-    @saved_locations = SavedLocation.ordered
+    @saved_locations = SavedLocation.reusable.ordered
   end
 
   def remember_location(event)
     return unless event.check_in_configured?
 
-    SavedLocation.find_or_create_by(name: event.location.strip) do |saved|
-      saved.latitude = event.latitude
-      saved.longitude = event.longitude
-    end
+    location = event.saved_location
+    existing = SavedLocation.reusable.find_by("LOWER(name) = ?", location.name.downcase)
+    return if existing
+
+    location.update!(is_saved: true)
   end
 
   def event_params

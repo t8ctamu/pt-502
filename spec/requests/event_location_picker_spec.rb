@@ -160,7 +160,7 @@ RSpec.describe "Event location picker", type: :request do
            expect(event.starts_at).to be_within(1.second).of(attrs[:starts_at])
            expect(event.ends_at).to be_within(1.second).of(attrs[:ends_at])
            expect(event.check_in_configured?).to be false
-           expect(SavedLocation.count).to eq(0)
+           expect(SavedLocation.reusable.count).to eq(0)
          end
 
          it "preserves every entered field when validation fails" do

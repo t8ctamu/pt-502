@@ -1,9 +1,19 @@
 class SavedLocation < ApplicationRecord
-     validates :name, presence: true, uniqueness: { case_sensitive: false }
-  validates :latitude, presence: true,
-    numericality: { greater_than_or_equal_to: -90, less_than_or_equal_to: 90 }
-  validates :longitude, presence: true,
-    numericality: { greater_than_or_equal_to: -180, less_than_or_equal_to: 180 }
+     has_many :events, dependent: :restrict_with_error
 
+  validates :name, presence: true
+  validates :name, uniqueness: { case_sensitive: false, conditions: -> { where(is_saved: true) } }, if: :is_saved?
+  validates :latitude, :longitude, presence: true, if: :is_saved?
+  validates :latitude, numericality: { in: -90..90 }, allow_nil: true
+  validates :longitude, numericality: { in: -180..180 }, allow_nil: true
+  validate :coordinates_provided_together
+
+  scope :reusable, -> { where(is_saved: true) }
   scope :ordered, -> { order(Arel.sql("LOWER(name)")) }
+
+  private
+
+       def coordinates_provided_together
+            errors.add(:base, "Provide both latitude and longitude") unless latitude.nil? == longitude.nil?
+       end
 end

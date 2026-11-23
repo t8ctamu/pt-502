@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_11_18_013450) do
+ActiveRecord::Schema[8.1].define(version: 2026_11_23_000000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -65,17 +65,16 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_18_013450) do
     t.text "description"
     t.datetime "ends_at"
     t.string "external_reference"
-    t.decimal "latitude", precision: 10, scale: 6
-    t.string "location"
-    t.decimal "longitude", precision: 10, scale: 6
     t.string "name"
     t.string "other_type"
     t.integer "point_value", default: 1, null: false
     t.bigint "requirement_id"
+    t.bigint "saved_location_id", null: false
     t.datetime "starts_at"
     t.datetime "updated_at", null: false
     t.index ["external_reference"], name: "index_events_on_external_reference", unique: true
     t.index ["requirement_id"], name: "index_events_on_requirement_id"
+    t.index ["saved_location_id"], name: "index_events_on_saved_location_id"
     t.check_constraint "check_in_radius_feet >= 100 AND check_in_radius_feet <= 1000", name: "events_check_in_radius_feet_range"
     t.check_constraint "point_value >= 0", name: "events_nonnegative_points"
   end
@@ -147,11 +146,12 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_18_013450) do
 
   create_table "saved_locations", force: :cascade do |t|
     t.datetime "created_at", null: false
-    t.decimal "latitude", precision: 10, scale: 6, null: false
-    t.decimal "longitude", precision: 10, scale: 6, null: false
+    t.boolean "is_saved", default: true, null: false
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
     t.string "name", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_saved_locations_on_name", unique: true
+    t.index "lower((name)::text)", name: "index_saved_locations_on_reusable_name", unique: true, where: "(is_saved = true)"
   end
 
   create_table "semesters", force: :cascade do |t|
@@ -173,6 +173,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_18_013450) do
   add_foreign_key "event_submissions", "points", on_delete: :nullify
   add_foreign_key "event_submissions", "requirements"
   add_foreign_key "events", "requirements"
+  add_foreign_key "events", "saved_locations"
   add_foreign_key "members", "roles"
   add_foreign_key "points", "members"
   add_foreign_key "points", "requirements"

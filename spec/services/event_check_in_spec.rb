@@ -43,7 +43,7 @@ RSpec.describe EventCheckIn do
           end
 
           it "still rejects an event that is not configured for check-in" do
-               event.update_columns(latitude: nil, longitude: nil)
+               event.saved_location.update_columns(latitude: nil, longitude: nil)
 
                expect do
                     described_class.call(member: member, event: event, skip_distance: true)

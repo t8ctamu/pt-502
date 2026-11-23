@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  belongs_to :saved_location, optional: true, autosave: true
   belongs_to :requirement, optional: true
   has_many :attendances, dependent: :destroy
   has_many :members, through: :attendances
@@ -23,6 +24,21 @@ class Event < ApplicationRecord
   before_validation { self.other_type = nil unless requirement&.name == "Other" }
   validates :other_type, presence: { message: "is required when the point type is Other" },
                         if: -> { requirement&.name == "Other" }
+  # Keep the form/import interface while storing venue data in one table.
+  { location: :name, latitude: :latitude, longitude: :longitude }.each do |field, column|
+    define_method(field) { saved_location&.public_send(column) }
+    define_method("#{field}=") do |value|
+      if saved_location&.persisted?
+        self.saved_location = SavedLocation.new(
+          name: saved_location.name, latitude: saved_location.latitude,
+          longitude: saved_location.longitude, is_saved: false
+        )
+      end
+      self.saved_location ||= SavedLocation.new(is_saved: false)
+      saved_location.public_send("#{column}=", value)
+    end
+  end
+
   def check_in_configured?
     latitude.present? && longitude.present?
   end

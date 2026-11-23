@@ -56,7 +56,7 @@ RSpec.describe AttendanceImport::Executor do
      end
 
      it "reports a not-configured event as a row error" do
-          event.update_columns(latitude: nil, longitude: nil)
+          event.saved_location.update_columns(latitude: nil, longitude: nil)
 
           result = described_class.new(rows: [ ready_row(member: member) ], event: event).call
 

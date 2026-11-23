@@ -135,7 +135,7 @@ RSpec.describe "Event check-in", type: :request do
 
   it "explains when officers have not configured check-in" do
     sign_in member
-    event.update_columns(latitude: nil, longitude: nil) # legacy row: validation would now block this
+    event.saved_location.update_columns(latitude: nil, longitude: nil) # legacy row: validation would now block this
     get event_check_in_path(event)
     expect(CGI.unescapeHTML(response.body)).to include("Check-in isn't set up for this event yet")
     expect(response.body).not_to include("Check in using my location")
@@ -154,7 +154,7 @@ RSpec.describe "Event check-in", type: :request do
 
   it "redirects officers to configure an event before displaying a QR code" do
     sign_in officer
-    event.update_columns(latitude: nil, longitude: nil) # legacy row: validation would now block this
+    event.saved_location.update_columns(latitude: nil, longitude: nil) # legacy row: validation would now block this
     get check_in_qr_event_path(event)
     expect(response).to redirect_to(edit_event_path(event))
   end
