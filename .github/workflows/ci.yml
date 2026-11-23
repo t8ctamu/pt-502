@@ -2,11 +2,13 @@ name: Tests and code quality
 on:
   push:
   pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     services:
       postgres:
         image: postgres:17
@@ -32,14 +34,21 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
-      - run: bundle exec rails db:prepare
+      - name: Prepare test database
+        run: bundle exec rails db:prepare
       - run: bundle exec rake db:test:prepare
-      - run: bundle exec rspec spec/
-      - run: bundle exec rubocop
+      - name: Run Rails tests
+        run: bundle exec rspec spec/
+      - name: Check Ruby code quality
+        if: ${{ !cancelled() }}
+        run: bundle exec rubocop
       - uses: actions/setup-node@v4
+        if: ${{ !cancelled() }}
         with:
           node-version: '22'
-      - run: node --test spec/javascript/*.cjs
+      - name: Run JavaScript tests
+        if: ${{ !cancelled() }}
+        run: node --test spec/javascript/*.cjs
       - uses: actions/upload-artifact@v7
         if: always()
         with:

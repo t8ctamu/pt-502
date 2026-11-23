@@ -76,7 +76,6 @@ Before installing, open [the system guide](docs/system-guide.html) in a browser.
 Use Ruby from `.ruby-version` and PostgreSQL. After local setup:
  
 ```sh
-bundle exec rails db:prepare
 RAILS_ENV=test bundle exec rails db:prepare
 bundle exec rspec spec/
 bundle exec rubocop
