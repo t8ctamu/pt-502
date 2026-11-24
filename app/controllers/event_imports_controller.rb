@@ -68,7 +68,8 @@ class EventImportsController < ApplicationController
   end
 
   def import_path(token)
-       Rails.root.join("tmp", "event_imports", "#{token}#{File.extname(params[:file].original_filename)}").to_s
+       extension = File.extname(params[:file].original_filename).downcase == ".xlsx" ? ".xlsx" : ".csv"
+       Rails.root.join("tmp", "event_imports", "#{token}#{extension}").to_s
   end
 
   def load_import_file
@@ -76,8 +77,10 @@ class EventImportsController < ApplicationController
     unless token.match?(/\A[0-9a-f-]{36}\z/)
          return redirect_to new_event_import_path, alert: "Invalid import."
     end
-    @path = Dir.glob(Rails.root.join("tmp", "event_imports", "#{token}.*")).first
-    unless @path && File.exist?(@path)
+    directory = Rails.root.join("tmp", "event_imports")
+    filename = Dir.children(directory).find { |name| name == "#{token}.csv" || name == "#{token}.xlsx" } if Dir.exist?(directory)
+    @path = directory.join(filename).to_s if filename
+    unless @path && File.file?(@path) && !File.symlink?(@path)
          redirect_to new_event_import_path, alert: "Import expired. Please upload again."
     end
   end

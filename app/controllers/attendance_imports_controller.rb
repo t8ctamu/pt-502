@@ -1,4 +1,5 @@
 require "fileutils"
+require "tempfile"
 
 class AttendanceImportsController < ApplicationController
      before_action :require_completed_profile
@@ -23,8 +24,13 @@ class AttendanceImportsController < ApplicationController
 
           return render_invalid("Please upload a .csv or .xlsx file.") unless valid_file?(file)
 
-          path = write_temp_file(file)
-          parser = AttendanceImport::Parser.new(path)
+          extension = File.extname(file.original_filename).downcase == ".xlsx" ? ".xlsx" : ".csv"
+          directory = Rails.root.join("tmp", "attendance_imports")
+          FileUtils.mkdir_p(directory)
+          temporary_file = Tempfile.new([ "attendance-", extension ], directory, binmode: true)
+          temporary_file.write(file.read)
+          temporary_file.flush
+          parser = AttendanceImport::Parser.new(temporary_file.path)
 
           missing = missing_columns(parser.headers)
           if missing.any?
@@ -47,7 +53,7 @@ class AttendanceImportsController < ApplicationController
           Rails.logger.error("Attendance import failed: #{e.message}")
           render_invalid("That file could not be read. Please check the format and try again.")
      ensure
-          File.delete(path) if path && File.exist?(path)
+          temporary_file&.close!
      end
 
      def results
@@ -71,14 +77,6 @@ class AttendanceImportsController < ApplicationController
           def valid_file?(file)
                file.is_a?(ActionDispatch::Http::UploadedFile) &&
                     ALLOWED_EXTENSIONS.include?(File.extname(file.original_filename).downcase)
-          end
-
-          def write_temp_file(file)
-               token = SecureRandom.uuid
-               path = Rails.root.join("tmp", "attendance_imports", "#{token}#{File.extname(file.original_filename).downcase}").to_s
-               FileUtils.mkdir_p(File.dirname(path))
-               File.binwrite(path, file.read)
-               path
           end
 
           def missing_columns(headers)
