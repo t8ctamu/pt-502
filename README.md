@@ -113,10 +113,13 @@ Use Ruby from `.ruby-version` and PostgreSQL. After local setup:
 RAILS_ENV=test bundle exec rails db:prepare
 bundle exec rspec spec/
 bundle exec rubocop
+bundle exec brakeman --no-pager
 node --test spec/javascript/*.cjs
 ```
  
 The test database is `pt502_test` and is disposable.
+
+CI also runs the locked Brakeman version to scan Rails code for security warnings. Warnings or scan errors fail the check. Download the `brakeman-report` artifact from the Actions run for the JSON and text results, including when the scan fails. Review findings and fix confirmed issues; a clean scan does not replace sign-in and authorization tests.
  
 ## Deployment
  
