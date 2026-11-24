@@ -79,8 +79,10 @@ class ImportsController < ApplicationController
     unless token.match?(/\A[0-9a-f-]{36}\z/)
          return redirect_to new_import_path, alert: "Invalid import."
     end
-    @path = import_path(token)
-    unless File.exist?(@path)
+    directory = Rails.root.join("tmp", "imports")
+    filename = Dir.children(directory).find { |name| name == "#{token}.csv" } if Dir.exist?(directory)
+    @path = directory.join(filename).to_s if filename
+    unless @path && File.file?(@path) && !File.symlink?(@path)
          redirect_to new_import_path, alert: "Import expired. Please upload again."
     end
   end
